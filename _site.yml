@@ -1,0 +1,20 @@
+name: " "
+output_dir: "docs"
+navbar:
+  title: "Unidad 1"
+  left:
+    - text: "Introducción"
+      href: recurso201.html
+    - text: "Tablas"
+      href: recurso207.html
+    - text: "Ind.de posición"
+      href: recurso202.html
+    - text: "Ind.de centro"
+      href: recurso203.html
+    - text: "Ind.de variabilidad"
+      href: recurso204.html
+    - text: "Ind.de forma"
+      href: recurso205.html
+    - text: "Repr.gráfica"
+      href: recurso206.html
+

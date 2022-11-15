@@ -1,0 +1,74 @@
+---
+title: "Introducción"
+author: "Nivelatorio de Estadística"
+date: "2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+</br>
+
+El analisis de datos forma parte de uno de los pasos de la Métodologia Estadística constituida por los siguientes pasos :
+
+1. Definición del problema
+2. Deficinión de lo objetivos
+3. Determinación de las variables de interés
+4. Diseño del experimento
+5. Recolección o selección de la información
+6. Procesamiento de los datos
+7. **Análisis descriptivo de datos**
+8. Inferencia Estadística
+9. Aplicaciones estadísticas . modelos estadísticos 
+10. Conclusiones y recomendaciones
+
+
+</br></br>
+
+<div style="width: 100%;"><div style="position: relative; padding-bottom: 55.00%; padding-top: 0; height: 0;"><iframe title="Metodologia" frameborder="0" width="2000" height="1100" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/5f1ba8da1829700da368b4ab" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+
+</br></br>
+
+Es necesario relacionar los datos con un proposito (objetivos) que nos permita proporner soluciones o recomendaciones a un problema en particular planteado, a partir de información por lo regular estructura de en bases de datos  conformada por variables (columnas) y registros (filas)
+
+En número de registros por lo regular de gran tamaño hace necesaria la utilización de un herramienta computacional para su analisis y procesamiento ( en nuestro caso el lenguaje R)
+
+
+Por otro lado las variables se puede clasificar como :
+
+* Cualitativas : corresponde a caracteristicas que pueden tomar como valores palabras
+
+* Cuantitativas : corresponden a valores numéricos que representan una caracteristica del objeto o individuo observado. A su vez se pueden clasificar como :
+
+  + Discretas : se caracteriza por que están relacionadas con el conteo  (número de 
+  
+  + Continuas : estas variables se originan en la medición  
+  
+</br></br>
+
+De acuerdo con esta clasificacion las variables se pueden medir en diferentes escalas :
+
+</br>
+
+| Tipo de variable       |    escala de medición    |  ejemplo                            |
+|:-----------------------|:-------------------------|:------------------------------------|
+| Cualitativa            | nominal (no existe orden)|  estado civil ( soltero, casdado, separado, viodo, unión libre)   | 
+| (conteo)               |                          |  color ( blanco, negro, rojo, azul, amarillo, verde)              |
+|                        |                          |  pais (co, pe, us, uk, es,..)                                     |
+|                        | ordinal (con orden)      | nivel de ansiedad (bajo, medio, alto)                             |
+|                        |                          | clima laboral (excelente, muy bueno, bueno, regular, muy regular) |
+|                        |                          | nivel de satisfación (baja, media, alta)                          |
+| Cuantitativas          | intervalo                | temperatura (centigrados, kelvin, Fahrenheit)                        |
+| (medición)             |                          | operacionalización de clima laboral |
+|                        | de razón                 | edad                                |
+|                        |                          | tiempo de ejeción                   |
+|                        |                          | precio del artículo en dólares      |
+
+
+Dependiendo el tipo de variable y su escala de medición se tomaran los respectivos indicadores y gráficos para su correcta simplificación y representación 
+
+
+
+

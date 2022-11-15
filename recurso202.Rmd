@@ -1,0 +1,33 @@
+---
+title: "Indicadores de Posicion"
+author: "Nivelatorio de Estadística"
+date: "2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Cuando nos subimos a un auto observamos un tablero con muchos indicadores que permiten al conductor validar el estado del vehículo. Todos los podemos visualizar al tiempo con el fin de darnos una idea del nivel de combustible, la temperatura, el estado de la batería, si alguna puerta esta abierta, la velocidad a la que se viaja, entre otros.
+
+</br>
+
+Iniciaremos con los indicadores de posición o tambien llamados **PERCENTILES** que son 99 valores que parten los datos en  cien partes de igual porcentaje  ($P_{1}, P_{2}, P_{3}, P_{4}, \cdots ,P_{99}$   ). Por ejemplo : 
+
++ El percentil 30 ($P_{30}$) divide la muestra en dos partes. Por debajo de este valor está el 30% de los datos y por encima de el esta el 70% restante
++ El percentil 75 ($P_{75}$), tiene por debajo de el un 75% de los datos
+
+</br>
+
+Tambien existen los **DECILES** que son 9 número que dividen la muesra en 10 partes cada una con un 10% de la muestra ($D_{1}, D_{2}, D_{3}, D_{4}, \cdots , D_{9}$, )
+
++ Decil 2 ($D_{2}$), tiene por debajo del el, el 20% de los datos
++ Decil 5 ($D_{5}$), por debajo de este número se encuentra el 50% de los datos
+
+</br>
+
+Y finalmente los **CUARTILES** que corresponden a 3 números que dividen la muestra en cuatro partes de igual porcentaje ($Q_{1}$, $Q_{2}$, $Q_{3}$), con los cuales se construye los diagrámas de cajas que permiten poder detectar datos atípocos
+
+
+

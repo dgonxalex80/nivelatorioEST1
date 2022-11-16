@@ -1,7 +1,7 @@
 name: " "
 output_dir: "docs"
 navbar:
-  title: "Unidad 1"
+  title: "Análisis de exploratorio de datos"
   left:
     - text: "Tablas"
       href: recurso207.html
@@ -15,4 +15,6 @@ navbar:
       href: recurso205.html
     - text: "Repr.gráfica"
       href: recurso206.html
-
+output:
+  html_document:
+    css: style.css

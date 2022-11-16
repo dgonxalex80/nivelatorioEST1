@@ -3,8 +3,6 @@ output_dir: "docs"
 navbar:
   title: "Unidad 1"
   left:
-    - text: "Introducción"
-      href: recurso201.html
     - text: "Tablas"
       href: recurso207.html
     - text: "Ind.de posición"

@@ -7,24 +7,124 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+Colombia<-readRDS("data/Colombia.RDS")
 ```
 
-## R Markdown
+</br>
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Una de las herramientas más utilizadas para la revisión inicial de los datos la conforman las **tablas de frecuencia**, las cuales permiten resumir los valores en unos pocos contabilizando sus frecuencias, ademas de detectar de problemas como datos faltantes (NAs) o incosistencias como valores escritos de difente forma 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+</br></br>
 
-```{r cars}
-summary(cars)
+**Ejemplo 1**
+
+
+La base de datos Casos positivos de COVID-19 en Colombia ubicada en la plataforma de DATOS ABIERTOS se puede descargar directamente con el siguiente código  
+
+</br>
+
+```{r, eval=FALSE}
+# Código para bajar data Covid-19 Colombia
+install.packages("RSocrata", dependencies = TRUE)   # instalación de paquete RSocrata
+library(RSocrata)    # llamado de lib"data/Colombia.RDS"reria
+token <- "zxMsD6eXc0zlEMryRGW87Hwrz"  # token personal que se puede solicitar en la página
+Colombia <- read.socrata("https://www.datos.gov.co/resource/gt2j-8ykr.json", app_token = token) # lectura 
+saveRDS(Colombia, file = "data/Colombia.RDS")  # guardar base con modificaciones
 ```
 
-## Including Plots
+</br></br>
 
-You can also embed plots, for example:
+Una tabla de la variable ubicación permite detectar valores de una misma categoria escritos de manera diferente :
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+table(Colombia$ubicacion)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+</br>
+
+```{r}
+table(Colombia$sexo)
+```
+
+</br>
+
+En este caso se puede arreglar el problema mediante la funcion `str_to_lower()` del paquete `stringr` 
+
+```{r}
+library(stringr)
+Colombia$ubicacionA <- str_to_lower(Colombia$ubicacion) # pasar a minusculas todos valores 
+Colombia$ubicacionA[Colombia$ubicacionA=="n/a"]=NA   # cambiar el valor  n/a por NA - valores faltantes
+
+Colombia$sexoA <- str_to_lower(Colombia$sexo) # pasar a minusculas todos valores 
+Colombia$sexoA[Colombia$sexoA=="n/a"]=NA   # cambiar el valor  n/a por NA - valores faltantes
+
+table(Colombia$ubicacionA)
+table(Colombia$sexoA)
+
+```
+</br></br>
+
+Además de los problemas detectados la información resumida permite visualizar que actualmente están reportados 19 casos en cuidado UCI y que a la fecha han fallecido en Colombia a causa del Civid-19 141862 personas
+
+</br>
+
+Tambien es posible realizar una tabla cruzada a partir de dos variables cualitativas en este caso de escala nominal
+
+```{r}
+table(Colombia$ubicacionA, Colombia$sexoA)
+```
+
+</br></br>
+
+
+La información anterior corresponde a distribuciones de frecuencia absolutas que se expresan en termino de número de personas, pero tambien es importante realizar el analisis en porcentaje dado que puede dar una idea de lo que representa una categoria en relación con el total en este caso  de positivos de Covid-19
+
+
+
+```{r}
+t=round(table(Colombia$ubicacionA, Colombia$sexoA)*100, 2)
+t/sum(t)
+```
+
+</br>
+
+
+Una mejor representación se puede realizar a traves de la funcion freq del  paquete summarytools
+
+
+```{r, eval=FALSE}
+install.packages("remotes")        # se puede tambien utulizar el paquete devtools
+library(remotes)
+install_github("dcomtois/summarytools", build_vignettes = TRUE) # descarga paquete summarytools
+```
+
+
+</br></br>
+
+```{r}
+summarytools::freq(Colombia$ubicacionA, cumul = FALSE)
+```
+
+En este caso pordemos decir que los fallecidos en Colombia corresponden al  2.24% del total de infectados
+
+</br></br>
+
+```{r}
+ev=c("1-Muy regular", "2-Regular", "3-Bueno", "4-Muy bueno","5-Excelente")
+califica=sample(ev, 1000, replace = TRUE, prob = c(0.04,0.08,0.12,0.43,0.32))
+summarytools::freq(califica)
+```
+
+
+Note que en este caso se genera una columna adicional que corresponde a la frecuencia acumulada, que en este caso tiene sentido dado que la variable tiene una escala ordinal
+
+
+
+
+
+
+
+
+
+
+

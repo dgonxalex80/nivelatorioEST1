@@ -1,42 +1,36 @@
 ---
 title: "Introducción"
-author: "Nivelatorio de Estadística"
-date: "2022"
+author: "  "
+date: " "
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
 ```
 
-</br>
 
-El analisis de datos forma parte de uno de los pasos de la Métodologia Estadística constituida por los siguientes pasos :
+</br></br></br>
 
-1. Definición del problema
-2. Deficinión de lo objetivos
-3. Determinación de las variables de interés
-4. Diseño del experimento
-5. Recolección o selección de la información
-6. Procesamiento de los datos
-7. **Análisis descriptivo de datos**
-8. Inferencia Estadística
-9. Aplicaciones estadísticas . modelos estadísticos 
-10. Conclusiones y recomendaciones
+```{r, echo=FALSE, out.width="60%", fig.align = "center"}
+knitr::include_graphics("img/procesodatos.png")
+```
+
+Tomado de : [Ciencia de Datos para Gente Sociable](https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/index.html)
+
+El proceso de manejo de datos comprende una serie de etapas que permiten cumplir los objetivos trazados en una investigación o proyecto de Ciencia de datos como lo menciona Antonio Vazquez Brust en su libro Ciencia de Datos para gente sociable. Es necesario para realizar este proceso recordar o incorporar conceptos de Estadística que hacen posible que se realicen las etapas descritas sin inconvenientes.
 
 
 </br></br>
 
-<div style="width: 100%;"><div style="position: relative; padding-bottom: 55.00%; padding-top: 0; height: 0;"><iframe title="Metodologia" frameborder="0" width="2000" height="1100" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/5f1ba8da1829700da368b4ab" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+Es necesario inicialmente relacionar los datos con un proposito (objetivos) que nos permita proporner soluciones o metodologías que permitan plantear recomendaciones a un problema en particular planteado, a partir de información por lo regular estructurada  en una bases de datos  conformada por variables (columnas) y registros (filas)
 
-</br></br>
-
-Es necesario relacionar los datos con un proposito (objetivos) que nos permita proporner soluciones o recomendaciones a un problema en particular planteado, a partir de información por lo regular estructura de en bases de datos  conformada por variables (columnas) y registros (filas)
-
-En número de registros por lo regular de gran tamaño hace necesaria la utilización de un herramienta computacional para su analisis y procesamiento ( en nuestro caso el lenguaje R)
+En número de registros por lo regular de gran tamaño hace necesaria la utilización de un herramientas computacionales para su analisis y procesamiento (en nuestro caso el lenguaje R)
 
 
-Por otro lado las variables se puede clasificar como :
+Inicialmente se examinan las caracteristicas de las variables que conforman la data que serán empleadas posteriormente en la generación de modelos.
+
+Las variables se puede clasificar como :
 
 * Cualitativas : corresponde a caracteristicas que pueden tomar como valores palabras
 
@@ -46,11 +40,13 @@ Por otro lado las variables se puede clasificar como :
   
   + Continuas : estas variables se originan en la medición  
   
+**Nota* : El termino *variable* en estadistica se refiere a una caracteristica de interés que permite una agrupación o analisis a diferencia de la interpretación que se le pueda dar en el área de sistemas donde es de su interés caracteristicas como id, número de cedula, dirección, nombre del representante legal entro otros.
+
 </br></br>
 
-De acuerdo con esta clasificacion las variables se pueden medir en diferentes escalas :
+A la clasificación anterior añadimos la forma en que se pueden medir las variables, es decir el tipo de escala: 
 
-</br>
+</br></br>
 
 | Tipo de variable       |    escala de medición    |  ejemplo                            |
 |:-----------------------|:-------------------------|:------------------------------------|
@@ -66,8 +62,56 @@ De acuerdo con esta clasificacion las variables se pueden medir en diferentes es
 |                        |                          | tiempo de ejeción                   |
 |                        |                          | precio del artículo en dólares      |
 
+</br></br></br>
 
 Dependiendo el tipo de variable y su escala de medición se tomaran los respectivos indicadores y gráficos para su correcta simplificación y representación 
+
+
+|Tipo de variable  | Escala          |  Indicadores             | Gráfico                     |
+|:-----------------|:----------------|:-------------------------|:----------------------------|
+|Cualitativas      |                 |                          |                             |
+|                  |Nominal          | moda                     | diagrama de torta           |
+|                  |Ordinal          | moda                     | diagrama de barras          |
+|                  |                 |                          | diagrama de mosaico         |
+|                  |                 |                          |                             |
+|Cuantitativas     |Intervalo-razón  | media                    | diagrama de tallos y hojas  |
+|                  |                 | mediana                  | histograma                  |
+|                  |                 | mínimo                   | diagrama de cajas           |
+|                  |                 | máximo                   | diagrama de densidad        |
+|                  |                 | rango                    | diagrama de puntos          |
+|                  |                 | varianza                 | diagrama de lineas          |
+|                  |                 | desviación estandar      | diagrama de radar           |
+|                  |                 | coeficiende de variación | gráfico likert              |
+|                  |                 | coeficiente de curtosis  | mapa de calor               |
+|                  |                 | coeficiende de asimetria | diagramas de dispersión     |
+|                  |                 | percentiles, deciles, cuartiles |                      |
+ 
+</br></br>
+
+Esta clasificación de las varibles tambien serán de utilidad al momento del modelelado
+
+</br></br>
+
+En esta unidad se tratará de manera general los conceptos principales relacionados con el analisis descriptivo de datos basados en las principales caracteristicas de los datos, tanto para variables cualitativas como para variables cuantitativas
+
+El análisis de las variables cuantitativas se centra en la contrucción de tablas de frecuencia y su prepresentación a traves de gráficos de tortas (nominales) y de barras (ordinales), mientras que en el caso de las variables cualitativas nos centraremos en indicadores de posición,  centro, variabilidad o de dispersión y de forma, además de su representación gráfica mediante histogramas, diagramas de cajas, diagramas de dispersión entre otros. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

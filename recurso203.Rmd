@@ -1,7 +1,7 @@
 ---
 title: "Indicadores de tendencias central"
-author: "Nivelatorio de Estadística"
-date: "2022"
+author: " "
+date: " "
 output: html_document
 ---
 
@@ -25,15 +25,20 @@ Una de las caracteristicas principales estan constituido por los indicadores de 
  
 ### **Media aritmética** 
 
+Es el indicador de tendencia central más conocido y utilizado por si fácil intepretación y calculo. Consiste en sumar todos los valores de un conjunto de datos y dividirlos por el número de datos
+
  <br/>
  
 $$\bar{x}= \frac{1}{n} \sum_{i=1}^{n} x_{i}$$
+```{r}
+x=c(1,2,3,4,5,6,7,8,9,10) # vector de numeros
+mean(x)  # funcion media
+sum(x)/length(x) # calculo de la media
+```
 
  <br/>
  
-Es una de los indicadores estadísticos mas conocidos
-
-Propiedades de la media :
+Sus principales propiedades son:
 
 + La suma de las desviaciones de los datos con respecto a la media es cero. $\sum (x_{i}-\bar{x})=0$.
 
@@ -128,10 +133,32 @@ $$MG = \Bigg(\displaystyle\prod_{i=1}^n (r_{i}+1)\Bigg)^{1/n}$$
  
 **Ejemplo 3**
 
+El crecimiento de la población en Colombia durante las ultimas decadas presenta la siguiente tendencia :
 
+```{r}
+# install.packages(psych)
+library(psych)
+x = c(0.025,0.022,0.02,0.016,0.011,0.007)
+
+psych::geometric.mean(x)
+
+```
+Lo  cual indica que a población colombiana está creciendo a una tasa del 1.5% durante las últimas 5 decadas
+
+https://osoramirez.github.io/R_Para_Biologos/aprendiendo-estadistica.html
 
 ###  **Media armónica**  
 
 $$H = \dfrac{1}{\frac{1}{x_{1}}+\frac{1}{x_{2}}+ ... + \frac{1}{x_{n}}}  $$
 
 Este indicador corresponde al inverso de la media aritmética 
+
+
+
+https://rpubs.com/cete/rdsa
+
+https://osoramirez.github.io/R_Para_Biologos/aprendiendo-estadistica.html#media-armonica
+
+
+
+

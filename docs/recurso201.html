@@ -9,9 +9,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Nivelatorio de Estadística" />
+<meta name="author" content="" />
 
-<meta name="date" content="2022-01-01" />
 
 <title>Introducción</title>
 
@@ -276,45 +275,35 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Introducción</h1>
-<h4 class="author">Nivelatorio de Estadística</h4>
-<h4 class="date">2022</h4>
+<h4 class="author"></h4>
 
 </div>
 
 
-<p></br></p>
-<p>El analisis de datos forma parte de uno de los pasos de la
-Métodologia Estadística constituida por los siguientes pasos :</p>
-<ol style="list-style-type: decimal">
-<li>Definición del problema</li>
-<li>Deficinión de lo objetivos</li>
-<li>Determinación de las variables de interés</li>
-<li>Diseño del experimento</li>
-<li>Recolección o selección de la información</li>
-<li>Procesamiento de los datos</li>
-<li><strong>Análisis descriptivo de datos</strong></li>
-<li>Inferencia Estadística</li>
-<li>Aplicaciones estadísticas . modelos estadísticos</li>
-<li>Conclusiones y recomendaciones</li>
-</ol>
+<p></br></br></br></p>
+<p><img src="img/procesodatos.png" width="60%" style="display: block; margin: auto;" /></p>
+<p>Tomado de : <a
+href="https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/index.html">Ciencia
+de Datos para Gente Sociable</a></p>
+<p>El proceso de manejo de datos comprende una serie de etapas que
+permiten cumplir los objetivos trazados en una investigación o proyecto
+de Ciencia de datos como lo menciona Antonio Vazquez Brust en su libro
+Ciencia de Datos para gente sociable. Es necesario para realizar este
+proceso recordar o incorporar conceptos de Estadística que hacen posible
+que se realicen las etapas descritas sin inconvenientes.</p>
 <p></br></br></p>
-<div style="width: 100%;">
-<div
-style="position: relative; padding-bottom: 55.00%; padding-top: 0; height: 0;">
-<iframe title="Metodologia" frameborder="0" width="2000" height="1100" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/5f1ba8da1829700da368b4ab" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all">
-</iframe>
-</div>
-</div>
-<p></br></br></p>
-<p>Es necesario relacionar los datos con un proposito (objetivos) que
-nos permita proporner soluciones o recomendaciones a un problema en
-particular planteado, a partir de información por lo regular estructura
-de en bases de datos conformada por variables (columnas) y registros
-(filas)</p>
+<p>Es necesario inicialmente relacionar los datos con un proposito
+(objetivos) que nos permita proporner soluciones o metodologías que
+permitan plantear recomendaciones a un problema en particular planteado,
+a partir de información por lo regular estructurada en una bases de
+datos conformada por variables (columnas) y registros (filas)</p>
 <p>En número de registros por lo regular de gran tamaño hace necesaria
-la utilización de un herramienta computacional para su analisis y
-procesamiento ( en nuestro caso el lenguaje R)</p>
-<p>Por otro lado las variables se puede clasificar como :</p>
+la utilización de un herramientas computacionales para su analisis y
+procesamiento (en nuestro caso el lenguaje R)</p>
+<p>Inicialmente se examinan las caracteristicas de las variables que
+conforman la data que serán empleadas posteriormente en la generación de
+modelos.</p>
+<p>Las variables se puede clasificar como :</p>
 <ul>
 <li><p>Cualitativas : corresponde a caracteristicas que pueden tomar
 como valores palabras</p></li>
@@ -327,10 +316,15 @@ conteo (número de</p></li>
 <li><p>Continuas : estas variables se originan en la medición</p></li>
 </ul></li>
 </ul>
+<p>**Nota* : El termino <em>variable</em> en estadistica se refiere a
+una caracteristica de interés que permite una agrupación o analisis a
+diferencia de la interpretación que se le pueda dar en el área de
+sistemas donde es de su interés caracteristicas como id, número de
+cedula, dirección, nombre del representante legal entro otros.</p>
 <p></br></br></p>
-<p>De acuerdo con esta clasificacion las variables se pueden medir en
-diferentes escalas :</p>
-<p></br></p>
+<p>A la clasificación anterior añadimos la forma en que se pueden medir
+las variables, es decir el tipo de escala:</p>
+<p></br></br></p>
 <table>
 <colgroup>
 <col width="27%" />
@@ -405,9 +399,139 @@ muy regular)</td>
 </tr>
 </tbody>
 </table>
+<p></br></br></br></p>
 <p>Dependiendo el tipo de variable y su escala de medición se tomaran
 los respectivos indicadores y gráficos para su correcta simplificación y
 representación</p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="18%" />
+<col width="28%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Tipo de variable</th>
+<th align="left">Escala</th>
+<th align="left">Indicadores</th>
+<th align="left">Gráfico</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Cualitativas</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Nominal</td>
+<td align="left">moda</td>
+<td align="left">diagrama de torta</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Ordinal</td>
+<td align="left">moda</td>
+<td align="left">diagrama de barras</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de mosaico</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Cuantitativas</td>
+<td align="left">Intervalo-razón</td>
+<td align="left">media</td>
+<td align="left">diagrama de tallos y hojas</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mediana</td>
+<td align="left">histograma</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mínimo</td>
+<td align="left">diagrama de cajas</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">máximo</td>
+<td align="left">diagrama de densidad</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">rango</td>
+<td align="left">diagrama de puntos</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">varianza</td>
+<td align="left">diagrama de lineas</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">desviación estandar</td>
+<td align="left">diagrama de radar</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">coeficiende de variación</td>
+<td align="left">gráfico likert</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">coeficiente de curtosis</td>
+<td align="left">mapa de calor</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">coeficiende de asimetria</td>
+<td align="left">diagramas de dispersión</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">percentiles, deciles, cuartiles</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p></br></br></p>
+<p>Esta clasificación de las varibles tambien serán de utilidad al
+momento del modelelado</p>
+<p></br></br></p>
+<p>En esta unidad se tratará de manera general los conceptos principales
+relacionados con el analisis descriptivo de datos basados en las
+principales caracteristicas de los datos, tanto para variables
+cualitativas como para variables cuantitativas</p>
+<p>El análisis de las variables cuantitativas se centra en la
+contrucción de tablas de frecuencia y su prepresentación a traves de
+gráficos de tortas (nominales) y de barras (ordinales), mientras que en
+el caso de las variables cualitativas nos centraremos en indicadores de
+posición, centro, variabilidad o de dispersión y de forma, además de su
+representación gráfica mediante histogramas, diagramas de cajas,
+diagramas de dispersión entre otros.</p>
 
 
 

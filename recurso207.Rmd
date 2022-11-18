@@ -6,35 +6,37 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-Colombia<-readRDS("data/Colombia.RDS")
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
+Colombia<-readRDS("/home/deg/Documentos/Javeriana/Ms en Ciencia de Datos/repository/dataset/Colombia.RDS")
 ```
 
 </br>
 
-Una de las herramientas más utilizadas para la revisión inicial de los datos la conforman las **tablas de frecuencia**, las cuales permiten resumir los valores en unos pocos contabilizando sus frecuencias, ademas de detectar de problemas como datos faltantes (NAs) o incosistencias como valores escritos de difente forma 
-
-</br></br>
-
-**Ejemplo 1**
 
 
-La base de datos Casos positivos de COVID-19 en Colombia ubicada en la plataforma de DATOS ABIERTOS se puede descargar directamente con el siguiente código  
 
-</br>
+Las tablas de frecuencia constituyen una de las herramientas más utilizadas en Estadística para resumir variables de tipo cualitativas.  Para las variables en escala nominal estan conformadas por tres columnas : 
 
-```{r, eval=FALSE}
-# Código para bajar data Covid-19 Colombia
-install.packages("RSocrata", dependencies = TRUE)   # instalación de paquete RSocrata
-library(RSocrata)    # llamado de lib"data/Colombia.RDS"reria
-token <- "zxMsD6eXc0zlEMryRGW87Hwrz"  # token personal que se puede solicitar en la página
-Colombia <- read.socrata("https://www.datos.gov.co/resource/gt2j-8ykr.json", app_token = token) # lectura 
-saveRDS(Colombia, file = "data/Colombia.RDS")  # guardar base con modificaciones
++ Descripción que corresponde a los niveles o valores diferentes que posee la variable
++ Frecuencia absoluta o conteo de los elementos o registros que tienen un valor determinado
++ Freciemcoa relativa que coresponde al porcentaje sobre el total de registros que corresponden a un valor determinado
+
+La siguiente tabla corresponde a la distribución de la variable ubicación de las personas que se han contagiado con Covid-19 en Colombia, base que se encuentra disponible en la plataforma [DATOS ABIERTOS](https://www.datos.gov.co/browse?q=covid%20&sortBy=relevance)
+
+
+```{r, echo=FALSE, out.width="50%", fig.align = "center"}
+knitr::include_graphics("img/tabla1.png")
 ```
+Fuente : Base Casos positivos de COVID-19 en Colombia. 17-10-2022
+
+La tabla permite visualizar que actualmente están reportados 19 casos en cuidado UCI y que a la fecha han fallecido en Colombia a causa del Covid-19 141862 personas
+
+
+Las tablas de frecuencia además de permitir un analisis rapido de las variables cualitativas, tambien permite detectar posible problemas en la digitación y valorar la magnitud de los datos faltantes (NA) 
 
 </br></br>
 
-Una tabla de la variable ubicación permite detectar valores de una misma categoria escritos de manera diferente :
+Como ejemplo tenemos las variables ubicación (Colombia\$ubucacion) y sexo (Colombia\$sexo)  
 
 ```{r}
 table(Colombia$ubicacion)
@@ -48,7 +50,7 @@ table(Colombia$sexo)
 
 </br>
 
-En este caso se puede arreglar el problema mediante la funcion `str_to_lower()` del paquete `stringr` 
+Es necesario corregir esto problemas antes de procesar la información. La funcion de R `str_to_lower()` del paquete `stringr` lo hace.
 
 ```{r}
 library(stringr)
@@ -64,13 +66,13 @@ table(Colombia$sexoA)
 ```
 </br></br>
 
-Además de los problemas detectados la información resumida permite visualizar que actualmente están reportados 19 casos en cuidado UCI y que a la fecha han fallecido en Colombia a causa del Civid-19 141862 personas
+Además de los problemas detectados la información resumida permite 
 
-</br>
+</br></br>
 
 Tambien es posible realizar una tabla cruzada a partir de dos variables cualitativas en este caso de escala nominal
 
-```{r}
+```{r, echo=FALSE}
 table(Colombia$ubicacionA, Colombia$sexoA)
 ```
 
@@ -89,10 +91,10 @@ t/sum(t)
 </br>
 
 
-Una mejor representación se puede realizar a traves de la funcion freq del  paquete summarytools
+Una mejor representación se puede realizar a traves de la funcion `freq` del  paquete `summarytools`
 
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo=FALSE}
 install.packages("remotes")        # se puede tambien utulizar el paquete devtools
 library(remotes)
 install_github("dcomtois/summarytools", build_vignettes = TRUE) # descarga paquete summarytools
@@ -101,7 +103,7 @@ install_github("dcomtois/summarytools", build_vignettes = TRUE) # descarga paque
 
 </br></br>
 
-```{r}
+```{r, echo=FALSE}
 summarytools::freq(Colombia$ubicacionA, cumul = FALSE)
 ```
 
@@ -109,7 +111,7 @@ En este caso pordemos decir que los fallecidos en Colombia corresponden al  2.24
 
 </br></br>
 
-```{r}
+```{r, echo=FALSE}
 ev=c("1-Muy regular", "2-Regular", "3-Bueno", "4-Muy bueno","5-Excelente")
 califica=sample(ev, 1000, replace = TRUE, prob = c(0.04,0.08,0.12,0.43,0.32))
 summarytools::freq(califica)

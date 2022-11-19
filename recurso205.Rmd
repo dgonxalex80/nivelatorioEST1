@@ -1,5 +1,5 @@
 ---
-title: "Indicadores de forma"
+title: <span style="color:#034a94"> **Indicadores de forma**</span>
 author: "Nivelatorio de Estadística"
 date: "2022"
 output: html_document

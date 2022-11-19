@@ -9,11 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="dgonzalez80" />
+<meta name="author" content="Nivelatorio de Estadística" />
 
-<meta name="date" content="2022-11-10" />
+<meta name="date" content="2022-01-01" />
 
-<title>Tablas de frecuencia</title>
+<title> Tablas de frecuencia</title>
 
 <script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -275,9 +275,10 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Tablas de frecuencia</h1>
-<h4 class="author">dgonzalez80</h4>
-<h4 class="date">2022-11-10</h4>
+<h1 class="title toc-ignore"><span style="color:#034a94"> <strong>Tablas
+de frecuencia</strong></span></h1>
+<h4 class="author">Nivelatorio de Estadística</h4>
+<h4 class="date">2022</h4>
 
 </div>
 
@@ -285,8 +286,8 @@ $(document).ready(function () {
 <p></br></p>
 <p>Las tablas de frecuencia constituyen una de las herramientas más
 utilizadas en Estadística para resumir variables de tipo cualitativas.
-Para las variables en escala nominal estan conformadas por tres columnas
-:</p>
+Para las variables en <strong>escala nominal</strong> estan conformadas
+por tres columnas :</p>
 <ul>
 <li>Descripción que corresponde a los niveles o valores diferentes que
 posee la variable</li>
@@ -300,104 +301,166 @@ ubicación de las personas que se han contagiado con Covid-19 en
 Colombia, base que se encuentra disponible en la plataforma <a
 href="https://www.datos.gov.co/browse?q=covid%20&amp;sortBy=relevance">DATOS
 ABIERTOS</a></p>
-<p><img src="img/tabla1.png" width="50%" style="display: block; margin: auto;" />
-Fuente : Base Casos positivos de COVID-19 en Colombia. 17-10-2022</p>
+</br></br>
+<center>
+<strong>DISTRIBUCIÓN DE LA UBICACIÓN DE CONTAGIADOS DE COVID-19
+COLOMBIA</strong>
+</center>
+<img src="img/tabla1.png" width="45%" style="display: block; margin: auto;" />
+<center>
+Fuente : Base Casos positivos de COVID-19 en Colombia. 17-10-2022
+</center>
+<p></br></br></p>
 <p>La tabla permite visualizar que actualmente están reportados 19 casos
 en cuidado UCI y que a la fecha han fallecido en Colombia a causa del
 Covid-19 141862 personas</p>
+<p>Para el caso de variables cualitativas medidas en <strong>escala
+ordinal</strong> los valores debe presentarse ordenados. En este caso se
+adiciona una columna donde aparecen las frecuencias acumuladas
+relativas</p>
+<p></br></br></p>
+<center>
+<strong>EVALUACIÓN DEL SERVICIO DE ATENCIÓN AL CLIENTE MES DE NOVIEMBRE
+DE 2022</strong>
+</center>
+<p><img src="img/tabla2.png" width="60%" style="display: block; margin: auto;" /></p>
+<p></br></br></p>
+<p>Se puede interpretar que las evaluaciones desfavorables (muy regular
+y regular) representan un 13.16% y que entre muy bueno y exelente se
+encuentra el 67.83% de los evaluados (100-32.17)</p>
+<p>Tambien es de utilidad realizar tablas cruzadas o de doble entrada
+que permite visualizar las frecuencias de dos variables cualitativas</p>
+</br></br>
+<center>
+<strong>DISTRIBUCIÓN DE LA UBUCACION POR SEXO DE LOS CONTAGIADOS DE
+COVID-19 COLOMBIA</strong>
+</center>
+<img src="img/tabla3.png" width="60%" style="display: block; margin: auto;" />
+<center>
+Fuente : Base Casos positivos de COVID-19 en Colombia. 17-10-2022
+</center>
+<p></br></br></p>
+<p>De esta tabla se puede observar que se presenta una mayor cantidad de
+hombres fallecidos (86045)</p>
+<p></br></br></p>
 <p>Las tablas de frecuencia además de permitir un analisis rapido de las
 variables cualitativas, tambien permite detectar posible problemas en la
 digitación y valorar la magnitud de los datos faltantes (NA)</p>
 <p></br></br></p>
 <p>Como ejemplo tenemos las variables ubicación (Colombia$ubucacion) y
 sexo (Colombia$sexo)</p>
-<pre class="r"><code>table(Colombia$ubicacion)</code></pre>
-<pre><code>
-        casa         Casa         CASA    Fallecido     Hospital Hospital UCI 
-       27689      6107510            7       141862          179           19 
-         N/A 
-       34093 </code></pre>
-<p></br></p>
-<pre class="r"><code>table(Colombia$sexo)</code></pre>
-<pre><code>
-      f       F       m       M 
-      6 3370605       6 2940742 </code></pre>
-<p></br></p>
-<p>Es necesario corregir esto problemas antes de procesar la
-información. La funcion de R <code>str_to_lower()</code> del paquete
-<code>stringr</code> lo hace.</p>
-<pre class="r"><code>library(stringr)
-Colombia$ubicacionA &lt;- str_to_lower(Colombia$ubicacion) # pasar a minusculas todos valores 
-Colombia$ubicacionA[Colombia$ubicacionA==&quot;n/a&quot;]=NA   # cambiar el valor  n/a por NA - valores faltantes
-
-Colombia$sexoA &lt;- str_to_lower(Colombia$sexo) # pasar a minusculas todos valores 
-Colombia$sexoA[Colombia$sexoA==&quot;n/a&quot;]=NA   # cambiar el valor  n/a por NA - valores faltantes
-
-table(Colombia$ubicacionA)</code></pre>
-<pre><code>
-        casa    fallecido     hospital hospital uci 
-     6135206       141862          179           19 </code></pre>
-<pre class="r"><code>table(Colombia$sexoA)</code></pre>
-<pre><code>
-      f       m 
-3370611 2940748 </code></pre>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="14%" />
+<col width="9%" />
+<col width="16%" />
+<col width="19%" />
+<col width="18%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">casa</th>
+<th align="left">Casa</th>
+<th align="left">CASA</th>
+<th align="left">Fallecido</th>
+<th align="left">Hospital</th>
+<th align="left">Hospital UCI</th>
+<th align="left">NA</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">27689</td>
+<td align="left">6107510</td>
+<td align="left">7</td>
+<td align="left">141862</td>
+<td align="left">179</td>
+<td align="left">19</td>
+<td align="left">34093</td>
+</tr>
+</tbody>
+</table>
 <p></br></br></p>
-<p>Además de los problemas detectados la información resumida
-permite</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">f</th>
+<th align="left">F</th>
+<th align="left">m</th>
+<th align="left">M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">6</td>
+<td align="left">3370605</td>
+<td align="left">6</td>
+<td align="left">2940742</td>
+</tr>
+</tbody>
+</table>
 <p></br></br></p>
-<p>Tambien es posible realizar una tabla cruzada a partir de dos
-variables cualitativas en este caso de escala nominal</p>
-<pre><code>              
-                     f       m
-  casa         3299440 2835766
-  fallecido      55817   86045
-  hospital          76     103
-  hospital uci       8      11</code></pre>
-<p></br></br></p>
-<p>La información anterior corresponde a distribuciones de frecuencia
-absolutas que se expresan en termino de número de personas, pero tambien
-es importante realizar el analisis en porcentaje dado que puede dar una
-idea de lo que representa una categoria en relación con el total en este
-caso de positivos de Covid-19</p>
-<pre class="r"><code>t=round(table(Colombia$ubicacionA, Colombia$sexoA)*100, 2)
-t/sum(t)</code></pre>
-<pre><code>              
-                          f            m
-  casa         5.256174e-01 4.517518e-01
-  fallecido    8.891928e-03 1.370740e-02
-  hospital     1.210718e-05 1.640842e-05
-  hospital uci 1.274440e-06 1.752355e-06</code></pre>
-<p></br></p>
-<p>Una mejor representación se puede realizar a traves de la funcion
+<p>En R se puede utilizar la función <code>table(x)</code> para la
+elaboración de una tabla de frecuencias que contiene solo el conteo,
+pero que permite una revición rapida de sus valores. Una mejor
+representación se puede realizar a traves de la función
 <code>freq</code> del paquete <code>summarytools</code></p>
 <p></br></br></p>
-<pre><code>Frequencies  
+<p>El siguiente código de R permite descargar la base de datos Casos
+positivos de COVID-19 en Colombia directamente del portal de Datos
+Abiertos, revisar los valores de las variables : ubicación y sexo,
+arreglarlas pasando todos sus valores a minúsculas y corrigiendo el
+valor de los datos faltantes NA</p>
+<pre class="r"><code>install.packages(&quot;tidyverse&quot;) #  instalacion de paquete para manejo de datos
+library(tidyverse)   # libreria de librerias util en el manejo de datos
 
-                        Freq    % Valid    % Total
------------------- --------- ---------- ----------
-              casa   6135206    97.7369    97.2090
-         fallecido    141862     2.2599     2.2477
-          hospital       179     0.0029     0.0028
-      hospital uci        19     0.0003     0.0003
-              &lt;NA&gt;     34093                0.5402
-             Total   6311359   100.0000   100.0000</code></pre>
-<p>En este caso pordemos decir que los fallecidos en Colombia
-corresponden al 2.24% del total de infectados</p>
+install.packages(&quot;RSocrata&quot;, dependencies = TRUE)   # instalación de paquete RSocrata
+library(RSocrata)    # llamado de libreria
+token &lt;- &quot;zxMsD6eXc0zlEMryRGW87Hwrz&quot;  # token
+Colombia &lt;- read.socrata(&quot;https://www.datos.gov.co/resource/gt2j-8ykr.json&quot;, app_token = token) # lectura de manera remota 
+
+# adecuación de la base de datos
+Colombia$edad=as.integer(Colombia$edad)  # convertir en entoro la variable edad
+Colombia$sexo=str_to_lower(Colombia$sexo) # pasar a minusculas todos valores de la variable sexo
+Colombia$estado=str_to_lower(Colombia$estado) # pasar a minusculas todos lo valores de la variable estado
+Colombia$estado[Colombia$estado==&quot;n/a&quot;]=NA   # cambiar el valor  n/a por NA - valores faltantes
+Colombia$recuperado=str_to_lower(Colombia$recuperado) # pasar a minusculas todos los valores de la variable recuperado
+Colombia$recuperado[Colombia$recuperado==&quot;n/a&quot;]=NA 
+
+# seleccion de bases
+Colombia22=subset(Colombia, Colombia$fecha_reporte_web&gt;=&quot;2022-01-01&quot;) # data del 2022
+Colombia21=subset(Colombia, Colombia$fecha_reporte_web&gt;=&quot;2021-01-01&quot; &amp; Colombia$fecha_reporte_web&lt;&quot;2022-01-01&quot;) # data de 2021
+Colombia20=subset(Colombia, Colombia$fecha_reporte_web&gt;=&quot;2020-01-01&quot; &amp; Colombia$fecha_reporte_web&lt;&quot;2021-01-01&quot;) # data de 2020
+Colombia22_09=subset(Colombia, Colombia$fecha_reporte_web&gt;=&quot;2022-09-01&quot;) # data de 2022 sep
+
+
+Valle22=subset(Colombia22, departamento==&quot;76&quot;) # data del valle del cauca de 2022
+Cali22_09= subset(Colombia22_09, ciudad_municipio_nom==&quot;CALI&quot;) # data de cali de 2022
+
+table(Colombia22$estado)
+table(Colombia21$estado)
+table(Colombia20$estado)
+
+summarytools::freq(Colombia22$estado, cumul = F)
+summarytools::freq(Colombia21$estado, cumul = F)
+summarytools::freq(Colombia20$estado, cumul = F)
+summarytools::descr(Colombia22$edad)
+
+saveRDS(Colombia, file = &quot;data/Colombia.RDS&quot;)  # guardar base con modificaciones
+
+table(Cali22_06$estado)</code></pre>
 <p></br></br></p>
-<pre><code>Frequencies  
-
-                      Freq   % Valid   % Valid Cum.   % Total   % Total Cum.
-------------------- ------ --------- -------------- --------- --------------
-      1-Muy regular     49      4.90           4.90      4.90           4.90
-          2-Regular    103     10.30          15.20     10.30          15.20
-            3-Bueno    110     11.00          26.20     11.00          26.20
-        4-Muy bueno    404     40.40          66.60     40.40          66.60
-        5-Excelente    334     33.40         100.00     33.40         100.00
-               &lt;NA&gt;      0                               0.00         100.00
-              Total   1000    100.00         100.00    100.00         100.00</code></pre>
-<p>Note que en este caso se genera una columna adicional que corresponde
-a la frecuencia acumulada, que en este caso tiene sentido dado que la
-variable tiene una escala ordinal</p>
+<p>Tabla de frecuencias de una variable cualitativa en escala
+nominal</p>
+<pre class="r"><code>summarytools::freq(Colombia$ubicacion, cumul = FALSE)</code></pre>
+<p></br></br></p>
+<p>Tabla de frecuencias de una variable cuantitativa en escala
+ordinal</p>
+<pre class="r"><code>ev=c(&quot;1-Muy regular&quot;, &quot;2-Regular&quot;, &quot;3-Bueno&quot;, &quot;4-Muy bueno&quot;,&quot;5-Excelente&quot;)
+califica=sample(ev, 1000, replace = TRUE, prob = c(0.04,0.08,0.12,0.43,0.32))
+summarytools::freq(califica)</code></pre>
 
 
 

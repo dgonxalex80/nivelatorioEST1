@@ -1,5 +1,5 @@
 ---
-title: "Introducción"
+title: <span style="color:#034a94"> **Introducción**</span>
 author: "  "
 date: " "
 output: html_document

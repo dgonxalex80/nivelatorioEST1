@@ -13,7 +13,7 @@
 
 <meta name="date" content="2022-01-01" />
 
-<title>Indicadores de tendencias central</title>
+<title> Indicadores de tendencias central</title>
 
 <script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -275,7 +275,8 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Indicadores de tendencias central</h1>
+<h1 class="title toc-ignore"><span style="color:#034a94">
+<strong>Indicadores de tendencias central</strong></span></h1>
 <h4 class="author">Nivelatorio de Estadística</h4>
 <h4 class="date">2022</h4>
 
@@ -303,41 +304,23 @@ conjunto de datos y dividirlos por el número de datos</p>
 <p><br/></p>
 <p><span class="math display">\[\bar{x}= \frac{1}{n} \sum_{i=1}^{n}
 x_{i}\]</span></p>
-<pre class="r"><code>x=c(1,2,3,4,5,6,7,8,9,10)
-mean(x)</code></pre>
+<pre class="r"><code>x=c(1,2,3,4,5,6,7,8,9,10) # vector de numeros
+mean(x)  # funcion media</code></pre>
 <pre><code>## [1] 5.5</code></pre>
-<pre class="r"><code>sum(x)/length(x)</code></pre>
+<pre class="r"><code>sum(x)/length(x) # calculo de la media</code></pre>
 <pre><code>## [1] 5.5</code></pre>
 <p><br/></p>
 <p>Sus principales propiedades son:</p>
 <ul>
-<li>La suma de las desviaciones de los datos con respecto a la media es
-cero. <span class="math inline">\(\sum (x_{i}-\bar{x})=0\)</span>.</li>
-</ul>
-<pre class="r"><code>sum(x-5.5)</code></pre>
-<pre><code>## [1] 0</code></pre>
-<ul>
-<li>La suma de los cuadrados de las desviaciones de los datos con
+<li><p>La suma de las desviaciones de los datos con respecto a la media
+es cero. <span class="math inline">\(\sum
+(x_{i}-\bar{x})=0\)</span>.</p></li>
+<li><p>La suma de los cuadrados de las desviaciones de los datos con
 respecto a un valor <span class="math inline">\(a\)</span> es mínimo
-cuando <span class="math inline">\(a=\bar{x}\)</span>.</li>
-</ul>
-<pre class="r"><code>sum((x-5.5)^2) # suma de cuadrados de las diferencias de los datos a 5.5</code></pre>
-<pre><code>## [1] 82.5</code></pre>
-<p>Nota: es estudiante puede validar esta propiedad utilizando el código
-con otros valores</p>
-<ul>
-<li>Si <span class="math inline">\(x_{i}=k\)</span> para todo <span
+cuando <span class="math inline">\(a=\bar{x}\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(x_{i}=k\)</span> para todo <span
 class="math inline">\(i\)</span>, entonces, <span
-class="math inline">\(\bar{x}=k\)</span>.</li>
-</ul>
-<pre class="r"><code>sum(x)     # suma de los valores de la muestra</code></pre>
-<pre><code>## [1] 55</code></pre>
-<pre class="r"><code>sum(x)*10  # suma de los valores de la muestra multiplicada por 10 </code></pre>
-<pre><code>## [1] 550</code></pre>
-<pre class="r"><code>y=10*x     # transformacion
-sum(y)</code></pre>
-<pre><code>## [1] 550</code></pre>
-<ul>
+class="math inline">\(\bar{x}=k\)</span>.</p></li>
 <li><p>Si todos los datos de una variable se multiplican por una
 constante <span class="math inline">\(k\)</span>, es decir <span
 class="math inline">\(y_{i}=kx_{i}\)</span>, entonces <span
@@ -417,6 +400,19 @@ extrae la raíz n-esima.</p>
 (r_{i}+1)\Bigg)^{1/n}\]</span></p>
 <p><br/> <br/></p>
 <p><strong>Ejemplo 3</strong></p>
+<p>El crecimiento de la población en Colombia durante las ultimas
+decadas presenta la siguiente tendencia :</p>
+<pre class="r"><code># install.packages(psych)
+library(psych)
+x = c(0.025,0.022,0.02,0.016,0.011,0.007)
+
+psych::geometric.mean(x)</code></pre>
+<pre><code>## [1] 0.01544071</code></pre>
+<p>Lo cual indica que a población colombiana está creciendo a una tasa
+del 1.5% durante las últimas 5 decadas</p>
+<p><a
+href="https://osoramirez.github.io/R_Para_Biologos/aprendiendo-estadistica.html"
+class="uri">https://osoramirez.github.io/R_Para_Biologos/aprendiendo-estadistica.html</a></p>
 </div>
 <div id="media-armónica" class="section level3">
 <h3><strong>Media armónica</strong></h3>
@@ -424,6 +420,11 @@ extrae la raíz n-esima.</p>
 \dfrac{1}{\frac{1}{x_{1}}+\frac{1}{x_{2}}+ ... +
 \frac{1}{x_{n}}}  \]</span></p>
 <p>Este indicador corresponde al inverso de la media aritmética</p>
+<p><a href="https://rpubs.com/cete/rdsa"
+class="uri">https://rpubs.com/cete/rdsa</a></p>
+<p><a
+href="https://osoramirez.github.io/R_Para_Biologos/aprendiendo-estadistica.html#media-armonica"
+class="uri">https://osoramirez.github.io/R_Para_Biologos/aprendiendo-estadistica.html#media-armonica</a></p>
 </div>
 
 

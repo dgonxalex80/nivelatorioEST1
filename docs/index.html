@@ -11,7 +11,7 @@
 
 
 
-<title>Introducción</title>
+<title> Introducción</title>
 
 <script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -273,12 +273,265 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Introducción</h1>
+<h1 class="title toc-ignore"><span style="color:#034a94">
+<strong>Introducción</strong></span></h1>
 
 </div>
 
 
-
+<p></br></br></br></p>
+<p>El proceso de manejo de datos comprende una serie de etapas que
+permiten cumplir los objetivos trazados en una investigación o proyecto
+de Ciencia de datos como lo menciona Antonio Vazquez Brust en su libro
+Ciencia de Datos para gente sociable. Es necesario para realizar este
+proceso recordar o incorporar conceptos de Estadística que hacen posible
+que se realicen las etapas descritas sin inconvenientes.</p>
+<p></br></br></p>
+<img src="img/procesodatos.png" width="60%" style="display: block; margin: auto;" />
+<center>
+Tomado de : <a
+href="https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/index.html">Ciencia
+de Datos para Gente Sociable</a>
+</center>
+<p></br></br></p>
+<p>Es necesario inicialmente relacionar los datos con un proposito
+(objetivos) que nos permita proporner soluciones o metodologías que
+permitan plantear recomendaciones a un problema en particular planteado,
+a partir de información por lo regular estructurada en una bases de
+datos conformada por variables (columnas) y registros (filas)</p>
+<p>En número de registros por lo regular de gran tamaño hace necesaria
+la utilización de un herramientas computacionales para su analisis y
+procesamiento (en nuestro caso el lenguaje R)</p>
+<p>Inicialmente se examinan las caracteristicas de las variables que
+conforman la data que serán empleadas posteriormente en la generación de
+modelos.</p>
+<p>Las variables se puede clasificar como :</p>
+<ul>
+<li><p>Cualitativas : corresponde a caracteristicas que pueden tomar
+como valores palabras</p></li>
+<li><p>Cuantitativas : corresponden a valores numéricos que representan
+una caracteristica del objeto o individuo observado. A su vez se pueden
+clasificar como :</p>
+<ul>
+<li><p>Discretas : se caracteriza por que están relacionadas con el
+conteo (número de</p></li>
+<li><p>Continuas : estas variables se originan en la medición</p></li>
+</ul></li>
+</ul>
+<p></br></br></p>
+<p><strong>Nota</strong> : El termino <em>variable</em> en estadistica
+se refiere a una caracteristica de interés que permite una agrupación o
+analisis a diferencia de la interpretación que se le pueda dar en el
+área de sistemas donde es de su interés caracteristicas como id, número
+de cedula, dirección, nombre del representante legal entro otros.</p>
+<p></br></br></p>
+<p>A la clasificación anterior añadimos la forma en que se pueden medir
+las variables, es decir el tipo de escala:</p>
+<p></br></br></p>
+<table>
+<colgroup>
+<col width="27%" />
+<col width="29%" />
+<col width="42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Tipo de variable</th>
+<th align="left">escala de medición</th>
+<th align="left">ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Cualitativa</td>
+<td align="left">nominal (no existe orden)</td>
+<td align="left">estado civil ( soltero, casdado, separado, viodo, unión
+libre)</td>
+</tr>
+<tr class="even">
+<td align="left">(conteo)</td>
+<td align="left"></td>
+<td align="left">color ( blanco, negro, rojo, azul, amarillo,
+verde)</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">pais (co, pe, us, uk, es,..)</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">ordinal (con orden)</td>
+<td align="left">nivel de ansiedad (bajo, medio, alto)</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">clima laboral (excelente, muy bueno, bueno, regular,
+muy regular)</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">nivel de satisfación (baja, media, alta)</td>
+</tr>
+<tr class="odd">
+<td align="left">Cuantitativas</td>
+<td align="left">intervalo</td>
+<td align="left">temperatura (centigrados, kelvin, Fahrenheit)</td>
+</tr>
+<tr class="even">
+<td align="left">(medición)</td>
+<td align="left"></td>
+<td align="left">operacionalización de clima laboral</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">de razón</td>
+<td align="left">edad</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">tiempo de ejeción</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">precio del artículo en dólares</td>
+</tr>
+</tbody>
+</table>
+<p></br></br></br></p>
+<p>Dependiendo el tipo de variable y su escala de medición se tomaran
+los respectivos indicadores y gráficos para su correcta simplificación y
+representación</p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="18%" />
+<col width="28%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Tipo de variable</th>
+<th align="left">Escala</th>
+<th align="left">Indicadores</th>
+<th align="left">Gráfico</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Cualitativas</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Nominal</td>
+<td align="left">moda</td>
+<td align="left">diagrama de torta</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Ordinal</td>
+<td align="left">moda</td>
+<td align="left">diagrama de barras</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de mosaico</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Cuantitativas</td>
+<td align="left">Intervalo-razón</td>
+<td align="left">media</td>
+<td align="left">diagrama de tallos y hojas</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mediana</td>
+<td align="left">histograma</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mínimo</td>
+<td align="left">diagrama de cajas</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">máximo</td>
+<td align="left">diagrama de densidad</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">rango</td>
+<td align="left">diagrama de puntos</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">varianza</td>
+<td align="left">diagrama de lineas</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">desviación estandar</td>
+<td align="left">diagrama de radar</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">coeficiende de variación</td>
+<td align="left">gráfico likert</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">coeficiente de curtosis</td>
+<td align="left">mapa de calor</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">coeficiende de asimetria</td>
+<td align="left">diagramas de dispersión</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">percentiles, deciles, cuartiles</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p></br></br></p>
+<p>En esta unidad se tratará de manera general los conceptos principales
+relacionados con el analisis descriptivo de datos basados en las
+principales caracteristicas de los datos, tanto para variables
+cualitativas como para variables cuantitativas</p>
+<p>El análisis de las variables cuantitativas se centra en la
+contrucción de tablas de frecuencia y su prepresentación a traves de
+gráficos de tortas (nominales) y de barras (ordinales), mientras que en
+el caso de las variables cualitativas nos centraremos en indicadores de
+posición, centro, variabilidad o de dispersión y de forma, además de su
+representación gráfica mediante histogramas, diagramas de cajas,
+diagramas de dispersión entre otros.</p>
 
 
 

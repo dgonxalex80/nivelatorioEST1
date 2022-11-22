@@ -175,7 +175,7 @@ Este diagrma de puntos permite visializar la relación lineal que puede existir 
 
 ```{r, fig.height=5, echo=FALSE}
 ed=round(rnorm(90,18,1),1)
-plot(ed,nf, main="Edad vs Nota final matemáticas fundamentales", ylim = c(0,5), xlab = "Edad", ylab = "Nota final",col="#447270",pch=19)
+plot(ed,nf, main="Edad vs Nota final Estadística", ylim = c(0,5), xlab = "Edad", ylab = "Nota final",col="#447270",pch=19)
 grid()
 ```
 

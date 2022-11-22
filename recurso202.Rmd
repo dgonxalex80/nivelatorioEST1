@@ -65,14 +65,14 @@ Los siguientes datos correspnde a tiempos registrados por 70 atletas  dutante un
 
  <br/> <br/>
 
-El **PERCENTIL 30** ($P_{30}$) divide la muestra en dos partes. Por debajo de este valor está el 30% de los datos y por encima de el esta el 70% restante. En este grupo de datos $P_{30} = 48.96$ y está representado por el punto nego 
+El **PERCENTIL 30** ($P_{30}$) divide la muestra en dos partes. Por debajo de este valor está el 30% de los datos y por encima de el esta el 70% restante. En este grupo de datos $P_{30} = 48.96$ y está representado por el punto azul. En contexto uno de los atletas empleó un tiemo de 48.58 minutos. Primero que él llegó el 30% de los competidores, pero le ganó al 70% de los que participaron en la prueba. Esta información le permite compararse rapidamente con el grupo.
 
 ```{r, echo=FALSE, out.width="700%", fig.align = "center"}
 knitr::include_graphics("img/puntosP30.png")
 ```
 </br></br>
 
-El **PERCENTIL 75** ($P_{75}$), está ubicado de tal forma en la muestra que  tiene por debajo un 75% de los datos y por encima  un 25%. Para este caso corresponde a $P_{75} = 52.90$, prepresentado en la siguiente gráfica por un punto nego 
+El **PERCENTIL 75** ($P_{75}$), está ubicado de tal forma en la muestra que  tiene por debajo un 75% de los datos y por encima  un 25%. Para este caso corresponde a $P_{75} = 52.90$, prepresentado en la siguiente gráfica por un punto azul. Este punto representa el tiempo empleado por un corredor que marcó un tiempo de 52.54 min y solo le ganó al 30% de los corredores que gastaron más tiempo en culminar la carrera. 
 
 ```{r, echo=FALSE, out.width="700%", fig.align = "center"}
 knitr::include_graphics("img/puntosP75.png")
@@ -95,7 +95,7 @@ Tambien existen los **DECILES** que corresponden a  9 número que dividen la mue
 knitr::include_graphics("img/puntosD2yD5.png")
 ```
 
-En este caso corresponde a : $D_{2} = 46.72$  y $D_{5} = 50.98$ 
+En este caso corresponde a : $D_{2} = 46.72$  y $D_{5} = 50.98$ . Si suponemos que solo el 20% de los corredores con mejor tiempo seran seleccionados para otro evento, entoces los corredores con tiempo inferiores a $D_{2}$ = $P_{20} = 46.43$ minutos estarían seleccionados.
 
 
 

@@ -283,7 +283,80 @@ $(document).ready(function () {
 </div>
 
 
+<p>Los indicadores de forma permiten adicionar elementos para la
+interpretación.</p>
+<p><br/><br/></p>
+<div id="curtosis" class="section level3">
+<h3><strong>Curtosis</strong></h3>
+<p><br/></p>
+<p>Se mide a través del coeficiente de curtosis que mide cuan
+<strong>puntiaguda</strong> es una distribución respecto a un patron
+estandar que es la curva de la distribución normal. Esta caracteristica
+está relacionada directamente con la dispersión</p>
+<p>De acuerdo con su valor, la puntudez de los datos puede clasificarse
+en tres grupos:</p>
+<ul>
+<li><p><span style="color:#ee3b3b"><strong>Leptocúrtica</strong></span>,
+con valores grandes para el coeficiente ( <span
+style="color:#ee3b3b"><strong>CA&gt;0</strong></span>)</p></li>
+<li><p><span style="color:#0000cd"><strong>Mesocúrtica</strong></span>,
+con valores medianos para el coeficiente ( <span
+style="color:#0000cd"><strong>CA=0</strong></span>)</p></li>
+<li><p><span style="color:#ee9a00"><strong>Platicútrica</strong></span>,
+con valores pequeños para el coeficiente ( <span
+style="color:#ee9a00"><strong>CA&lt;0</strong></span>)</p></li>
+</ul>
+<pre><code>Loading required package: ggplot2</code></pre>
+<p><img src="recurso205_files/figure-html/unnamed-chunk-1-1.png" width="864" /></p>
+<p><br/> <br/></p>
+<p>En R se utiliza la función del paquete rapportools :
+<code>rapportools::kurtosis(x)</code></p>
+<p><br/><br/></p>
+</div>
+<div id="asimetría-o-sesgo" class="section level3">
+<h3><strong>Asimetría o sesgo</strong></h3>
+<p><br/></p>
+<p>Mide que tanto la forma de la distribución de frecuencias de los
+datos es simétrica o no con respecto a la media. Esta característica de
+los datos se mide a través del coeficiente de asimetría o sesgo.</p>
+<ul>
+<li><p>Es <span style="color:#ee3b3b"><strong>simétrica</strong></span>
+si el valor del indicador es 0 (<span
+class="math inline">\(\bar{x}=Me\)</span>)</p></li>
+<li><p>Es <span style="color:#ee9a00"><strong>asimétrica a la
+izquierda</strong></span> si el valor del indicador es negativo (<span
+class="math inline">\(\bar{x}&lt;Me\)</span>)</p></li>
+<li><p>Es <span style="color:#0000cd"><strong>asimétrica a la
+derecha</strong></span> si el valor del indicador es positivo (<span
+class="math inline">\(\bar{x}&gt;Me\)</span>)</p></li>
+</ul>
+<p><br/></p>
+<p><img src="img/simetria.png" /></p>
+<p><br/></p>
+<ul>
+<li><strong>Asimetria negativa </strong> : Poco con poco, mucho con
+mucho</li>
+<li><strong>Simetrica</strong> : Poco con poco, poco con mucho, mucho al
+rededor de un centro</li>
+<li><strong>Asimetria positiva</strong> : Mucho con poco, poco con
+mucho</li>
+</ul>
+<p><br/></p>
+<p>En R se utiliza la función :
+<code>rapportools::skewness(data1$value1)</code></p>
+<p><br/></p>
+<pre class="r"><code>x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69, 48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19, 53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06, 54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24, 52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54, 52.72, 44.82, 52.49, 58.43, 52.91)
 
+rapportools::kurtosis(x)   # [1] 0.6423682
+rapportools::skewness(x)   # [1] 0.6014827</code></pre>
+<p>Estos resultados indica una leve concentració de los datos y una leve
+asimetria a la derecha, la cual será mas evidente observar en la
+siguiente sección (Representacion gráfica)</p>
+<p>El valor obtenido para el sesgos nos indica que existe un mediano
+sesgo positivo o a la derecha ( mucho con poco - poco con mucho). Este
+resultado nos indica que muchos equipos tienen bajo nivel ofencivo y
+unos pocos son los que tienen un alto poder ofencivo.</p>
+</div>
 
 
 

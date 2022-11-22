@@ -26,3 +26,27 @@ p2=ggplot(data1, aes(x=value1, y=" "))+
   geom_jitter(color="#034A94", size=3, alpha=0.9) 
 p2= p2 + geom_text(data = data1, x = 50.5, y = 0, label = "x",col="#034A94")
 p2
+
+
+x1=round(rnorm(30, 28,5),0)
+x2=round(rnorm(30, 28,15),0)
+
+x1=c(27, 27, 28, 28, 34, 28, 26, 33, 24, 28, 25, 25, 33, 27, 34, 38, 24, 26, 22, 
+     23, 33, 23, 26, 26, 32, 33, 29, 30, 25, 23)
+
+x2=c(35,  25,  19,  17,  24,   17,  55,  25,  31,   35,  43,  28,  32,  19,  20,  17,
+     25,  18,  21,  22,  17,  35,  29,  20,  54,  46,  24, 29, 40, 18)
+
+max(x1)-min(x1)
+max(x2)-min(x2)
+
+data2 <- data.frame(
+         name2=c(rep("Grupo1",30), rep("Grupo2",30)),
+  value2=c(x1,x2)
+)
+
+p3=ggplot(data2, aes(x=value2, y=name2, color = name2)) +
+          geom_jitter(size=3, alpha=1) +
+          scale_color_manual(values=c("#FF7F00", "#034A94")) 
+p3          
+  

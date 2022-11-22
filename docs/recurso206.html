@@ -283,7 +283,206 @@ $(document).ready(function () {
 </div>
 
 
+<div id="introducción" class="section level2">
+<h2><strong>Introducción</strong></h2>
+<blockquote>
+<p>Una gráfica o una representación gráfica o un gráfico, es un tipo de
+representación de datos, generalmente cuantitativos, mediante recursos
+visuales (líneas, vectores, superficies o símbolos), para que se
+manifieste visualmente la relación matemática o correlación estadística
+que guardan entre sí.</p>
+</blockquote>
+<p>Wikipedia</p>
+<p><br/><br/></p>
+<p>Elegir el gráfico adecuado es muy importante, pues existen diferentes
+alternativos y se debe escoger el apropiado para representar los datos.
+El tipo de dato determina el tipo de grafico asi:</p>
+<table>
+<colgroup>
+<col width="23%" />
+<col width="21%" />
+<col width="55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Tipo de variable</th>
+<th align="left">Escala</th>
+<th align="left">Gráfico</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Cualitativas</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Nominal</td>
+<td align="left">torta</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Ordinal</td>
+<td align="left">barras</td>
+</tr>
+<tr class="even">
+<td align="left">Cuantitativas</td>
+<td align="left">Intervalo-razón</td>
+<td align="left">diagrama de tallos y hojas</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">histograma</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de cajas</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de densidad</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de puntos</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de lineas</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">diagrama de radar</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">gráfico likert</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">mapa de calor</td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
+</div>
+<div id="gráficos-variables-cualitativas" class="section level2">
+<h2><strong>Gráficos variables cualitativas </strong></h2>
+<p><br/><br/></p>
+<div id="gráfico-de-tortas" class="section level3">
+<h3><strong>Gráfico de tortas</strong></h3>
+<p><br/> Este tipo de gráficos se utiliza para variables cualitativas
+medidas en escala nominal</p>
+<p><img src="recurso206_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><br/><br/></p>
+</div>
+<div id="diagrama-de-barras" class="section level3">
+<h3><strong>Diagrama de barras</strong></h3>
+<p><br/></p>
+<p>El diagrama de barras se utiliza para representar variables
+cualitativas en escala ordinal. Es necesario que los valores
+representados sigan el orden de la escala</p>
+<p><img src="recurso206_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><br/><br/></p>
+</div>
+<div id="diagrama-de-barras-dos-variables" class="section level3">
+<h3><strong>Diagrama de barras dos variables</strong></h3>
+<p><br/></p>
+<p>Este diagrama se emplea para representar dos variables cualitativas
+que pueden ser de escala nominal u ordinal</p>
+<p><img src="recurso206_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><br/><br/><br/></p>
+</div>
+</div>
+<div id="gráficas-variables-cuantitativas-con-r-base"
+class="section level2">
+<h2><strong>Gráficas variables cuantitativas con R base</strong></h2>
+<p><br/></p>
+<div id="diagrama-de-árbol" class="section level3">
+<h3><strong>Diagrama de árbol</strong></h3>
+<p><br/></p>
+<pre><code>
+  The decimal point is at the |
 
+  1 | 67
+  2 | 00012244444
+  2 | 555677777778
+  3 | 0000000000000011111111222222223344
+  3 | 555555566677777777888999
+  4 | 0111123</code></pre>
+<p>Este diagrama ordena los datos de manera que se puede determinar
+tanto en mínimo (1.6) como el máximo (4.3) , además de visualizar donde
+están la mayor concentración de ellos.</p>
+<p><br/><br/></p>
+</div>
+<div id="histograma" class="section level3">
+<h3><strong>Histograma</strong></h3>
+<p><br/></p>
+<p>El histograma es uno de los gráficos más utilizados para representar
+variables cuantitativas y permite resumir por rangos los diferentes
+datos. Es una buena forma de visualizar la distribución de los datos y
+su forma</p>
+<p><img src="recurso206_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><br/><br/></p>
+</div>
+<div id="diagrama-de-densidad" class="section level3">
+<h3><strong>Diagrama de densidad</strong></h3>
+<p><br/></p>
+<p>Este diagrama correspone a un contorno suavizado del histograma que
+permite visualizar claramente la forma de los datos</p>
+<p><img src="recurso206_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><br/><br/></p>
+</div>
+<div id="diagrama-de-cajas" class="section level3">
+<h3><strong>Diagrama de cajas</strong></h3>
+<p><br/></p>
+<p>Es uno de las representaciones gráficas más utilizadas, pues ademas
+de los elementos y caracteristicas que permite visualizar de las
+variables, permite comparar los resulados de dos o más grupos</p>
+<p><img src="recurso206_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><br/><br/></p>
+</div>
+<div id="diagrama-de-dispersión" class="section level3">
+<h3><strong>Diagrama de dispersión</strong></h3>
+<p><br/></p>
+<p>Este diagrma de puntos permite visializar la relación lineal que
+puede existir entre dos variables cualitativas</p>
+<p><img src="recurso206_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><br/><br/></p>
+</div>
+<div id="gráfica-de-series-de-tiempo" class="section level3">
+<h3><strong>Gráfica de series de tiempo</strong></h3>
+<p><img src="recurso206_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><br/><br/><br/></p>
+</div>
+<div id="códigos-en-r" class="section level3">
+<h3><strong>Códigos en R</strong></h3>
+<pre class="r"><code># sumulación de datos
+x=rnorm(100,100,20)   
+y=rnorm(100,100,25)   
+z=rbinom(100,4,0.30)
+t=1:100
+
+pie(table(z))        # gráfico de torta
+barplot(table(z))    # diagrama de barras
+stem(x)              # diagrama de tallos y hojas
+hist(x)              # histograma
+boxplot(x)           # diagrama de cajas
+plot(x,y)            # diagrama de dispersión 
+plot(t,y, type=&quot;l&quot;)  # linea de tiempo
+plot(density(x))     # diagrama de densidad</code></pre>
+<p><br/><br/></p>
+</div>
+</div>
 
 
 

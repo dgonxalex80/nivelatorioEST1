@@ -6,6 +6,87 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
+
+x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69, 48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19, 53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06, 54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24, 52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54, 52.72, 44.82, 52.49, 58.43, 52.91)
+data1 <- data.frame(
+  name1=rep("A",70),
+  value1=x
+)
 ```
 
+Los indicadores de forma permiten adicionar elementos para la interpretación.
+
+<br/><br/>
+
+### **Curtosis**
+
+<br/>
+
+Se mide a través del coeficiente de curtosis que mide cuan **puntiaguda** es una distribución respecto a un patron estandar que es la curva de la distribución normal. Esta caracteristica está relacionada directamente con la dispersión
+
+De acuerdo con su valor, la puntudez de los datos puede clasificarse en tres grupos:
+
++ <span style="color:#ee3b3b">**Leptocúrtica**</span>, con valores grandes para el coeficiente ( <span style="color:#ee3b3b">**CA>0**</span>)
+
++ <span style="color:#0000cd">**Mesocúrtica**</span>, con valores medianos para el coeficiente ( <span style="color:#0000cd">**CA=0**</span>)
+
++ <span style="color:#ee9a00">**Platicútrica**</span>, con valores pequeños para el coeficiente ( <span style="color:#ee9a00">**CA<0**</span>) 
+
+```{r, echo=FALSE, fig.height=3.5, fig.width=9}
+# Distribucion normal
+library(ggfortify)
+
+p=ggdistribution(dnorm, seq(-5, 5, 0.01), mean = 0, sd = 1,colour = 'blue')
+p=ggdistribution(dnorm, seq(-5, 5, 0.01), mean = 0, sd = .7,colour = 'red', p=p)
+p=ggdistribution(dnorm, seq(-5, 5, 0.01),   mean = 0, sd = 1.5,colour = 'orange', p=p)
+p
+```
+
+ <br/> <br/>
+ 
+ En R se utiliza la función del paquete rapportools : `rapportools::kurtosis(x)` 
+ 
+
+<br/><br/> 
+ 
+### **Asimetría o sesgo**
+
+<br/>
+
+Mide que tanto la forma de la distribución de frecuencias de los datos es simétrica o no con respecto a la media. Esta característica de los datos se mide a través del coeficiente de asimetría o sesgo.
+
++ Es <span style="color:#ee3b3b">**simétrica**</span> si el  valor del indicador es 0  ($\bar{x}=Me$)
+
++ Es <span style="color:#ee9a00">**asimétrica a la izquierda**</span> si el valor del indicador es negativo ($\bar{x}<Me$)
+
++ Es <span style="color:#0000cd">**asimétrica a la derecha**</span> si el valor del indicador es positivo ($\bar{x}>Me$)
+
+<br/>
+
+![](img/simetria.png)
+
+<br/>
+
++ **Asimetria negativa ** : Poco con poco, mucho con mucho
++ **Simetrica** : Poco con poco, poco con mucho, mucho al rededor de un centro
++ **Asimetria positiva** : Mucho con poco, poco con mucho
+
+<br/>
+
+En R se utiliza la función : `rapportools::skewness(data1$value1)`
+
+<br/>
+
+```{r, eval=FALSE}
+x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69, 48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19, 53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06, 54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24, 52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54, 52.72, 44.82, 52.49, 58.43, 52.91)
+
+rapportools::kurtosis(x)   # [1] 0.6423682
+rapportools::skewness(x)   # [1] 0.6014827
+
+```
+Estos resultados indica una leve concentració de los datos y una leve asimetria a la derecha, la cual será mas evidente observar en la siguiente sección (Representacion gráfica)
+
+
+
+El valor obtenido para el sesgos nos indica que existe un mediano sesgo positivo o a la derecha ( mucho con poco - poco con mucho). Este resultado nos indica que muchos equipos tienen bajo nivel ofencivo y unos pocos son los que tienen un alto poder ofencivo.

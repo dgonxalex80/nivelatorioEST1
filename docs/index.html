@@ -279,7 +279,7 @@ $(document).ready(function () {
 </div>
 
 
-<p></br></br></br></p>
+<p></br></p>
 <p>El proceso de manejo de datos comprende una serie de etapas que
 permiten cumplir los objetivos trazados en una investigación o proyecto
 de Ciencia de datos como lo menciona Antonio Vazquez Brust en su libro
@@ -302,6 +302,10 @@ datos conformada por variables (columnas) y registros (filas)</p>
 <p>En número de registros por lo regular de gran tamaño hace necesaria
 la utilización de un herramientas computacionales para su analisis y
 procesamiento (en nuestro caso el lenguaje R)</p>
+<p></br></br></p>
+<div id="tipos-de-variables" class="section level3">
+<h3><strong>Tipos de variables</strong></h3>
+<p></br></p>
 <p>Inicialmente se examinan las caracteristicas de las variables que
 conforman la data que serán empleadas posteriormente en la generación de
 modelos.</p>
@@ -325,6 +329,10 @@ analisis a diferencia de la interpretación que se le pueda dar en el
 área de sistemas donde es de su interés caracteristicas como id, número
 de cedula, dirección, nombre del representante legal entro otros.</p>
 <p></br></br></p>
+</div>
+<div id="tipos-de-escala" class="section level3">
+<h3><strong>Tipos de escala</strong></h3>
+<p></br></p>
 <p>A la clasificación anterior añadimos la forma en que se pueden medir
 las variables, es decir el tipo de escala:</p>
 <p></br></br></p>
@@ -532,6 +540,37 @@ el caso de las variables cualitativas nos centraremos en indicadores de
 posición, centro, variabilidad o de dispersión y de forma, además de su
 representación gráfica mediante histogramas, diagramas de cajas,
 diagramas de dispersión entre otros.</p>
+<p></br></br></p>
+</div>
+<div id="resumen-de-indicadores" class="section level3">
+<h3><strong>Resumen de indicadores</strong></h3>
+<p></br></p>
+<p>La función del paquete summarytools :
+<code>summarytools::descr(x)</code> permite obtener un resumen de
+indicadores</p>
+<pre class="r"><code>summarytools::descr(data1$value1)</code></pre>
+<pre><code>Descriptive Statistics  
+value  
+N: 70  
+
+                     value
+----------------- --------
+             Mean    50.80
+          Std.Dev     4.62
+              Min    42.30
+               Q1    48.42
+           Median    50.98
+               Q3    52.91
+              Max    64.44
+              MAD     3.64
+              IQR     4.47
+               CV     0.09
+         Skewness     0.60
+      SE.Skewness     0.29
+         Kurtosis     0.64
+          N.Valid    70.00
+        Pct.Valid   100.00</code></pre>
+</div>
 
 
 

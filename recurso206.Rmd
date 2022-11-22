@@ -6,6 +6,208 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
+# colores
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
+paleta4=c("#0d3b66", "#faf0ca", "#f4d35e", "#ee964d")
+
 ```
 
+
+
+## **Introducción**
+
+>Una gráfica o una representación gráfica o un gráfico, es un tipo de representación de datos, generalmente cuantitativos, mediante recursos visuales (líneas, vectores, superficies o símbolos), para que se manifieste visualmente la relación matemática o correlación estadística que guardan entre sí.
+
+Wikipedia
+
+<br/><br/>
+
+Elegir el gráfico adecuado es muy importante, pues existen diferentes alternativos  y se debe escoger el apropiado para representar los datos. El tipo de dato determina el tipo de grafico asi:
+
+|Tipo de variable  | Escala          | Gráfico                                   |
+|:-----------------|:----------------|:------------------------------------------|
+|Cualitativas      |                 |                                           |
+|                  |Nominal          | torta                                     |
+|                  |Ordinal          | barras                                    |
+|Cuantitativas     |Intervalo-razón  | diagrama de tallos y hojas                |
+|                  |                 | histograma                                |
+|                  |                 | diagrama de cajas                         |
+|                  |                 | diagrama de densidad                      |
+|                  |                 | diagrama de puntos                        |
+|                  |                 | diagrama de lineas                        |
+|                  |                 | diagrama de radar                         |
+|                  |                 | gráfico likert                            |
+|                  |                 | mapa de calor                             |
+
+<br/><br/>
+
+## **Gráficos variables cualitativas **
+
+<br/><br/>
+
+### **Gráfico de tortas**
+
+<br/>
+Este tipo de gráficos se utiliza para variables cualitativas medidas en escala nominal
+
+```{r, fig.height=5, echo=FALSE}
+a=rep("Cultutal", 360145)
+b=rep("Pastoral", 61496)
+c=rep("Bienestar",49912)
+d=rep("Deportivo",11777)
+data=c(a,b,c,d)
+t=table(data)
+lbs=c("Cultural", "Pastoral", "Bienestar", "Deportivo")
+pct=round(t/sum(t)*100)
+labs=paste(lbs, pct)
+labs=paste(labs, "%", sep = " ") 
+pie(t, labels=labs, main=" Participación eventos Medio Universitario",
+    col = paleta4)
+```
+
+<br/><br/>
+
+### **Diagrama de barras**
+
+<br/>
+
+El diagrama de barras se utiliza para representar variables cualitativas en escala ordinal.  Es necesario que los valores representados sigan el orden de la escala
+
+```{r, fig.height=5, echo=FALSE}
+ev=c(4,  8, 12, 43, 32)
+names(ev)=c("Muy regular", "Regular", "Bueno", "Muy bueno","Excelente")
+barplot(ev, col=c("#ff5b00","#dcf600","#7dbd00","#659cef","#2956b2"), main = "Evaluación proceso de inducción")
+```
+
+<br/><br/>
+
+### **Diagrama de barras dos variables**
+
+<br/>
+
+Este diagrama se emplea para representar dos variables cualitativas que pueden ser de escala nominal u ordinal
+
+
+```{r, fig.height=5.5, echo=FALSE}
+counts <- table(mtcars$vs, mtcars$gear); rownames(counts)=c("Montor en linea", "Motor en V")
+barplot(counts, main="Numero de cambios adelante por Tipo de motor",  xlab="Numero de cambios adelante ",col=c("#447270","#f6e271"),
+  legend = rownames(counts))
+```
+
+<br/><br/><br/>
+
+## **Gráficas variables cuantitativas con R base**
+
+<br/>
+
+### **Diagrama de árbol**
+
+<br/>
+
+```{r, echo=FALSE}
+nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+stem(nf)
+```
+
+Este diagrama ordena los datos de manera que se puede determinar tanto en mínimo (1.6) como el máximo (4.3) , además de visualizar donde están la mayor concentración de ellos.
+
+<br/><br/>
+
+### **Histograma**
+
+<br/>
+
+El histograma es uno de los gráficos más utilizados para representar variables cuantitativas y permite resumir por rangos los diferentes datos. Es una buena forma de visualizar la distribución de los datos y su forma
+
+
+```{r, fig.height=5, echo=FALSE}
+h1=hist(nf, main = "Nota final matemáticas fundamentales", xlab = "nota", ylab="frecuencias absolutas", labels=TRUE, col="#6b9493", ylim = c(0,30))
+abline(v=3,col="#f6b915", lwd=4)
+```
+
+
+<br/><br/>
+
+### **Diagrama de densidad**
+
+<br/>
+
+Este diagrama correspone a un contorno suavizado del histograma que permite visualizar claramente la forma de los datos
+
+
+```{r, fig.height=5, echo=FALSE}
+nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+plot(density(nf), main="Distribucion de las notas de matematias fundamentales", col=c0, lwd=4)
+```
+
+<br/><br/>
+  
+### **Diagrama de cajas**
+
+<br/>
+
+Es uno de las representaciones gráficas más utilizadas, pues ademas de los elementos y caracteristicas que permite visualizar de las variables, permite comparar los resulados de dos o más grupos
+
+
+```{r, fig.height=4.5, echo=FALSE}
+nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+cc=c(20, 10, 20, 20, 20, 20, 20, 20, 20, 30, 20, 20, 20, 10, 30, 20, 20, 30, 20, 30, 30, 20, 10, 30, 20, 20, 30, 30, 10, 20, 10, 20, 20, 20, 10, 20, 10, 20, 20, 30, 30, 30, 10, 30, 20, 20, 20, 20, 20, 20, 10, 20, 30, 30, 10, 10, 10, 20, 10, 20, 10, 30, 20, 10, 20, 30, 10, 30, 30, 30, 20, 30, 30, 30, 30, 30, 30, 20, 10, 30, 10, 20, 20, 10, 20, 20, 20, 20, 10, 20)
+labs=c("Ing. de Sistemas","Ing. Industrial","Ing. Mecánica")
+boxplot((nf~cc),main="Nota final matemáticas fundamentales por carrera", 
+        col=c("#066d8d","#34b5aa","#ecbe14"), names=labs, xlab = "carrera", ylab = "nota")
+abline(h=3, col="#f69312", lwd=4)
+abline(h=4, col="#447270", lwd=4)
+```
+
+<br/><br/>
+
+### **Diagrama de dispersión**
+
+<br/>
+
+Este diagrma de puntos permite visializar la relación lineal que puede existir entre dos variables cualitativas
+
+```{r, fig.height=5, echo=FALSE}
+ed=round(rnorm(90,18,1),1)
+plot(ed,nf, main="Edad vs Nota final matemáticas fundamentales", ylim = c(0,5), xlab = "Edad", ylab = "Nota final",col="#447270",pch=19)
+grid()
+```
+
+
+<br/><br/>
+
+### **Gráfica de series de tiempo**
+
+```{r, fig.height=5, echo=FALSE}
+plot(AirPassengers, main="Numero de pasajeros por mes", col="#203c3b", lwd = 4)
+```
+
+<br/><br/><br/>
+
+### **Códigos en R**
+
+```{r, eval=FALSE}
+# sumulación de datos
+x=rnorm(100,100,20)   
+y=rnorm(100,100,25)   
+z=rbinom(100,4,0.30)
+t=1:100
+
+pie(table(z))        # gráfico de torta
+barplot(table(z))    # diagrama de barras
+stem(x)              # diagrama de tallos y hojas
+hist(x)              # histograma
+boxplot(x)           # diagrama de cajas
+plot(x,y)            # diagrama de dispersión 
+plot(t,y, type="l")  # linea de tiempo
+plot(density(x))     # diagrama de densidad
+```
+    
+
+<br/><br/>

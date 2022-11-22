@@ -283,14 +283,15 @@ $(document).ready(function () {
 </div>
 
 
-<div id="problema-reconocimiento-de-grupo" class="section level3">
-<h3><strong>Problema reconocimiento de grupo</strong></h3>
+<div id="problema-reconocimiento-de-grupo" class="section level2">
+<h2><strong>Problema reconocimiento de grupo</strong></h2>
+<p></br></p>
 <p>Supongamos que tenemos dos grupos de estudiantes y que la información
 que se posee de ellos es el valor de su media es que ambos grupos tienen
 como valor promedio de sus edades 28 años. Lo que primero se piensa es
 que los dos grupos tienen una composición igual dado que coinciden en su
 promedio. Pero no es así, los datos que se presentan a continuación
-tienen medias de 28 pero corresponden a grupos diferentes :</p>
+tienen medias de 28 pero corresponden a grupos diferentes.</p>
 <table>
 <colgroup>
 <col width="8%" />
@@ -309,6 +310,9 @@ tienen medias de 28 pero corresponden a grupos diferentes :</p>
 </tr>
 </tbody>
 </table>
+<p></br></br></p>
+<p><img src="img/grupos12.png" width="100%" style="display: block; margin: auto;" /></p>
+<p></br></br></p>
 <p>Hace falta otro indicador que nos oriente sobre que tan dispersos son
 los datos. Esta necesidad la suplen los
 <code>indicadores de dispersión</code>.</p>
@@ -316,10 +320,11 @@ los datos. Esta necesidad la suplen los
 </div>
 <div id="indicadores-de-dispersión" class="section level2">
 <h2><strong>Indicadores de Dispersión</strong></h2>
+<p></br></p>
 <div id="rango" class="section level3">
 <h3><strong>Rango</strong></h3>
-<p>El rango es el indicador de dispersión más facil de calcular, pues se
-obtiene restando los valores extremos de los datos:</p>
+<p></br> El rango es el indicador de dispersión más facil de calcular,
+pues se obtiene restando los valores extremos de los datos:</p>
 <p><span class="math inline">\(r = max(x) - min(x)\)</span></p>
 <p>En caso de los dos grupos:</p>
 <table>
@@ -354,10 +359,13 @@ cuando se deben realizar cálculos rápidos.</p>
 </div>
 <div id="varianza" class="section level3">
 <h3><strong>Varianza</strong></h3>
+<p></br></p>
 <p>Es la medida de dispersión más utilizada en estadística y está
 definida por</p>
 <p><span class="math display">\[s^{2}=\frac{1}{n-1} \sum_{i=1}^{n}
 (x_{i}-\bar{x})^{2}\]</span></p>
+<p>Se podría afirmar que la varianza es un promedio de los cuadrados de
+las diferencias entre los datos</p>
 <p><br/> <br/></p>
 <div id="propiedades-de-la-varianza" class="section level4">
 <h4><strong>Propiedades de la varianza</strong></h4>
@@ -380,21 +388,21 @@ class="math inline">\(b^{2}s_{y}^{2}\)</span> + <span
 class="math inline">\(2ab\)</span> <span
 class="math inline">\(cov(xy)\)</span></p></li>
 </ul>
-<p>La varianza se puede interpretar como el promedio de las diferencias
-cuadradas entre cada uno de los datos y la media</p>
-<p>El problema de la varianza es su <strong>interpretación</strong></p>
-<p>Sus unidades son al cuadrado y en la mayoría de los casos no es
-posible interpretarlos. Por esta razón se optó por utilizar otra mediada
-de dispersión</p>
+<p>El problema de la varianza es su <strong>interpretación</strong>,
+pues sus unidades quedan al cuadrado y en la mayoría de los casos no es
+posible interpretar los resultados. Por esta razón se optó por utilizar
+otra mediada de dispersión calculada a partir de ella</p>
 <p><br/> <br/></p>
 </div>
 </div>
 <div id="desviación-estándar" class="section level3">
 <h3><strong>Desviación estándar</strong></h3>
+<p></br></p>
 <p>Es la raíz cuadrada de la varianza</p>
 <p><span class="math display">\[s=\sqrt{s^{2}}\]</span></p>
 <p><strong>Nota</strong> : no aplican todas las propiedades de la
 varianza</p>
+<p></br></p>
 <table>
 <thead>
 <tr class="header">
@@ -422,17 +430,17 @@ años</td>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code># cat( &quot;Varianza :&quot;,var(futbol$off), &quot;\n&quot; )
-# cat(&quot;Desviación estándar :&quot;,sd(futbol$off))</code></pre>
-<p>Aunque la desviación estándar reduce el problema debido a tener las
-mismas unidades de la variable, es útil para comparación de dos
-grupos</p>
+<p>Aunque la desviación estándar reduce el problema mencionado
+anteriormente debido a tener las mismas unidades de la variable, es útil
+para comparación de dos grupos</p>
 <p><br/> <br/></p>
 </div>
 <div id="coeficiente-de-variación" class="section level3">
 <h3><strong>Coeficiente de variación</strong></h3>
-<p>Nos indica que tan grande o que tan pequeña es la desviación estándar
-con respecto a su media</p>
+<p></br></p>
+<p>Por último, el coeficiente de variación es un indicador adimencional
+que indica que tan grande o que tan pequeña es la desviación estándar
+con respecto a su media en porcentaje</p>
 <p><span class="math display">\[CV= \dfrac{s}{\bar{x}} \times 100 \%
 \]</span></p>
 <p>Existen diferentes reglas empíricas para la interpretación del
@@ -440,6 +448,7 @@ coeficiente de variación. Una de ellas establece como límite el 20% para
 separar los grupos homogéneos de los heterogéneos Por lo general se
 utiliza un valor hasta el 20% para determinar que un grupo de datos son
 homogéneos, de lo contrario se calificará como heterogéneo.</p>
+<p></br></p>
 <table>
 <thead>
 <tr class="header">
@@ -463,6 +472,15 @@ años</td>
 <p>En este caso se obtienen valores difentes para los dos grupos. El
 grupo 1 con un valor inferior a 20%, que indica homogeneidad y el grupo
 2 con un valor superior que indica heterogeneidad</p>
+<p></br></br></br></p>
+</div>
+<div id="códigos-r" class="section level3">
+<h3><strong>Códigos R</strong></h3>
+<pre class="r"><code>max(x1)-min(x1)
+var(x1)
+sd(x1)
+sd(x1)/mean(x1)*100</code></pre>
+<p><br/> <br/></p>
 </div>
 </div>
 

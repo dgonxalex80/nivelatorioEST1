@@ -1,5 +1,5 @@
 ---
-title: <span style="color:#034a94"> **Indicadores de Posicion**</span>
+title: <span style="color:#034a94"> **Indicadores de Posición**</span>
 author: "Nivelatorio de Estadística "
 date: "2022"
 output: html_document
@@ -114,7 +114,7 @@ knitr::include_graphics("img/puntosQ1Q2Q3.png")
 ```
 
 
-En este caso los cuartiles $Q_1 = 46.72$, $Q_2 = 50.98$ y $Q_3 = 52.90$, estan representados por las lineas verticales que conforman la caja. La linea central de la caja representa $Q_{2}$ que divide los datos en dos parte de igual porcentaje (50% - 50%). Los puntos azules ubicados a derecha del gráfico representan datos atípicos que deben ser objeto de estudio en unos casos y de exclusión en otros 
+En este caso los cuartiles $Q_1 = 46.72$, $Q_2 = 50.98$ y $Q_3 = 52.90$, estan representados por las lineas verticales que conforman la caja. La linea central de la caja representa a $Q_{2}$ y  divide los datos en dos parte de igual porcentaje (50% | 50%). Los puntos azules ubicados a derecha del gráfico representan datos atípicos que deben ser objeto de estudio por separado para determinar sus causas en unos casos y de exclusión en otros casos para evitar que causen desvios en los indicadores 
 
  <br/> <br/>
  

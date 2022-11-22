@@ -69,6 +69,9 @@ knitr::include_graphics("img/media.png")
 
 Para el ejemplo simulado corresponde a  50.80 . En R se utuliza la función `mean(x)`
 
+
+La media tiene un problema en presencia de datos atípicos y cuando los datos tienen formas asimétricas. Estos problemas los resuelve de manera robusta el siguiente indicador 
+
  <br/> <br/>
 
 ### **Mediana** 

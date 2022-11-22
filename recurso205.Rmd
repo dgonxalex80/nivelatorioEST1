@@ -13,6 +13,12 @@ data1 <- data.frame(
   name1=rep("A",70),
   value1=x
 )
+
+c1="#FF7F00"
+c2="#=EB0C6"
+c3="#034A94"
+c4="#686868"
+
 ```
 
 Los indicadores de forma permiten adicionar elementos para la interpretación.
@@ -68,9 +74,15 @@ Mide que tanto la forma de la distribución de frecuencias de los datos es simé
 
 <br/>
 
+Interpretación
+
 + **Asimetria negativa ** : Poco con poco, mucho con mucho
 + **Simetrica** : Poco con poco, poco con mucho, mucho al rededor de un centro
 + **Asimetria positiva** : Mucho con poco, poco con mucho
+
+<br/><br/>
+
+### **Código R**
 
 <br/>
 
@@ -87,6 +99,6 @@ rapportools::skewness(x)   # [1] 0.6014827
 ```
 Estos resultados indica una leve concentració de los datos y una leve asimetria a la derecha, la cual será mas evidente observar en la siguiente sección (Representacion gráfica)
 
-
+<br/>
 
 El valor obtenido para el sesgos nos indica que existe un mediano sesgo positivo o a la derecha ( mucho con poco - poco con mucho). Este resultado nos indica que muchos equipos tienen bajo nivel ofencivo y unos pocos son los que tienen un alto poder ofencivo.

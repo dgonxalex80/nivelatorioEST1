@@ -18,7 +18,7 @@ data4=data.frame(x1,x2)
 
 </br>
 
-Supongamos que tenemos dos grupos de estudiantes y que la información que se posee de ellos es el valor de su media es que ambos grupos tienen como valor promedio de sus edades 28 años.  Lo que primero se piensa es que los dos grupos tienen una composición igual dado que coinciden en su promedio.  Pero no es así, los datos que se presentan a continuación tienen medias de 28 pero corresponden a grupos diferentes.
+Supongamos que tenemos dos grupos de estudiantes y que solo se conoce  ambos grupos tienen en promedio  28 años de edad.  Lo que primero se piensa es que los dos grupos tienen una composición igual o muy parecida dado que coinciden en su promedio.  Pero no es así, los datos que se presentan a continuación tienen medias de 28,  pero corresponden a grupos diferentes.
 
 |           |                                                                                                                       |
 |:----------|:----------------------------------------------------------------------------------------------------------------------|
@@ -33,7 +33,7 @@ knitr::include_graphics("img/grupos12.png")
 
 </br></br>
 
-Hace falta otro indicador que nos oriente sobre  que tan dispersos son los datos. Esta necesidad la suplen los `indicadores de dispersión`.
+Hace falta otro indicador que nos oriente sobre  que tan dispersos son los datos con el fin de saber si se trata de grupos parecidos tanto en centro como en variabilidad. Esta necesidad la suplen los `indicadores de dispersión`.
 
  <br/> <br/>
  
@@ -57,7 +57,7 @@ En caso de los dos grupos:
 |                             |                                    |
 
 
-Es importante hacer notar que si además de la media conocemos tambien un indicador de dispersión, en este caso el rango, podemos intuir si se trata del primero o segundo grupo. El rango es un indicador muy útil cuando se deben realizar cálculos rápidos.
+Es importante hacer notar que si además de la media conocemos tambien un indicador de dispersión, en este caso el rango, podemos caracterizar un poco más a los grupos. El rango es un indicador muy útil cuando se deben realizar cálculos rápidos.
 
  <br/> <br/>
  
@@ -65,12 +65,12 @@ Es importante hacer notar que si además de la media conocemos tambien un indica
 
 </br>
 
-Es la medida de dispersión más utilizada en estadística y está definida por 
+Es la medida de dispersión más utilizada en estadística y está definida por :
 
 $$s^{2}=\frac{1}{n-1} \sum_{i=1}^{n} (x_{i}-\bar{x})^{2}$$
 
 
-Se podría afirmar que la varianza es un promedio de los cuadrados de las diferencias entre los datos  
+Se podría afirmar que la varianza es un promedio de los cuadrados de las diferencias entre los datos  y su media
 
  <br/> <br/>
  
@@ -88,7 +88,7 @@ Se podría afirmar que la varianza es un promedio de los cuadrados de las difere
 
 + Si $z_{i} = a x_{i} + b y_{i}$, entonces $s_{z}^{2}$ = $a^{2}s_{x}^{2}$ + $b^{2}s_{y}^{2}$ + $2ab$ $cov(xy)$
 
-El problema de la varianza es su **interpretación**, pues sus unidades quedan al cuadrado y en la mayoría de los casos no es posible interpretar los resultados. Por esta razón se optó por utilizar otra mediada de dispersión calculada a partir de ella
+El problema de la varianza es su **interpretación**, pues sus unidades quedan al cuadrado y en la mayoría de los casos no es posible interpretar los resultados. Por esta razón se optó por utilizar otra mediada de dispersión calculada a partir de la raiz cuadrada de la varianza.
 
  <br/> <br/>
  
@@ -111,7 +111,7 @@ $$s=\sqrt{s^{2}}$$
 |$s  = 4.16$ años             |$s = 10.81$ años                    | 
 
 
-Aunque la desviación estándar reduce el problema mencionado anteriormente debido a tener las mismas unidades de la variable, es útil para comparación de dos grupos
+Aunque la desviación estándar reduce el problema mencionado anteriormente debido a tener las mismas unidades de la variable, es útil para comparación de dos grupos con igual media.  En caso de que las medias sean diferentes es dificil poder realizar las comparaciones.
 
  <br/> <br/>
  
@@ -119,7 +119,7 @@ Aunque la desviación estándar reduce el problema mencionado anteriormente debi
 
 </br>
 
-Por último, el coeficiente de variación es un indicador adimencional que indica que tan grande o que tan pequeña es la desviación estándar con respecto a su media en porcentaje
+Por último, el coeficiente de variación es un indicador adimencional que indica que tan grande o que tan pequeña es la desviación estándar con respecto a su media en porcentaje y de esta manera podemos resolver el problema de la dispersión para cualquier grupo de datos
 
 $$CV= \dfrac{s}{\bar{x}} \times 100 \% $$
 

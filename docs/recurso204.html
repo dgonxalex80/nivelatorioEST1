@@ -286,12 +286,12 @@ $(document).ready(function () {
 <div id="problema-reconocimiento-de-grupo" class="section level2">
 <h2><strong>Problema reconocimiento de grupo</strong></h2>
 <p></br></p>
-<p>Supongamos que tenemos dos grupos de estudiantes y que la información
-que se posee de ellos es el valor de su media es que ambos grupos tienen
-como valor promedio de sus edades 28 años. Lo que primero se piensa es
-que los dos grupos tienen una composición igual dado que coinciden en su
-promedio. Pero no es así, los datos que se presentan a continuación
-tienen medias de 28 pero corresponden a grupos diferentes.</p>
+<p>Supongamos que tenemos dos grupos de estudiantes y que solo se conoce
+ambos grupos tienen en promedio 28 años de edad. Lo que primero se
+piensa es que los dos grupos tienen una composición igual o muy parecida
+dado que coinciden en su promedio. Pero no es así, los datos que se
+presentan a continuación tienen medias de 28, pero corresponden a grupos
+diferentes.</p>
 <table>
 <colgroup>
 <col width="8%" />
@@ -314,7 +314,8 @@ tienen medias de 28 pero corresponden a grupos diferentes.</p>
 <p><img src="img/grupos12.png" width="100%" style="display: block; margin: auto;" /></p>
 <p></br></br></p>
 <p>Hace falta otro indicador que nos oriente sobre que tan dispersos son
-los datos. Esta necesidad la suplen los
+los datos con el fin de saber si se trata de grupos parecidos tanto en
+centro como en variabilidad. Esta necesidad la suplen los
 <code>indicadores de dispersión</code>.</p>
 <p><br/> <br/></p>
 </div>
@@ -352,20 +353,20 @@ años</td>
 </tbody>
 </table>
 <p>Es importante hacer notar que si además de la media conocemos tambien
-un indicador de dispersión, en este caso el rango, podemos intuir si se
-trata del primero o segundo grupo. El rango es un indicador muy útil
-cuando se deben realizar cálculos rápidos.</p>
+un indicador de dispersión, en este caso el rango, podemos caracterizar
+un poco más a los grupos. El rango es un indicador muy útil cuando se
+deben realizar cálculos rápidos.</p>
 <p><br/> <br/></p>
 </div>
 <div id="varianza" class="section level3">
 <h3><strong>Varianza</strong></h3>
 <p></br></p>
 <p>Es la medida de dispersión más utilizada en estadística y está
-definida por</p>
+definida por :</p>
 <p><span class="math display">\[s^{2}=\frac{1}{n-1} \sum_{i=1}^{n}
 (x_{i}-\bar{x})^{2}\]</span></p>
 <p>Se podría afirmar que la varianza es un promedio de los cuadrados de
-las diferencias entre los datos</p>
+las diferencias entre los datos y su media</p>
 <p><br/> <br/></p>
 <div id="propiedades-de-la-varianza" class="section level4">
 <h4><strong>Propiedades de la varianza</strong></h4>
@@ -391,7 +392,8 @@ class="math inline">\(cov(xy)\)</span></p></li>
 <p>El problema de la varianza es su <strong>interpretación</strong>,
 pues sus unidades quedan al cuadrado y en la mayoría de los casos no es
 posible interpretar los resultados. Por esta razón se optó por utilizar
-otra mediada de dispersión calculada a partir de ella</p>
+otra mediada de dispersión calculada a partir de la raiz cuadrada de la
+varianza.</p>
 <p><br/> <br/></p>
 </div>
 </div>
@@ -432,7 +434,8 @@ años</td>
 </table>
 <p>Aunque la desviación estándar reduce el problema mencionado
 anteriormente debido a tener las mismas unidades de la variable, es útil
-para comparación de dos grupos</p>
+para comparación de dos grupos con igual media. En caso de que las
+medias sean diferentes es dificil poder realizar las comparaciones.</p>
 <p><br/> <br/></p>
 </div>
 <div id="coeficiente-de-variación" class="section level3">
@@ -440,7 +443,8 @@ para comparación de dos grupos</p>
 <p></br></p>
 <p>Por último, el coeficiente de variación es un indicador adimencional
 que indica que tan grande o que tan pequeña es la desviación estándar
-con respecto a su media en porcentaje</p>
+con respecto a su media en porcentaje y de esta manera podemos resolver
+el problema de la dispersión para cualquier grupo de datos</p>
 <p><span class="math display">\[CV= \dfrac{s}{\bar{x}} \times 100 \%
 \]</span></p>
 <p>Existen diferentes reglas empíricas para la interpretación del

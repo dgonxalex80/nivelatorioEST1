@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
 
 x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69, 48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19, 53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06, 54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24, 52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54, 52.72, 44.82, 52.49, 58.43, 52.91)
 
@@ -66,6 +66,8 @@ Sus principales propiedades son:
  
 **Ejemplo 1**
 
+<br/>
+
 El promedio de el rendimiento de millas por galón de combustible del grupo de 32 autos observados en el dataset `mtcars` es de $20.09$ mpg
 
 
@@ -74,9 +76,11 @@ mean(mtcars$mpg,     # variable mpg de la data mtcars
      na.rm = TRUE)   # parametro util cuando se tiene datos faltantes :  NA 
 ```
 
- <br/> <br/>
+<br/> <br/>
 
 ### **Mediana** 
+
+<br/>
 
 **Me** :Es el número que divide la muestra en dos partes de igual proporción (50% : 50%). Es decir que corresponde a:
 
@@ -88,6 +92,8 @@ mean(mtcars$mpg,     # variable mpg de la data mtcars
  
 **Ejemplo 2**
 
+<br/>
+
 ```{r}
 median(mtcars$mpg)
 ```
@@ -96,10 +102,12 @@ median(mtcars$mpg)
 
 ### **Moda**  
 
+<br/>
+
 **Mo** : Dato o valor que más se repite. Es utilizada como medida de tendencia central en variables cualitativas o o en cuantitativas discretas con pocos valores. En una tabla o  gráfico se puede distinguir fácilmente.
 
 
- <br/> <br/>
+<br/> <br/>
  
 **Ejemplo 3**
 
@@ -107,6 +115,8 @@ median(mtcars$mpg)
  <br/> <br/>
  
 ### **Media truncada**
+
+<br/>
 
 Con el fin de evitar que los datos atípicos generen sesgos en el indicador de la media, es posible separar el 90% de los datos, quitando un 5% de los datos mas pequeños y un  5% de los datos mayores. A este indicador de le llama media truncada al 10%  ($\bar{x}_{_{0.10}}$)
 
@@ -121,6 +131,8 @@ mean(mtcars$mpg, na.rm = TRUE, trim = 0.10)
  
 ### **Rango medio**  
 
+<br/>
+
 $$\frac{1}{2}\big(max(x)+min(x)\big)$$
 
 
@@ -133,9 +145,9 @@ La diferencia entre el equipo con mas poder ofencivo y el equipo como menor valo
 <br/> <br/>
  
 
- <br/> <br/>
-
 ###  **Media geométrica** 
+
+<br/>
 
 Este indicador de tendencia central se utiliza para promediar tasa de crecimiento o de interés. Para encontrar su valor se multiplican los valores de $n$ tasas incrementadas en uno ($1+r$). A ese producto se le extrae la raíz n-esima.
 
@@ -144,6 +156,8 @@ $$MG = \Bigg(\displaystyle\prod_{i=1}^n (r_{i}+1)\Bigg)^{1/n}$$
  <br/> <br/>
  
 **Ejemplo 3**
+
+<br/>
 
 El crecimiento de la población en Colombia durante las ultimas decadas presenta la siguiente tendencia :
 
@@ -155,13 +169,16 @@ x = c(0.025,0.022,0.02,0.016,0.011,0.007)
 psych::geometric.mean(x)
 
 ```
+
+<br/>
+
 Lo  cual indica que a población colombiana está creciendo a una tasa del 1.5% durante las últimas 5 decadas
 
 https://osoramirez.github.io/R_Para_Biologos/aprendiendo-estadistica.html
 
 ###  **Media armónica**  
 
-$$H = \dfrac{1}{\frac{1}{x_{1}}+\frac{1}{x_{2}}+ ... + \frac{1}{x_{n}}}  $$
+$$H = \dfrac{1}{\frac{1}{x_{1}}+\frac{1}{x_{2}}+ ... + \frac{1}{x_{n}}}$$
 
 Este indicador corresponde al inverso de la media aritmética 
 

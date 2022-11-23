@@ -19,9 +19,11 @@ c2="#=EB0C6"
 c3="#034A94"
 c4="#686868"
 
+
+library(ggplot2)
 ```
 
-Los indicadores de forma permiten adicionar elementos para la interpretación.
+Los indicadores de forma permiten adicionar elementos a la interpretación de los datos.
 
 <br/><br/>
 
@@ -33,16 +35,16 @@ Se mide a través del coeficiente de curtosis que mide cuan **puntiaguda** es un
 
 De acuerdo con su valor, la puntudez de los datos puede clasificarse en tres grupos:
 
-+ <span style="color:#ee3b3b">**Leptocúrtica**</span>, con valores grandes para el coeficiente ( <span style="color:#ee3b3b">**CA>0**</span>)
++ **Leptocúrtica**, con valores grandes para el coeficiente (CA>0)
 
-+ <span style="color:#0000cd">**Mesocúrtica**</span>, con valores medianos para el coeficiente ( <span style="color:#0000cd">**CA=0**</span>)
++ **Mesocúrtica**, con valores medianos para el coeficiente (CA=0)
 
-+ <span style="color:#ee9a00">**Platicútrica**</span>, con valores pequeños para el coeficiente ( <span style="color:#ee9a00">**CA<0**</span>) 
++ **Platicútrica**, con valores pequeños para el coeficiente (CA<0) 
 
-```{r, echo=FALSE, fig.height=3.5, fig.width=9}
+
+```{r, echo=FALSE, fig.height=3, fig.width=9}
 # Distribucion normal
 library(ggfortify)
-
 p=ggdistribution(dnorm, seq(-5, 5, 0.01), mean = 0, sd = 1,colour = 'blue')
 p=ggdistribution(dnorm, seq(-5, 5, 0.01), mean = 0, sd = .7,colour = 'red', p=p)
 p=ggdistribution(dnorm, seq(-5, 5, 0.01),   mean = 0, sd = 1.5,colour = 'orange', p=p)
@@ -62,11 +64,11 @@ p
 
 Mide que tanto la forma de la distribución de frecuencias de los datos es simétrica o no con respecto a la media. Esta característica de los datos se mide a través del coeficiente de asimetría o sesgo.
 
-+ Es <span style="color:#ee3b3b">**simétrica**</span> si el  valor del indicador es 0  ($\bar{x}=Me$)
++ Es **simétrica** si el  valor del indicador es 0  ($\bar{x}=Me$)
 
-+ Es <span style="color:#ee9a00">**asimétrica a la izquierda**</span> si el valor del indicador es negativo ($\bar{x}<Me$)
++ Es **asimétrica a la izquierda**> si el valor del indicador es negativo ($\bar{x}<Me$)
 
-+ Es <span style="color:#0000cd">**asimétrica a la derecha**</span> si el valor del indicador es positivo ($\bar{x}>Me$)
++ Es **asimétrica a la derecha** si el valor del indicador es positivo ($\bar{x}>Me$)
 
 <br/>
 
@@ -74,11 +76,15 @@ Mide que tanto la forma de la distribución de frecuencias de los datos es simé
 
 <br/>
 
-Interpretación
+#### **Interpretación**
 
-+ **Asimetria negativa ** : Poco con poco, mucho con mucho
-+ **Simetrica** : Poco con poco, poco con mucho, mucho al rededor de un centro
-+ **Asimetria positiva** : Mucho con poco, poco con mucho
+<br/>
+
++ **Asimetria negativa ** : poco con poco y mucho con mucho
+
++ **Simetrica**           : poco con poco, poco con mucho, mucho al rededor de un centro
+
++ **Asimetria positiva**  : mucho con poco y poco con mucho
 
 <br/><br/>
 
@@ -86,7 +92,8 @@ Interpretación
 
 <br/>
 
-En R se utiliza la función : `rapportools::skewness(data1$value1)`
+En R se utiliza la funciones : `rapportools::kurtosis(x)`  y  `rapportools::skewness(x)` de manera individual.
+
 
 <br/>
 
@@ -97,6 +104,9 @@ rapportools::kurtosis(x)   # [1] 0.6423682
 rapportools::skewness(x)   # [1] 0.6014827
 
 ```
+
+<br/>
+
 Estos resultados indica una leve concentració de los datos y una leve asimetria a la derecha, la cual será mas evidente observar en la siguiente sección (Representacion gráfica)
 
 <br/>

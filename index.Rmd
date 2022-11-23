@@ -21,7 +21,7 @@ data1 <- data.frame(
 
 
 
-El proceso de manejo de datos comprende una serie de etapas que permiten cumplir los objetivos trazados en una investigación o proyecto de Ciencia de datos como lo menciona Antonio Vazquez Brust en su libro Ciencia de Datos para gente sociable. Es necesario para realizar este proceso recordar o incorporar conceptos de Estadística que hacen posible que se realicen las etapas descritas sin inconvenientes.
+El proceso de manejo de datos comprende una serie de etapas que permiten cumplir los objetivos trazados en una investigación o proyecto de Ciencia de Datos como lo menciona Antonio Vazquez Brust en su libro Ciencia de Datos para gente sociable. Es necesario para realizar este proceso recordar o incorporar conceptos de Estadística que hacen posible que se realicen las etapas descritas sin inconvenientes.
 
 </br></br>
 
@@ -33,9 +33,9 @@ knitr::include_graphics("img/procesodatos.png")
 
 </br></br>
 
-Es necesario inicialmente relacionar los datos con un proposito (objetivos) que nos permita proporner soluciones o metodologías que permitan plantear recomendaciones a un problema en particular planteado, a partir de información por lo regular estructurada  en una bases de datos  conformada por variables (columnas) y registros (filas)
+Debemos relacionar los datos con un proposito (objetivos) que nos permita proporner soluciones o metodologías y así plantear recomendaciones a un problema en particular, a partir de información por lo regular estructurada  en una bases de datos  conformada por variables (columnas) y registros (filas)
 
-En número de registros por lo regular de gran tamaño hace necesaria la utilización de un herramientas computacionales para su analisis y procesamiento (en nuestro caso el lenguaje R)
+En número de registros por lo regular de gran tamaño, hace necesaria la utilización de un herramientas computacionales para su analisis y procesamiento (en nuestro caso el lenguaje **R**).
 
 </br></br>
 
@@ -47,17 +47,17 @@ Inicialmente se examinan las caracteristicas de las variables que conforman la d
 
 Las variables se puede clasificar como :
 
-* Cualitativas : corresponde a caracteristicas que pueden tomar como valores palabras
+* **Cualitativas** : corresponde a caracteristicas que pueden tomar como valores palabras
 
-* Cuantitativas : corresponden a valores numéricos que representan una caracteristica del objeto o individuo observado. A su vez se pueden clasificar como :
+* **Cuantitativas** : corresponden a valores numéricos que representan una caracteristica del objeto o individuo observado. A su vez se pueden clasificar como :
 
-  + Discretas : se caracteriza por que están relacionadas con el conteo  (número de 
+  + **Discretas** : se caracteriza por que están relacionadas con el conteo  (número de...) 
   
-  + Continuas : estas variables se originan en la medición  
+  + **Continuas** : estas variables se originan en la medición y pueden tomar cualquier valor real  
 
 </br></br>
 
-**Nota** : El termino *variable* en estadistica se refiere a una caracteristica de interés que permite una agrupación o analisis a diferencia de la interpretación que se le pueda dar en el área de sistemas donde es de su interés caracteristicas como id, número de cedula, dirección, nombre del representante legal entro otros.
+**Nota** : El termino *variable* en estadística se refiere a una caracteristica de interés que permite una agrupación o analisis a diferencia de la interpretación que se le pueda dar en el área de sistemas, donde son de interés caracteristicas como id, número de cedula, dirección, nombre del representante legal entre otros. En adelante se entenderán como variables las primeras.
 
 </br></br>
 
@@ -109,22 +109,34 @@ Dependiendo el tipo de variable y su escala de medición se tomaran los respecti
  
 </br></br>
 
-En esta unidad se tratará de manera general los conceptos principales relacionados con el analisis descriptivo de datos basados en las principales caracteristicas de los datos, tanto para variables cualitativas como para variables cuantitativas
+En esta unidad se tratará de manera general los conceptos principales relacionados con el analisis descriptivo de datos, basados en las principales caracteristicas de los datos, tanto para variables cualitativas como para variables cuantitativas.
 
 El análisis de las variables cuantitativas se centra en la contrucción de tablas de frecuencia y su prepresentación a traves de gráficos de tortas (nominales) y de barras (ordinales), mientras que en el caso de las variables cualitativas nos centraremos en indicadores de posición,  centro, variabilidad o de dispersión y de forma, además de su representación gráfica mediante histogramas, diagramas de cajas, diagramas de dispersión entre otros. 
 
 </br></br>
 
-### **Resumen de indicadores**
+### **Resumen de indicadores  y gráfica**
 
 </br>
 
-La función del paquete summarytools : `summarytools::descr(x)` permite obtener un resumen de indicadores
+La función del paquete summarytools : `summarytools::descr(x)` permite obtener un resumen de indicadores. Al aplicar la función a un grupo de 70 valores correspondientes a los tiempo gastados por atletas en recorrer 10.5 kilómetros. 
+
+</br>
 
 ```{r}
 summarytools::descr(data1$value1)
 ```
+</br></br>
 
+```{r, fig.height=4, echo=FALSE}
+library(ggplot2)
+dat <- data1
+plot <- ggplot(data1, aes(x = value1)) 
+plot <- plot + geom_histogram(aes(y=..density..), color="black", fill = "#034A96", binwidth = 5, alpha = 0.5) + labs(title = "Tiempo de carrera  K10.5-2022") + ylab("densidad") + xlab("minutos")
+plot
+```
+
+Los datos indican que en promedio los atletas emplearon 51 minutos, con un tiempo mínimo para el ganador de 43 minutos y un máximo de 64. Los datos presenta un forma simetrica concentra un gran número de atletas en un rango en tre 45 y 55 minutos. En cuanto su dispersión presentan un 9% de coeficiente de variación que los califica como homogeneos.
 
 
 

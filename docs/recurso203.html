@@ -284,17 +284,17 @@ $(document).ready(function () {
 
 
 <p><img src="img/puntos1.png" width="100%" style="display: block; margin: auto;" /></p>
-<p>Uno de los principales retos en el análisis de datos consiste en
-resumir una información en unos pocos indicadores que los representen.
-Los indicadores de tendencia centro o de centro resumen en un número los
-datos. Dentro de ellos se destancan:</p>
 <p><br/> <br/></p>
+<p>Una de las caracteristicas principales estan constituido por los
+indicadores de centro, dentro de ellos se destacan :</p>
 <ul>
 <li>Media</li>
 <li>Mediana</li>
 <li>Moda</li>
 <li>Rango medio</li>
 <li>Media truncada</li>
+<li>Media geométrica</li>
+<li>Media armónica</li>
 </ul>
 <p><br/> <br/></p>
 <div id="media-aritmética" class="section level3">
@@ -304,7 +304,13 @@ fácil intepretación y calculo. Consiste en sumar todos los valores de un
 conjunto de datos y dividirlos por el número de datos</p>
 <p><br/></p>
 <p><span class="math display">\[\bar{x}= \frac{1}{n} \sum_{i=1}^{n}
-x_{i}\]</span> <br/></p>
+x_{i}\]</span></p>
+<pre class="r"><code>x=c(1,2,3,4,5,6,7,8,9,10) # vector de numeros
+mean(x)  # funcion media</code></pre>
+<pre><code>[1] 5.5</code></pre>
+<pre class="r"><code>sum(x)/length(x) # calculo de la media</code></pre>
+<pre><code>[1] 5.5</code></pre>
+<p><br/></p>
 <p>Sus principales propiedades son:</p>
 <ul>
 <li><p>La suma de las desviaciones de los datos con respecto a la media
@@ -327,65 +333,112 @@ class="math inline">\(y_{i}\)</span> variables, entonces: <span
 class="math inline">\(\bar{z}=a\bar{x}+b\bar{y}\)</span>.</p></li>
 </ul>
 <p><br/> <br/></p>
-<p><img src="img/media.png" width="100%" style="display: block; margin: auto;" />
-</br></br></p>
-<p>Para el ejemplo simulado corresponde a 50.80 . En R se utuliza la
-función <code>mean(x)</code></p>
-<p>La media tiene un problema en presencia de datos atípicos y cuando
-los datos tienen formas asimétricas. Estos problemas los resuelve de
-manera robusta el siguiente indicador</p>
+<p><strong>Ejemplo 1</strong></p>
+<p><br/></p>
+<p>El promedio de el rendimiento de millas por galón de combustible del
+grupo de 32 autos observados en el dataset <code>mtcars</code> es de
+<span class="math inline">\(20.09\)</span> mpg</p>
+<pre class="r"><code>mean(mtcars$mpg,     # variable mpg de la data mtcars
+     na.rm = TRUE)   # parametro util cuando se tiene datos faltantes :  NA </code></pre>
+<pre><code>[1] 20.09062</code></pre>
 <p><br/> <br/></p>
 </div>
 <div id="mediana" class="section level3">
 <h3><strong>Mediana</strong></h3>
+<p><br/></p>
 <p><strong>Me</strong> :Es el número que divide la muestra en dos partes
-de igual proporción (50% : 50%). Es decir que corresponde al <span
-class="math inline">\(P_{50}\)</span> = <span
-class="math inline">\(D_{5}\)</span> = <span
-class="math inline">\(Q_{2}\)</span>, revisado en los indicadores de
-posición e igual a 50.98. En R se utiliza la función
-<code>median(x)</code></p>
+de igual proporción (50% : 50%). Es decir que corresponde a:</p>
+<ul>
+<li><span class="math inline">\(P_{50}\)</span> : percentil 50</li>
+<li><span class="math inline">\(D_{5}\)</span> : decil 5</li>
+<li><span class="math inline">\(Q_{2}\)</span> : segundo cuartil</li>
+</ul>
+<p><br/> <br/></p>
+<p><strong>Ejemplo 2</strong></p>
+<p><br/></p>
+<pre class="r"><code>median(mtcars$mpg)</code></pre>
+<pre><code>[1] 19.2</code></pre>
 <p><br/> <br/></p>
 </div>
 <div id="moda" class="section level3">
 <h3><strong>Moda</strong></h3>
-<p>Para las variables cuantitativas se utiliza como indicador de centro
-la <strong>MODA</strong>, la cual corresponde al valor que más se repite
-o que mayor frecuencia tienen. Para encontrarla se construye una tabla
-de frecuencias</p>
+<p><br/></p>
+<p><strong>Mo</strong> : Dato o valor que más se repite. Es utilizada
+como medida de tendencia central en variables cualitativas o o en
+cuantitativas discretas con pocos valores. En una tabla o gráfico se
+puede distinguir fácilmente.</p>
+<p><br/> <br/></p>
+<p><strong>Ejemplo 3</strong></p>
 <p><br/> <br/></p>
 </div>
 <div id="media-truncada" class="section level3">
 <h3><strong>Media truncada</strong></h3>
+<p><br/></p>
 <p>Con el fin de evitar que los datos atípicos generen sesgos en el
-indicador de la media, es posible separar un gran porcentaje central de
-datos y cortar los datos de los extremos. Por ejemplo podemos truncar el
-10% de los datos (5% a cada lado ) dejando un 90%. A este indicador de
-le llama media truncada al 10% (<span
+indicador de la media, es posible separar el 90% de los datos, quitando
+un 5% de los datos mas pequeños y un 5% de los datos mayores. A este
+indicador de le llama media truncada al 10% (<span
 class="math inline">\(\bar{x}_{_{0.10}}\)</span>)</p>
-<p>Para el ejemplo simulado el valor de la media truncada corresponde a
-50.53, calculado utilizando la función :
-<code>mean(x, na.rm = TRUE, trim = 0.10)</code></p>
+<p><br/> <br/></p>
+<pre class="r"><code>mean(mtcars$mpg, na.rm = TRUE, trim = 0.10)</code></pre>
+<pre><code>[1] 19.69615</code></pre>
 <p><br/> <br/></p>
 </div>
 <div id="rango-medio" class="section level3">
 <h3><strong>Rango medio</strong></h3>
-<p>El rango medio es un indicador fácil de calcular y muy practico para
-estimaciones rápidas. Para ello debemos conocer los valores mínomos y
-máximos de los datos, sumarlos y dividir el resultado por dos</p>
+<p><br/></p>
 <p><span
-class="math display">\[\frac{1}{2}\Big(max(x)+min(x)\Big)\]</span> Para
-caluclarlo se puede puede construir la siguiente funcion en R :
-<code>(max(x ,na.rm = TRUE) + min(x,na.rm = TRUE))/2</code>, la cual
-arroja un valor de 53.37 para los datos simulados</p>
-<p><strong>Códigos R</strong></p>
-<pre class="r"><code>x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69, 48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19, 53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06, 54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24, 52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54, 52.72, 44.82, 52.49, 58.43, 52.91)
+class="math display">\[\frac{1}{2}\big(max(x)+min(x)\big)\]</span></p>
+<pre class="r"><code>(max(mtcars$mpg,na.rm = TRUE)+min(mtcars$mpg,na.rm = TRUE))/2</code></pre>
+<pre><code>[1] 22.15</code></pre>
+<p>La diferencia entre el equipo con mas poder ofencivo y el equipo como
+menor valor es de 1.87 puntos.</p>
+<p><br/> <br/></p>
+</div>
+<div id="media-geométrica" class="section level3">
+<h3><strong>Media geométrica</strong></h3>
+<p><br/></p>
+<p>Este indicador de tendencia central se utiliza para promediar tasa de
+crecimiento o de interés. Para encontrar su valor se multiplican los
+valores de <span class="math inline">\(n\)</span> tasas incrementadas en
+uno (<span class="math inline">\(1+r\)</span>). A ese producto se le
+extrae la raíz n-esima.</p>
+<p><span class="math display">\[MG = \Bigg(\displaystyle\prod_{i=1}^n
+(r_{i}+1)\Bigg)^{1/n}\]</span></p>
+<p><br/> <br/></p>
+<p><strong>Ejemplo 3</strong></p>
+<p><br/></p>
+<p>El crecimiento de la población en Colombia durante las ultimas
+decadas presenta la siguiente tendencia :</p>
+<pre class="r"><code># install.packages(psych)
+library(psych)</code></pre>
+<pre><code>
+Attaching package: &#39;psych&#39;</code></pre>
+<pre><code>The following objects are masked from &#39;package:ggplot2&#39;:
 
+    %+%, alpha</code></pre>
+<pre class="r"><code>x = c(0.025,0.022,0.02,0.016,0.011,0.007)
 
-mean(x)                                           # media
-median(x)                                         # mediana 
-mean(x, na.rm = TRUE, trim = 0.10)                # media truncada al 10%
-(max(x ,na.rm = TRUE) + min(x,na.rm = TRUE))/2    # rango medio </code></pre>
+psych::geometric.mean(x)</code></pre>
+<pre><code>[1] 0.01544071</code></pre>
+<p><br/></p>
+<p>Lo cual indica que a población colombiana está creciendo a una tasa
+del 1.5% durante las últimas 5 decadas</p>
+<p><a
+href="https://osoramirez.github.io/R_Para_Biologos/aprendiendo-estadistica.html"
+class="uri">https://osoramirez.github.io/R_Para_Biologos/aprendiendo-estadistica.html</a></p>
+</div>
+<div id="media-armónica" class="section level3">
+<h3><strong>Media armónica</strong></h3>
+<p><span class="math display">\[H =
+\dfrac{1}{\frac{1}{x_{1}}+\frac{1}{x_{2}}+ ... +
+\frac{1}{x_{n}}}\]</span></p>
+<p>Este indicador corresponde al inverso de la media aritmética</p>
+<p><a href="https://rpubs.com/cete/rdsa"
+class="uri">https://rpubs.com/cete/rdsa</a></p>
+<p><a
+href="https://osoramirez.github.io/R_Para_Biologos/aprendiendo-estadistica.html#media-armonica"
+class="uri">https://osoramirez.github.io/R_Para_Biologos/aprendiendo-estadistica.html#media-armonica</a></p>
 </div>
 
 

@@ -1,7 +1,6 @@
 ---
 title: <span style="color:#034a94"> **Introducción**</span>
-author: "  "
-date: " "
+author: "Nivelatorio de Estadística"
 output: html_document
 ---
 

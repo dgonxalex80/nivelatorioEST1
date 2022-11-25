@@ -133,8 +133,6 @@ quantile(x, c(0.25,0.50,0.75))
 </pre>
 
 
-< enlace href = " https://fonts.cdnfonts.com/css/barlow-semi-condensed-2 " rel = "hoja de estilo" >
-                
 
 
 

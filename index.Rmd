@@ -35,7 +35,7 @@ knitr::include_graphics("img/procesodatos.png")
 
 </br></br>
 
-Debemos relacionar los datos con un proposito (objetivos) que nos permita proporner soluciones o metodologías y así plantear recomendaciones a un problema en particular, a partir de información por lo regular estructurada  en una bases de datos  conformada por variables (columnas) y registros (filas)
+Debemos relacionar los datos con un proposito (objetivos) que nos permita proporner soluciones o metodologías y así plantear recomendaciones a un problema en particular, a partir de información estructurada en una bases de datos,  conformada por variables (columnas) y registros (filas).
 
 En número de registros por lo regular de gran tamaño, hace necesaria la utilización de un herramientas computacionales para su analisis y procesamiento (en nuestro caso el lenguaje **R**).
 
@@ -43,9 +43,7 @@ En número de registros por lo regular de gran tamaño, hace necesaria la utiliz
 
 ### **Tipos de variables**
 
-</br>
-
-Inicialmente se examinan las caracteristicas de las variables que conforman la data que serán empleadas posteriormente en la generación de modelos.
+Inicialmente se examinan las caracteristicas de las variables que conforman la data.
 
 Las variables se puede clasificar como :
 
@@ -57,9 +55,9 @@ Las variables se puede clasificar como :
   
   + **Continuas** : estas variables se originan en la medición y pueden tomar cualquier valor real  
 
-</br></br>
+</br>
 
-**Nota** : El termino *variable* en estadística se refiere a una caracteristica de interés que permite una agrupación o analisis a diferencia de la interpretación que se le pueda dar en el área de sistemas, donde son de interés caracteristicas como id, número de cedula, dirección, nombre del representante legal entre otros. En adelante se entenderán como variables las primeras.
+**Nota** : El termino *variable* en Estadística se refiere a una caracteristica de interés que permite una agrupación o analisis a diferencia de la interpretación que se le pueda dar en el área de sistemas, donde son de interés caracteristicas como id, número de cedula, dirección, nombre del representante legal entre otros. En adelante se entenderán como variables las primeras.
 
 </br></br>
 

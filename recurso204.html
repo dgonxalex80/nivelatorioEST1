@@ -12,7 +12,7 @@
 <meta name="author" content="Nivelatorio de Estadística" />
 
 
-<title> Tablas de frecuencia</title>
+<title> Indicadores de variabilidad o dispersión</title>
 
 <script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -274,221 +274,217 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore"><span style="color:#034a94"> <strong>Tablas
-de frecuencia</strong></span></h1>
+<h1 class="title toc-ignore"><span style="color:#034a94">
+<strong>Indicadores de variabilidad o dispersión</strong></span></h1>
 <h4 class="author">Nivelatorio de Estadística</h4>
 
 </div>
 
 
+<div id="problema-reconocimiento-de-grupo" class="section level2">
+<h2><strong>Problema reconocimiento de grupo</strong></h2>
 <p></br></p>
-<div id="tablas-de-frecuencia-variables-nominales"
-class="section level3">
-<h3><strong>Tablas de frecuencia variables nominales</strong></h3>
-<p></br></p>
-<p>Las tablas de frecuencia constituyen una de las herramientas más
-utilizadas en Estadística para resumir variables de tipo cualitativas.
-Para las variables en <strong>escala nominal</strong> están conformadas
-por tres columnas :</p>
-<ul>
-<li>Descripción que corresponde a los niveles o valores diferentes que
-posee la variable</li>
-<li>Frecuencia absoluta o conteo de los elementos o registros que tienen
-un valor determinado</li>
-<li>Frecuencia relativa que corresponde al porcentaje sobre el total de
-registros que corresponden a un valor determinado</li>
-</ul>
-<p>La siguiente tabla corresponde a la distribución de la variable
-ubicación de las personas que se han contagiado con Covid-19 en
-Colombia, base que se encuentra disponible en la plataforma <a
-href="https://www.datos.gov.co/browse?q=covid%20&amp;sortBy=relevance">DATOS
-ABIERTOS</a></p>
-</br></br>
-<center>
-<strong>DISTRIBUCIÓN DE LA UBICACIÓN DE CONTAGIADOS DE COVID-19
-COLOMBIA</strong>
-</center>
-<img src="img/tabla1.png" width="45%" style="display: block; margin: auto;" />
-<center>
-Fuente : Base Casos positivos de COVID-19 en Colombia. 17-10-2022
-</center>
-<p></br></p>
-<p>La tabla permite visualizar que actualmente están reportados 19 casos
-en cuidado UCI y que a la fecha han fallecido en Colombia a causa del
-Covid-19 141862 personas</p>
-<p></br></br></p>
-</div>
-<div id="tablas-de-frecuencia-variables-ordinales"
-class="section level3">
-<h3><strong>Tablas de frecuencia variables ordinales</strong></h3>
-<p></br></p>
-<p>Para el caso de variables cualitativas medidas en <strong>escala
-ordinal</strong> los valores debe presentarse ordenados. En este caso se
-adiciona una columna donde aparecen las frecuencias acumuladas
-relativas</p>
-<p></br></br></p>
-<center>
-<strong>EVALUACIÓN DEL SERVICIO DE ATENCIÓN AL CLIENTE MES DE NOVIEMBRE
-DE 2022</strong>
-</center>
-<p><img src="img/tabla2.png" width="60%" style="display: block; margin: auto;" /></p>
-<p></br></br></p>
-</div>
-<div id="tablas-cruzadas" class="section level3">
-<h3><strong>Tablas cruzadas</strong></h3>
-<p></br></p>
-<p>Se puede interpretar que las evaluaciones desfavorables (muy regular
-y regular) representan un 13.16% y que entre muy bueno y exelente se
-encuentra el 67.83% de los evaluados (100-32.17)</p>
-<p>También es de utilidad realizar tablas cruzadas o de doble entrada
-que permite visualizar las frecuencias de dos variables cualitativas</p>
-<p></br></br></p>
-<center>
-<strong>DISTRIBUCIÓN DE LA UBUCACIÓN POR SEXO DE LOS CONTAGIADOS DE
-COVID-19 COLOMBIA</strong>
-</center>
-<img src="img/tabla3.png" width="60%" style="display: block; margin: auto;" />
-<center>
-Fuente : Base Casos positivos de COVID-19 en Colombia. 17-10-2022
-</center>
-<p></br></br></p>
-<p>De esta tabla se puede observar que se presenta una mayor cantidad de
-hombres fallecidos (86045)</p>
-<p></br></br></p>
-</div>
-<div id="visualización-de-errores" class="section level3">
-<h3><strong>Visualización de errores</strong></h3>
-<p></br></p>
-<p>Las tablas de frecuencia además de permitir un análisis rápido de las
-variables cualitativas, también permite detectar posible problemas en la
-digitalización y valorar la magnitud de los datos faltantes (NA)</p>
-<p></br></br></p>
-<p>Como ejemplo tenemos las variables ubicación (Colombia$ubucación) y
-sexo (Colombia$sexo)</p>
+<p>Supongamos que tenemos dos grupos de estudiantes y que solo se conoce
+ambos grupos tienen en promedio 28 años de edad. Lo que primero se
+piensa es que los dos grupos tienen una composición igual o muy parecida
+dado que coinciden en su promedio. Pero no es así, los datos que se
+presentan a continuación tienen medias de 28, pero corresponden a grupos
+diferentes.</p>
 <table>
 <colgroup>
-<col width="10%" />
-<col width="14%" />
-<col width="9%" />
-<col width="16%" />
-<col width="19%" />
-<col width="18%" />
-<col width="10%" />
+<col width="8%" />
+<col width="91%" />
 </colgroup>
-<thead>
-<tr class="header">
-<th align="left">casa</th>
-<th align="left">Casa</th>
-<th align="left">CASA</th>
-<th align="left">Fallecido</th>
-<th align="left">Hospital</th>
-<th align="left">Hospital UCI</th>
-<th align="left">NA</th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td align="left">27689</td>
-<td align="left">6107510</td>
-<td align="left">7</td>
-<td align="left">141862</td>
-<td align="left">179</td>
-<td align="left">19</td>
-<td align="left">34093</td>
+<td align="left">Grupo 1</td>
+<td align="left">27, 27, 28, 28, 34, 28, 26, 33, 24, 28, 25, 25, 33, 27,
+34, 38, 24, 26, 22, 23, 33, 23, 26, 26, 32, 33, 29, 30, 25, 23</td>
+</tr>
+<tr class="even">
+<td align="left">Grupo 2</td>
+<td align="left">35, 25, 19, 17, 24, 17, 55, 25, 31, 35, 43, 28, 32, 19,
+20, 17, 25, 18, 21, 22, 17, 35, 29, 20, 54, 46, 24, 29, 40, 18</td>
 </tr>
 </tbody>
 </table>
 <p></br></br></p>
+<p><img src="img/grupos12.png" width="100%" style="display: block; margin: auto;" /></p>
+<p></br></br></p>
+<p>Hace falta otro indicador que nos oriente sobre que tan dispersos son
+los datos con el fin de saber si se trata de grupos parecidos tanto en
+centro como en variabilidad. Esta necesidad la suplen los
+<code>indicadores de dispersión</code>.</p>
+<p><br/> <br/></p>
+</div>
+<div id="indicadores-de-dispersión" class="section level2">
+<h2><strong>Indicadores de Dispersión</strong></h2>
+<p></br></p>
+<div id="rango" class="section level3">
+<h3><strong>Rango</strong></h3>
+<p></br> El rango es el indicador de dispersión más facil de calcular,
+pues se obtiene restando los valores extremos de los datos:</p>
+<p><span class="math inline">\(r = max(x) - min(x)\)</span></p>
+<p>En caso de los dos grupos:</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left">f</th>
-<th align="left">F</th>
-<th align="left">m</th>
-<th align="left">M</th>
+<th align="left"><strong>Grupo 1</strong></th>
+<th align="left"><strong>Grupo 1</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">6</td>
-<td align="left">3370605</td>
-<td align="left">6</td>
-<td align="left">2940742</td>
+<td align="left"><span class="math inline">\(\bar{x} = 28\)</span>
+años</td>
+<td align="left"><span class="math inline">\(\bar{x} = 28\)</span>
+años</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(r = 16\)</span> años</td>
+<td align="left"><span class="math inline">\(r = 38\)</span> años</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 </tbody>
 </table>
-<p></br></br></p>
-<p>En R se puede utilizar la función <code>table(x)</code> para la
-elaboración de una tabla de frecuencias que contiene solo el conteo,
-pero que permite una revisión rápida de sus valores. Una mejor
-representación se puede realizar a través de la función
-<code>freq</code> del paquete <code>summarytools</code></p>
-<p></br></br></p>
+<p>Es importante hacer notar que si además de la media conocemos tambien
+un indicador de dispersión, en este caso el rango, podemos caracterizar
+un poco más a los grupos. El rango es un indicador muy útil cuando se
+deben realizar cálculos rápidos.</p>
+<p><br/> <br/></p>
 </div>
-<div id="código-r" class="section level3">
-<h3><strong>Código R</strong></h3>
+<div id="varianza" class="section level3">
+<h3><strong>Varianza</strong></h3>
 <p></br></p>
-<p>El siguiente código de R permite descargar la base de datos Casos
-positivos de COVID-19 en Colombia directamente del portal de Datos
-Abiertos, revisar los valores de las variables : ubicación y sexo,
-arreglarlas pasando todos sus valores a minúsculas y corrigiendo el
-valor de los datos faltantes NA</p>
+<p>Es la medida de dispersión más utilizada en estadística y está
+definida por :</p>
+<p><span class="math display">\[s^{2}=\frac{1}{n-1} \sum_{i=1}^{n}
+(x_{i}-\bar{x})^{2}\]</span></p>
+<p>Se podría afirmar que la varianza es un promedio de los cuadrados de
+las diferencias entre los datos y su media</p>
+<p><br/> <br/></p>
+<div id="propiedades-de-la-varianza" class="section level4">
+<h4><strong>Propiedades de la varianza</strong></h4>
+<ul>
+<li><p><span class="math inline">\(s^{2} = \frac{1}{n} \sum x_{i}^{2}-
+(\bar{x})^{2}\)</span></p></li>
+<li><p>La varianza es siempre no negativa <span
+class="math inline">\(s^{2} &gt;=0\)</span></p></li>
+<li><p>La varianza de una constante es cero <span
+class="math inline">\(s_{k}^{2}=0\)</span></p></li>
+<li><p>Si <span class="math inline">\(y_{i}=k x_{i}\)</span>, entonces
+<span class="math inline">\(s_{y}^{2}= k^{2} s_{x}^{2}\)</span></p></li>
+<li><p>Si <span class="math inline">\(y_{i}=x_{i} + k\)</span> ,
+entonces <span class="math inline">\(s_{y}^{2} =
+s_{x}^{2}\)</span></p></li>
+<li><p>Si <span class="math inline">\(z_{i} = a x_{i} + b
+y_{i}\)</span>, entonces <span class="math inline">\(s_{z}^{2}\)</span>
+= <span class="math inline">\(a^{2}s_{x}^{2}\)</span> + <span
+class="math inline">\(b^{2}s_{y}^{2}\)</span> + <span
+class="math inline">\(2ab\)</span> <span
+class="math inline">\(cov(xy)\)</span></p></li>
+</ul>
+<p>El problema de la varianza es su <strong>interpretación</strong>,
+pues sus unidades quedan al cuadrado y en la mayoría de los casos no es
+posible interpretar los resultados. Por esta razón se optó por utilizar
+otra mediada de dispersión calculada a partir de la raiz cuadrada de la
+varianza.</p>
+<p><br/> <br/></p>
+</div>
+</div>
+<div id="desviación-estándar" class="section level3">
+<h3><strong>Desviación estándar</strong></h3>
+<p></br></p>
+<p>Es la raíz cuadrada de la varianza</p>
+<p><span class="math display">\[s=\sqrt{s^{2}}\]</span></p>
+<p><strong>Nota</strong> : no aplican todas las propiedades de la
+varianza</p>
+<p></br></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Grupo 1</strong></th>
+<th align="left"><strong>Grupo 1</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\bar{x} = 28\)</span>
+años</td>
+<td align="left"><span class="math inline">\(\bar{x} = 28\)</span>
+años</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(s^{2} = 16.62\)</span>
+años<span class="math inline">\(^2\)</span></td>
+<td align="left"><span class="math inline">\(s^{2} = 116.89\)</span>
+años<span class="math inline">\(^2\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(s = 4.16\)</span> años</td>
+<td align="left"><span class="math inline">\(s = 10.81\)</span>
+años</td>
+</tr>
+</tbody>
+</table>
+<p>Aunque la desviación estándar reduce el problema mencionado
+anteriormente debido a tener las mismas unidades de la variable, es útil
+para comparación de dos grupos con igual media. En caso de que las
+medias sean diferentes es dificil poder realizar las comparaciones.</p>
+<p><br/> <br/></p>
+</div>
+<div id="coeficiente-de-variación" class="section level3">
+<h3><strong>Coeficiente de variación</strong></h3>
+<p></br></p>
+<p>Por último, el coeficiente de variación es un indicador adimencional
+que indica que tan grande o que tan pequeña es la desviación estándar
+con respecto a su media en porcentaje y de esta manera podemos resolver
+el problema de la dispersión para cualquier grupo de datos</p>
+<p><span class="math display">\[CV= \dfrac{s}{\bar{x}} \times 100 \%
+\]</span></p>
+<p>Existen diferentes reglas empíricas para la interpretación del
+coeficiente de variación. Una de ellas establece como límite el 20% para
+separar los grupos homogéneos de los heterogéneos Por lo general se
+utiliza un valor hasta el 20% para determinar que un grupo de datos son
+homogéneos, de lo contrario se calificará como heterogéneo.</p>
+<p></br></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Grupo 1</strong></th>
+<th align="left"><strong>Grupo 1</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\bar{x} = 28\)</span>
+años</td>
+<td align="left"><span class="math inline">\(\bar{x} = 28\)</span>
+años</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(CV = 14.56\)</span> %</td>
+<td align="left"><span class="math inline">\(CV = 38.61\)</span> %</td>
+</tr>
+</tbody>
+</table>
+<p>En este caso se obtienen valores difentes para los dos grupos. El
+grupo 1 con un valor inferior a 20%, que indica homogeneidad y el grupo
+2 con un valor superior que indica heterogeneidad</p>
+<p></br></br></br></p>
+</div>
+<div id="códigos-r" class="section level3">
+<h3><strong>Códigos R</strong></h3>
 <pre>
-
-install.packages("tidyverse") #  instalación de paquete para manejo de datos
-library(tidyverse)   # librerías útil en el manejo de datos
-
-install.packages("RSocrata", dependencies = TRUE)   # instalación de paquete RSocrata
-library(RSocrata)    # llamado de libreria
-token <- "zxMsD6eXc0zlEMryRGW87Hwrz"  # token
-Colombia <- read.socrata("https://www.datos.gov.co/resource/gt2j-8ykr.json", app_token = token) # lectura de manera remota 
-
-# adecuación de la base de datos
-Colombia$edad=as.integer(Colombia$edad)  # convertir en entero la variable edad
-Colombia$sexo=str_to_lower(Colombia$sexo) # pasar a minúsculas todos valores de la variable sexo
-Colombia$estado=str_to_lower(Colombia$estado) # pasar a minúsculas todos lo valores de la variable estado
-Colombia$estado[Colombia$estado=="n/a"]=NA   # cambiar el valor  n/a por NA - valores faltantes
-Colombia$recuperado=str_to_lower(Colombia$recuperado) # pasar a minúsculas todos los valores de la variable recuperado
-Colombia$recuperado[Colombia$recuperado=="n/a"]=NA 
-
-# seleccion de bases
-Colombia22=subset(Colombia, Colombia$fecha_reporte_web>="2022-01-01") # data del 2022
-Colombia21=subset(Colombia, Colombia$fecha_reporte_web>="2021-01-01" & Colombia$fecha_reporte_web<"2022-01-01") # data de 2021
-Colombia20=subset(Colombia, Colombia$fecha_reporte_web>="2020-01-01" & Colombia$fecha_reporte_web<"2021-01-01") # data de 2020
-Colombia22_09=subset(Colombia, Colombia$fecha_reporte_web>="2022-09-01") # data de 2022 sep
-
-
-Valle22=subset(Colombia22, departamento=="76") # data del valle del cauca de 2022
-Cali22_09= subset(Colombia22_09, ciudad_municipio_nom=="CALI") # data de cali de 2022
-
-table(Colombia22$estado)
-table(Colombia21$estado)
-table(Colombia20$estado)
-
-summarytools::freq(Colombia22$estado, cumul = F)
-summarytools::freq(Colombia21$estado, cumul = F)
-summarytools::freq(Colombia20$estado, cumul = F)
-summarytools::descr(Colombia22$edad)
-
-saveRDS(Colombia, file = "data/Colombia.RDS")  # guardar base con modificaciones
-
-table(Cali22_06$estado)
-
+max(x1)-min(x1)        # rango
+var(x1)                # varianza
+sd(x1)                 # desviación estandar
+sd(x1)/mean(x1)*100    # coeficiente de variación
 </pre>
-<p></br></br></p>
-<p>Tabla de frecuencias de una variable cualitativa en escala
-nominal</p>
-<pre>
-summarytools::freq(Colombia$ubicacion, cumul = FALSE)    # tabla
-</pre>
-<p></br></br></p>
-<p>Tabla de frecuencias de una variable cuantitativa en escala
-ordinal</p>
-<pre>
-ev=c("1-Muy regular", "2-Regular", "3-Bueno", "4-Muy bueno","5-Excelente")     # etiquetas 
-califica=sample(ev, 1000, replace = TRUE, prob = c(0.04,0.08,0.12,0.43,0.32))  # datos simulados
-summarytools::freq(califica)                                                   # tabla   
-</pre>
+</div>
 </div>
 
 

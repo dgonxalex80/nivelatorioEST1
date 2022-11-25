@@ -137,12 +137,13 @@ En este caso se obtienen valores difentes para los dos grupos. El grupo 1 con un
 
 ### **Códigos R**
 
-```{r, eval=FALSE}
-max(x1)-min(x1)
-var(x1)
-sd(x1)
-sd(x1)/mean(x1)*100
-```
+
+<pre>
+max(x1)-min(x1)        # rango
+var(x1)                # varianza
+sd(x1)                 # desviación estandar
+sd(x1)/mean(x1)*100    # coeficiente de variación
+</pre>
 
  
 

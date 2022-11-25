@@ -194,7 +194,7 @@ plot(AirPassengers, main="Numero de pasajeros por mes", col="#034A94", lwd = 4, 
 
 ### **Códigos en R**
 
-```{r, eval=FALSE}
+<pre>
 # sumulación de datos
 x=rnorm(100,100,20)   
 y=rnorm(100,100,25)   
@@ -209,7 +209,7 @@ boxplot(x)           # diagrama de cajas
 plot(x,y)            # diagrama de dispersión 
 plot(t,y, type="l")  # linea de tiempo
 plot(density(x))     # diagrama de densidad
-```
+</pre>
     
 
 <br/><br/>

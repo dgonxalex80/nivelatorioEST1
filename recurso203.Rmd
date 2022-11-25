@@ -183,10 +183,3 @@ Este indicador corresponde al inverso de la media aritmética
 
 
 
-https://rpubs.com/cete/rdsa
-
-https://osoramirez.github.io/R_Para_Biologos/aprendiendo-estadistica.html#media-armonica
-
-
-
-

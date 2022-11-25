@@ -124,7 +124,7 @@ La función del paquete summarytools : `summarytools::descr(x)` permite obtener 
 
 </br>
 
-```{r}
+```{r, echo=FALSE}
 summarytools::descr(data1$value1)
 ```
 </br></br>

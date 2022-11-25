@@ -63,6 +63,7 @@ Se puede interpretar que las evaluaciones desfavorables (muy regular y regular) 
 Tambien es de utilidad realizar tablas cruzadas o de doble entrada que permite visualizar las frecuencias de dos variables cualitativas 
 
 </br></br>
+
 <center>**DISTRIBUCIÓN DE LA UBUCACION POR SEXO DE LOS CONTAGIADOS DE COVID-19 COLOMBIA**</center>
 ```{r, echo=FALSE, out.width="60%", fig.align = "center"}
 knitr::include_graphics("img/tabla3.png")
@@ -112,7 +113,8 @@ En R se puede utilizar la función `table(x)` para la elaboración de una tabla 
 El siguiente código de R permite descargar la base de datos Casos positivos de COVID-19 en Colombia directamente del portal de Datos Abiertos, revisar los valores de las variables : ubicación y sexo, arreglarlas pasando todos sus valores a minúsculas y corrigiendo el valor de los datos faltantes NA
 
 
-```{r, eval=FALSE}
+<pre>
+
 install.packages("tidyverse") #  instalacion de paquete para manejo de datos
 library(tidyverse)   # libreria de librerias util en el manejo de datos
 
@@ -151,25 +153,26 @@ summarytools::descr(Colombia22$edad)
 saveRDS(Colombia, file = "data/Colombia.RDS")  # guardar base con modificaciones
 
 table(Cali22_06$estado)
-```
+
+</pre>
 
 </br></br>
 
 Tabla de frecuencias de una variable cualitativa en escala nominal
 
-```{r, eval=FALSE}
+<pre>
 summarytools::freq(Colombia$ubicacion, cumul = FALSE)    # tabla
-```
+</pre>
 
 </br></br>
 
 Tabla de frecuencias de una variable cuantitativa en escala ordinal
 
-```{r, eval=FALSE}
+<pre>
 ev=c("1-Muy regular", "2-Regular", "3-Bueno", "4-Muy bueno","5-Excelente")     # etiquetas 
 califica=sample(ev, 1000, replace = TRUE, prob = c(0.04,0.08,0.12,0.43,0.32))  # datos simulados
 summarytools::freq(califica)                                                   # tabla   
-```
+</pre>
 
 
 

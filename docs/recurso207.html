@@ -342,7 +342,7 @@ y regular) representan un 13.16% y que entre muy bueno y exelente se
 encuentra el 67.83% de los evaluados (100-32.17)</p>
 <p>Tambien es de utilidad realizar tablas cruzadas o de doble entrada
 que permite visualizar las frecuencias de dos variables cualitativas</p>
-</br></br>
+<p></br></br></p>
 <center>
 <strong>DISTRIBUCIÓN DE LA UBUCACION POR SEXO DE LOS CONTAGIADOS DE
 COVID-19 COLOMBIA</strong>
@@ -433,31 +433,33 @@ positivos de COVID-19 en Colombia directamente del portal de Datos
 Abiertos, revisar los valores de las variables : ubicación y sexo,
 arreglarlas pasando todos sus valores a minúsculas y corrigiendo el
 valor de los datos faltantes NA</p>
-<pre class="r"><code>install.packages(&quot;tidyverse&quot;) #  instalacion de paquete para manejo de datos
+<pre>
+
+install.packages("tidyverse") #  instalacion de paquete para manejo de datos
 library(tidyverse)   # libreria de librerias util en el manejo de datos
 
-install.packages(&quot;RSocrata&quot;, dependencies = TRUE)   # instalación de paquete RSocrata
+install.packages("RSocrata", dependencies = TRUE)   # instalación de paquete RSocrata
 library(RSocrata)    # llamado de libreria
-token &lt;- &quot;zxMsD6eXc0zlEMryRGW87Hwrz&quot;  # token
-Colombia &lt;- read.socrata(&quot;https://www.datos.gov.co/resource/gt2j-8ykr.json&quot;, app_token = token) # lectura de manera remota 
+token <- "zxMsD6eXc0zlEMryRGW87Hwrz"  # token
+Colombia <- read.socrata("https://www.datos.gov.co/resource/gt2j-8ykr.json", app_token = token) # lectura de manera remota 
 
 # adecuación de la base de datos
 Colombia$edad=as.integer(Colombia$edad)  # convertir en entoro la variable edad
 Colombia$sexo=str_to_lower(Colombia$sexo) # pasar a minusculas todos valores de la variable sexo
 Colombia$estado=str_to_lower(Colombia$estado) # pasar a minusculas todos lo valores de la variable estado
-Colombia$estado[Colombia$estado==&quot;n/a&quot;]=NA   # cambiar el valor  n/a por NA - valores faltantes
+Colombia$estado[Colombia$estado=="n/a"]=NA   # cambiar el valor  n/a por NA - valores faltantes
 Colombia$recuperado=str_to_lower(Colombia$recuperado) # pasar a minusculas todos los valores de la variable recuperado
-Colombia$recuperado[Colombia$recuperado==&quot;n/a&quot;]=NA 
+Colombia$recuperado[Colombia$recuperado=="n/a"]=NA 
 
 # seleccion de bases
-Colombia22=subset(Colombia, Colombia$fecha_reporte_web&gt;=&quot;2022-01-01&quot;) # data del 2022
-Colombia21=subset(Colombia, Colombia$fecha_reporte_web&gt;=&quot;2021-01-01&quot; &amp; Colombia$fecha_reporte_web&lt;&quot;2022-01-01&quot;) # data de 2021
-Colombia20=subset(Colombia, Colombia$fecha_reporte_web&gt;=&quot;2020-01-01&quot; &amp; Colombia$fecha_reporte_web&lt;&quot;2021-01-01&quot;) # data de 2020
-Colombia22_09=subset(Colombia, Colombia$fecha_reporte_web&gt;=&quot;2022-09-01&quot;) # data de 2022 sep
+Colombia22=subset(Colombia, Colombia$fecha_reporte_web>="2022-01-01") # data del 2022
+Colombia21=subset(Colombia, Colombia$fecha_reporte_web>="2021-01-01" & Colombia$fecha_reporte_web<"2022-01-01") # data de 2021
+Colombia20=subset(Colombia, Colombia$fecha_reporte_web>="2020-01-01" & Colombia$fecha_reporte_web<"2021-01-01") # data de 2020
+Colombia22_09=subset(Colombia, Colombia$fecha_reporte_web>="2022-09-01") # data de 2022 sep
 
 
-Valle22=subset(Colombia22, departamento==&quot;76&quot;) # data del valle del cauca de 2022
-Cali22_09= subset(Colombia22_09, ciudad_municipio_nom==&quot;CALI&quot;) # data de cali de 2022
+Valle22=subset(Colombia22, departamento=="76") # data del valle del cauca de 2022
+Cali22_09= subset(Colombia22_09, ciudad_municipio_nom=="CALI") # data de cali de 2022
 
 table(Colombia22$estado)
 table(Colombia21$estado)
@@ -468,19 +470,25 @@ summarytools::freq(Colombia21$estado, cumul = F)
 summarytools::freq(Colombia20$estado, cumul = F)
 summarytools::descr(Colombia22$edad)
 
-saveRDS(Colombia, file = &quot;data/Colombia.RDS&quot;)  # guardar base con modificaciones
+saveRDS(Colombia, file = "data/Colombia.RDS")  # guardar base con modificaciones
 
-table(Cali22_06$estado)</code></pre>
+table(Cali22_06$estado)
+
+</pre>
 <p></br></br></p>
 <p>Tabla de frecuencias de una variable cualitativa en escala
 nominal</p>
-<pre class="r"><code>summarytools::freq(Colombia$ubicacion, cumul = FALSE)    # tabla</code></pre>
+<pre>
+summarytools::freq(Colombia$ubicacion, cumul = FALSE)    # tabla
+</pre>
 <p></br></br></p>
 <p>Tabla de frecuencias de una variable cuantitativa en escala
 ordinal</p>
-<pre class="r"><code>ev=c(&quot;1-Muy regular&quot;, &quot;2-Regular&quot;, &quot;3-Bueno&quot;, &quot;4-Muy bueno&quot;,&quot;5-Excelente&quot;)     # etiquetas 
+<pre>
+ev=c("1-Muy regular", "2-Regular", "3-Bueno", "4-Muy bueno","5-Excelente")     # etiquetas 
 califica=sample(ev, 1000, replace = TRUE, prob = c(0.04,0.08,0.12,0.43,0.32))  # datos simulados
-summarytools::freq(califica)                                                   # tabla   </code></pre>
+summarytools::freq(califica)                                                   # tabla   
+</pre>
 </div>
 
 

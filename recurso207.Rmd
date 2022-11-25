@@ -2,6 +2,7 @@
 title: <span style="color:#034a94"> **Tablas de frecuencia**</span>
 author: "Nivelatorio de Estadística"
 output: html_document
+font-family: Barlow
 ---
 
 ```{r setup, include=FALSE}
@@ -175,7 +176,7 @@ summarytools::freq(califica)                                                   #
 </pre>
 
 
-
+I am in <span style="font-family:'Barlow Semi Condensed', sans-serif; font-size:4em;">LOVE AEIOU   aeiou!</span>
 
 
 

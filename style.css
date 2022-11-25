@@ -14,3 +14,7 @@ border-color:#ffffff;
   background-color: #8acfe6;
 }
 
+body {
+    font-family: 'Barlow SemiCondensed', sans-serif;
+    font-size: 19px;
+}

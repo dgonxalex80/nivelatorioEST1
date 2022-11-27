@@ -69,6 +69,10 @@ Los siguientes datos correspnde a tiempos registrados por 70 atletas  dutante un
 
 El **PERCENTIL 30** ($P_{30}$) divide la muestra en dos partes. Por debajo de este valor está el 30% de los datos y por encima de el esta el 70% restante. En este grupo de datos $P_{30} = 48.96$ y está representado por el punto azul. En contexto uno de los atletas empleó un tiemo de 48.58 minutos. Primero que él llegó el 30% de los competidores, pero le ganó al 70% de los que participaron en la prueba. Esta información le permite compararse rapidamente con el grupo.
 
+ <br/>
+
+**Nota**: para facilitar la interpretación de los resultados los transformamos a tiempo minutos, segundos.
+
 ```{r, echo=FALSE, out.width="700%", fig.align = "center"}
 knitr::include_graphics("img/puntosP30.png")
 ```
@@ -126,13 +130,14 @@ En este caso los cuartiles $Q_1 = 46.72$, $Q_2 = 50.98$ y $Q_3 = 52.90$, estan r
 
 Los percentiles pueden ser calculados mediante la función  `quantile()` . El siguiente código ilustra la obtención de los cuartiles
 
-<pre>
+```{r, eval=FALSE}
 x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69, 48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19, 53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06, 54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24, 52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54, 52.72, 44.82, 52.49, 58.43, 52.91)
 
 quantile(x, c(0.25,0.50,0.75))
+```
+
+<pre class="my-pre">
+    25%             50%             75% 
+48.4300         50.9800         52.8975 
 </pre>
-
-
-
-
 

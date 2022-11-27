@@ -139,14 +139,20 @@ En este caso se obtienen valores difentes para los dos grupos. El grupo 1 con un
 ### **Códigos R**
 
 
-<pre>
+
+```{r, eval=FALSE}
 max(x1)-min(x1)        # rango
 var(x1)                # varianza
 sd(x1)                 # desviación estandar
 sd(x1)/mean(x1)*100    # coeficiente de variación
-</pre>
+```
 
- 
+<pre class="my-pre">
+[1] 16
+[1] 16.62069
+[1] 4.076848
+[1] 14.56017  
+</pre> 
 
 
 

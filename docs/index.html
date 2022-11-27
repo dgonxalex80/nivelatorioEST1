@@ -310,26 +310,34 @@ procesamiento (en nuestro caso el lenguaje <strong>R</strong>).</p>
 <p>Inicialmente se examinan las caracteristicas de las variables que
 conforman la data.</p>
 <p>Las variables se puede clasificar como :</p>
+<div>
 <ul>
 <li><p><strong>Cualitativas</strong> : corresponde a caracteristicas que
-pueden tomar como valores palabras</p></li>
+pueden tomar como valores palabras. Pueden ser medidas en escala nominal
+u ordinal</p></li>
 <li><p><strong>Cuantitativas</strong> : corresponden a valores numéricos
-que representan una caracteristica del objeto o individuo observado. A
-su vez se pueden clasificar como :</p>
+que representan una caracteristica del objeto o individuo observado.
+Pueden tener escala de intervalo o de razón. A su vez estas variables se
+pueden clasificar como :</p>
 <ul>
 <li><p><strong>Discretas</strong> : se caracteriza por que están
-relacionadas con el conteo (número de…)</p></li>
+relacionadas con el conteo y por lo general empiezan por : número
+de…</p></li>
 <li><p><strong>Continuas</strong> : estas variables se originan en la
-medición y pueden tomar cualquier valor real</p></li>
+medición y pueden tomar cualquier valor real<br />
+</p></li>
 </ul></li>
 </ul>
+</div>
 <p></br></p>
+<div>
 <p><strong>Nota</strong> : El termino <em>variable</em> en Estadística
 se refiere a una caracteristica de interés que permite una agrupación o
 analisis a diferencia de la interpretación que se le pueda dar en el
 área de sistemas, donde son de interés caracteristicas como id, número
 de cedula, dirección, nombre del representante legal entre otros. En
 adelante se entenderán como variables las primeras.</p>
+</div>
 <p></br></br></p>
 </div>
 <div id="tipos-de-escala" class="section level3">
@@ -553,11 +561,13 @@ indicadores. Al aplicar la función a un grupo de 70 valores
 correspondientes a los tiempo gastados por atletas en recorrer 10.5
 kilómetros.</p>
 <p></br></p>
-<pre><code>Descriptive Statistics  
-value  
+<pre class="r"><code>summarytools::descr(data1$value1)</code></pre>
+<pre>
+Descriptive Statistics  
+data1$value1  
 N: 70  
 
-                     value
+                    value1
 ----------------- --------
              Mean    50.80
           Std.Dev     4.62
@@ -573,7 +583,8 @@ N: 70
       SE.Skewness     0.29
          Kurtosis     0.64
           N.Valid    70.00
-        Pct.Valid   100.00</code></pre>
+        Pct.Valid   100.00
+</pre>
 <p></br></br></p>
 <p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Los datos indican que en promedio los atletas emplearon 51 minutos,

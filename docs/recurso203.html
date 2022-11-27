@@ -304,10 +304,11 @@ conjunto de datos y dividirlos por el número de datos</p>
 <p><span class="math display">\[\bar{x}= \frac{1}{n} \sum_{i=1}^{n}
 x_{i}\]</span></p>
 <pre class="r"><code>x=c(1,2,3,4,5,6,7,8,9,10) # vector de numeros
-mean(x)  # funcion media</code></pre>
-<pre><code>[1] 5.5</code></pre>
-<pre class="r"><code>sum(x)/length(x) # calculo de la media</code></pre>
-<pre><code>[1] 5.5</code></pre>
+mean(x)  # funcion media
+sum(x)/length(x) # calculo de la media</code></pre>
+<pre class="my-pre">
+[1]  5.5
+</pre>
 <p><br/></p>
 <p>Sus principales propiedades son:</p>
 <ul>
@@ -337,8 +338,10 @@ class="math inline">\(\bar{z}=a\bar{x}+b\bar{y}\)</span>.</p></li>
 grupo de 32 autos observados en el dataset <code>mtcars</code> es de
 <span class="math inline">\(20.09\)</span> mpg</p>
 <pre class="r"><code>mean(mtcars$mpg,     # variable mpg de la data mtcars
-     na.rm = TRUE)   # parametro util cuando se tiene datos faltantes :  NA </code></pre>
-<pre><code>[1] 20.09062</code></pre>
+     na.rm = TRUE)   # parametro util cuando se tiene datos faltantes :</code></pre>
+<pre class="my-pre">
+[1]  20.09062     
+</pre>
 <p><br/> <br/></p>
 </div>
 <div id="mediana" class="section level3">
@@ -354,8 +357,10 @@ de igual proporción (50% : 50%). Es decir que corresponde a:</p>
 <p><br/> <br/></p>
 <p><strong>Ejemplo 2</strong></p>
 <p><br/></p>
-<pre class="r"><code>median(mtcars$mpg)</code></pre>
-<pre><code>[1] 19.2</code></pre>
+<pre class="r"><code>median(cars$speed)</code></pre>
+<pre class="my-pre">
+[1] 15
+</pre>
 <p><br/> <br/></p>
 </div>
 <div id="moda" class="section level3">
@@ -379,7 +384,9 @@ indicador de le llama media truncada al 10% (<span
 class="math inline">\(\bar{x}_{_{0.10}}\)</span>)</p>
 <p><br/> <br/></p>
 <pre class="r"><code>mean(mtcars$mpg, na.rm = TRUE, trim = 0.10)</code></pre>
-<pre><code>[1] 19.69615</code></pre>
+<pre class="my-pre">
+[1] 19.69615
+</pre>
 <p><br/> <br/></p>
 </div>
 <div id="rango-medio" class="section level3">
@@ -388,7 +395,9 @@ class="math inline">\(\bar{x}_{_{0.10}}\)</span>)</p>
 <p><span
 class="math display">\[\frac{1}{2}\big(max(x)+min(x)\big)\]</span></p>
 <pre class="r"><code>(max(mtcars$mpg,na.rm = TRUE)+min(mtcars$mpg,na.rm = TRUE))/2</code></pre>
-<pre><code>[1] 22.15</code></pre>
+<pre class="my-pre">
+[1] 22.15
+</pre>
 <p>La diferencia entre el equipo con mas poder ofencivo y el equipo como
 menor valor es de 1.87 puntos.</p>
 <p><br/> <br/></p>
@@ -409,29 +418,42 @@ extrae la raíz n-esima.</p>
 <p>El crecimiento de la población en Colombia durante las ultimas
 decadas presenta la siguiente tendencia :</p>
 <pre class="r"><code># install.packages(psych)
-library(psych)</code></pre>
-<pre><code>
-Attaching package: &#39;psych&#39;</code></pre>
-<pre><code>The following objects are masked from &#39;package:ggplot2&#39;:
-
-    %+%, alpha</code></pre>
-<pre class="r"><code>x = c(0.025,0.022,0.02,0.016,0.011,0.007)
+library(psych)
+x = c(0.025,0.022,0.02,0.016,0.011,0.007)
 
 psych::geometric.mean(x)</code></pre>
-<pre><code>[1] 0.01544071</code></pre>
+<pre class="my-pre">
+[1] 0.01544071
+</pre>
 <p><br/></p>
 <p>Lo cual indica que a población colombiana está creciendo a una tasa
 del 1.5% durante las últimas 5 decadas</p>
-<p><a
-href="https://osoramirez.github.io/R_Para_Biologos/aprendiendo-estadistica.html"
-class="uri">https://osoramirez.github.io/R_Para_Biologos/aprendiendo-estadistica.html</a></p>
+<p><br/> <br/></p>
 </div>
 <div id="media-armónica" class="section level3">
 <h3><strong>Media armónica</strong></h3>
 <p><span class="math display">\[H =
 \dfrac{1}{\frac{1}{x_{1}}+\frac{1}{x_{2}}+ ... +
 \frac{1}{x_{n}}}\]</span></p>
-<p>Este indicador corresponde al inverso de la media aritmética</p>
+<p>Este indicador corresponde al inverso de la media aritmética, se
+utiliza para el calculo de velocidades medias, tiempos especialmente en
+el area de la electrónica.</p>
+<p><br/><br/></p>
+<p><strong>Ejemplo 4</strong></p>
+<p><br/></p>
+<p>Una empresa de transporte desea estimar la media de tiempo que se
+pueden tardar sus autos en un viaje de una ciudad A a una ciudad B. Para
+haciona el tiempo empleado por un grupo de 3 de sus vehiculos. Los
+tiempos registrados con respectivamente son 4.25, 3.75 y 5.25 horas (
+tiempos equivalentes en escala decimal)</p>
+<p>Para calcular la velocidad promedio utilizamos la media armónica
+tenemos:</p>
+<pre class="r"><code>library(psych)
+x=c(4.25, 3.75, 5.25)
+harmonic.mean(x,na.rm=TRUE,zero=TRUE)</code></pre>
+<pre class="my-pre">
+[1] 4.332524
+</pre>
 </div>
 
 

@@ -343,6 +343,17 @@ max(Colombia22_11$edad)
 summarytools::descr(Colombia22_11$edad)</code></pre>
 <p><br/><br/></p>
 <p><img src="img/paso7.png" width="18%" style="display: block; margin: auto auto auto 0;" /></p>
+<pre class="r"><code>t1=table(Colombia$sexo)
+pie(t1)
+
+t2=table(Colombia$sexo,Colombia$ubicacion)
+barplot(t2, las=1)
+
+hist(Colombia22_11$edad, las=1, xlab = &quot;edad (años)&quot;, ylab = &quot;frecuencia&quot;, 
+     main = &quot;Edad de personas contagiadas Covid19 Colombia- Nov 2022&quot; )
+
+boxplot(Colombia$edad, horizontal = TRUE,
+        main = &quot;Edad de personas contagiadas Covid19 Colombia&quot;)</code></pre>
 <p><br/><br/></p>
 <p><img src="img/paso8.png" width="20%" style="display: block; margin: auto auto auto 0;" /></p>
 <pre class="r"><code>Finalmente realiza un análisis de los resultados obtenidos</code></pre>

@@ -117,6 +117,18 @@ knitr::include_graphics("img/paso7.png")
 ```
 
 ```{r, eval=FALSE}
+t1=table(Colombia$sexo)
+pie(t1)
+
+t2=table(Colombia$sexo,Colombia$ubicacion)
+barplot(t2, las=1)
+
+hist(Colombia22_11$edad, las=1, xlab = "edad (años)", ylab = "frecuencia", 
+     main = "Edad de personas contagiadas Covid19 Colombia- Nov 2022" )
+
+boxplot(Colombia$edad, horizontal = TRUE,
+        main = "Edad de personas contagiadas Covid19 Colombia")
+
 
 ```
 

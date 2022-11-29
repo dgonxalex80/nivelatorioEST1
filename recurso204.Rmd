@@ -44,6 +44,7 @@ Hace falta otro indicador que nos oriente sobre  que tan dispersos son los datos
 ### **Rango**
 
 </br>
+
 El rango es el indicador de dispersión más facil de calcular, pues se obtiene restando los valores extremos de los datos: 
 
 $r = max(x) - min(x)$
@@ -56,6 +57,7 @@ En caso de los dos grupos:
 |$r = 16$ años                 |$r = 38$ años                      |  
 |                             |                                    |
 
+</br>
 
 Es importante hacer notar que si además de la media conocemos tambien un indicador de dispersión, en este caso el rango, podemos caracterizar un poco más a los grupos. El rango es un indicador muy útil cuando se deben realizar cálculos rápidos.
 
@@ -88,6 +90,8 @@ Se podría afirmar que la varianza es un promedio de los cuadrados de las difere
 
 + Si $z_{i} = a x_{i} + b y_{i}$, entonces $s_{z}^{2}$ = $a^{2}s_{x}^{2}$ + $b^{2}s_{y}^{2}$ + $2ab$ $cov(xy)$
 
+</br></br>
+
 El problema de la varianza es su **interpretación**, pues sus unidades quedan al cuadrado y en la mayoría de los casos no es posible interpretar los resultados. Por esta razón se optó por utilizar otra mediada de dispersión calculada a partir de la raiz cuadrada de la varianza.
 
  <br/> <br/>
@@ -110,6 +114,7 @@ $$s=\sqrt{s^{2}}$$
 |$s^{2} = 16.62$ años$^2$     |$s^{2} = 116.89$ años$^2$           |  
 |$s  = 4.16$ años             |$s = 10.81$ años                    | 
 
+</br>
 
 Aunque la desviación estándar reduce el problema mencionado anteriormente debido a tener las mismas unidades de la variable, es útil para comparación de dos grupos con igual media.  En caso de que las medias sean diferentes es dificil poder realizar las comparaciones.
 
@@ -131,6 +136,8 @@ Existen diferentes reglas empíricas para la interpretación del coeficiente de 
 |:----------------------------|:-----------------------------------|
 |$\bar{x} = 28$ años          |$\bar{x} = 28$ años                 |
 |$CV  = 14.56$ %              |$CV = 38.61$ %                      |  
+
+</br>
 
 En este caso se obtienen valores difentes para los dos grupos. El grupo 1 con un valor inferior a 20%, que indica homogeneidad y el grupo 2 con un valor superior que indica heterogeneidad
 

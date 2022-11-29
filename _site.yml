@@ -15,6 +15,8 @@ navbar:
       href: recurso205.html
     - text: "Repr.gráfica"
       href: recurso206.html
+    - text: "Actividad 1"
+      href: actividad1.html
 output:
   html_document:
     css: style.css

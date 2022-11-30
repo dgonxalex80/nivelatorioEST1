@@ -31,7 +31,7 @@ Los indicadores de forma permiten adicionar elementos a la interpretación de lo
 
 <br/>
 
-Se mide a través del coeficiente de curtosis que mide cuan **puntiaguda** es una distribución respecto a un patron estandar que es la curva de la distribución normal. Esta caracteristica está relacionada directamente con la dispersión
+Se mide a través del coeficiente de curtosis que mide cuan **puntiaguda** es una distribución respecto a un patrón estándar que es la curva de la distribución normal. Esta característica está relacionada directamente con la dispersión
 
 De acuerdo con su valor, la puntudez de los datos puede clasificarse en tres grupos:
 

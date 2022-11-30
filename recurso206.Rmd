@@ -28,7 +28,7 @@ Wikipedia
 
 <br/><br/>
 
-Elegir el gráfico adecuado es muy importante, pues existen diferentes alternativos  y se debe escoger el apropiado para representar los datos. El tipo de dato determina el tipo de grafico asi:
+Elegir el gráfico adecuado es muy importante, pues existen diferentes alternativos  y se debe escoger el apropiado para representar los datos. El tipo de dato determina el tipo de grafico así:
 
 |Tipo de variable  | Escala          | Gráfico                                   |
 |:-----------------|:----------------|:------------------------------------------|
@@ -68,7 +68,7 @@ pct=round(t/sum(t)*100)
 labs=paste(lbs, pct)
 labs=paste(labs, "%", sep = " ") 
 pie(t, labels=labs, main=" Participación eventos Medio Universitario",
-    col = paleta4)
+col = paleta4)
 ```
 
 <br/><br/>
@@ -97,7 +97,7 @@ Este diagrama se emplea para representar dos variables cualitativas que pueden s
 ```{r, fig.height=5.5, echo=FALSE}
 counts <- table(mtcars$vs, mtcars$gear); rownames(counts)=c("Montor en linea", "Motor en V")
 barplot(counts, main="Numero de cambios adelante por Tipo de motor",  xlab="Número de cambios adelante ",col=c("#FFBF69","#034A94"),
-  legend = rownames(counts))
+legend = rownames(counts))
 ```
 
 <br/><br/><br/>
@@ -144,11 +144,11 @@ Este diagrama correspone a un contorno suavizado del histograma que permite visu
 ```{r, fig.height=5, echo=FALSE}
 nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
 plot(density(nf), main="Distribucion de las notas de Estadística", col="#034A94", lwd=4, las=1,
-     xlab="nota", ylab="densidad")
+xlab="nota", ylab="densidad")
 ```
 
 <br/><br/>
-  
+
 ### **Diagrama de cajas**
 
 <br/>
@@ -161,8 +161,8 @@ nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 
 cc=c(20, 10, 20, 20, 20, 20, 20, 20, 20, 30, 20, 20, 20, 10, 30, 20, 20, 30, 20, 30, 30, 20, 10, 30, 20, 20, 30, 30, 10, 20, 10, 20, 20, 20, 10, 20, 10, 20, 20, 30, 30, 30, 10, 30, 20, 20, 20, 20, 20, 20, 10, 20, 30, 30, 10, 10, 10, 20, 10, 20, 10, 30, 20, 10, 20, 30, 10, 30, 30, 30, 20, 30, 30, 30, 30, 30, 30, 20, 10, 30, 10, 20, 20, 10, 20, 20, 20, 20, 10, 20)
 labs=c("Grupo 1","Grupo 2","Grupo 3")
 boxplot((nf~cc),main="Nota final Estadística", 
-        col=c("#2C5990","#5B84C4","#F98125"), names=labs, xlab = "grupo", ylab = "nota", 
-        las=1)
+col=c("#2C5990","#5B84C4","#F98125"), names=labs, xlab = "grupo", ylab = "nota", 
+las=1)
 abline(h=3, col="#960200", lwd=1)
 abline(h=4, col="#447270", lwd=1)
 ```
@@ -188,7 +188,7 @@ grid()
 
 ```{r, fig.height=5, echo=FALSE}
 plot(AirPassengers, main="Numero de pasajeros por mes", col="#034A94", lwd = 4, las=1, 
-     ylab="número de pasajeros", xlab="año")
+ylab="número de pasajeros", xlab="año")
 ```
 
 <br/><br/><br/>
@@ -211,6 +211,6 @@ plot(x,y)            # diagrama de dispersión
 plot(t,y, type="l")  # linea de tiempo
 plot(density(x))     # diagrama de densidad
 </pre>
-    
+
 
 <br/><br/>

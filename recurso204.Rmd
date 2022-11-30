@@ -35,8 +35,8 @@ knitr::include_graphics("img/grupos12.png")
 
 Hace falta otro indicador que nos oriente sobre  que tan dispersos son los datos con el fin de saber si se trata de grupos parecidos tanto en centro como en variabilidad. Esta necesidad la suplen los `indicadores de dispersión`.
 
- <br/> <br/>
- 
+<br/> <br/>
+
 ## **Indicadores de Dispersión**
 
 </br>
@@ -59,10 +59,10 @@ En caso de los dos grupos:
 
 </br>
 
-Es importante hacer notar que si además de la media conocemos tambien un indicador de dispersión, en este caso el rango, podemos caracterizar un poco más a los grupos. El rango es un indicador muy útil cuando se deben realizar cálculos rápidos.
+Es importante hacer notar que si además de la media conocemos también un indicador de dispersión, en este caso el rango, podemos caracterizar un poco más a los grupos. El rango es un indicador muy útil cuando se deben realizar cálculos rápidos.
 
- <br/> <br/>
- 
+<br/> <br/>
+
 ### **Varianza**
 
 </br>
@@ -74,8 +74,8 @@ $$s^{2}=\frac{1}{n-1} \sum_{i=1}^{n} (x_{i}-\bar{x})^{2}$$
 
 Se podría afirmar que la varianza es un promedio de los cuadrados de las diferencias entre los datos  y su media
 
- <br/> <br/>
- 
+<br/> <br/>
+
 #### **Propiedades de la varianza**
 
 + $s^{2} = \frac{1}{n} \sum x_{i}^{2}- (\bar{x})^{2}$ 
@@ -92,10 +92,10 @@ Se podría afirmar que la varianza es un promedio de los cuadrados de las difere
 
 </br></br>
 
-El problema de la varianza es su **interpretación**, pues sus unidades quedan al cuadrado y en la mayoría de los casos no es posible interpretar los resultados. Por esta razón se optó por utilizar otra mediada de dispersión calculada a partir de la raiz cuadrada de la varianza.
+El problema de la varianza es su **interpretación**, pues sus unidades quedan al cuadrado y en la mayoría de los casos no es posible interpretar los resultados. Por esta razón se optó por utilizar otra mediada de dispersión calculada a partir de la raíz cuadrada de la varianza.
 
- <br/> <br/>
- 
+<br/> <br/>
+
 ### **Desviación estándar** 
 
 </br>
@@ -116,15 +116,15 @@ $$s=\sqrt{s^{2}}$$
 
 </br>
 
-Aunque la desviación estándar reduce el problema mencionado anteriormente debido a tener las mismas unidades de la variable, es útil para comparación de dos grupos con igual media.  En caso de que las medias sean diferentes es dificil poder realizar las comparaciones.
+Aunque la desviación estándar reduce el problema mencionado anteriormente debido a tener las mismas unidades de la variable, es útil para comparación de dos grupos con igual media.  En caso de que las medias sean diferentes es difícil poder realizar las comparaciones.
 
- <br/> <br/>
- 
+<br/> <br/>
+
 ### **Coeficiente de variación**
 
 </br>
 
-Por último, el coeficiente de variación es un indicador adimencional que indica que tan grande o que tan pequeña es la desviación estándar con respecto a su media en porcentaje y de esta manera podemos resolver el problema de la dispersión para cualquier grupo de datos
+Por último, el coeficiente de variación es un indicador adimensional que indica que tan grande o que tan pequeña es la desviación estándar con respecto a su media en porcentaje y de esta manera podemos resolver el problema de la dispersión para cualquier grupo de datos
 
 $$CV= \dfrac{s}{\bar{x}} \times 100 \% $$
 
@@ -139,7 +139,7 @@ Existen diferentes reglas empíricas para la interpretación del coeficiente de 
 
 </br>
 
-En este caso se obtienen valores difentes para los dos grupos. El grupo 1 con un valor inferior a 20%, que indica homogeneidad y el grupo 2 con un valor superior que indica heterogeneidad
+En este caso se obtienen valores diferentes para los dos grupos. El grupo 1 con un valor inferior a 20%, que indica homogeneidad y el grupo 2 con un valor superior que indica heterogeneidad
 
 </br></br></br>
 
@@ -150,7 +150,7 @@ En este caso se obtienen valores difentes para los dos grupos. El grupo 1 con un
 ```{r, eval=FALSE}
 max(x1)-min(x1)        # rango
 var(x1)                # varianza
-sd(x1)                 # desviación estandar
+sd(x1)                 # desviación estándar
 sd(x1)/mean(x1)*100    # coeficiente de variación
 ```
 

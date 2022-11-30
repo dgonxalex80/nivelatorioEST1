@@ -283,7 +283,7 @@ $(document).ready(function () {
 
 <p><br/> <br/></p>
 <p>Una de las dificultades que se presentan al tratar de interpretar los
-valores de una variables es el de poder la resumur en uno pocos
+valores de una variables es el de poder la resumir en uno pocos
 indicadores que los represente, para lo cual es necesario utilizar
 indicadores que los caractericen.</p>
 <p><img src="img/puntos1.png" width="100%" style="display: block; margin: auto;" /></p>
@@ -292,7 +292,7 @@ indicadores que los caractericen.</p>
 frecuencia identificando el valor que más se repite, indicador que se
 denomina <strong>MODA</strong>.</p>
 <p>Para las variable cuantitativas existen una serie de indicadores que
-caracterisan y facilitan su analisis como son :</p>
+caracterizan y facilitan su análisis como son :</p>
 <ul>
 <li>Indicadores de posición</li>
 <li>Indicadores de centro</li>
@@ -309,11 +309,10 @@ class="uri">https://pixabay.com/</a>
 </center>
 <p><br/> <br/></p>
 <p>La posición final de un atleta en una competencia indica cual es su
-nivel frente a un grupo de competidores, de igual manera los
-indicadoreds de posición hacen referencia a la ubicación de un valor
-frente al grupo. Además del ganador y el último existen un gran número
-de valores intermedio que nos ayudan en el analisis de un grupo de
-datos</p>
+nivel frente a un grupo de competidores, de igual manera los indicadores
+de posición hacen referencia a la ubicación de un valor frente al grupo.
+Además del ganador y el último existen un gran número de valores
+intermedio que nos ayudan en el análisis de un grupo de datos</p>
 <p><br/></p>
 <p>Los <strong>PERCENTILES</strong> corresponden a 99 valores que
 dividen los datos en cien partes de igual porcentaje (<span
@@ -325,9 +324,9 @@ class="math inline">\(\cdots\)</span> ,<span
 class="math inline">\(P_{99}\)</span>).</p>
 <p><br/></p>
 <p><strong>Ejemplo 1</strong></p>
-<p>Los siguientes datos correspnde a tiempos registrados por 70 atletas
-dutante una carrera de 10.5 kilómetros obtenidos de manera simulada que
-nos serviran de apoyo para visualizar y entender los indicadores de
+<p>Los siguientes datos corresponde a tiempos registrados por 70 atletas
+durante una carrera de 10.5 kilómetros obtenidos de manera simulada que
+nos servirán de apoyo para visualizar y entender los indicadores de
 posición.</p>
 <p><br/></p>
 <p>El <strong>PERCENTIL 30</strong> (<span
@@ -335,13 +334,13 @@ class="math inline">\(P_{30}\)</span>) divide la muestra en dos partes.
 Por debajo de este valor está el 30% de los datos y por encima de el
 esta el 70% restante. En este grupo de datos <span
 class="math inline">\(P_{30} = 48.96\)</span> y está representado por el
-punto azul. En contexto uno de los atletas empleó un tiemo de 48.58
+punto azul. En contexto uno de los atletas empleó un tiempo de 48.58
 minutos. Primero que él llegó el 30% de los competidores, pero le ganó
 al 70% de los que participaron en la prueba. Esta información le permite
-compararse rapidamente con el grupo.</p>
+compararse rápidamente con el grupo.</p>
 <p><br/></p>
 <p><strong>Nota</strong>: para facilitar la interpretación de los
-resultados los transformamos a tiempo minutos, segundos.</p>
+resultados se transforman a minutos.segundos.</p>
 <p><img src="img/puntosP30.png" width="700%" style="display: block; margin: auto;" /></p>
 <p></br></p>
 <p>El <strong>PERCENTIL 75</strong> (<span
@@ -382,20 +381,20 @@ números que dividen la muestra en cuatro partes de igual porcentaje
 (<span class="math inline">\(Q_{1}\)</span>, <span
 class="math inline">\(Q_{2}\)</span>, <span
 class="math inline">\(Q_{3}\)</span>), con los cuales se construye los
-diagrámas de cajas que permiten poder detectar datos atípicos</p>
+diagramas de cajas que permiten poder detectar datos atípicos</p>
 <p></br><br/></p>
 <p><strong>Ejemplo 3</strong></p>
 <p></br></p>
 <p><img src="img/puntosQ1Q2Q3.png" width="700%" style="display: block; margin: auto;" /></p>
 <p>En este caso los cuartiles <span class="math inline">\(Q_1 =
 46.72\)</span>, <span class="math inline">\(Q_2 = 50.98\)</span> y <span
-class="math inline">\(Q_3 = 52.90\)</span>, estan representados por las
+class="math inline">\(Q_3 = 52.90\)</span>, están representados por las
 lineas verticales que conforman la caja. La linea central de la caja
 representa a <span class="math inline">\(Q_{2}\)</span> y divide los
 datos en dos parte de igual porcentaje (50% | 50%). Los puntos azules
 ubicados a derecha del gráfico representan datos atípicos que deben ser
 objeto de estudio por separado para determinar sus causas en unos casos
-y de exclusión en otros casos para evitar que causen desvios en los
+y de exclusión en otros casos para evitar que causen desvíos en los
 indicadores</p>
 <p><br/> <br/></p>
 <p><strong>Código R</strong></p>
@@ -406,7 +405,7 @@ los cuartiles</p>
 
 quantile(x, c(0.25,0.50,0.75))</code></pre>
 <pre class="my-pre">
-    25%             50%             75% 
+25%             50%             75% 
 48.4300         50.9800         52.8975 
 </pre>
 

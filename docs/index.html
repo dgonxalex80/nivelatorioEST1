@@ -286,9 +286,8 @@ $(document).ready(function () {
 El proceso de manejo de datos comprende una serie de etapas que permiten
 cumplir los objetivos trazados en una investigación o proyecto de
 Ciencia de Datos como lo menciona Antonio Vazquez Brust en su libro
-Ciencia de Datos para gente sociable. Es necesario para realizar este
-proceso recordar o incorporar conceptos de Estadística que hacen posible
-que se realicen las etapas descritas sin inconvenientes.
+<em>Ciencia de Datos para gente sociable</em>. Es necesario para
+realizar este proceso recordar o incorporar conceptos de Estadística.
 </p>
 <p></br></br></p>
 <img src="img/procesodatos.png" width="60%" style="display: block; margin: auto;" />
@@ -298,45 +297,43 @@ href="https://bitsandbricks.github.io/ciencia_de_datos_gente_sociable/index.html
 de Datos para Gente Sociable</a>
 </center>
 <p></br></br></p>
-<p>Debemos relacionar los datos con un proposito (objetivos) que nos
-permita proporner soluciones o metodologías y así plantear
+<p>Debemos relacionar los datos con un propósito (objetivos) que nos
+permita proponer soluciones o metodologías y así plantear
 recomendaciones a un problema en particular, a partir de información
 estructurada en una bases de datos, conformada por variables (columnas)
 y registros (filas).</p>
 <p>En número de registros por lo regular de gran tamaño, hace necesaria
-la utilización de un herramientas computacionales para su analisis y
+la utilización de un herramientas computacionales para su análisis y
 procesamiento (en nuestro caso el lenguaje <strong>R</strong>).</p>
 <p></br></br></p>
 <div id="tipos-de-variables" class="section level3">
 <h3><strong>Tipos de variables</strong></h3>
-<p>Inicialmente se examinan las caracteristicas de las variables que
+<p>Inicialmente se examinan las características de las variables que
 conforman la data.</p>
 <p>Las variables se puede clasificar como :</p>
 <div>
 <ul>
-<li><p><strong>Cualitativas</strong> : corresponde a caracteristicas que
+<li><p><strong>Cualitativas</strong> : corresponde a características que
 pueden tomar como valores palabras. Pueden ser medidas en escala nominal
 u ordinal</p></li>
 <li><p><strong>Cuantitativas</strong> : corresponden a valores numéricos
-que representan una caracteristica del objeto o individuo observado.
+que representan una característica del objeto o individuo observado.
 Pueden tener escala de intervalo o de razón. A su vez estas variables se
-pueden clasificar como :</p>
-<ul>
+pueden clasificar como :</p></li>
 <li><p><strong>Discretas</strong> : se caracteriza por que están
 relacionadas con el conteo y por lo general empiezan por : número
 de…</p></li>
 <li><p><strong>Continuas</strong> : estas variables se originan en la
 medición y pueden tomar cualquier valor real<br />
 </p></li>
-</ul></li>
 </ul>
 </div>
 <p></br></p>
 <div>
 <p><strong>Nota</strong> : El termino <em>variable</em> en Estadística
-se refiere a una caracteristica de interés que permite una agrupación o
-analisis a diferencia de la interpretación que se le pueda dar en el
-área de sistemas, donde son de interés caracteristicas como id, número
+se refiere a una característica de interés que permite una agrupación o
+análisis a diferencia de la interpretación que se le pueda dar en el
+área de sistemas, donde son de interés características como id, número
 de cedula, dirección, nombre del representante legal entre otros. En
 adelante se entenderán como variables las primeras.</p>
 </div>
@@ -365,7 +362,7 @@ las variables, es decir el tipo de escala:</p>
 <tr class="odd">
 <td align="left">Cualitativa</td>
 <td align="left">nominal (no existe orden)</td>
-<td align="left">estado civil ( soltero, casdado, separado, viodo, unión
+<td align="left">estado civil ( soltero, casado, separado, viudo, unión
 libre)</td>
 </tr>
 <tr class="even">
@@ -393,12 +390,12 @@ muy regular)</td>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">nivel de satisfación (baja, media, alta)</td>
+<td align="left">nivel de satisfacción (baja, media, alta)</td>
 </tr>
 <tr class="odd">
 <td align="left">Cuantitativas</td>
 <td align="left">intervalo</td>
-<td align="left">temperatura (centigrados, kelvin, Fahrenheit)</td>
+<td align="left">temperatura (centígrados, kelvin, Fahrenheit)</td>
 </tr>
 <tr class="even">
 <td align="left">(medición)</td>
@@ -413,7 +410,7 @@ muy regular)</td>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">tiempo de ejeción</td>
+<td align="left">tiempo de ejecución</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -511,13 +508,13 @@ representación</p>
 <tr class="even">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">desviación estandar</td>
+<td align="left">desviación estándar</td>
 <td align="left">diagrama de radar</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">coeficiende de variación</td>
+<td align="left">coeficiente de variación</td>
 <td align="left">gráfico likert</td>
 </tr>
 <tr class="even">
@@ -529,7 +526,7 @@ representación</p>
 <tr class="odd">
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">coeficiende de asimetria</td>
+<td align="left">coeficiente de asimetria</td>
 <td align="left">diagramas de dispersión</td>
 </tr>
 <tr class="even">
@@ -542,11 +539,11 @@ representación</p>
 </table>
 <p></br></br></p>
 <p>En esta unidad se tratará de manera general los conceptos principales
-relacionados con el analisis descriptivo de datos, basados en las
-principales caracteristicas de los datos, tanto para variables
+relacionados con el análisis descriptivo de datos, basados en las
+principales características de los datos, tanto para variables
 cualitativas como para variables cuantitativas.</p>
 <p>El análisis de las variables cuantitativas se centra en la
-contrucción de tablas de frecuencia y su prepresentación a traves de
+construcción de tablas de frecuencia y su representación a través de
 gráficos de tortas (nominales) y de barras (ordinales), mientras que en
 el caso de las variables cualitativas nos centraremos en indicadores de
 posición, centro, variabilidad o de dispersión y de forma, además de su
@@ -569,30 +566,30 @@ Descriptive Statistics
 data1$value1  
 N: 70  
 
-                    value1
+value1
 ----------------- --------
-             Mean    50.80
-          Std.Dev     4.62
-              Min    42.30
-               Q1    48.42
-           Median    50.98
-               Q3    52.91
-              Max    64.44
-              MAD     3.64
-              IQR     4.47
-               CV     0.09
-         Skewness     0.60
-      SE.Skewness     0.29
-         Kurtosis     0.64
-          N.Valid    70.00
-        Pct.Valid   100.00
+Mean    50.80
+Std.Dev     4.62
+Min    42.30
+Q1    48.42
+Median    50.98
+Q3    52.91
+Max    64.44
+MAD     3.64
+IQR     4.47
+CV     0.09
+Skewness     0.60
+SE.Skewness     0.29
+Kurtosis     0.64
+N.Valid    70.00
+Pct.Valid   100.00
 </pre>
 <p></br></br></p>
 <p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Los datos indican que en promedio los atletas emplearon 51 minutos,
 con un tiempo mínimo para el ganador de 43 minutos y un máximo de 64.
-Los datos presenta un forma simetrica concentra un gran número de
-atletas en un rango en tre 45 y 55 minutos. En cuanto su dispersión
+Los datos presenta un forma simétrica concentra un gran número de
+atletas en un rango entre 45 y 55 minutos. En cuanto su dispersión
 presentan un 9% de coeficiente de variación que los califica como
 homogeneos.</p>
 </div>

@@ -286,19 +286,19 @@ $(document).ready(function () {
 <p>Una de las características principales están constituido por los
 indicadores de centro, dentro de ellos se destacan :</p>
 <ul>
-<li>Media</li>
+<li>Media aritmética</li>
 <li>Mediana</li>
 <li>Moda</li>
-<li>Rango medio</li>
 <li>Media truncada</li>
+<li>Rango medio</li>
 <li>Media geométrica</li>
 <li>Media armónica</li>
 </ul>
 <p><br/> <br/></p>
 <div id="media-aritmética" class="section level3">
-<h3><span style="color:#FF7F00"><strong>MEDIA
-ARITMÉTICA</strong></span></h3>
-<p>Es el indicador de tendencia central más conocido y utilizado por si
+<h3><span style="color:#FF7F00"><strong>Media
+aritmética</strong></span></h3>
+<p>Es el indicador de tendencia central más conocido y utilizado por su
 fácil interpretación y calculo. Consiste en sumar todos los valores de
 un conjunto de datos y dividirlos por el número de datos</p>
 <p><br/></p>
@@ -335,7 +335,7 @@ class="math inline">\(\bar{z}=a\bar{x}+b\bar{y}\)</span>.</p></li>
 <p><br/> <br/></p>
 <p><strong>Ejemplo 1</strong></p>
 <p><br/></p>
-<p>El promedio de el rendimiento de millas por galón de combustible del
+<p>El promedio del rendimiento de millas por galón de combustible de un
 grupo de 32 autos observados en el dataset <code>mtcars</code> es de
 <span class="math inline">\(20.09\)</span> mpg</p>
 <pre class="r"><code>mean(mtcars$mpg,     # variable mpg de la data mtcars
@@ -346,15 +346,12 @@ na.rm = TRUE)   # parametro util cuando se tiene datos faltantes :</code></pre>
 <p><br/> <br/></p>
 </div>
 <div id="mediana" class="section level3">
-<h3><span style="color:#FF7F00"><strong>MEDIANA</strong></span></h3>
+<h3><span style="color:#FF7F00"><strong>Mediana</strong></span></h3>
 <p><br/></p>
-<p><strong>Me</strong> :Es el número que divide la muestra en dos partes
-de igual proporción (50% : 50%). Es decir que corresponde a:</p>
-<ul>
-<li><span class="math inline">\(P_{50}\)</span> : percentil 50</li>
-<li><span class="math inline">\(D_{5}\)</span> : decil 5</li>
-<li><span class="math inline">\(Q_{2}\)</span> : segundo cuartil</li>
-</ul>
+<p>La <strong>mediana</strong> es el número que divide la muestra en dos
+partes de igual proporción (50% : 50%). Es decir que corresponde al
+percentil 50 + <span class="math inline">\(D_{5}\)</span> : decil 5 +
+<span class="math inline">\(Q_{2}\)</span> : segundo cuartil</p>
 <p><br/> <br/></p>
 <p><strong>Ejemplo 2</strong></p>
 <p><br/></p>
@@ -365,13 +362,12 @@ de igual proporción (50% : 50%). Es decir que corresponde a:</p>
 <p><br/> <br/></p>
 </div>
 <div id="moda" class="section level3">
-<h3><span style="color:#FF7F00"><strong>MODA</strong></span></h3>
+<h3><span style="color:#FF7F00"><strong>Moda</strong></span></h3>
 <p><br/></p>
-<p><strong>Mo</strong> : Dato o valor que más se repite. Es utilizada
-como medida de tendencia central en variables cualitativas o o en
-cuantitativas discretas con pocos valores. En una tabla o gráfico se
-puede distinguir fácilmente.</p>
-<p><br/> <br/></p>
+<p>La <strong>moda</strong> corresponde al dato o valor que más se
+repite. Es utilizada como medida de tendencia central en variables
+cualitativas o en cuantitativas discretas con pocos valores. <br/>
+<br/></p>
 <p><strong>Ejemplo 3</strong></p>
 <p><br/> <br/></p>
 <pre class="r"><code>par(oma = c(1, 1, 1, 1) )  # margenes de la imagen
@@ -386,15 +382,19 @@ barplot(ev, col=c(&quot;#ff5b00&quot;,&quot;#dcf600&quot;,&quot;#7dbd00&quot;,&q
 <p><br/><br/></p>
 </div>
 <div id="media-truncada" class="section level3">
-<h3><span style="color:#FF7F00"><strong>MEDIA
-TRUNCADA</strong></span></h3>
+<h3><span style="color:#FF7F00"><strong>Media
+truncada</strong></span></h3>
 <p><br/></p>
 <p>Con el fin de evitar que los datos atípicos generen sesgos en el
 indicador de la media, es posible separar el 90% de los datos, quitando
-un 5% de los datos mas pequeños y un 5% de los datos mayores. A este
-indicador de le llama media truncada al 10% (<span
+un 5% de los datos más pequeños y un 5% de los datos mayores. A este
+indicador se le llama <strong>media truncada</strong> al 10% (<span
 class="math inline">\(\bar{x}_{_{0.10}}\)</span>)</p>
 <p><br/> <br/></p>
+<p><strong>Ejemplo 4</strong></p>
+<p>El valor para la media truncada al 10% para el caso de los datos de
+rendimiento de millas por galón de combustible de un grupo de 32 autos
+observados en el dataset <code>mtcars</code> es de 19.69615</p>
 <pre class="r"><code>mean(mtcars$mpg, na.rm = TRUE, trim = 0.10)</code></pre>
 <pre class="my-pre">
 [1] 19.69615
@@ -402,10 +402,18 @@ class="math inline">\(\bar{x}_{_{0.10}}\)</span>)</p>
 <p><br/> <br/></p>
 </div>
 <div id="rango-medio" class="section level3">
-<h3><span style="color:#FF7F00"><strong>RANGO MEDIO</strong></span></h3>
+<h3><span style="color:#FF7F00"><strong>Rango medio</strong></span></h3>
 <p><br/></p>
+<p>El rango medio se obtiene al sumar los valores extremos ( mínimo y
+máximo) y dividir el resultado por dos. Este indicador es de fácil
+cálculo y útil cuando se desea una estimación empírica y alta precisión
+en datos simétricos.</p>
 <p><span
 class="math display">\[\frac{1}{2}\big(max(x)+min(x)\big)\]</span></p>
+<p><br/> <br/></p>
+<p><strong>Ejemplo 5</strong></p>
+<p>Para el caso de los datos de rendimiento de combustible arroja un
+valor de 22.15 millas por galón.</p>
 <pre class="r"><code>(max(mtcars$mpg,na.rm = TRUE)+min(mtcars$mpg,na.rm = TRUE))/2</code></pre>
 <pre class="my-pre">
 [1] 22.15
@@ -413,18 +421,19 @@ class="math display">\[\frac{1}{2}\big(max(x)+min(x)\big)\]</span></p>
 <p><br/> <br/></p>
 </div>
 <div id="media-geométrica" class="section level3">
-<h3><span style="color:#FF7F00"><strong>MEDIA
-GEOMÉTRICA</strong></span></h3>
+<h3><span style="color:#FF7F00"><strong>Media
+geométrica</strong></span></h3>
 <p><br/></p>
-<p>Este indicador de tendencia central se utiliza para promediar tasa de
-crecimiento o de interés. Para encontrar su valor se multiplican los
-valores de <span class="math inline">\(n\)</span> tasas incrementadas en
-uno (<span class="math inline">\(1+r\)</span>). A ese producto se le
-extrae la raíz n-esima.</p>
+<p>La <strong>media geométrica</strong> es un indicador de tendencia
+central se utiliza para promediar tasas de crecimiento o de interés.
+Para encontrar su valor se multiplican los valores de <span
+class="math inline">\(n\)</span> tasas incrementadas en uno (<span
+class="math inline">\(1+r\)</span>). A ese producto se le extrae la raíz
+n-esima.</p>
 <p><span class="math display">\[MG = \Bigg(\displaystyle\prod_{i=1}^n
 (r_{i}+1)\Bigg)^{1/n}\]</span></p>
 <p><br/> <br/></p>
-<p><strong>Ejemplo 4</strong></p>
+<p><strong>Ejemplo 6</strong></p>
 <p><br/></p>
 <p>El crecimiento de la población en Colombia durante las ultimas
 décadas presenta la siguiente tendencia :</p>
@@ -437,29 +446,29 @@ psych::geometric.mean(x)</code></pre>
 [1] 0.01544071
 </pre>
 <p><br/></p>
-<p>Lo cual indica que a población colombiana está creciendo a una tasa
-del 1.5% durante las últimas 5 decadas</p>
+<p>Lo cual indica que la población colombiana está creciendo a una tasa
+del 1.5% durante las últimas 5 décadas</p>
 <p><br/> <br/></p>
 </div>
 <div id="media-armónica" class="section level3">
-<h3><span style="color:#FF7F00"><strong>MEDIA
-ARMÓNICA</strong></span></h3>
+<h3><span style="color:#FF7F00"><strong>Media
+armónica</strong></span></h3>
 <p><span class="math display">\[H =
 \dfrac{1}{\frac{1}{x_{1}}+\frac{1}{x_{2}}+ ... +
 \frac{1}{x_{n}}}\]</span></p>
 <p>Este indicador corresponde al inverso de la media aritmética, se
-utiliza para el calculo de velocidades medias, tiempos especialmente en
-el area de la electrónica.</p>
+utiliza para el cálculo de velocidades medias, tiempos especialmente en
+el área de la electrónica.</p>
 <p><br/><br/></p>
-<p><strong>Ejemplo 5</strong></p>
+<p><strong>Ejemplo 7</strong></p>
 <p><br/></p>
-<p>Una empresa de transporte desea estimar la media de tiempo que se
-pueden tardar sus autos en un viaje de una ciudad A a una ciudad B. El
-tiempo empleado por un grupo de 3 de sus vehículos. Los tiempos
-registrados con respectivamente son 4.25, 3.75 y 5.25 horas ( tiempos
-equivalentes en escala decimal)</p>
+<p>Una empresa de transporte desea estimar la media de tiempo que pueden
+tardar sus autos en un viaje de una ciudad A a una ciudad B. Los tiempos
+empleados por un grupo de 3 de sus vehículos son respectivamente son
+4.25, 3.75 y 5.25 horas ( tiempos equivalentes en escala decimal)</p>
 <p>Para calcular la velocidad promedio utilizamos la media armónica
-tenemos:</p>
+utilizamos la función <code>harmonic.mean</code> del paquete de R
+<code>psych</code></p>
 <pre class="r"><code>library(psych)
 x=c(4.25, 3.75, 5.25)
 harmonic.mean(x,na.rm=TRUE,zero=TRUE)</code></pre>
@@ -467,6 +476,24 @@ harmonic.mean(x,na.rm=TRUE,zero=TRUE)</code></pre>
 [1] 4.332524
 </pre>
 <p><br/> <br/></p>
+</div>
+<div id="código-r" class="section level2">
+<h2><span style="color:#FF7F00"><strong>Código R</strong></span></h2>
+<pre class="r"><code>tiempos=c(51.4, 49.9, 49.3, 51.2, 51.2, 45.7, 48.4, 47.3, 49.0, 50.1, 50.9, 45.4, 55.7, 48.9, 56.0, 44.7, 56.9, 46.6, 53.3, 48.5, 49.7, 45.0, 63.0, 51.0, 50.4, 51.2, 53.5, 52.1, 49.6, 45.9, 49.8, 42.3, 53.5, 54.7, 53.5, 56.7, NA,  44.4, 51.2, 51.1, 55.0, 64.4, 51.8, 45.3, 62.7, 43.8, 51.3, 53.7, 51.0, 52.9, 43.1, 43.6, 51.2, 52.8, 49.2, 49.6, 49.6, 51.5, 55.3, 46.7, 47.6, 51.8, 58.9, 50.8, 43.4, 48.5, 52.7, 44.8, 52.5, 58.4, 52.9)
+
+mean(tiempos, na.rm = TRUE)
+median(tiempos,na.rm = TRUE)
+mean(tiempos, na.rm = TRUE, trim = 0.10)
+(min(tiempos,na.rm = TRUE)+max(tiempos,na.rm = TRUE))/2</code></pre>
+<pre class="my-pre">
+[1] 50.79714
+[1] 51
+[1] 50.52679
+[1] 53.35
+</pre>
+<p><strong>Nota</strong> . Es necesario agregar
+<code>na.rm = TRUE</code> para que permite eliminar de los datos los
+faltantes para el calculo de los indicadores</p>
 </div>
 
 

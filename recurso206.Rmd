@@ -21,7 +21,7 @@ paleta4=c("#0d3b66", "#faf0ca", "#f4d35e", "#ee964d")
 
 <br/><br/>
 
-## <span style="color:#FF7F00">**INTRODUCCIÓN**</span>
+## <span style="color:#FF7F00">**Introducción**</span>
 
 >Una gráfica o una representación gráfica o un gráfico, es un tipo de representación de datos, generalmente cuantitativos, mediante recursos visuales (líneas, vectores, superficies o símbolos), para que se manifieste visualmente la relación matemática o correlación estadística que guardan entre sí.
 
@@ -29,7 +29,7 @@ Wikipedia
 
 <br/><br/>
 
-Elegir el gráfico adecuado es muy importante, pues existen diferentes alternativos  y se debe escoger el apropiado para representar los datos. El tipo de dato determina el tipo de grafico así:
+Elegir el gráfico adecuado es muy importante, pues existen diferentes alternativos  y se debe escoger el apropiado para representar los datos. El tipo de dato determina el tipo de gráfico así:
 
 |Tipo de variable  | Escala          | Gráfico                                   |
 |:-----------------|:----------------|:------------------------------------------|
@@ -48,14 +48,13 @@ Elegir el gráfico adecuado es muy importante, pues existen diferentes alternati
 
 <br/><br/>
 
-## <span style="color:#FF7F00">**GRÁFICOS VARIABLES CUALITATIVAS**</span>
-
-<br/><br/>
-
-### <span style="color:#FF7F00">**GRÁFICO DE TORTAS**</span>
+## <span style="color:#FF7F00">**Gráficos variables cualitativas**</span>
 
 <br/>
-Este tipo de gráficos se utiliza para variables cualitativas medidas en escala nominal
+
+### <span style="color:#FF7F00">**Gráfico de tortas**</span>
+
+Este tipo de gráficos se utiliza para variables cualitativas medidas en escala nominal.
 
 ```{r, fig.height=5, echo=FALSE}
 a=rep("Cultutal", 360145)
@@ -74,11 +73,9 @@ col = paleta4)
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**DIAGRAMA DE BARRAS**</span>
+### <span style="color:#FF7F00">**Diagrama de barras**</span>
 
-<br/>
-
-El diagrama de barras se utiliza para representar variables cualitativas en escala ordinal.  Es necesario que los valores representados sigan el orden de la escala
+El diagrama de barras se utiliza para representar variables cualitativas en escala ordinal.  Es necesario que los valores representados sigan el orden de la escala.
 
 ```{r, fig.height=5, echo=FALSE}
 ev=c(4,  8, 12, 43, 32)
@@ -88,11 +85,9 @@ barplot(ev, col=c("#ff5b00","#dcf600","#7dbd00","#659cef","#2956b2"), main = "Ev
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**DIAGRAMA DE BARRAS CON DOS VARIABLES**</span>
+### <span style="color:#FF7F00">**Diagrama de barras con dos variables**</span>
 
-<br/>
-
-Este diagrama se emplea para representar dos variables cualitativas que pueden ser de escala nominal u ordinal
+Este diagrama se emplea para representar dos variables cualitativas que pueden ser de escala nominal u ordinal.
 
 
 ```{r, fig.height=5.5, echo=FALSE}
@@ -103,13 +98,12 @@ legend = rownames(counts))
 
 <br/><br/><br/>
 
-## <span style="color:#FF7F00">**GRÁFICAS VARIABLES CUALITATIVAS**</span>
+## <span style="color:#FF7F00">**Gráficas variables cualitativas**</span>
 
 <br/>
 
-### <span style="color:#FF7F00">**DIAGRAMA DE ÁRBOL**</span>
+### <span style="color:#FF7F00">**Diagrama de árbol**</span>
 
-<br/>
 
 ```{r, echo=FALSE}
 nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
@@ -120,11 +114,9 @@ Este diagrama ordena los datos de manera que se puede determinar tanto en mínim
 
 <br/><br/>
 
-### *<span style="color:#FF7F00">**HISTOGRAMA**</span>
+### *<span style="color:#FF7F00">**Histograma**</span>
 
-<br/>
-
-El histograma es uno de los gráficos más utilizados para representar variables cuantitativas y permite resumir por rangos los diferentes datos. Es una buena forma de visualizar la distribución de los datos y su forma
+El histograma es uno de los gráficos más utilizados para representar variables cuantitativas y permite resumir por rangos los diferentes datos. Es una buena forma de visualizar la distribución de los datos y su forma.
 
 
 ```{r, fig.height=5, echo=FALSE}
@@ -135,9 +127,7 @@ abline(v=3,col="#f6b915", lwd=2)
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**DIAGRAMA DE DENSIDAD**</span>
-
-<br/>
+### <span style="color:#FF7F00">**Diagrama de densidad**</span>
 
 Este diagrama correspone a un contorno suavizado del histograma que permite visualizar claramente la forma de los datos
 
@@ -150,11 +140,9 @@ xlab="nota", ylab="densidad")
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**DIAGRAMA DE CAJAS**</span>
+### <span style="color:#FF7F00">**Diagrama de cajas**</span>
 
-<br/>
-
-Es uno de las representaciones gráficas más utilizadas, pues ademas de los elementos y caracteristicas que permite visualizar de las variables, permite comparar los resulados de dos o más grupos
+Es uno de las representaciones gráficas más utilizadas, pues ademas de los elementos y caracteristicas que permite visualizar de las variables, permite comparar los resulados de dos o más grupos.
 
 
 ```{r, fig.height=4.5, echo=FALSE}
@@ -170,11 +158,9 @@ abline(h=4, col="#447270", lwd=1)
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**DIAGRAMA DE DISPERSIÓN**</span>
+### <span style="color:#FF7F00">**Diagrama de dispersión**</span>
 
-<br/>
-
-Este diagrma de puntos permite visializar la relación lineal que puede existir entre dos variables cualitativas
+Este diagrma de puntos permite visializar la relación lineal que puede existir entre dos variables cualitativas.
 
 ```{r, fig.height=5, echo=FALSE}
 ed=round(rnorm(90,28,1),1)

@@ -27,11 +27,9 @@ Los indicadores de forma permiten adicionar elementos a la interpretación de lo
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**CURTOSIS**</span>
+### <span style="color:#FF7F00">**Curtosis**</span>
 
-<br/>
-
-Se mide a través del coeficiente de curtosis que mide cuan **puntiaguda** es una distribución respecto a un patrón estándar que es la curva de la distribución normal. Esta característica está relacionada directamente con la dispersión
+Se mide a través del coeficiente de curtosis que mide cuan **puntiaguda** es una distribución respecto a un patrón estándar que es la curva de la distribución normal. Esta característica está relacionada directamente con la dispersión.
 
 De acuerdo con su valor, la puntudez de los datos puede clasificarse en tres grupos:
 
@@ -59,7 +57,7 @@ En R se utiliza la función del paquete rapportools : `rapportools::kurtosis(x)`
 
 <br/><br/> 
 
-### <span style="color:#FF7F00">**ASIMETRÍA O SESGO**</span>
+### <span style="color:#FF7F00">**Asimetría o sesgo**</span>
 
 <br/>
 
@@ -89,7 +87,7 @@ Mide que tanto la forma de la distribución de frecuencias de los datos es simé
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**CÓDIGO R**</span>
+### <span style="color:#FF7F00">**Código R**</span>
 
 <br/>
 
@@ -111,8 +109,5 @@ rapportools::skewness(x)
 
 </pre>
 
-Estos resultados indica una leve concentración de los datos y una leve asimetría a la derecha, la cual será mas evidente observar en la siguiente sección (Representación gráfica)
-
-<br/>
-
+Estos resultados indica una leve concentración de los datos y una leve asimetría a la derecha, la cual será mas evidente observar en la siguiente sección (Representación gráfica). 
 El valor obtenido para el sesgos nos indica que existe un mediano sesgo positivo o a la derecha ( mucho con poco - poco con mucho). 

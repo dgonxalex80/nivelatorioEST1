@@ -27,7 +27,7 @@ Los indicadores de forma permiten adicionar elementos a la interpretación de lo
 
 <br/><br/>
 
-### **Curtosis**
+### <span style="color:#FF7F00">**CURTOSIS**</span>
 
 <br/>
 
@@ -59,7 +59,7 @@ En R se utiliza la función del paquete rapportools : `rapportools::kurtosis(x)`
 
 <br/><br/> 
 
-### **Asimetría o sesgo**
+### <span style="color:#FF7F00">**ASIMETRÍA O SESGO**</span>
 
 <br/>
 
@@ -89,7 +89,7 @@ Mide que tanto la forma de la distribución de frecuencias de los datos es simé
 
 <br/><br/>
 
-### **Código R**
+### <span style="color:#FF7F00">**CÓDIGO R**</span>
 
 <br/>
 

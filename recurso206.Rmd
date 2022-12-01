@@ -19,8 +19,9 @@ paleta4=c("#0d3b66", "#faf0ca", "#f4d35e", "#ee964d")
 ```
 
 
+<br/><br/>
 
-## **Introducción**
+## <span style="color:#FF7F00">**INTRODUCCIÓN**</span>
 
 >Una gráfica o una representación gráfica o un gráfico, es un tipo de representación de datos, generalmente cuantitativos, mediante recursos visuales (líneas, vectores, superficies o símbolos), para que se manifieste visualmente la relación matemática o correlación estadística que guardan entre sí.
 
@@ -47,11 +48,11 @@ Elegir el gráfico adecuado es muy importante, pues existen diferentes alternati
 
 <br/><br/>
 
-## **Gráficos variables cualitativas **
+## <span style="color:#FF7F00">**GRÁFICOS VARIABLES CUALITATIVAS**</span>
 
 <br/><br/>
 
-### **Gráfico de tortas**
+### <span style="color:#FF7F00">**GRÁFICO DE TORTAS**</span>
 
 <br/>
 Este tipo de gráficos se utiliza para variables cualitativas medidas en escala nominal
@@ -73,7 +74,7 @@ col = paleta4)
 
 <br/><br/>
 
-### **Diagrama de barras**
+### <span style="color:#FF7F00">**DIAGRAMA DE BARRAS**</span>
 
 <br/>
 
@@ -87,7 +88,7 @@ barplot(ev, col=c("#ff5b00","#dcf600","#7dbd00","#659cef","#2956b2"), main = "Ev
 
 <br/><br/>
 
-### **Diagrama de barras dos variables**
+### <span style="color:#FF7F00">**DIAGRAMA DE BARRAS CON DOS VARIABLES**</span>
 
 <br/>
 
@@ -102,11 +103,11 @@ legend = rownames(counts))
 
 <br/><br/><br/>
 
-## **Gráficas variables cuantitativas**
+## <span style="color:#FF7F00">**GRÁFICAS VARIABLES CUALITATIVAS**</span>
 
 <br/>
 
-### **Diagrama de árbol**
+### <span style="color:#FF7F00">**DIAGRAMA DE ÁRBOL**</span>
 
 <br/>
 
@@ -119,7 +120,7 @@ Este diagrama ordena los datos de manera que se puede determinar tanto en mínim
 
 <br/><br/>
 
-### **Histograma**
+### *<span style="color:#FF7F00">**HISTOGRAMA**</span>
 
 <br/>
 
@@ -134,7 +135,7 @@ abline(v=3,col="#f6b915", lwd=2)
 
 <br/><br/>
 
-### **Diagrama de densidad**
+### <span style="color:#FF7F00">**DIAGRAMA DE DENSIDAD**</span>
 
 <br/>
 
@@ -149,7 +150,7 @@ xlab="nota", ylab="densidad")
 
 <br/><br/>
 
-### **Diagrama de cajas**
+### <span style="color:#FF7F00">**DIAGRAMA DE CAJAS**</span>
 
 <br/>
 
@@ -169,7 +170,7 @@ abline(h=4, col="#447270", lwd=1)
 
 <br/><br/>
 
-### **Diagrama de dispersión**
+### <span style="color:#FF7F00">**DIAGRAMA DE DISPERSIÓN**</span>
 
 <br/>
 
@@ -184,7 +185,7 @@ grid()
 
 <br/><br/>
 
-### **Gráfica de series de tiempo**
+### <span style="color:#FF7F00">**GRÁFICA DE SERIES DE TIEMPO**</span>
 
 ```{r, fig.height=5, echo=FALSE}
 plot(AirPassengers, main="Numero de pasajeros por mes", col="#034A94", lwd = 4, las=1, 
@@ -193,7 +194,7 @@ ylab="número de pasajeros", xlab="año")
 
 <br/><br/><br/>
 
-### **Códigos en R**
+### <span style="color:#FF7F00">**CÓDIGO R**</span>
 
 <pre>
 # sumulación de datos

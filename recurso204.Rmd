@@ -13,17 +13,18 @@ x2=c(35,  25,  19,  17,  24,   17,  55,  25,  31,   35,  43,  28,  32,  19,  20,
 data4=data.frame(x1,x2)
 ```
 
+</br></br>
 
-## **Problema reconocimiento de grupo**
+## <span style="color:#FF7F00">**PROBLEMA RECONOCIMIENTO DE GRUPO**</span>
 
 </br>
 
 Supongamos que tenemos dos grupos de estudiantes y que solo se conoce  ambos grupos tienen en promedio  28 años de edad.  Lo que primero se piensa es que los dos grupos tienen una composición igual o muy parecida dado que coinciden en su promedio.  Pero no es así, los datos que se presentan a continuación tienen medias de 28,  pero corresponden a grupos diferentes.
 
-|           |                                                                                                                       |
-|:----------|:----------------------------------------------------------------------------------------------------------------------|
-| Grupo 1   |27, 27, 28, 28, 34, 28, 26, 33, 24, 28, 25, 25, 33, 27, 34, 38, 24, 26, 22, 23, 33, 23, 26, 26, 32, 33, 29, 30, 25, 23 | 
-| Grupo 2   |35, 25, 19, 17, 24, 17, 55, 25, 31, 35, 43, 28, 32, 19, 20, 17, 25, 18, 21, 22, 17, 35, 29, 20, 54, 46, 24, 29, 40, 18 |
+|      |                                                                                                                       |
+|:-----|:----------------------------------------------------------------------------------------------------------------------|
+| G1   |27, 27, 28, 28, 34, 28, 26, 33, 24, 28, 25, 25, 33, 27, 34, 38, 24, 26, 22, 23, 33, 23, 26, 26, 32, 33, 29, 30, 25, 23 | 
+| G2   |35, 25, 19, 17, 24, 17, 55, 25, 31, 35, 43, 28, 32, 19, 20, 17, 25, 18, 21, 22, 17, 35, 29, 20, 54, 46, 24, 29, 40, 18 |
 
 </br></br>
 
@@ -37,11 +38,11 @@ Hace falta otro indicador que nos oriente sobre  que tan dispersos son los datos
 
 <br/> <br/>
 
-## **Indicadores de Dispersión**
+## <span style="color:#FF7F00">**INDICADORES DE DISPERSIÓN**</span>
 
 </br>
 
-### **Rango**
+### <span style="color:#FF7F00">**RANGO**</span>
 
 </br>
 
@@ -63,7 +64,7 @@ Es importante hacer notar que si además de la media conocemos también un indic
 
 <br/> <br/>
 
-### **Varianza**
+### <span style="color:#FF7F00">**VARIANZA**</span>
 
 </br>
 
@@ -96,7 +97,7 @@ El problema de la varianza es su **interpretación**, pues sus unidades quedan a
 
 <br/> <br/>
 
-### **Desviación estándar** 
+### <span style="color:#FF7F00">**DESVIACIÓN ESTÁNDAR**</span> 
 
 </br>
 
@@ -120,7 +121,7 @@ Aunque la desviación estándar reduce el problema mencionado anteriormente debi
 
 <br/> <br/>
 
-### **Coeficiente de variación**
+### <span style="color:#FF7F00">**COEFICIENTE DE VARIACIÓN**</span>
 
 </br>
 
@@ -143,7 +144,7 @@ En este caso se obtienen valores diferentes para los dos grupos. El grupo 1 con 
 
 </br></br></br>
 
-### **Códigos R**
+### <span style="color:#FF7F00">**CÓDIGO  R**</span>
 
 
 

@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE, comment = NA)
 </br>
 
 
-### **Tablas de frecuencia variables nominales**
+### <span style="color:#FF7F00">**TABLAS DE FRECUENCIA VARIABLES NOMINALES**</span>
 
 </br>
 
@@ -39,7 +39,7 @@ La tabla permite visualizar que actualmente están reportados 19 casos en cuidad
 
 </br></br>
 
-### **Tablas de frecuencia variables ordinales**
+### <span style="color:#FF7F00">**TABLAS DE FRECUENCIA VARIABLES ORDINALES**</span>
 
 </br>
 
@@ -54,7 +54,7 @@ knitr::include_graphics("img/tabla2.png")
 
 </br></br>
 
-### **Tablas cruzadas**
+### <span style="color:#FF7F00">**TABLAS CRUZADAS**</span>
 
 </br>
 
@@ -77,7 +77,7 @@ De esta tabla se puede observar que se presenta una mayor cantidad de hombres fa
 
 </br></br>
 
-### **Visualización de errores**
+### <span style="color:#FF7F00">**VISUALIZACIÓN DE ERRORES**</span>
 
 </br>
 
@@ -106,7 +106,7 @@ En R se puede utilizar la función `table(x)` para la elaboración de una tabla 
 
 </br></br>
 
-### **Código R**
+### <span style="color:#FF7F00">**CÓDIGO R**
 
 
 </br>

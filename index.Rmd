@@ -38,7 +38,7 @@ En número de registros por lo regular de gran tamaño, hace necesaria la utiliz
 
 </br></br>
 
-### **Tipos de variables**
+### <span style="color:#FF7F00">**Tipos de variables**</span>
 
 Inicialmente se examinan las características de las variables que conforman la data.
 
@@ -63,7 +63,7 @@ Las variables se puede clasificar como :
 
 </br></br>
 
-### **Tipos de escala**
+### <span style="color:#FF7F00">**Tipos de escala**</span>
 
 </br>
 
@@ -117,7 +117,7 @@ El análisis de las variables cuantitativas se centra en la construcción de tab
 
 </br></br>
 
-### **Resumen de indicadores  y gráfica**
+### <span style="color:#FF7F00">**Resumen de indicadores  y gráfica**</span>
 
 </br>
 

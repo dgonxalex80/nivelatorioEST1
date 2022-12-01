@@ -296,7 +296,8 @@ indicadores de centro, dentro de ellos se destacan :</p>
 </ul>
 <p><br/> <br/></p>
 <div id="media-aritmética" class="section level3">
-<h3><strong>Media aritmética</strong></h3>
+<h3><span style="color:#FF7F00"><strong>MEDIA
+ARITMÉTICA</strong></span></h3>
 <p>Es el indicador de tendencia central más conocido y utilizado por si
 fácil interpretación y calculo. Consiste en sumar todos los valores de
 un conjunto de datos y dividirlos por el número de datos</p>
@@ -345,7 +346,7 @@ na.rm = TRUE)   # parametro util cuando se tiene datos faltantes :</code></pre>
 <p><br/> <br/></p>
 </div>
 <div id="mediana" class="section level3">
-<h3><strong>Mediana</strong></h3>
+<h3><span style="color:#FF7F00"><strong>MEDIANA</strong></span></h3>
 <p><br/></p>
 <p><strong>Me</strong> :Es el número que divide la muestra en dos partes
 de igual proporción (50% : 50%). Es decir que corresponde a:</p>
@@ -364,7 +365,7 @@ de igual proporción (50% : 50%). Es decir que corresponde a:</p>
 <p><br/> <br/></p>
 </div>
 <div id="moda" class="section level3">
-<h3><strong>Moda</strong></h3>
+<h3><span style="color:#FF7F00"><strong>MODA</strong></span></h3>
 <p><br/></p>
 <p><strong>Mo</strong> : Dato o valor que más se repite. Es utilizada
 como medida de tendencia central en variables cualitativas o o en
@@ -385,7 +386,8 @@ barplot(ev, col=c(&quot;#ff5b00&quot;,&quot;#dcf600&quot;,&quot;#7dbd00&quot;,&q
 <p><br/><br/></p>
 </div>
 <div id="media-truncada" class="section level3">
-<h3><strong>Media truncada</strong></h3>
+<h3><span style="color:#FF7F00"><strong>MEDIA
+TRUNCADA</strong></span></h3>
 <p><br/></p>
 <p>Con el fin de evitar que los datos atípicos generen sesgos en el
 indicador de la media, es posible separar el 90% de los datos, quitando
@@ -400,7 +402,7 @@ class="math inline">\(\bar{x}_{_{0.10}}\)</span>)</p>
 <p><br/> <br/></p>
 </div>
 <div id="rango-medio" class="section level3">
-<h3><strong>Rango medio</strong></h3>
+<h3><span style="color:#FF7F00"><strong>RANGO MEDIO</strong></span></h3>
 <p><br/></p>
 <p><span
 class="math display">\[\frac{1}{2}\big(max(x)+min(x)\big)\]</span></p>
@@ -411,7 +413,8 @@ class="math display">\[\frac{1}{2}\big(max(x)+min(x)\big)\]</span></p>
 <p><br/> <br/></p>
 </div>
 <div id="media-geométrica" class="section level3">
-<h3><strong>Media geométrica</strong></h3>
+<h3><span style="color:#FF7F00"><strong>MEDIA
+GEOMÉTRICA</strong></span></h3>
 <p><br/></p>
 <p>Este indicador de tendencia central se utiliza para promediar tasa de
 crecimiento o de interés. Para encontrar su valor se multiplican los
@@ -421,7 +424,7 @@ extrae la raíz n-esima.</p>
 <p><span class="math display">\[MG = \Bigg(\displaystyle\prod_{i=1}^n
 (r_{i}+1)\Bigg)^{1/n}\]</span></p>
 <p><br/> <br/></p>
-<p><strong>Ejemplo 3</strong></p>
+<p><strong>Ejemplo 4</strong></p>
 <p><br/></p>
 <p>El crecimiento de la población en Colombia durante las ultimas
 décadas presenta la siguiente tendencia :</p>
@@ -439,7 +442,8 @@ del 1.5% durante las últimas 5 decadas</p>
 <p><br/> <br/></p>
 </div>
 <div id="media-armónica" class="section level3">
-<h3><strong>Media armónica</strong></h3>
+<h3><span style="color:#FF7F00"><strong>MEDIA
+ARMÓNICA</strong></span></h3>
 <p><span class="math display">\[H =
 \dfrac{1}{\frac{1}{x_{1}}+\frac{1}{x_{2}}+ ... +
 \frac{1}{x_{n}}}\]</span></p>
@@ -447,179 +451,8 @@ del 1.5% durante las últimas 5 decadas</p>
 utiliza para el calculo de velocidades medias, tiempos especialmente en
 el area de la electrónica.</p>
 <p><br/><br/></p>
-<p><strong>Ejemplo 4</strong></p>
-<p><br/></p>
-<p>Una empresa de transporte desea estimar la media de tiempo que se
-pueden tardar sus autos en un viaje de una ciudad A a una ciudad B. El
-tiempo empleado por un grupo de 3 de sus vehículos. Los tiempos
-registrados con respectivamente son 4.25, 3.75 y 5.25 horas ( tiempos
-equivalentes en escala decimal)</p>
-<p>Para calcular la velocidad promedio utilizamos la media armónica
-tenemos:</p>
-<pre class="r"><code>library(psych)
-x=c(4.25, 3.75, 5.25)
-harmonic.mean(x,na.rm=TRUE,zero=TRUE)</code></pre>
-<pre class="my-pre">
-[1] 4.332524
-</pre>
-<p><br/> <br/></p>
-<p>Una de las características principales están constituido por los
-indicadores de centro, dentro de ellos se destacan :</p>
-<ul>
-<li>Media</li>
-<li>Mediana</li>
-<li>Moda</li>
-<li>Rango medio</li>
-<li>Media truncada</li>
-<li>Media geométrica</li>
-<li>Media armónica</li>
-</ul>
-<p><br/> <br/></p>
-</div>
-<div id="media-aritmética-1" class="section level3">
-<h3><strong>Media aritmética</strong></h3>
-<p>Es el indicador de tendencia central más conocido y utilizado por si
-fácil interpretación y calculo. Consiste en sumar todos los valores de
-un conjunto de datos y dividirlos por el número de datos</p>
-<p><br/></p>
-<p><span class="math display">\[\bar{x}= \frac{1}{n} \sum_{i=1}^{n}
-x_{i}\]</span></p>
-<pre class="r"><code>x=c(1,2,3,4,5,6,7,8,9,10) # vector de números
-mean(x)  # funcion media
-sum(x)/length(x) # calculo de la media</code></pre>
-<pre class="my-pre">
-[1]  5.5
-</pre>
-<p><br/></p>
-<p>Sus principales propiedades son:</p>
-<ul>
-<li><p>La suma de las desviaciones de los datos con respecto a la media
-es cero. <span class="math inline">\(\sum
-(x_{i}-\bar{x})=0\)</span>.</p></li>
-<li><p>La suma de los cuadrados de las desviaciones de los datos con
-respecto a un valor <span class="math inline">\(a\)</span> es mínimo
-cuando <span class="math inline">\(a=\bar{x}\)</span>.</p></li>
-<li><p>Si <span class="math inline">\(x_{i}=k\)</span> para todo <span
-class="math inline">\(i\)</span>, entonces, <span
-class="math inline">\(\bar{x}=k\)</span>.</p></li>
-<li><p>Si todos los datos de una variable se multiplican por una
-constante <span class="math inline">\(k\)</span>, es decir <span
-class="math inline">\(y_{i}=kx_{i}\)</span>, entonces <span
-class="math inline">\(\bar{y}=k\bar{x}\)</span></p></li>
-<li><p>Si <span class="math inline">\(z_{i}=a x_{i}+b y_{i}\)</span>,
-donde: <strong>a</strong>, <strong>b</strong> constantes y <span
-class="math inline">\(x_{i}\)</span>, <span
-class="math inline">\(y_{i}\)</span> variables, entonces: <span
-class="math inline">\(\bar{z}=a\bar{x}+b\bar{y}\)</span>.</p></li>
-</ul>
-<p><br/> <br/></p>
 <p><strong>Ejemplo 5</strong></p>
 <p><br/></p>
-<p>El promedio de el rendimiento de millas por galón de combustible del
-grupo de 32 autos observados en el dataset <code>mtcars</code> es de
-<span class="math inline">\(20.09\)</span> mpg</p>
-<pre class="r"><code>mean(mtcars$mpg,     # variable mpg de la data mtcars
-na.rm = TRUE)   # parametro util cuando se tiene datos faltantes :</code></pre>
-<pre class="my-pre">
-[1]  20.09062     
-</pre>
-<p><br/> <br/></p>
-</div>
-<div id="mediana-1" class="section level3">
-<h3><strong>Mediana</strong></h3>
-<p><br/></p>
-<p><strong>Me</strong> :Es el número que divide la muestra en dos partes
-de igual proporción (50% : 50%). Es decir que corresponde a:</p>
-<ul>
-<li><span class="math inline">\(P_{50}\)</span> : percentil 50</li>
-<li><span class="math inline">\(D_{5}\)</span> : decil 5</li>
-<li><span class="math inline">\(Q_{2}\)</span> : segundo cuartil</li>
-</ul>
-<p><br/> <br/></p>
-<p><strong>Ejemplo 6</strong></p>
-<p><br/></p>
-<pre class="r"><code>median(cars$speed)</code></pre>
-<pre class="my-pre">
-[1] 15
-</pre>
-<p><br/> <br/></p>
-</div>
-<div id="moda-1" class="section level3">
-<h3><strong>Moda</strong></h3>
-<p><br/></p>
-<p><strong>Mo</strong> : Dato o valor que más se repite. Es utilizada
-como medida de tendencia central en variables cualitativas o o en
-cuantitativas discretas con pocos valores. En una tabla o gráfico se
-puede distinguir fácilmente.</p>
-<p><br/> <br/></p>
-<p><strong>Ejemplo 7</strong></p>
-<p><br/> <br/></p>
-</div>
-<div id="media-truncada-1" class="section level3">
-<h3><strong>Media truncada</strong></h3>
-<p><br/></p>
-<p>Con el fin de evitar que los datos atípicos generen sesgos en el
-indicador de la media, es posible separar el 90% de los datos, quitando
-un 5% de los datos mas pequeños y un 5% de los datos mayores. A este
-indicador de le llama media truncada al 10% (<span
-class="math inline">\(\bar{x}_{_{0.10}}\)</span>)</p>
-<p><br/> <br/></p>
-<pre class="r"><code>mean(mtcars$mpg, na.rm = TRUE, trim = 0.10)</code></pre>
-<pre class="my-pre">
-[1] 19.69615
-</pre>
-<p><br/> <br/></p>
-</div>
-<div id="rango-medio-1" class="section level3">
-<h3><strong>Rango medio</strong></h3>
-<p><br/></p>
-<p><span
-class="math display">\[\frac{1}{2}\big(max(x)+min(x)\big)\]</span></p>
-<pre class="r"><code>(max(mtcars$mpg,na.rm = TRUE)+min(mtcars$mpg,na.rm = TRUE))/2</code></pre>
-<pre class="my-pre">
-[1] 22.15
-</pre>
-<p><br/> <br/></p>
-</div>
-<div id="media-geométrica-1" class="section level3">
-<h3><strong>Media geométrica</strong></h3>
-<p><br/></p>
-<p>Este indicador de tendencia central se utiliza para promediar tasa de
-crecimiento o de interés. Para encontrar su valor se multiplican los
-valores de <span class="math inline">\(n\)</span> tasas incrementadas en
-uno (<span class="math inline">\(1+r\)</span>). A ese producto se le
-extrae la raíz n-esima.</p>
-<p><span class="math display">\[MG = \Bigg(\displaystyle\prod_{i=1}^n
-(r_{i}+1)\Bigg)^{1/n}\]</span></p>
-<p><br/> <br/></p>
-<p><strong>Ejemplo 8</strong></p>
-<p><br/></p>
-<p>El crecimiento de la población en Colombia durante las ultimas
-décadas presenta la siguiente tendencia :</p>
-<pre class="r"><code># install.packages(psych)
-library(psych)
-x = c(0.025,0.022,0.02,0.016,0.011,0.007)
-
-psych::geometric.mean(x)</code></pre>
-<pre class="my-pre">
-[1] 0.01544071
-</pre>
-<p><br/></p>
-<p>Lo cual indica que a población colombiana está creciendo a una tasa
-del 1.5% durante las últimas 5 decadas</p>
-<p><br/> <br/></p>
-</div>
-<div id="media-armónica-1" class="section level3">
-<h3><strong>Media armónica</strong></h3>
-<p><span class="math display">\[H =
-\dfrac{1}{\frac{1}{x_{1}}+\frac{1}{x_{2}}+ ... +
-\frac{1}{x_{n}}}\]</span></p>
-<p>Este indicador corresponde al inverso de la media aritmética, se
-utiliza para el calculo de velocidades medias, tiempos especialmente en
-el area de la electrónica.</p>
-<p><br/><br/></p>
-<p><strong>Ejemplo 9</strong></p>
-<p><br/></p>
 <p>Una empresa de transporte desea estimar la media de tiempo que se
 pueden tardar sus autos en un viaje de una ciudad A a una ciudad B. El
 tiempo empleado por un grupo de 3 de sus vehículos. Los tiempos
@@ -633,6 +466,7 @@ harmonic.mean(x,na.rm=TRUE,zero=TRUE)</code></pre>
 <pre class="my-pre">
 [1] 4.332524
 </pre>
+<p><br/> <br/></p>
 </div>
 
 

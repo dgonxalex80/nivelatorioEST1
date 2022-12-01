@@ -91,7 +91,7 @@ Mide que tanto la forma de la distribución de frecuencias de los datos es simé
 
 <br/>
 
-En R se utiliza la funciones : `rapportools::kurtosis(x)`  y  `rapportools::skewness(x)` de manera individual.
+En R se utilizan las funciones : `rapportools::kurtosis(x)`  y  `rapportools::skewness(x)` de manera individual.
 
 </br>
 
@@ -109,5 +109,5 @@ rapportools::skewness(x)
 
 </pre>
 
-Estos resultados indica una leve concentración de los datos y una leve asimetría a la derecha, la cual será mas evidente observar en la siguiente sección (Representación gráfica). 
+Estos resultados indica una leve concentración de los datos y una leve asimetría a la derecha, la cual será más evidente observar en la siguiente sección (Representación gráfica). 
 El valor obtenido para el sesgos nos indica que existe un mediano sesgo positivo o a la derecha ( mucho con poco - poco con mucho). 

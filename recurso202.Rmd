@@ -131,7 +131,7 @@ En este caso los cuartiles $Q_1 = 46.72$, $Q_2 = 50.98$ y $Q_3 = 52.90$, están 
 
 <br/> <br/>
 
-###  <span style="color:#FF7F00">**CÓDIGO R**</span>
+###  <span style="color:#FF7F00">**Codigo R**</span>
 
 
 Los percentiles pueden ser calculados mediante la función  `quantile()` . El siguiente código ilustra la obtención de los cuartiles

@@ -180,7 +180,7 @@ ylab="número de pasajeros", xlab="año")
 
 <br/><br/><br/>
 
-### <span style="color:#FF7F00">**CÓDIGO R**</span>
+### <span style="color:#FF7F00">**Código R**</span>
 
 <pre>
 # sumulación de datos
@@ -199,5 +199,6 @@ plot(t,y, type="l")  # linea de tiempo
 plot(density(x))     # diagrama de densidad
 </pre>
 
-
 <br/><br/>
+
+

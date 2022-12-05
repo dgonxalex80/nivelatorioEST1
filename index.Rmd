@@ -113,7 +113,7 @@ Dependiendo el tipo de variable y su escala de medición se tomaran los respecti
 
 En esta unidad se tratará de manera general los conceptos principales relacionados con el análisis descriptivo de datos, basados en las principales características de los datos, tanto para variables cualitativas como para variables cuantitativas.
 
-El análisis de las variables cuantitativas se centra en la construcción de tablas de frecuencia y su representación a través de gráficos de tortas (nominales) y de barras (ordinales), mientras que en el caso de las variables cualitativas nos centraremos en indicadores de posición,  centro, variabilidad o de dispersión y de forma, además de su representación gráfica mediante histogramas, diagramas de cajas, diagramas de dispersión entre otros. 
+El análisis de las variables `cualitativas` se centra en la construcción de tablas de frecuencia y su representación a través de gráficos de tortas (nominales) y de barras (ordinales), mientras que en el caso de las variables `cuantitativas`  nos centraremos en indicadores de posición,  centro, variabilidad o de dispersión y de forma, además de su representación gráfica mediante histogramas, diagramas de cajas, diagramas de dispersión entre otros. 
 
 </br></br>
 

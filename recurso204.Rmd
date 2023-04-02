@@ -11,11 +11,17 @@ knitr::opts_chunk$set(echo = TRUE, comment = NA)
 x1=c(27, 27, 28, 28, 34, 28, 26, 33, 24, 28, 25, 25, 33, 27, 34, 38, 24, 26, 22, 23, 33, 23, 26, 26, 32, 33, 29, 30, 25, 23)
 x2=c(35,  25,  19,  17,  24,   17,  55,  25,  31,   35,  43,  28,  32,  19,  20, 17, 25,  18,  21,  22,  17,  35,  29,  20,  54,  46,  24, 29, 40, 18)
 data4=data.frame(x1,x2)
+
+
+c1 ="#FF7F00"  # naranja - color primario 
+c2 ="#034A94"  # azul oscuro - color secundario
+c3 ="#0EB0C6"  # azul claro - color terciario
+c4 ="#686868"  # gris - color texto
 ```
 
 </br></br>
 
-## <span style="color:#FF7F00">**Problema reconocimiento de grupo**</span>
+## <span style="color:#034A94">**Problema reconocimiento de grupo**</span>
 
 </br>
 
@@ -38,11 +44,11 @@ Hace falta otro indicador que nos oriente sobre, qué tan dispersos son los dato
 
 <br/> <br/>
 
-## <span style="color:#FF7F00">**Indicadores de dispersión**</span>
+## <span style="color:#034A94">**Indicadores de dispersión**</span>
 
 </br>
 
-### <span style="color:#FF7F00">**Rango**</span>
+### <span style="color:#034A94">**Rango**</span>
 
 </br>
 
@@ -64,7 +70,7 @@ Es importante hacer notar que si además de la media conocemos también un indic
 
 <br/> <br/>
 
-### <span style="color:#FF7F00">**Varianza**</span>
+### <span style="color:#034A94">**Varianza**</span>
 
 </br>
 
@@ -97,7 +103,7 @@ El problema de la varianza es su **interpretación**, pues sus unidades quedan a
 
 <br/> <br/>
 
-### <span style="color:#FF7F00">**Desviación estándar**</span> 
+### <span style="color:#034A94">**Desviación estándar**</span> 
 
 </br>
 
@@ -105,7 +111,10 @@ Es la raíz cuadrada de la varianza
 
 $$s=\sqrt{s^{2}}$$
 
-**Nota** : no aplican todas las propiedades de la varianza
+<div class="content-box-gray">
+### <span style="color:#686868">**Nota**</span> 
+Para la desviación estándar no aplican todas las propiedades de la varianza, dado que la raíz cuadrada no es una transformación lineal
+</div>
 
 </br>
 
@@ -121,7 +130,7 @@ Aunque la desviación estándar reduce el problema mencionado anteriormente debi
 
 <br/> <br/>
 
-### <span style="color:#FF7F00">**Coeficiente de variación**</span>
+### <span style="color:#034A94">**Coeficiente de variación**</span>
 
 </br>
 
@@ -132,6 +141,8 @@ $$CV= \dfrac{s}{\bar{x}} \times 100 \% $$
 Existen diferentes reglas empíricas para la interpretación del coeficiente de variación. Una de ellas establece como límite el 20% para separar los grupos homogéneos de los heterogéneos, por lo general se utiliza un valor hasta el 20% para determinar que un grupo de datos son homogéneos, de lo contrario se calificará como heterogéneo.
 
 </br>
+### <span style="color:#FF7F00"> **Ejemplo**</span> 
+
 
 |**Grupo 1**                  | **Grupo 1**                        |
 |:----------------------------|:-----------------------------------|
@@ -144,7 +155,7 @@ En este caso se obtienen valores diferentes para los dos grupos. El grupo 1 con 
 
 </br></br></br>
 
-### <span style="color:#FF7F00">**Código  R**</span>
+### <span style="color:#034A94">**Código  R**</span>
 
 
 

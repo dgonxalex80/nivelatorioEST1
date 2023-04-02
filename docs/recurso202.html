@@ -14,7 +14,7 @@
 
 <title> Indicadores de Posición</title>
 
-<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -301,10 +301,10 @@ caracterizan y facilitan su análisis como son :</p>
 <p><br/></p>
 <p>Iniciaremos con los <strong>indicadores de posición</strong></p>
 <p><br/><br/></p>
-<img src="img/carrera1.jpg" width="70%" style="display: block; margin: auto;" />
 <center>
-Tomada de : <a href="https://pixabay.com/"
-class="uri">https://pixabay.com/</a>
+<img src="img/carrera1.jpg" width="70%" style="display: block; margin: auto;" />
+<sub> Tomada de : <a href="https://pixabay.com/"
+class="uri">https://pixabay.com/</a> </sub>
 </center>
 <p><br/> <br/></p>
 <p>La posición final de un atleta en una competencia indica cual es su
@@ -314,7 +314,7 @@ Además del ganador y el último existen un gran número de valores
 intermedio que nos ayudan en el análisis de un grupo de datos</p>
 <p><br/></p>
 <div id="percentiles" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Percentiles</strong></span></h3>
+<h3><span style="color:#034A64"><strong>Percentiles</strong></span></h3>
 <p>Los <strong>percentiles</strong> corresponden a 99 valores que
 dividen los datos en cien partes de igual porcentaje (<span
 class="math inline">\(P_{1}\)</span>, <span
@@ -324,7 +324,9 @@ class="math inline">\(P_{4}\)</span>, <span
 class="math inline">\(\cdots\)</span> ,<span
 class="math inline">\(P_{99}\)</span>).</p>
 <p><br/></p>
-<p><strong>Ejemplo 1</strong></p>
+</div>
+<div id="ejemplo" class="section level3">
+<h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
 <p>Los siguientes datos corresponde a tiempos registrados por 70 atletas
 durante una carrera de 10.5 kilómetros obtenidos de manera simulada que
 nos servirán de apoyo para visualizar y entender los indicadores de
@@ -347,9 +349,13 @@ representa con un punto azul en la gráfica de puntos. Este valor
 corresponde al tiempo empleado por un atleta cuya posición está por
 encima del 30% de los participantes, pero por debajo del 70% de los que
 gastaron mayor tiempo.</p>
-<p><br/></p>
-<p><strong>Nota</strong>: para facilitar la interpretación de los
-resultados se transforman a minutos.segundos.</p>
+<br/>
+</div>
+<div id="nota" class="section level3 content-box-gray">
+<h3><span style="color:#686868"><strong>Nota</strong></span></h3>
+<p>Para facilitar la interpretación de los resultados se transforman a
+minutos.segundos.</p>
+</div>
 <p><img src="img/puntosP30.png" width="700%" style="display: block; margin: auto;" /></p>
 <p></br></p>
 <p>El <strong>percentil 75</strong> divide la muestra en dos partes, una
@@ -359,15 +365,16 @@ encima. En el conjunto de datos del ejemplo 1, corresponde a un valor de
 azul.</p>
 <p><img src="img/puntosP75.png" width="700%" style="display: block; margin: auto;" /></p>
 <p><br/> <br/></p>
-</div>
 <div id="deciles" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Deciles</strong></span></h3>
+<h3><span style="color:#034A94"><strong>Deciles</strong></span></h3>
 <p>Los <strong>deciles</strong> por su parte corresponden a 9 número que
 dividen la muestra en 10 partes, cada una con un 10% de la muestra
 (<span class="math inline">\(D_{1}, D_{2}, D_{3}, D_{4}, \cdots ,
 D_{9}\)</span>)</p>
 <p></br><br/></p>
-<p><strong>Ejemplo 2</strong></p>
+</div>
+<div id="ejemplo-1" class="section level3">
+<h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
 <p>El <strong>decil 2</strong> (<span
 class="math inline">\(D_{2}\)</span>), tiene por debajo del el, el 20%
 de los datos</p>
@@ -382,7 +389,7 @@ seleccionados.</p>
 <p></br></p>
 </div>
 <div id="cuartiles" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Cuartiles</strong></span></h3>
+<h3><span style="color:#034A94"><strong>Cuartiles</strong></span></h3>
 <p>Y finalmente los <strong>cuartiles</strong> corresponden a 3 números
 que dividen la muestra en cuatro partes de igual porcentaje (<span
 class="math inline">\(Q_{1}\)</span>, <span
@@ -390,7 +397,9 @@ class="math inline">\(Q_{2}\)</span>, <span
 class="math inline">\(Q_{3}\)</span>), con los cuales se construye el
 diagrama de cajas que permiten detectar datos atípicos</p>
 <p></br><br/></p>
-<p><strong>Ejemplo 3</strong></p>
+</div>
+<div id="ejemplo-2" class="section level3">
+<h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
 <p><img src="img/puntosQ1Q2Q3.png" width="700%" style="display: block; margin: auto;" /></p>
 <p>En este caso los cuartiles <span class="math inline">\(Q_1 =
 46.72\)</span>, <span class="math inline">\(Q_2 = 50.98\)</span> y <span
@@ -405,7 +414,7 @@ indicadores.</p>
 <p><br/> <br/></p>
 </div>
 <div id="codigo-r" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Codigo R</strong></span></h3>
+<h3><span style="color:#034A94"><strong>Codigo R</strong></span></h3>
 <p>Los percentiles pueden ser calculados mediante la función
 <code>quantile()</code> . El siguiente código ilustra la obtención de
 los cuartiles</p>

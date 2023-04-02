@@ -35,7 +35,7 @@ Una de las características principales están constituido por los indicadores d
 
 <br/> <br/>
 
-### <span style="color:#FF7F00">**Media aritmética**</span>
+### <span style="color:#034A94">**Media aritmética**</span>
 
 Es el indicador de tendencia central más conocido y utilizado por su fácil interpretación y calculo. Consiste en sumar todos los valores de un conjunto de datos y dividirlos por el número de datos
 
@@ -69,7 +69,7 @@ Sus principales propiedades son:
 
 <br/> <br/>
 
-**Ejemplo 1**
+### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 <br/>
 
@@ -87,7 +87,7 @@ na.rm = TRUE)   # parametro util cuando se tiene datos faltantes :
 
 <br/> <br/>
 
-### <span style="color:#FF7F00">**Mediana**</span> 
+### <span style="color:#034A94">**Mediana**</span> 
 
 <br/>
 
@@ -97,7 +97,7 @@ La **mediana** es el número que divide la muestra en dos partes de igual propor
 
 <br/> <br/>
 
-**Ejemplo 2**
+### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 <br/>
 
@@ -111,14 +111,14 @@ median(cars$speed)
 
 <br/> <br/>
 
-### <span style="color:#FF7F00">**Moda**</span>  
+### <span style="color:#034A94">**Moda**</span>  
 
 <br/>
 
 La **moda**  corresponde al dato o valor que más se repite. Es utilizada como medida de tendencia central en variables cualitativas o en cuantitativas discretas con pocos valores. 
 <br/> <br/>
 
-**Ejemplo 3**
+### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 <br/> <br/>
 ```{r}
@@ -135,7 +135,7 @@ Moda : **UEFA** .
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**Media truncada**</span>
+### <span style="color:#034A94">**Media truncada**</span>
 
 <br/>
 
@@ -143,7 +143,7 @@ Con el fin de evitar que los datos atípicos generen sesgos en el indicador de l
 
 <br/> <br/>
 
-**Ejemplo 4**
+### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 El valor para la media truncada al 10% para el caso de los datos de rendimiento de millas por galón de combustible de un grupo de 32 autos observados en el dataset `mtcars` es de 19.69615
 
@@ -157,7 +157,7 @@ mean(mtcars$mpg, na.rm = TRUE, trim = 0.10)
 
 <br/> <br/>
 
-### <span style="color:#FF7F00">**Rango medio**</span>  
+### <span style="color:#034A94">**Rango medio**</span>  
 
 <br/>
 
@@ -167,7 +167,7 @@ El rango medio se obtiene al sumar los valores extremos ( mínimo y máximo) y d
 
 <br/> <br/>
 
-**Ejemplo 5**
+### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 Para el caso de los datos de rendimiento de combustible arroja un valor de 22.15 millas por galón.
 
@@ -182,7 +182,7 @@ Para el caso de los datos de rendimiento de combustible arroja un valor de 22.15
 
 <br/> <br/>
 
-###  <span style="color:#FF7F00">**Media geométrica**</span> 
+###  <span style="color:#034A94">**Media geométrica**</span> 
 
 <br/>
 
@@ -192,7 +192,7 @@ $$MG = \Bigg(\displaystyle\prod_{i=1}^n (r_{i}+1)\Bigg)^{1/n}$$
 
 <br/> <br/>
 
-**Ejemplo 6**
+### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 <br/>
 
@@ -217,7 +217,7 @@ Lo  cual indica que la población colombiana está creciendo a una tasa del 1.5%
 
 <br/> <br/>
 
-###  <span style="color:#FF7F00">**Media  armónica**</span>  
+###  <span style="color:#034A94">**Media  armónica**</span>  
 
 $$H = \dfrac{1}{\frac{1}{x_{1}}+\frac{1}{x_{2}}+ ... + \frac{1}{x_{n}}}$$
 
@@ -225,7 +225,7 @@ Este indicador corresponde al inverso de la media aritmética, se utiliza para e
 
 <br/><br/>
 
-**Ejemplo 7**
+### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 <br/>
 
@@ -249,7 +249,7 @@ harmonic.mean(x,na.rm=TRUE,zero=TRUE)
 
 <br/> <br/>
 
-## <span style="color:#FF7F00">**Código R**</span>
+## <span style="color:#034A94">**Código R**</span>
 
 ```{r, eval=FALSE}
 tiempos=c(51.4, 49.9, 49.3, 51.2, 51.2, 45.7, 48.4, 47.3, 49.0, 50.1, 50.9, 45.4, 55.7, 48.9, 56.0, 44.7, 56.9, 46.6, 53.3, 48.5, 49.7, 45.0, 63.0, 51.0, 50.4, 51.2, 53.5, 52.1, 49.6, 45.9, 49.8, 42.3, 53.5, 54.7, 53.5, 56.7, NA,  44.4, 51.2, 51.1, 55.0, 64.4, 51.8, 45.3, 62.7, 43.8, 51.3, 53.7, 51.0, 52.9, 43.1, 43.6, 51.2, 52.8, 49.2, 49.6, 49.6, 51.5, 55.3, 46.7, 47.6, 51.8, 58.9, 50.8, 43.4, 48.5, 52.7, 44.8, 52.5, 58.4, 52.9)
@@ -267,10 +267,14 @@ mean(tiempos, na.rm = TRUE, trim = 0.10)
 [1] 53.35
 </pre>
 
+<br/> <br/>
 
+<div class="content-box-gray">
+### <span style="color:#686868">**Nota**</span>  
 
-**Nota** . Es necesario agregar `na.rm = TRUE` para que permite eliminar de los datos los faltantes para el calculo de los indicadores
+Es necesario agregar `na.rm = TRUE` para que permite eliminar de los datos los faltantes para el calculo de los indicadores
 
+</div>
 
 
 

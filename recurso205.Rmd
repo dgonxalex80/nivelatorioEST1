@@ -27,7 +27,7 @@ Los indicadores de forma permiten adicionar elementos a la interpretación de lo
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**Curtosis**</span>
+### <span style="color:#034a94">**Curtosis**</span>
 
 Se mide a través del coeficiente de curtosis que mide cuan **puntiaguda** es una distribución respecto a un patrón estándar que es la curva de la distribución normal. Esta característica está relacionada directamente con la dispersión.
 
@@ -57,7 +57,7 @@ En R se utiliza la función del paquete rapportools : `rapportools::kurtosis(x)`
 
 <br/><br/> 
 
-### <span style="color:#FF7F00">**Asimetría o sesgo**</span>
+### <span style="color:#034a94">**Asimetría o sesgo**</span>
 
 <br/>
 
@@ -75,7 +75,7 @@ Mide que tanto la forma de la distribución de frecuencias de los datos es simé
 
 <br/>
 
-#### **Interpretación**
+### <span style="color:#034a94">**Interpretación**</span>
 
 <br/>
 
@@ -87,7 +87,7 @@ Mide que tanto la forma de la distribución de frecuencias de los datos es simé
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**Código R**</span>
+### <span style="color:#034a94">**Código R**</span>
 
 <br/>
 

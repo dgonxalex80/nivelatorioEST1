@@ -37,10 +37,12 @@ Iniciaremos con los **indicadores de posición**
 
 <br/><br/>
 
+<center>
 ```{r, echo=FALSE, out.width="70%", fig.align = "center"}
 knitr::include_graphics("img/carrera1.jpg")
 ```
-<center> Tomada de : https://pixabay.com/ </center>
+<sub> Tomada de : https://pixabay.com/ </sub>
+</center>
 
 <br/> <br/>
 
@@ -48,7 +50,7 @@ La posición final de un atleta en una competencia indica cual es su nivel frent
 
 <br/>
 
-###  <span style="color:#FF7F00">**Percentiles**</span>
+###  <span style="color:#034A64">**Percentiles**</span>
 
 Los **percentiles** corresponden a 99 valores que dividen los datos en  cien partes de igual porcentaje  ($P_{1}$, $P_{2}$, $P_{3}$, $P_{4}$, $\cdots$ ,$P_{99}$). 
 
@@ -57,7 +59,7 @@ Los **percentiles** corresponden a 99 valores que dividen los datos en  cien par
 
 
 
-**Ejemplo 1** 
+### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 Los siguientes datos corresponde a tiempos registrados por 70 atletas  durante una carrera de 10.5 kilómetros obtenidos de manera simulada que nos servirán de apoyo para visualizar y entender los indicadores de posición.
 
@@ -75,8 +77,11 @@ knitr::include_graphics("img/puntos1.png")
 El **percentil 30** divide la muestra en dos partes.  30% por debajo y un 70% por encima de este valor. Para el conjunto de tiempos el $P_{30}$ corresponde a un valor de $48.96$, valor que se   representa con un punto azul en la gráfica de puntos. Este valor corresponde al tiempo empleado por un atleta cuya posición está por encima del 30% de los participantes, pero por debajo del 70% de los que gastaron mayor tiempo.
 
 <br/>
+<div class="content-box-gray">
+### <span style="color:#686868">**Nota**</span> 
 
-**Nota**: para facilitar la interpretación de los resultados se transforman a minutos.segundos.
+Para facilitar la interpretación de los resultados se transforman a minutos.segundos.
+</div>
 
 ```{r, echo=FALSE, out.width="700%", fig.align = "center"}
 knitr::include_graphics("img/puntosP30.png")
@@ -94,13 +99,14 @@ knitr::include_graphics("img/puntosP75.png")
 
 <br/> <br/>
 
-###  <span style="color:#FF7F00">**Deciles**</span>
+###  <span style="color:#034A94">**Deciles**</span>
+
 
 Los **deciles** por su parte corresponden a  9 número que dividen la muestra en 10 partes, cada una con un 10% de la muestra ($D_{1}, D_{2}, D_{3}, D_{4}, \cdots , D_{9}$)
 
 </br><br/>
 
-**Ejemplo 2**
+### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 El **decil 2** ($D_{2}$), tiene por debajo del el, el 20% de los datos 
 
@@ -114,13 +120,13 @@ Para el conjunto de datos del ejemplo 1 el $D_{2} = 46.72$. Si suponemos que sol
 
 </br>
 
-###  <span style="color:#FF7F00">**Cuartiles**</span>
+###  <span style="color:#034A94">**Cuartiles**</span>
 
 Y finalmente los **cuartiles** corresponden a 3 números que dividen la muestra en cuatro partes de igual porcentaje ($Q_{1}$, $Q_{2}$, $Q_{3}$), con los cuales se construye el diagrama de cajas que permiten detectar datos atípicos
 
 </br><br/>
 
-**Ejemplo 3**
+### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 ```{r, echo=FALSE, out.width="700%", fig.align = "center"}
 knitr::include_graphics("img/puntosQ1Q2Q3.png")
@@ -131,7 +137,7 @@ En este caso los cuartiles $Q_1 = 46.72$, $Q_2 = 50.98$ y $Q_3 = 52.90$, están 
 
 <br/> <br/>
 
-###  <span style="color:#FF7F00">**Codigo R**</span>
+###  <span style="color:#034A94">**Codigo R**</span>
 
 
 Los percentiles pueden ser calculados mediante la función  `quantile()` . El siguiente código ilustra la obtención de los cuartiles
@@ -146,4 +152,19 @@ quantile(x, c(0.25,0.50,0.75))
 25%             50%             75% 
 48.4300         50.9800         52.8975 
 </pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

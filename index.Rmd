@@ -38,7 +38,7 @@ En número de registros por lo regular de gran tamaño, hace necesaria la utiliz
 
 </br></br>
 
-### <span style="color:#FF7F00">**Tipos de variables**</span>
+### <<span style="color:#034a94">**Tipos de variables**</span>
 
 Inicialmente se examinan las características de las variables que conforman la data.
 
@@ -57,13 +57,16 @@ Las variables se puede clasificar como :
 </br>
 
 <div>
-**Nota** : El termino *variable* en Estadística se refiere a una característica de interés que permite una agrupación o análisis a diferencia de la interpretación que se le pueda dar en el área de sistemas, donde son de interés características como id, número de cedula, dirección, nombre del representante legal entre otros. En adelante se entenderán como variables las primeras.
+<div class="content-box-gray">
+### <span style="color:#686868">**Nota**</span> 
+
+El termino **variable** en Estadística se refiere a una característica de interés que permite una agrupación o análisis a diferencia de la interpretación que se le pueda dar en el área de sistemas, donde son de interés características como id, número de cédula, dirección, nombre del representante legal entre otros. En adelante se entenderán como variables las primeras.
 </div>
 
 
 </br></br>
 
-### <span style="color:#FF7F00">**Tipos de escala**</span>
+### <span style="color:#034a94">**Tipos de escala**</span>
 
 </br>
 
@@ -117,13 +120,13 @@ El análisis de las variables `cualitativas` se centra en la construcción de ta
 
 </br></br>
 
-### <span style="color:#FF7F00">**Resumen de indicadores  y gráfica**</span>
+### <span style="color:#034a94">**Resumen de indicadores  y gráfica**</span>
 
 </br>
 
 La función del paquete summarytools : `summarytools::descr(x)` permite obtener un resumen de indicadores. Al aplicar la función a un grupo de 70 valores correspondientes a los tiempo gastados por atletas en recorrer 10.5 kilómetros. 
 
-</br>
+</br></br>
 
 ```{r, eval=FALSE}
 summarytools::descr(data1$value1)
@@ -138,20 +141,20 @@ N: 70
 
 value1
 ----------------- --------
-Mean    50.80
+Mean        50.80
 Std.Dev     4.62
-Min    42.30
-Q1    48.42
-Median    50.98
-Q3    52.91
-Max    64.44
-MAD     3.64
-IQR     4.47
-CV     0.09
+Min         42.30
+Q1          48.42
+Median      50.98
+Q3          52.91
+Max         64.44
+MAD          3.64
+IQR          4.47
+CV           0.09
 Skewness     0.60
-SE.Skewness     0.29
+SE.Skewness  0.29
 Kurtosis     0.64
-N.Valid    70.00
+N.Valid     70.00
 Pct.Valid   100.00
 </pre>        
 
@@ -159,7 +162,7 @@ Pct.Valid   100.00
 
 </br></br>
 
-```{r, fig.height=4, echo=FALSE}
+```{r, fig.height=4, echo=FALSE, warning=FALSE, message=FALSE}
 library(ggplot2)
 dat <- data1
 plot <- ggplot(data1, aes(x = value1)) 
@@ -167,6 +170,7 @@ plot <- plot + geom_histogram(aes(y=..density..), color="black", fill = "#034A96
 plot
 ```
 
+</br></br>
 
 Los datos indican que en promedio los atletas emplearon 51 minutos, con un tiempo mínimo para el ganador de 43 minutos y un máximo de 64. Los datos presenta un forma simétrica concentra un gran número de atletas en un rango entre 45 y 55 minutos. En cuanto su dispersión presentan un 9% de coeficiente de variación que los califica como homogeneos.
 

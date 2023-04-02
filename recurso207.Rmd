@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE, comment = NA)
 </br>
 
 
-### <span style="color:#FF7F00">**TABLAS DE FRECUENCIA VARIABLES NOMINALES**</span>
+### <span style="color:#034a94">**Tablas de frecuencia de variables nominales**</span>
 
 </br>
 
@@ -23,10 +23,10 @@ Las tablas de frecuencia constituyen una de las herramientas más utilizadas en 
 + Frecuencia absoluta o conteo de los elementos o registros que tienen un valor determinado
 + Frecuencia relativa que corresponde al porcentaje sobre el total de registros que corresponden a un valor determinado
 
-La siguiente tabla corresponde a la distribución de la variable ubicación de las personas que se han contagiado con Covid-19 en Colombia, base que se encuentra disponible en la plataforma [DATOS ABIERTOS](https://www.datos.gov.co/browse?q=covid%20&sortBy=relevance)
+La siguiente tabla corresponde a la distribución de la variable ubicación de las personas que se han contagiado con Covid-19 en Colombia, base que se encuentra disponible en la plataforma [Datos abiertos](https://www.datos.gov.co/browse?q=covid%20&sortBy=relevance)
 
 </br></br>
-<center>**DISTRIBUCIÓN DE LA UBICACIÓN DE CONTAGIADOS DE COVID-19 COLOMBIA**</center>
+<center>**Distribución de la ubicación de contagios de Covid-19 Colombia**</center>
 ```{r, echo=FALSE, out.width="45%", fig.align = "center"}
 knitr::include_graphics("img/tabla1.png")
 ```
@@ -39,7 +39,7 @@ La tabla permite visualizar que actualmente están reportados 19 casos en cuidad
 
 </br></br>
 
-### <span style="color:#FF7F00">**TABLAS DE FRECUENCIA VARIABLES ORDINALES**</span>
+### <span style="color:#034a94">**Tablas de frecuencia variables ordinales**</span>
 
 </br>
 
@@ -47,14 +47,14 @@ Para el caso de variables cualitativas medidas en **escala ordinal** los valores
 
 </br></br>
 
-<center>**EVALUACIÓN DEL SERVICIO DE ATENCIÓN AL CLIENTE MES DE NOVIEMBRE DE 2022**</center>
+<center>**Evaluación del servicio de atención al cliente dic-2002 **</center>
 ```{r, echo=FALSE, out.width="60%", fig.align = "center"}
 knitr::include_graphics("img/tabla2.png")
 ```
 
 </br></br>
 
-### <span style="color:#FF7F00">**TABLAS CRUZADAS**</span>
+### <span style="color:#034a94">**Tablas cruzadas**</span>
 
 </br>
 
@@ -65,7 +65,7 @@ También es de utilidad realizar tablas cruzadas o de doble entrada que permite 
 
 </br></br>
 
-<center>**DISTRIBUCIÓN DE LA UBUCACIÓN POR SEXO DE LOS CONTAGIADOS DE COVID-19 COLOMBIA**</center>
+<center>**Distribución de la ubicación por sexo de los contagiados de Covid-19 Colombia**</center>
 ```{r, echo=FALSE, out.width="60%", fig.align = "center"}
 knitr::include_graphics("img/tabla3.png")
 ```
@@ -77,7 +77,7 @@ De esta tabla se puede observar que se presenta una mayor cantidad de hombres fa
 
 </br></br>
 
-### <span style="color:#FF7F00">**Visualización de errores**</span>
+### <span style="color:#034a94">**Visualización de errores**</span>
 
 </br>
 
@@ -106,7 +106,7 @@ En R se puede utilizar la función `table(x)` para la elaboración de una tabla 
 
 </br></br>
 
-### <span style="color:#FF7F00">**Código R**
+### <span style="color:#034a94">**Código R**
 
 
 </br>

@@ -14,7 +14,7 @@
 
 <title> Representación gráfica de datos</title>
 
-<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -375,11 +375,11 @@ El tipo de dato determina el tipo de gráfico así:</p>
 <p><br/><br/></p>
 </div>
 <div id="gráficos-variables-cualitativas" class="section level2">
-<h2><span style="color:#FF7F00"><strong>Gráficos variables
+<h2><span style="color:#034a94"><strong>Gráficos variables
 cualitativas</strong></span></h2>
 <p><br/></p>
 <div id="gráfico-de-tortas" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Gráfico de
+<h3><span style="color:#034a94"><strong>Gráfico de
 tortas</strong></span></h3>
 <p>Este tipo de gráficos se utiliza para variables cualitativas medidas
 en escala nominal.</p>
@@ -387,7 +387,7 @@ en escala nominal.</p>
 <p><br/><br/></p>
 </div>
 <div id="diagrama-de-barras" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Diagrama de
+<h3><span style="color:#034a94"><strong>Diagrama de
 barras</strong></span></h3>
 <p>El diagrama de barras se utiliza para representar variables
 cualitativas en escala ordinal. Es necesario que los valores
@@ -396,7 +396,7 @@ representados sigan el orden de la escala.</p>
 <p><br/><br/></p>
 </div>
 <div id="diagrama-de-barras-con-dos-variables" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Diagrama de barras con dos
+<h3><span style="color:#034a94"><strong>Diagrama de barras con dos
 variables</strong></span></h3>
 <p>Este diagrama se emplea para representar dos variables cualitativas
 que pueden ser de escala nominal u ordinal.</p>
@@ -405,11 +405,11 @@ que pueden ser de escala nominal u ordinal.</p>
 </div>
 </div>
 <div id="gráficas-variables-cualitativas" class="section level2">
-<h2><span style="color:#FF7F00"><strong>Gráficas variables
+<h2><span style="color:#034a94"><strong>Gráficas variables
 cualitativas</strong></span></h2>
 <p><br/></p>
 <div id="diagrama-de-árbol" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Diagrama de
+<h3><span style="color:#034a94"><strong>Diagrama de
 árbol</strong></span></h3>
 <pre><code>
   The decimal point is at the |
@@ -426,7 +426,7 @@ están la mayor concentración de ellos.</p>
 <p><br/><br/></p>
 </div>
 <div id="histograma" class="section level3">
-<h3>*<span style="color:#FF7F00"><strong>Histograma</strong></span></h3>
+<h3><span style="color:#034a94"><strong>Histograma</strong></span></h3>
 <p>El histograma es uno de los gráficos más utilizados para representar
 variables cuantitativas y permite resumir por rangos los diferentes
 datos. Es una buena forma de visualizar la distribución de los datos y
@@ -435,7 +435,7 @@ su forma.</p>
 <p><br/><br/></p>
 </div>
 <div id="diagrama-de-densidad" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Diagrama de
+<h3><span style="color:#034a94"><strong>Diagrama de
 densidad</strong></span></h3>
 <p>Este diagrama corresponde a un contorno suavizado del histograma que
 permite visualizar claramente la forma de los datos.</p>
@@ -443,7 +443,7 @@ permite visualizar claramente la forma de los datos.</p>
 <p><br/><br/></p>
 </div>
 <div id="diagrama-de-cajas" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Diagrama de
+<h3><span style="color:#034a94"><strong>Diagrama de
 cajas</strong></span></h3>
 <p>Es uno de las representaciones gráficas más utilizadas, pues además
 de los elementos y características que permite visualizar de las
@@ -452,34 +452,34 @@ variables, permite comparar los resultados de dos o más grupos.</p>
 <p><br/><br/></p>
 </div>
 <div id="diagrama-de-dispersión" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Diagrama de
+<h3><span style="color:#034a94"><strong>Diagrama de
 dispersión</strong></span></h3>
 <p>Este diagrma de puntos permite visualizar la relación lineal que
 puede existir entre dos variables cualitativas.</p>
 <p><img src="recurso206_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p><br/><br/></p>
 </div>
-<div id="gráfica-de-series-de-tiempo" class="section level3">
-<h3><span style="color:#FF7F00"><strong>GRÁFICA DE SERIES DE
-TIEMPO</strong></span></h3>
+<div id="gráfico-de-series-de-tiempo" class="section level3">
+<h3><span style="color:#034a94"><strong>Gráfico de series de
+tiempo</strong></span></h3>
 <p><img src="recurso206_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p><br/><br/><br/></p>
 </div>
 <div id="código-r" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Código R</strong></span></h3>
-<pre>
+<h3><span style="color:#034a94"><strong>Código R</strong></span></h3>
+<pre class="my-pre">
 # sumulación de datos
 x=rnorm(100,100,20)   
 y=rnorm(100,100,25)   
 z=rbinom(100,4,0.30)
 t=1:100
 
-pie(table(z))        # gráfico de torta
+pie(table(z))            # gráfico de torta
 barplot(table(z))    # diagrama de barras
-stem(x)              # diagrama de tallos y hojas
-hist(x)              # histograma
-boxplot(x)           # diagrama de cajas
-plot(x,y)            # diagrama de dispersión 
+stem(x)                    # diagrama de tallos y hojas
+hist(x)                      # histograma
+boxplot(x)               # diagrama de cajas
+plot(x,y)                  # diagrama de dispersión 
 plot(t,y, type="l")  # linea de tiempo
 plot(density(x))     # diagrama de densidad
 </pre>

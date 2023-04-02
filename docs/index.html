@@ -14,7 +14,7 @@
 
 <title> Introducción</title>
 
-<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -305,7 +305,7 @@ la utilización de un herramientas computacionales para su análisis y
 procesamiento (en nuestro caso el lenguaje <strong>R</strong>).</p>
 <p></br></br></p>
 <div id="tipos-de-variables" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Tipos de
+<h3>&lt;<span style="color:#034a94"><strong>Tipos de
 variables</strong></span></h3>
 <p>Inicialmente se examinan las características de las variables que
 conforman la data.</p>
@@ -329,17 +329,19 @@ medición y pueden tomar cualquier valor real<br />
 </div>
 <p></br></p>
 <div>
-<p><strong>Nota</strong> : El termino <em>variable</em> en Estadística
-se refiere a una característica de interés que permite una agrupación o
-análisis a diferencia de la interpretación que se le pueda dar en el
-área de sistemas, donde son de interés características como id, número
-de cedula, dirección, nombre del representante legal entre otros. En
+</div>
+<div id="nota" class="section level3 content-box-gray">
+<h3><span style="color:#686868"><strong>Nota</strong></span></h3>
+<p>El termino <strong>variable</strong> en Estadística se refiere a una
+característica de interés que permite una agrupación o análisis a
+diferencia de la interpretación que se le pueda dar en el área de
+sistemas, donde son de interés características como id, número de
+cédula, dirección, nombre del representante legal entre otros. En
 adelante se entenderán como variables las primeras.</p>
 </div>
 <p></br></br></p>
-</div>
 <div id="tipos-de-escala" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Tipos de
+<h3><span style="color:#034a94"><strong>Tipos de
 escala</strong></span></h3>
 <p></br></p>
 <p>A la clasificación anterior añadimos la forma en que se pueden medir
@@ -552,7 +554,7 @@ diagramas de cajas, diagramas de dispersión entre otros.</p>
 <p></br></br></p>
 </div>
 <div id="resumen-de-indicadores-y-gráfica" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Resumen de indicadores y
+<h3><span style="color:#034a94"><strong>Resumen de indicadores y
 gráfica</strong></span></h3>
 <p></br></p>
 <p>La función del paquete summarytools :
@@ -560,7 +562,7 @@ gráfica</strong></span></h3>
 indicadores. Al aplicar la función a un grupo de 70 valores
 correspondientes a los tiempo gastados por atletas en recorrer 10.5
 kilómetros.</p>
-<p></br></p>
+<p></br></br></p>
 <pre class="r"><code>summarytools::descr(data1$value1)</code></pre>
 <pre>
 Descriptive Statistics  
@@ -569,26 +571,25 @@ N: 70
 
 value1
 ----------------- --------
-Mean    50.80
+Mean        50.80
 Std.Dev     4.62
-Min    42.30
-Q1    48.42
-Median    50.98
-Q3    52.91
-Max    64.44
-MAD     3.64
-IQR     4.47
-CV     0.09
+Min         42.30
+Q1          48.42
+Median      50.98
+Q3          52.91
+Max         64.44
+MAD          3.64
+IQR          4.47
+CV           0.09
 Skewness     0.60
-SE.Skewness     0.29
+SE.Skewness  0.29
 Kurtosis     0.64
-N.Valid    70.00
+N.Valid     70.00
 Pct.Valid   100.00
 </pre>
 <p></br></br></p>
-<pre><code>Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
-ℹ Please use `after_stat(density)` instead.</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p></br></br></p>
 <p>Los datos indican que en promedio los atletas emplearon 51 minutos,
 con un tiempo mínimo para el ganador de 43 minutos y un máximo de 64.
 Los datos presenta un forma simétrica concentra un gran número de

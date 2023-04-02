@@ -48,11 +48,11 @@ Elegir el gráfico adecuado es muy importante, pues existen diferentes alternati
 
 <br/><br/>
 
-## <span style="color:#FF7F00">**Gráficos variables cualitativas**</span>
+## <span style="color:#034a94">**Gráficos variables cualitativas**</span>
 
 <br/>
 
-### <span style="color:#FF7F00">**Gráfico de tortas**</span>
+### <span style="color:#034a94">**Gráfico de tortas**</span>
 
 Este tipo de gráficos se utiliza para variables cualitativas medidas en escala nominal.
 
@@ -73,7 +73,7 @@ col = paleta4)
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**Diagrama de barras**</span>
+### <span style="color:#034a94">**Diagrama de barras**</span>
 
 El diagrama de barras se utiliza para representar variables cualitativas en escala ordinal.  Es necesario que los valores representados sigan el orden de la escala.
 
@@ -85,7 +85,7 @@ barplot(ev, col=c("#ff5b00","#dcf600","#7dbd00","#659cef","#2956b2"), main = "Ev
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**Diagrama de barras con dos variables**</span>
+### <span style="color:#034a94">**Diagrama de barras con dos variables**</span>
 
 Este diagrama se emplea para representar dos variables cualitativas que pueden ser de escala nominal u ordinal.
 
@@ -98,11 +98,11 @@ legend = rownames(counts))
 
 <br/><br/><br/>
 
-## <span style="color:#FF7F00">**Gráficas variables cualitativas**</span>
+## <span style="color:#034a94">**Gráficas variables cualitativas**</span>
 
 <br/>
 
-### <span style="color:#FF7F00">**Diagrama de árbol**</span>
+### <span style="color:#034a94">**Diagrama de árbol**</span>
 
 
 ```{r, echo=FALSE}
@@ -114,7 +114,7 @@ Este diagrama ordena los datos de manera que se puede determinar tanto el mínim
 
 <br/><br/>
 
-### *<span style="color:#FF7F00">**Histograma**</span>
+### <span style="color:#034a94">**Histograma**</span>
 
 El histograma es uno de los gráficos más utilizados para representar variables cuantitativas y permite resumir por rangos los diferentes datos. Es una buena forma de visualizar la distribución de los datos y su forma.
 
@@ -127,7 +127,7 @@ abline(v=3,col="#f6b915", lwd=2)
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**Diagrama de densidad**</span>
+### <span style="color:#034a94">**Diagrama de densidad**</span>
 
 Este diagrama corresponde a un contorno suavizado del histograma que permite visualizar claramente la forma de los datos.
 
@@ -140,7 +140,7 @@ xlab="nota", ylab="densidad")
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**Diagrama de cajas**</span>
+### <span style="color:#034a94">**Diagrama de cajas**</span>
 
 Es uno de las representaciones gráficas más utilizadas, pues además de los elementos y características que permite visualizar de las variables, permite comparar los resultados de dos o más grupos.
 
@@ -158,7 +158,7 @@ abline(h=4, col="#447270", lwd=1)
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**Diagrama de dispersión**</span>
+### <span style="color:#034a94">**Diagrama de dispersión**</span>
 
 Este diagrma de puntos permite visualizar la relación lineal que puede existir entre dos variables cualitativas.
 
@@ -171,7 +171,7 @@ grid()
 
 <br/><br/>
 
-### <span style="color:#FF7F00">**GRÁFICA DE SERIES DE TIEMPO**</span>
+### <span style="color:#034a94">**Gráfico de series de tiempo**</span>
 
 ```{r, fig.height=5, echo=FALSE}
 plot(AirPassengers, main="Numero de pasajeros por mes", col="#034A94", lwd = 4, las=1, 
@@ -180,21 +180,21 @@ ylab="número de pasajeros", xlab="año")
 
 <br/><br/><br/>
 
-### <span style="color:#FF7F00">**Código R**</span>
+### <span style="color:#034a94">**Código R**</span>
 
-<pre>
+<pre class="my-pre">
 # sumulación de datos
 x=rnorm(100,100,20)   
 y=rnorm(100,100,25)   
 z=rbinom(100,4,0.30)
 t=1:100
 
-pie(table(z))        # gráfico de torta
+pie(table(z))            # gráfico de torta
 barplot(table(z))    # diagrama de barras
-stem(x)              # diagrama de tallos y hojas
-hist(x)              # histograma
-boxplot(x)           # diagrama de cajas
-plot(x,y)            # diagrama de dispersión 
+stem(x)                    # diagrama de tallos y hojas
+hist(x)                      # histograma
+boxplot(x)               # diagrama de cajas
+plot(x,y)                  # diagrama de dispersión 
 plot(t,y, type="l")  # linea de tiempo
 plot(density(x))     # diagrama de densidad
 </pre>

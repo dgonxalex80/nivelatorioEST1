@@ -14,7 +14,7 @@
 
 <title> Indicadores de variabilidad o dispersión</title>
 
-<script src="site_libs/header-attrs-2.17/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -283,7 +283,7 @@ $(document).ready(function () {
 
 <p></br></br></p>
 <div id="problema-reconocimiento-de-grupo" class="section level2">
-<h2><span style="color:#FF7F00"><strong>Problema reconocimiento de
+<h2><span style="color:#034A94"><strong>Problema reconocimiento de
 grupo</strong></span></h2>
 <p></br></p>
 <p>Supongamos que tenemos dos grupos de estudiantes y solo se conoce el
@@ -320,11 +320,11 @@ en centro como en variabilidad. Esta necesidad la suplen los
 <p><br/> <br/></p>
 </div>
 <div id="indicadores-de-dispersión" class="section level2">
-<h2><span style="color:#FF7F00"><strong>Indicadores de
+<h2><span style="color:#034A94"><strong>Indicadores de
 dispersión</strong></span></h2>
 <p></br></p>
 <div id="rango" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Rango</strong></span></h3>
+<h3><span style="color:#034A94"><strong>Rango</strong></span></h3>
 <p></br></p>
 <p>El rango es el indicador de dispersión más facil de calcular, pues se
 obtiene restando los valores extremos de los datos:</p>
@@ -362,7 +362,7 @@ deben realizar cálculos rápidos.</p>
 <p><br/> <br/></p>
 </div>
 <div id="varianza" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Varianza</strong></span></h3>
+<h3><span style="color:#034A94"><strong>Varianza</strong></span></h3>
 <p></br></p>
 <p>Es la medida de dispersión más utilizada en estadística y está
 definida por :</p>
@@ -402,13 +402,17 @@ varianza.</p>
 </div>
 </div>
 <div id="desviación-estándar" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Desviación
+<h3><span style="color:#034A94"><strong>Desviación
 estándar</strong></span></h3>
 <p></br></p>
 <p>Es la raíz cuadrada de la varianza</p>
 <p><span class="math display">\[s=\sqrt{s^{2}}\]</span></p>
-<p><strong>Nota</strong> : no aplican todas las propiedades de la
-varianza</p>
+</div>
+<div id="nota" class="section level3 content-box-gray">
+<h3><span style="color:#686868"><strong>Nota</strong></span></h3>
+<p>Para la desviación estándar no aplican todas las propiedades de la
+varianza, dado que la raíz cuadrada no es una transformación lineal</p>
+</div>
 <p></br></p>
 <table>
 <thead>
@@ -443,9 +447,8 @@ anteriormente debido a tener las mismas unidades de la variable, es útil
 para comparación de dos grupos con igual media. En caso de que las
 medias sean diferentes es difícil poder realizar las comparaciones.</p>
 <p><br/> <br/></p>
-</div>
 <div id="coeficiente-de-variación" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Coeficiente de
+<h3><span style="color:#034A94"><strong>Coeficiente de
 variación</strong></span></h3>
 <p></br></p>
 <p>Por último, el coeficiente de variación es un indicador adimensional
@@ -459,7 +462,8 @@ coeficiente de variación. Una de ellas establece como límite el 20% para
 separar los grupos homogéneos de los heterogéneos, por lo general se
 utiliza un valor hasta el 20% para determinar que un grupo de datos son
 homogéneos, de lo contrario se calificará como heterogéneo.</p>
-<p></br></p>
+<p></br> ### <span style="color:#FF7F00">
+<strong>Ejemplo</strong></span></p>
 <table>
 <thead>
 <tr class="header">
@@ -487,7 +491,7 @@ grupo 1 con un valor inferior a 20%, que indica homogeneidad y el grupo
 <p></br></br></br></p>
 </div>
 <div id="código-r" class="section level3">
-<h3><span style="color:#FF7F00"><strong>Código R</strong></span></h3>
+<h3><span style="color:#034A94"><strong>Código R</strong></span></h3>
 <pre class="r"><code>max(x1)-min(x1)        # rango
 var(x1)                # varianza
 sd(x1)                 # desviación estándar

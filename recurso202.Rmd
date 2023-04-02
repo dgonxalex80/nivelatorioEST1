@@ -50,7 +50,7 @@ La posición final de un atleta en una competencia indica cual es su nivel frent
 
 <br/>
 
-###  <span style="color:#034A64">**Percentiles**</span>
+##  <span style="color:#034A64">**Percentiles**</span>
 
 Los **percentiles** corresponden a 99 valores que dividen los datos en  cien partes de igual porcentaje  ($P_{1}$, $P_{2}$, $P_{3}$, $P_{4}$, $\cdots$ ,$P_{99}$). 
 
@@ -99,7 +99,7 @@ knitr::include_graphics("img/puntosP75.png")
 
 <br/> <br/>
 
-###  <span style="color:#034A94">**Deciles**</span>
+##  <span style="color:#034A94">**Deciles**</span>
 
 
 Los **deciles** por su parte corresponden a  9 número que dividen la muestra en 10 partes, cada una con un 10% de la muestra ($D_{1}, D_{2}, D_{3}, D_{4}, \cdots , D_{9}$)
@@ -120,7 +120,7 @@ Para el conjunto de datos del ejemplo 1 el $D_{2} = 46.72$. Si suponemos que sol
 
 </br>
 
-###  <span style="color:#034A94">**Cuartiles**</span>
+##  <span style="color:#034A94">**Cuartiles**</span>
 
 Y finalmente los **cuartiles** corresponden a 3 números que dividen la muestra en cuatro partes de igual porcentaje ($Q_{1}$, $Q_{2}$, $Q_{3}$), con los cuales se construye el diagrama de cajas que permiten detectar datos atípicos
 

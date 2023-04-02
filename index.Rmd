@@ -38,7 +38,7 @@ En número de registros por lo regular de gran tamaño, hace necesaria la utiliz
 
 </br></br>
 
-### <<span style="color:#034a94">**Tipos de variables**</span>
+### <span style="color:#034a94">**Tipos de variables**</span>
 
 Inicialmente se examinan las características de las variables que conforman la data.
 

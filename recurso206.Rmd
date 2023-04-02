@@ -21,11 +21,14 @@ paleta4=c("#0d3b66", "#faf0ca", "#f4d35e", "#ee964d")
 
 <br/><br/>
 
-## <span style="color:#FF7F00">**Introducción**</span>
+## <span style="color:#034A94">**Introducción**</span>
 
+
+<div class="content-box-gray">
 >Se denomina gráfico a una representación visual de una serie de datos, prepresentación que tiene como finalidad dar una rápida noción acerca de volúmenes, cantidades y porcentajes, estableciendo comparaciones 
 
-Fuente : enciclopedia.net
+<sub>Fuente : enciclopedia.net</sub>
+</div>
 
 <br/><br/>
 

@@ -177,3 +177,4 @@ sd(x1)/mean(x1)*100    # coeficiente de variación
 
 
 
+

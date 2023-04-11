@@ -185,7 +185,7 @@ ylab="número de pasajeros", xlab="año")
 
 ### <span style="color:#034a94">**Código R**</span>
 
-<pre class="my-pre">
+<pre>
 # sumulación de datos
 x=rnorm(100,100,20)   
 y=rnorm(100,100,25)   

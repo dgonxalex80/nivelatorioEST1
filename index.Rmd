@@ -23,11 +23,16 @@ value1=x
 El proceso de manejo de datos comprende una serie de etapas que permiten cumplir los objetivos trazados en una investigación o proyecto de Ciencia de Datos como lo menciona Antonio Vazquez Brust en su libro *Ciencia de Datos para gente sociable*. Es necesario para realizar este proceso recordar o incorporar conceptos de Estadística.</p>
 
 </br></br>
+<center>
 
+**Proceso del análisis de datos** 
 ```{r, echo=FALSE, out.width="60%", fig.align = "center"}
-knitr::include_graphics("img/procesodatos.png")
+knitr::include_graphics("img/proceso_cd.png")
 ```
-<center>Tomado de : Ciencia de Datos para Gente Sociable</center>
+<sub>
+Tomado de : Ciencia de Datos para Gente Sociable
+</sub>
+</center>
 
 
 </br></br>

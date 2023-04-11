@@ -26,11 +26,15 @@ Las tablas de frecuencia constituyen una de las herramientas más utilizadas en 
 La siguiente tabla corresponde a la distribución de la variable ubicación de las personas que se han contagiado con Covid-19 en Colombia, base que se encuentra disponible en la plataforma [Datos abiertos](https://www.datos.gov.co/browse?q=covid%20&sortBy=relevance)
 
 </br></br>
-<center>**Distribución de la ubicación de contagios de Covid-19 Colombia**</center>
+<center>
+**Distribución de la ubicación de contagios de Covid-19 Colombia**
 ```{r, echo=FALSE, out.width="45%", fig.align = "center"}
 knitr::include_graphics("img/tabla1.png")
 ```
-<center>Fuente : Base Casos positivos de COVID-19 en Colombia. 17-10-2022</center>
+<sub>
+Fuente : Base Casos positivos de COVID-19 en Colombia. 17-10-2022
+</sub>
+</center>
 
 </br>
 
@@ -47,10 +51,12 @@ Para el caso de variables cualitativas medidas en **escala ordinal** los valores
 
 </br></br>
 
-<center>**Evaluación del servicio de atención al cliente dic-2002 **</center>
+<center>
+**Evaluación del servicio de atención al cliente dic-2022**
 ```{r, echo=FALSE, out.width="60%", fig.align = "center"}
 knitr::include_graphics("img/tabla2.png")
 ```
+</center>
 
 </br></br>
 
@@ -65,11 +71,15 @@ También es de utilidad realizar tablas cruzadas o de doble entrada que permite 
 
 </br></br>
 
-<center>**Distribución de la ubicación por sexo de los contagiados de Covid-19 Colombia**</center>
+<center>
+**Distribución de la ubicación por sexo de los contagiados de Covid-19 Colombia**
 ```{r, echo=FALSE, out.width="60%", fig.align = "center"}
 knitr::include_graphics("img/tabla3.png")
 ```
-<center>Fuente : Base Casos positivos de COVID-19 en Colombia. 17-10-2022</center>
+<sub>
+Fuente : Base Casos positivos de COVID-19 en Colombia. 17-10-2022</center>
+</sub>
+</center>
 
 </br></br>
 

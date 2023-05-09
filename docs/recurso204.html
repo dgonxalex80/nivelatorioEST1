@@ -287,11 +287,11 @@ $(document).ready(function () {
 grupo</strong></span></h2>
 <p></br></p>
 <p>Supongamos que tenemos dos grupos de estudiantes y solo se conoce el
-promedio de sus edades (28 años). Lo que primero se piensa es que los
-dos grupos tienen una composición igual o muy parecida dado que
-coinciden en el promedio. Pero no es así, los datos que se presentan a
-continuación tienen medias de 28, pero corresponden a grupos
-diferentes.</p>
+promedio de sus edades (<span class="math inline">\(\bar{x} =28\)</span>
+años). Lo que primero se piensa es que los dos grupos tienen una
+composición igual o muy parecida dado que coinciden en el promedio. Pero
+no es así, los datos que se presentan a continuación tienen medias de
+28, pero corresponden a grupos diferentes.</p>
 <table>
 <colgroup>
 <col width="4%" />
@@ -311,7 +311,11 @@ diferentes.</p>
 </tbody>
 </table>
 <p></br></br></p>
-<p><img src="img/grupos12.png" width="100%" style="display: block; margin: auto;" /></p>
+<center>
+<img src="img/grupos12.png" width="100%" style="display: block; margin: auto;" />
+<strong>Figura 1.9</strong> Tiempos de carrera en minutos </br>
+<sub>Fuente : Carrera La Luz Cali - comparación de grupos </sub>
+</center>
 <p></br></br></p>
 <p>Hace falta otro indicador que nos oriente sobre, qué tan dispersos
 son los datos con el fin de saber si se trata de grupos parecidos tanto
@@ -323,8 +327,9 @@ en centro como en variabilidad. Esta necesidad la suplen los
 <h2><span style="color:#034A94"><strong>Indicadores de
 dispersión</strong></span></h2>
 <p></br></p>
-<div id="rango" class="section level3">
-<h3><span style="color:#034A94"><strong>Rango</strong></span></h3>
+</div>
+<div id="rango" class="section level2">
+<h2><span style="color:#034A94"><strong>Rango</strong></span></h2>
 <p></br></p>
 <p>El rango es el indicador de dispersión más facil de calcular, pues se
 obtiene restando los valores extremos de los datos:</p>
@@ -361,8 +366,8 @@ un poco más a los grupos. El rango es un indicador muy útil cuando se
 deben realizar cálculos rápidos.</p>
 <p><br/> <br/></p>
 </div>
-<div id="varianza" class="section level3">
-<h3><span style="color:#034A94"><strong>Varianza</strong></span></h3>
+<div id="varianza" class="section level2">
+<h2><span style="color:#034A94"><strong>Varianza</strong></span></h2>
 <p></br></p>
 <p>Es la medida de dispersión más utilizada en estadística y está
 definida por :</p>
@@ -371,8 +376,9 @@ definida por :</p>
 <p>Se podría afirmar que la varianza es un promedio de los cuadrados de
 las diferencias entre los datos y su media.</p>
 <p><br/> <br/></p>
-<div id="propiedades-de-la-varianza" class="section level4">
-<h4><strong>Propiedades de la varianza</strong></h4>
+<div id="propiedades-de-la-varianza" class="section level3">
+<h3><span style="color:#034A94"><strong>Propiedades de la
+varianza</strong></span></h3>
 <ul>
 <li><p><span class="math inline">\(s^{2} = \frac{1}{n} \sum x_{i}^{2}-
 (\bar{x})^{2}\)</span></p></li>
@@ -399,7 +405,6 @@ posible interpretar los resultados. Por esta razón se optó por utilizar
 otra medidada de dispersión calculada a partir de la raíz cuadrada de la
 varianza.</p>
 <p><br/> <br/></p>
-</div>
 </div>
 <div id="desviación-estándar" class="section level3">
 <h3><span style="color:#034A94"><strong>Desviación
@@ -447,9 +452,10 @@ anteriormente debido a tener las mismas unidades de la variable, es útil
 para comparación de dos grupos con igual media. En caso de que las
 medias sean diferentes es difícil poder realizar las comparaciones.</p>
 <p><br/> <br/></p>
-<div id="coeficiente-de-variación" class="section level3">
-<h3><span style="color:#034A94"><strong>Coeficiente de
-variación</strong></span></h3>
+</div>
+<div id="coeficiente-de-variación" class="section level2">
+<h2><span style="color:#034A94"><strong>Coeficiente de
+variación</strong></span></h2>
 <p></br></p>
 <p>Por último, el coeficiente de variación es un indicador adimensional
 que indica que tan grande o que tan pequeña es la desviación estándar
@@ -462,8 +468,9 @@ coeficiente de variación. Una de ellas establece como límite el 20% para
 separar los grupos homogéneos de los heterogéneos, por lo general se
 utiliza un valor hasta el 20% para determinar que un grupo de datos son
 homogéneos, de lo contrario se calificará como heterogéneo.</p>
-<p></br> ### <span style="color:#FF7F00">
-<strong>Ejemplo</strong></span></p>
+<p></br></p>
+<div id="ejemplo" class="section level3">
+<h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
 <table>
 <thead>
 <tr class="header">
@@ -490,19 +497,19 @@ grupo 1 con un valor inferior a 20%, que indica homogeneidad y el grupo
 2 con un valor superior que indica heterogeneidad</p>
 <p></br></br></br></p>
 </div>
-<div id="código-r" class="section level3">
-<h3><span style="color:#034A94"><strong>Código R</strong></span></h3>
+</div>
+<div id="código-r" class="section level2">
+<h2><span style="color:#034A94"><strong>Código R</strong></span></h2>
 <pre class="r"><code>max(x1)-min(x1)        # rango
 var(x1)                # varianza
 sd(x1)                 # desviación estándar
 sd(x1)/mean(x1)*100    # coeficiente de variación</code></pre>
-<pre class="my-pre">
+<pre >
 [1] 16
 [1] 16.62069
 [1] 4.076848
 [1] 14.56017  
 </pre>
-</div>
 </div>
 
 

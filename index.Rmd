@@ -1,5 +1,5 @@
 ---
-title : <span style="color:#034a94"> **Introducción**</span>
+title : <span style="color:#034a94"> **Experiencia**</span>
 author: "Nivelatorio de Estadística"
 css: style.css
 ---
@@ -20,6 +20,7 @@ value1=x
 
 </br>
 <p class="cuerpo_txt">
+
 El proceso de manejo de datos comprende una serie de etapas que permiten cumplir los objetivos trazados en una investigación o proyecto de Ciencia de Datos como lo menciona Antonio Vazquez Brust en su libro *Ciencia de Datos para gente sociable*. Es necesario para realizar este proceso recordar o incorporar conceptos de Estadística.</p>
 
 </br></br>
@@ -104,7 +105,6 @@ Dependiendo el tipo de variable y su escala de medición se tomaran los respecti
 |                  |Nominal          | moda                     | diagrama de torta           |
 |                  |Ordinal          | moda                     | diagrama de barras          |
 |                  |                 |                          | diagrama de mosaico         |
-|                  |                 |                          |                             |
 |Cuantitativas     |Intervalo-razón  | media                    | diagrama de tallos y hojas  |
 |                  |                 | mediana                  | histograma                  |
 |                  |                 | mínimo                   | diagrama de cajas           |

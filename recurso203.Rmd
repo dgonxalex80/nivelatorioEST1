@@ -16,10 +16,14 @@ value1=x
 )
 ```
 
+
+<center>
 ```{r, echo=FALSE, out.width="100%", fig.align = "center"}
 knitr::include_graphics("img/puntos1.png")
 ```
-
+**Figura 1.7**  Tiempos de carrera en minutos </br>
+<sub>Fuente : Carrera La Luz Cali  </sub>
+</center>
 
 <br/> <br/>
 
@@ -49,7 +53,7 @@ mean(x)  # función media
 sum(x)/length(x) # calculo de la media
 ```
 
-<pre class="my-pre">
+<pre>
 [1]  5.5
 </pre>
 
@@ -81,7 +85,7 @@ mean(mtcars$mpg,     # variable mpg de la data mtcars
 na.rm = TRUE)   # parametro util cuando se tiene datos faltantes :
 ```
 
-<pre class="my-pre">
+<pre>
 [1]  20.09062     
 </pre>
 
@@ -105,7 +109,7 @@ La **mediana** es el número que divide la muestra en dos partes de igual propor
 median(cars$speed)
 ```
 
-<pre class="my-pre">
+<pre>
 [1] 15
 </pre>
 
@@ -121,14 +125,23 @@ La **moda**  corresponde al dato o valor que más se repite. Es utilizada como m
 ### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 <br/> <br/>
-```{r}
+
+<center>
+```{r, echo=FALSE}
 par(oma = c(1, 1, 1, 1) )  # margenes de la imagen
 ev=c(4,  4, 5, 13, 6)
 names(ev)=c("CONCACAF", "CONMEBOL", "CAF", "UEFA","AFC")
 barplot(ev, col=c("#ff5b00","#dcf600","#7dbd00","#659cef","#2956b2"),
-        main = "Paises clasificados Mundial Catar-2022", ylim = c(0,15), las=1,
+        # main = "Paises clasificados Mundial Catar-2022", 
+        ylim = c(0,15), las=1,
           cex.axis = 1, cex.lab=.5, cex.names=0.8)
 ```
+</br>
+**Figura 1.8**  Paises clasificados Mundial Catar 2022 </br>
+<sub>Fuente : kaggle.com </sub>
+</center>
+
+
 <br/>
 
 Moda : **UEFA** . 
@@ -151,7 +164,7 @@ El valor para la media truncada al 10% para el caso de los datos de rendimiento 
 mean(mtcars$mpg, na.rm = TRUE, trim = 0.10)
 ```
 
-<pre class="my-pre">
+<pre>
 [1] 19.69615
 </pre>
 
@@ -175,7 +188,7 @@ Para el caso de los datos de rendimiento de combustible arroja un valor de 22.15
 (max(mtcars$mpg,na.rm = TRUE)+min(mtcars$mpg,na.rm = TRUE))/2
 ```
 
-<pre class="my-pre">
+<pre>
 [1] 22.15
 </pre>
 
@@ -207,7 +220,7 @@ x = c(0.025,0.022,0.02,0.016,0.011,0.007)
 psych::geometric.mean(x)
 ```
 
-<pre class="my-pre">
+<pre>
 [1] 0.01544071
 </pre>
 
@@ -242,7 +255,7 @@ harmonic.mean(x,na.rm=TRUE,zero=TRUE)
 ```
 
 
-<pre class="my-pre">
+<pre>
 [1] 4.332524
 </pre>
 
@@ -260,7 +273,7 @@ mean(tiempos, na.rm = TRUE, trim = 0.10)
 (min(tiempos,na.rm = TRUE)+max(tiempos,na.rm = TRUE))/2
 
 ```
-<pre class="my-pre">
+<pre>
 [1] 50.79714
 [1] 51
 [1] 50.52679

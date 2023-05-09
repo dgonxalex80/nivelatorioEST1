@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE, comment = NA)
 </br>
 
 
-### <span style="color:#034a94">**Tablas de frecuencia de variables nominales**</span>
+## <span style="color:#034a94">**Tablas de frecuencia de variables nominales**</span>
 
 </br>
 
@@ -27,7 +27,8 @@ La siguiente tabla corresponde a la distribución de la variable ubicación de l
 
 </br></br>
 <center>
-**Distribución de la ubicación de contagios de Covid-19 Colombia**
+**Tabla 1.1** <br/>
+*Distribución de la ubicación de contagios de Covid-19 Colombia*
 ```{r, echo=FALSE, out.width="45%", fig.align = "center"}
 knitr::include_graphics("img/tabla1.png")
 ```
@@ -35,7 +36,6 @@ knitr::include_graphics("img/tabla1.png")
 Fuente : Base Casos positivos de COVID-19 en Colombia. 17-10-2022
 </sub>
 </center>
-
 </br>
 
 La tabla permite visualizar que actualmente están reportados 19 casos en cuidado UCI y que a la fecha han fallecido en Colombia a causa del Covid-19 141862 personas
@@ -43,7 +43,7 @@ La tabla permite visualizar que actualmente están reportados 19 casos en cuidad
 
 </br></br>
 
-### <span style="color:#034a94">**Tablas de frecuencia variables ordinales**</span>
+## <span style="color:#034a94">**Tablas de frecuencia variables ordinales**</span>
 
 </br>
 
@@ -52,7 +52,8 @@ Para el caso de variables cualitativas medidas en **escala ordinal** los valores
 </br></br>
 
 <center>
-**Evaluación del servicio de atención al cliente dic-2022**
+**Tabla 1.2** <br/>
+*Evaluación del servicio de atención al cliente dic-2022*
 ```{r, echo=FALSE, out.width="60%", fig.align = "center"}
 knitr::include_graphics("img/tabla2.png")
 ```
@@ -60,7 +61,7 @@ knitr::include_graphics("img/tabla2.png")
 
 </br></br>
 
-### <span style="color:#034a94">**Tablas cruzadas**</span>
+## <span style="color:#034a94">**Tablas cruzadas**</span>
 
 </br>
 
@@ -72,7 +73,8 @@ También es de utilidad realizar tablas cruzadas o de doble entrada que permite 
 </br></br>
 
 <center>
-**Distribución de la ubicación por sexo de los contagiados de Covid-19 Colombia**
+**Tabla 1.3** <br/>
+*Distribución de la ubicación por sexo de los contagiados de Covid-19 Colombia*
 ```{r, echo=FALSE, out.width="60%", fig.align = "center"}
 knitr::include_graphics("img/tabla3.png")
 ```
@@ -87,7 +89,7 @@ De esta tabla se puede observar que se presenta una mayor cantidad de hombres fa
 
 </br></br>
 
-### <span style="color:#034a94">**Visualización de errores**</span>
+## <span style="color:#034a94">**Visualización de errores**</span>
 
 </br>
 
@@ -116,7 +118,7 @@ En R se puede utilizar la función `table(x)` para la elaboración de una tabla 
 
 </br></br>
 
-### <span style="color:#034a94">**Código R**
+## <span style="color:#034a94">**Código R**
 
 
 </br>

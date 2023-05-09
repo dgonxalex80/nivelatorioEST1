@@ -27,7 +27,7 @@ Los indicadores de forma permiten adicionar elementos a la interpretación de lo
 
 <br/><br/>
 
-### <span style="color:#034a94">**Curtosis**</span>
+## <span style="color:#034a94">**Curtosis**</span>
 
 Se mide a través del coeficiente de curtosis que mide cuan **puntiaguda** es una distribución respecto a un patrón estándar que es la curva de la distribución normal. Esta característica está relacionada directamente con la dispersión.
 
@@ -41,6 +41,7 @@ De acuerdo con su valor, la puntudez de los datos puede clasificarse en tres gru
 
 </br>
 
+<center>
 ```{r, echo=FALSE, fig.height=3, fig.width=9}
 # Distribucion normal
 library(ggfortify)
@@ -49,6 +50,8 @@ p=ggdistribution(dnorm, seq(-5, 5, 0.01), mean = 0, sd = .7,colour = 'red', p=p)
 p=ggdistribution(dnorm, seq(-5, 5, 0.01),   mean = 0, sd = 1.5,colour = 'orange', p=p)
 p
 ```
+**Figura 1.10**  Comparación de apuntamientos </br>
+</center>
 
 <br/> <br/>
 
@@ -57,7 +60,7 @@ En R se utiliza la función del paquete rapportools : `rapportools::kurtosis(x)`
 
 <br/><br/> 
 
-### <span style="color:#034a94">**Asimetría o sesgo**</span>
+## <span style="color:#034a94">**Asimetría o sesgo**</span>
 
 <br/>
 
@@ -70,12 +73,14 @@ Mide que tanto la forma de la distribución de frecuencias de los datos es simé
 + Es **asimétrica a la derecha** si el valor del indicador es positivo ($\bar{x}>Me$)
 
 <br/>
-
+<center>
 ![](img/simetria.png)
 
+**Figura 1.11**  Comparación de asimetrías </br>
+</center>
 <br/>
 
-### <span style="color:#034a94">**Interpretación**</span>
+## <span style="color:#034a94">**Interpretación**</span>
 
 <br/>
 
@@ -87,7 +92,7 @@ Mide que tanto la forma de la distribución de frecuencias de los datos es simé
 
 <br/><br/>
 
-### <span style="color:#034a94">**Código R**</span>
+## <span style="color:#034a94">**Código R**</span>
 
 <br/>
 
@@ -102,12 +107,12 @@ rapportools::kurtosis(x)
 rapportools::skewness(x)   
 ```
 
-<pre class="my-pre">
+<pre>
 [1] 0.6423682
 [1] 0.6014827
 </pre>
 
-</pre>
+</br>
 
 Estos resultados indica una leve concentración de los datos y una leve asimetría a la derecha, la cual será más evidente observar en la siguiente sección (Representación gráfica). 
 El valor obtenido para el sesgos nos indica que existe un mediano sesgo positivo o a la derecha ( mucho con poco - poco con mucho). 

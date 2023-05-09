@@ -281,7 +281,11 @@ $(document).ready(function () {
 </div>
 
 
-<p><img src="img/puntos1.png" width="100%" style="display: block; margin: auto;" /></p>
+<center>
+<img src="img/puntos1.png" width="100%" style="display: block; margin: auto;" />
+<strong>Figura 1.7</strong> Tiempos de carrera en minutos </br>
+<sub>Fuente : Carrera La Luz Cali </sub>
+</center>
 <p><br/> <br/></p>
 <p>Una de las características principales están constituido por los
 indicadores de centro, dentro de ellos se destacan :</p>
@@ -307,7 +311,7 @@ x_{i}\]</span></p>
 <pre class="r"><code>x=c(1,2,3,4,5,6,7,8,9,10) # vector de números
 mean(x)  # función media
 sum(x)/length(x) # calculo de la media</code></pre>
-<pre class="my-pre">
+<pre>
 [1]  5.5
 </pre>
 <p><br/></p>
@@ -342,7 +346,7 @@ grupo de 32 autos observados en el dataset <code>mtcars</code> es de
 <span class="math inline">\(20.09\)</span> mpg</p>
 <pre class="r"><code>mean(mtcars$mpg,     # variable mpg de la data mtcars
 na.rm = TRUE)   # parametro util cuando se tiene datos faltantes :</code></pre>
-<pre class="my-pre">
+<pre>
 [1]  20.09062     
 </pre>
 <p><br/> <br/></p>
@@ -360,7 +364,7 @@ percentil 50 + <span class="math inline">\(D_{5}\)</span> : decil 5 +
 <h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
 <p><br/></p>
 <pre class="r"><code>median(cars$speed)</code></pre>
-<pre class="my-pre">
+<pre>
 [1] 15
 </pre>
 <p><br/> <br/></p>
@@ -376,14 +380,12 @@ cualitativas o en cuantitativas discretas con pocos valores. <br/>
 <div id="ejemplo-2" class="section level3">
 <h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
 <p><br/> <br/></p>
-<pre class="r"><code>par(oma = c(1, 1, 1, 1) )  # margenes de la imagen
-ev=c(4,  4, 5, 13, 6)
-names(ev)=c(&quot;CONCACAF&quot;, &quot;CONMEBOL&quot;, &quot;CAF&quot;, &quot;UEFA&quot;,&quot;AFC&quot;)
-barplot(ev, col=c(&quot;#ff5b00&quot;,&quot;#dcf600&quot;,&quot;#7dbd00&quot;,&quot;#659cef&quot;,&quot;#2956b2&quot;),
-        main = &quot;Paises clasificados Mundial Catar-2022&quot;, ylim = c(0,15), las=1,
-          cex.axis = 1, cex.lab=.5, cex.names=0.8)</code></pre>
-<p><img src="recurso203_files/figure-html/unnamed-chunk-5-1.png" width="672" />
-<br/></p>
+<center>
+<img src="recurso203_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+</br> <strong>Figura 1.8</strong> Paises clasificados Mundial Catar 2022
+</br> <sub>Fuente : kaggle.com </sub>
+</center>
+<p><br/></p>
 <p>Moda : <strong>UEFA</strong> .</p>
 <p><br/><br/></p>
 </div>
@@ -404,7 +406,7 @@ class="math inline">\(\bar{x}_{_{0.10}}\)</span>)</p>
 rendimiento de millas por galón de combustible de un grupo de 32 autos
 observados en el dataset <code>mtcars</code> es de 19.69615</p>
 <pre class="r"><code>mean(mtcars$mpg, na.rm = TRUE, trim = 0.10)</code></pre>
-<pre class="my-pre">
+<pre>
 [1] 19.69615
 </pre>
 <p><br/> <br/></p>
@@ -425,7 +427,7 @@ class="math display">\[\frac{1}{2}\big(max(x)+min(x)\big)\]</span></p>
 <p>Para el caso de los datos de rendimiento de combustible arroja un
 valor de 22.15 millas por galón.</p>
 <pre class="r"><code>(max(mtcars$mpg,na.rm = TRUE)+min(mtcars$mpg,na.rm = TRUE))/2</code></pre>
-<pre class="my-pre">
+<pre>
 [1] 22.15
 </pre>
 <p><br/> <br/></p>
@@ -454,7 +456,7 @@ library(psych)
 x = c(0.025,0.022,0.02,0.016,0.011,0.007)
 
 psych::geometric.mean(x)</code></pre>
-<pre class="my-pre">
+<pre>
 [1] 0.01544071
 </pre>
 <p><br/></p>
@@ -486,7 +488,7 @@ utilizamos la función <code>harmonic.mean</code> del paquete de R
 <pre class="r"><code>library(psych)
 x=c(4.25, 3.75, 5.25)
 harmonic.mean(x,na.rm=TRUE,zero=TRUE)</code></pre>
-<pre class="my-pre">
+<pre>
 [1] 4.332524
 </pre>
 <p><br/> <br/></p>
@@ -499,7 +501,7 @@ mean(tiempos, na.rm = TRUE)
 median(tiempos,na.rm = TRUE)
 mean(tiempos, na.rm = TRUE, trim = 0.10)
 (min(tiempos,na.rm = TRUE)+max(tiempos,na.rm = TRUE))/2</code></pre>
-<pre class="my-pre">
+<pre>
 [1] 50.79714
 [1] 51
 [1] 50.52679

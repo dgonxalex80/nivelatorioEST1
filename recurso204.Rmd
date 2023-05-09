@@ -25,7 +25,7 @@ c4 ="#686868"  # gris - color texto
 
 </br>
 
-Supongamos que tenemos dos grupos de estudiantes y solo se conoce  el promedio de sus edades (28 años).  Lo que primero se piensa es que los dos grupos tienen una composición igual o muy parecida dado que coinciden en el promedio.  Pero no es así, los datos que se presentan a continuación tienen medias de 28,  pero corresponden a grupos diferentes.
+Supongamos que tenemos dos grupos de estudiantes y solo se conoce  el promedio de sus edades ($\bar{x} =28$ años).  Lo que primero se piensa es que los dos grupos tienen una composición igual o muy parecida dado que coinciden en el promedio.  Pero no es así, los datos que se presentan a continuación tienen medias de 28,  pero corresponden a grupos diferentes.
 
 |      |                                                                                                                       |
 |:-----|:----------------------------------------------------------------------------------------------------------------------|
@@ -34,9 +34,13 @@ Supongamos que tenemos dos grupos de estudiantes y solo se conoce  el promedio d
 
 </br></br>
 
+<center>
 ```{r, echo=FALSE, out.width="100%", fig.align = "center"}
 knitr::include_graphics("img/grupos12.png")
 ```
+**Figura 1.9**  Tiempos de carrera en minutos </br>
+<sub>Fuente : Carrera La Luz Cali - comparación de grupos </sub>
+</center>
 
 </br></br>
 
@@ -48,7 +52,7 @@ Hace falta otro indicador que nos oriente sobre, qué tan dispersos son los dato
 
 </br>
 
-### <span style="color:#034A94">**Rango**</span>
+## <span style="color:#034A94">**Rango**</span>
 
 </br>
 
@@ -70,7 +74,7 @@ Es importante hacer notar que si además de la media conocemos también un indic
 
 <br/> <br/>
 
-### <span style="color:#034A94">**Varianza**</span>
+## <span style="color:#034A94">**Varianza**</span>
 
 </br>
 
@@ -83,7 +87,7 @@ Se podría afirmar que la varianza es un promedio de los cuadrados de las difere
 
 <br/> <br/>
 
-#### **Propiedades de la varianza**
+### <span style="color:#034A94">**Propiedades de la varianza**</span>
 
 + $s^{2} = \frac{1}{n} \sum x_{i}^{2}- (\bar{x})^{2}$ 
 
@@ -130,7 +134,7 @@ Aunque la desviación estándar reduce el problema mencionado anteriormente debi
 
 <br/> <br/>
 
-### <span style="color:#034A94">**Coeficiente de variación**</span>
+## <span style="color:#034A94">**Coeficiente de variación**</span>
 
 </br>
 
@@ -141,6 +145,7 @@ $$CV= \dfrac{s}{\bar{x}} \times 100 \% $$
 Existen diferentes reglas empíricas para la interpretación del coeficiente de variación. Una de ellas establece como límite el 20% para separar los grupos homogéneos de los heterogéneos, por lo general se utiliza un valor hasta el 20% para determinar que un grupo de datos son homogéneos, de lo contrario se calificará como heterogéneo.
 
 </br>
+
 ### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 
@@ -155,7 +160,7 @@ En este caso se obtienen valores diferentes para los dos grupos. El grupo 1 con 
 
 </br></br></br>
 
-### <span style="color:#034A94">**Código  R**</span>
+## <span style="color:#034A94">**Código  R**</span>
 
 
 
@@ -166,7 +171,7 @@ sd(x1)                 # desviación estándar
 sd(x1)/mean(x1)*100    # coeficiente de variación
 ```
 
-<pre class="my-pre">
+<pre >
 [1] 16
 [1] 16.62069
 [1] 4.076848

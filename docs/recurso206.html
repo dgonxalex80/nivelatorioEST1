@@ -298,6 +298,11 @@ comparaciones</p>
 <p>Elegir el gráfico adecuado es muy importante, pues existen diferentes
 alternativas y se debe escoger el apropiado para representar los datos.
 El tipo de dato determina el tipo de gráfico así:</p>
+<p><br/><br/></p>
+<center>
+<strong>Tabla 6</strong> Tipos de gráfico por tipo de escala <br/>
+</center>
+<p><br/></p>
 <table>
 <colgroup>
 <col width="23%" />
@@ -372,6 +377,11 @@ El tipo de dato determina el tipo de gráfico así:</p>
 <td align="left"></td>
 <td align="left">Mapa de calor</td>
 </tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
 </tbody>
 </table>
 <p><br/><br/></p>
@@ -385,10 +395,23 @@ cualitativas</strong></span></h2>
 tortas</strong></span></h3>
 <p>Este tipo de gráficos se utiliza para variables cualitativas medidas
 en escala nominal.</p>
-<center>
+<pre class="r"><code>a=rep(&quot;Cultutal&quot;, 360145)
+b=rep(&quot;Pastoral&quot;, 61496)
+c=rep(&quot;Bienestar&quot;,49912)
+d=rep(&quot;Deportivo&quot;,11777)
+data=c(a,b,c,d)
+t=table(data)
+lbs=c(&quot;Cultural&quot;, &quot;Pastoral&quot;, &quot;Bienestar&quot;, &quot;Deportivo&quot;)
+pct=round(t/sum(t)*100)
+labs=paste(lbs, pct)
+labs=paste(labs, &quot;%&quot;, sep = &quot; &quot;) 
+pie(t, labels=labs, main=&quot; &quot;,
+col = paleta4)</code></pre>
 <img src="recurso206_files/figure-html/unnamed-chunk-1-1.png" width="672" />
-<br/> <strong>Figura 1.12</strong> Participación eventos Medio
-Universitario </br>
+<br/>
+<center>
+<strong>Figura 1.13</strong> Participación eventos Medio Universitario
+</br>
 </center>
 <p><br/><br/></p>
 </div>
@@ -398,8 +421,13 @@ barras</strong></span></h3>
 <p>El diagrama de barras se utiliza para representar variables
 cualitativas en escala ordinal. Es necesario que los valores
 representados sigan el orden de la escala.</p>
+<pre class="r"><code>ev=c(4,  8, 12, 43, 32)
+names(ev)=c(&quot;Muy regular&quot;, &quot;Regular&quot;, &quot;Bueno&quot;, &quot;Muy bueno&quot;,&quot;Excelente&quot;)
+barplot(ev, col=c(&quot;#ff5b00&quot;,&quot;#dcf600&quot;,&quot;#7dbd00&quot;,&quot;#659cef&quot;,&quot;#2956b2&quot;), las=1, ylim = c(0,50))</code></pre>
 <img src="recurso206_files/figure-html/unnamed-chunk-2-1.png" width="672" />
-<br/> <strong>Figura 1.13</strong> Evaluación proceso de inducción </br>
+<br/>
+<center>
+<strong>Figura 1.14</strong> Evaluación proceso de inducción </br>
 </center>
 <p><br/><br/></p>
 </div>
@@ -408,10 +436,16 @@ representados sigan el orden de la escala.</p>
 variables</strong></span></h3>
 <p>Este diagrama se emplea para representar dos variables cualitativas
 que pueden ser de escala nominal u ordinal.</p>
-<center>
+<pre class="r"><code>counts &lt;- table(mtcars$vs, mtcars$gear); rownames(counts)=c(&quot;Montor en linea&quot;, &quot;Motor en V&quot;)
+barplot(counts, 
+        xlab=&quot;Número de cambios adelante &quot;,
+        col=c(&quot;#FFBF69&quot;,&quot;#034A94&quot;),
+legend = rownames(counts))</code></pre>
 <img src="recurso206_files/figure-html/unnamed-chunk-3-1.png" width="672" />
-<br/> <strong>Figura 1.14</strong> Numero de cambios adelante por Tipo
-de motor </br>
+<br/>
+<center>
+<strong>Figura 1.15</strong> Numero de cambios adelante por Tipo de
+motor </br>
 </center>
 <p><br/><br/><br/></p>
 </div>
@@ -443,9 +477,19 @@ están la mayor concentración de ellos.</p>
 variables cuantitativas y permite resumir por rangos los diferentes
 datos. Es una buena forma de visualizar la distribución de los datos y
 su forma.</p>
-<center>
+<pre class="r"><code>h1=hist(nf,  
+        main = &quot;Notas de matemáticas fundamentales&quot;,
+        xlab = &quot;nota&quot;, 
+        ylab=&quot;frecuencias absolutas&quot;, 
+        labels=TRUE, 
+        col=&quot;#034A94&quot;, 
+        ylim = c(0,30), 
+        las=1)
+abline(v=3,col=&quot;#f6b915&quot;, lwd=2)</code></pre>
 <img src="recurso206_files/figure-html/unnamed-chunk-5-1.png" width="672" />
-<br/> <strong>Figura 1.15</strong> Nota final de Estadística </br>
+<br/>
+<center>
+<strong>Figura 1.15</strong> Nota final de Estadística </br>
 </center>
 <p><br/><br/></p>
 </div>
@@ -454,9 +498,15 @@ su forma.</p>
 densidad</strong></span></h3>
 <p>Este diagrama corresponde a un contorno suavizado del histograma que
 permite visualizar claramente la forma de los datos.</p>
-<center>
+<pre class="r"><code>nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+plot(density(nf),  
+     col=&quot;#034A94&quot;, 
+     lwd=4, las=1,
+xlab=&quot;nota&quot;, ylab=&quot;densidad&quot;)</code></pre>
 <img src="recurso206_files/figure-html/unnamed-chunk-6-1.png" width="672" />
-<br/> <strong>Figura 1.16</strong> Distribucion de las notas de
+<br/>
+<center>
+<strong>Figura 1.16</strong> Distribucion de las notas de
 Estadística,</br>
 </center>
 <p><br/><br/></p>
@@ -467,9 +517,18 @@ cajas</strong></span></h3>
 <p>Es uno de las representaciones gráficas más utilizadas, pues además
 de los elementos y características que permite visualizar de las
 variables, permite comparar los resultados de dos o más grupos.</p>
-<center>
+<pre class="r"><code>nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
+cc=c(20, 10, 20, 20, 20, 20, 20, 20, 20, 30, 20, 20, 20, 10, 30, 20, 20, 30, 20, 30, 30, 20, 10, 30, 20, 20, 30, 30, 10, 20, 10, 20, 20, 20, 10, 20, 10, 20, 20, 30, 30, 30, 10, 30, 20, 20, 20, 20, 20, 20, 10, 20, 30, 30, 10, 10, 10, 20, 10, 20, 10, 30, 20, 10, 20, 30, 10, 30, 30, 30, 20, 30, 30, 30, 30, 30, 30, 20, 10, 30, 10, 20, 20, 10, 20, 20, 20, 20, 10, 20)
+labs=c(&quot;Grupo 1&quot;,&quot;Grupo 2&quot;,&quot;Grupo 3&quot;)
+boxplot((nf~cc),
+col=c(&quot;#2C5990&quot;,&quot;#5B84C4&quot;,&quot;#F98125&quot;), names=labs, xlab = &quot;grupo&quot;, ylab = &quot;nota&quot;, 
+las=1)
+abline(h=3, col=&quot;#960200&quot;, lwd=1)
+abline(h=4, col=&quot;#447270&quot;, lwd=1)</code></pre>
 <img src="recurso206_files/figure-html/unnamed-chunk-7-1.png" width="672" />
-<br/> <strong>Figura 1.17</strong> Nota final Estadística </br>
+<br/>
+<center>
+<strong>Figura 1.17</strong> Nota final Estadística </br>
 </center>
 <p><br/><br/></p>
 </div>
@@ -478,17 +537,29 @@ variables, permite comparar los resultados de dos o más grupos.</p>
 dispersión</strong></span></h3>
 <p>Este diagrma de puntos permite visualizar la relación lineal que
 puede existir entre dos variables cualitativas.</p>
+<pre class="r"><code>ed=round(rnorm(90,28,1),1)
+plot(ed,nf,  
+     ylim = c(0,5), 
+     xlab = &quot;Edad (años)&quot;, 
+     ylab = &quot;Nota final&quot;,
+     col=&quot;#447270&quot;,
+     pch=19,
+     las=1)
+grid()</code></pre>
 <img src="recurso206_files/figure-html/unnamed-chunk-8-1.png" width="672" />
-<br/> <strong>Figura 1.18</strong> Edad vs Nota final Estadística </br>
+<br/>
+<center>
+<strong>Figura 1.18</strong> Edad vs Nota final Estadística </br>
 </center>
 <p><br/><br/></p>
 </div>
 <div id="gráfico-de-series-de-tiempo" class="section level3">
 <h3><span style="color:#034a94"><strong>Gráfico de series de
 tiempo</strong></span></h3>
-<center>
 <img src="recurso206_files/figure-html/unnamed-chunk-9-1.png" width="672" />
-<br/> <strong>Figura 1.19</strong> Numero de pasajeros por mes </br>
+<br/>
+<center>
+<strong>Figura 1.19</strong> Número de pasajeros por mes </br>
 </center>
 <p><br/><br/><br/></p>
 </div>
@@ -501,12 +572,12 @@ y=rnorm(100,100,25)
 z=rbinom(100,4,0.30)
 t=1:100
 
-pie(table(z))            # gráfico de torta
+pie(table(z))        # gráfico de torta
 barplot(table(z))    # diagrama de barras
-stem(x)                    # diagrama de tallos y hojas
-hist(x)                      # histograma
-boxplot(x)               # diagrama de cajas
-plot(x,y)                  # diagrama de dispersión 
+stem(x)              # diagrama de tallos y hojas
+hist(x)              # histograma
+boxplot(x)           # diagrama de cajas
+plot(x,y)            # diagrama de dispersión 
 plot(t,y, type="l")  # linea de tiempo
 plot(density(x))     # diagrama de densidad
 </pre>

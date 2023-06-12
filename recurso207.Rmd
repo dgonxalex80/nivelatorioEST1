@@ -8,6 +8,29 @@ css: style.css
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = NA)
 #Colombia<-readRDS("/home/deg/Documentos/Javeriana/Ms en Ciencia de Datos/repository/dataset/Colombia.RDS")
+
+
+# Carga las librerías
+library(knitr)
+library(kableExtra)
+
+# Definir la función para generar una tabla bonita
+generar_tabla_bonita1 <- function(tabla) {
+  # Crear la tabla con kable
+  tabla_kable <- kable(tabla, format = "html")
+  
+  # Personalizar la tabla con kableExtra
+  tabla_bonita <- tabla_kable %>%
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                  full_width = FALSE) %>%
+    add_header_above(c("  " = ncol(tabla))) %>%       # titulo de tabla
+    row_spec(0, bold = TRUE, background = "#D9EDF7") %>%
+  column_spec(1, width = "60%")  # Ancho de la última columna
+  # Retornar la tabla bonita
+  return(tabla_bonita)
+}
+
+
 ```
 
 </br>
@@ -27,18 +50,17 @@ La siguiente tabla corresponde a la distribución de la variable ubicación de l
 
 </br></br>
 <center>
-**Tabla 1.1** <br/>
-*Distribución de la ubicación de contagios de Covid-19 Colombia*
-```{r, echo=FALSE, out.width="45%", fig.align = "center"}
-knitr::include_graphics("img/tabla1.png")
+**Tabla 1.3** Distribución de población mundial por continente
+```{r, echo=FALSE, out.width="50%", fig.align = "center"}
+ knitr::include_graphics("img/tabla1a.png")
 ```
 <sub>
-Fuente : Base Casos positivos de COVID-19 en Colombia. 17-10-2022
+Fuente: [Datosmacro.com](https://datosmacro.expansion.com/demografia/poblacion) 
 </sub>
 </center>
 </br>
 
-La tabla permite visualizar que actualmente están reportados 19 casos en cuidado UCI y que a la fecha han fallecido en Colombia a causa del Covid-19 141862 personas
+La tabla permite visualizar la deficiencia en el cubrimiento del servicio de gas natural de internet. Por otro lado la falta de agua potable en un porcentaje significativo de la población Colombiana 
 
 
 </br></br>
@@ -52,11 +74,13 @@ Para el caso de variables cualitativas medidas en **escala ordinal** los valores
 </br></br>
 
 <center>
-**Tabla 1.2** <br/>
-*Evaluación del servicio de atención al cliente dic-2022*
+**Tabla 1.4** Servicio de atención al cliente dic-2022
 ```{r, echo=FALSE, out.width="60%", fig.align = "center"}
-knitr::include_graphics("img/tabla2.png")
+knitr::include_graphics("img/tabla2a.png")
+
 ```
+
+<sup>Fuente: Encuesta servicios cafeteria central </sub>
 </center>
 
 </br></br>
@@ -73,14 +97,10 @@ También es de utilidad realizar tablas cruzadas o de doble entrada que permite 
 </br></br>
 
 <center>
-**Tabla 1.3** <br/>
-*Distribución de la ubicación por sexo de los contagiados de Covid-19 Colombia*
-```{r, echo=FALSE, out.width="60%", fig.align = "center"}
-knitr::include_graphics("img/tabla3.png")
+**Tabla 1.5** Calificación del producto de acuerdo a su residencia del cliente
+```{r, echo=FALSE, out.width="70%", fig.align = "center"}
+knitr::include_graphics("img/tabla3a.png")
 ```
-<sub>
-Fuente : Base Casos positivos de COVID-19 en Colombia. 17-10-2022</center>
-</sub>
 </center>
 
 </br></br>
@@ -93,6 +113,7 @@ De esta tabla se puede observar que se presenta una mayor cantidad de hombres fa
 
 </br>
 
+Al trabajar con la base de datos Covid-19 para Colombia se encontraron registros con el mismo valor pero que por su forma de escritura eran tomados como diferentes. 
 Las tablas de frecuencia además de permitir un análisis rápido de las variables cualitativas, también permite detectar posible problemas en la digitalización y valorar la magnitud de los datos faltantes (NA) 
 
 </br></br>

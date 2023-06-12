@@ -38,7 +38,7 @@ Supongamos que tenemos dos grupos de estudiantes y solo se conoce  el promedio d
 ```{r, echo=FALSE, out.width="100%", fig.align = "center"}
 knitr::include_graphics("img/grupos12.png")
 ```
-**Figura 1.9**  Tiempos de carrera en minutos </br>
+**Figura 1.10**  Tiempos de carrera en minutos </br>
 <sub>Fuente : Carrera La Luz Cali - comparación de grupos </sub>
 </center>
 

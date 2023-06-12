@@ -15,6 +15,28 @@ data1 <- data.frame(
 name1=rep("A",70),
 value1=x
 )
+
+
+
+# Carga las librerías
+library(knitr)
+library(kableExtra)
+
+# Definir la función para generar una tabla bonita
+generar_tabla_bonita <- function(tabla) {
+  # Crear la tabla con kable
+  tabla_kable <- kable(tabla, format = "html")
+  
+  # Personalizar la tabla con kableExtra
+  tabla_bonita <- tabla_kable %>%
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                  full_width = FALSE) %>%
+    add_header_above(c("  " = ncol(tabla))) %>%       # titulo de tabla
+    row_spec(0, bold = TRUE, background = "#D9EDF7")
+  
+  # Retornar la tabla bonita
+  return(tabla_bonita)
+}
 ```
 
 
@@ -26,10 +48,12 @@ El proceso de manejo de datos comprende una serie de etapas que permiten cumplir
 </br></br>
 <center>
 
-**Proceso del análisis de datos** 
+
 ```{r, echo=FALSE, out.width="60%", fig.align = "center"}
 knitr::include_graphics("img/proceso_cd.png")
 ```
+**Figura 1.1**  Etapas en la aplicación de ciencia de datos
+<br/>
 <sub>
 Tomado de : Ciencia de Datos para Gente Sociable
 </sub>
@@ -41,6 +65,11 @@ Tomado de : Ciencia de Datos para Gente Sociable
 Debemos relacionar los datos con un propósito (objetivos) que nos permita proponer soluciones o metodologías y así plantear recomendaciones a un problema en particular, a partir de información estructurada en una bases de datos,  conformada por variables (columnas) y registros (filas).
 
 En número de registros por lo regular de gran tamaño, hace necesaria la utilización de un herramientas computacionales para su análisis y procesamiento (en nuestro caso el lenguaje **R**).
+
+</br></br>
+
+Iniciaremos con el concepto de variable, los diferentes tipos y la forma en que se mide. Esto permitirá relacionarlos con los diferentes formas de resumir los datos a través de tablas, indicadores y su prepresentación gráfica.
+
 
 </br></br>
 
@@ -66,7 +95,11 @@ Las variables se puede clasificar como :
 <div class="content-box-gray">
 ### <span style="color:#686868">**Nota**</span> 
 
-El termino **variable** en Estadística se refiere a una característica de interés que permite una agrupación o análisis a diferencia de la interpretación que se le pueda dar en el área de sistemas, donde son de interés características como id, número de cédula, dirección, nombre del representante legal entre otros. En adelante se entenderán como variables las primeras.
+El termino **variable** en Estadística se refiere a una característica de interés que permite una agrupación o análisis y que pertenecen a una población o muestra de interes. Ejemplo : edad, sexo, ingresos mensuales, profesión. De ellas puede ser de interés obtener una tabla de frecuencias, un indicador de centro como la media o la moda y una gráfica.  
+
+En el área de sistemas este concepto corresponde a un elemento que se modifica o se utiliza para controlar el comportamiento de un sistema y que ocupa un espacio temporal o definitivo de memoria. Ejemplo de variables que pueden ser de interes desde los sisemas pero nó desde el análisis de datos: id, número de cédula, dirección, nombre, e-mail, telefono.  
+
+En este curso nos enfocaremos en las variables aleatorias estadísticas 
 </div>
 
 
@@ -80,24 +113,33 @@ A la clasificación anterior añadimos la forma en que se pueden medir las varia
 
 </br></br>
 
+<center>
+**Tabla 1.1** Escalas de medición por tipo de variable
+
 | Tipo de variable       |    escala de medición    |  ejemplo                            |
 |:-----------------------|:-------------------------|:------------------------------------|
 | Cualitativa            | nominal (no existe orden)|  estado civil ( soltero, casado, separado, viudo, unión libre)   | 
-| (conteo)               |                          |  color ( blanco, negro, rojo, azul, amarillo, verde)              |
+|                        |                          |  color ( blanco, negro, rojo, azul, amarillo, verde)              |
 |                        |                          |  pais (co, pe, us, uk, es,..)                                     |
 |                        | ordinal (con orden)      | nivel de ansiedad (bajo, medio, alto)                             |
 |                        |                          | clima laboral (excelente, muy bueno, bueno, regular, muy regular) |
 |                        |                          | nivel de satisfacción (baja, media, alta)                          |
 | Cuantitativas          | intervalo                | temperatura (centígrados, kelvin, Fahrenheit)                        |
-| (medición)             |                          | operacionalización de clima laboral |
+|                        |                          | operacionalización de clima laboral |
 |                        | de razón                 | edad                                |
 |                        |                          | tiempo de ejecución                   |
 |                        |                          | precio del artículo en dólares      |
 
-</br></br></br>
+</center>
+
+</br></br>
 
 Dependiendo el tipo de variable y su escala de medición se tomaran los respectivos indicadores y gráficos para su correcta simplificación y representación 
 
+</br></br>
+
+<center>
+**Tabla 1.2** Indicadores y tipos de gráficos por tipos de variable
 
 |Tipo de variable  | Escala          |  Indicadores             | Gráfico                     |
 |:-----------------|:----------------|:-------------------------|:----------------------------|
@@ -117,11 +159,12 @@ Dependiendo el tipo de variable y su escala de medición se tomaran los respecti
 |                  |                 | coeficiente de asimetria | diagramas de dispersión     |
 |                  |                 | percentiles, deciles, cuartiles |                      |
 
+</center>
 </br></br>
 
 En esta unidad se tratará de manera general los conceptos principales relacionados con el análisis descriptivo de datos, basados en las principales características de los datos, tanto para variables cualitativas como para variables cuantitativas.
 
-El análisis de las variables `cualitativas` se centra en la construcción de tablas de frecuencia y su representación a través de gráficos de tortas (nominales) y de barras (ordinales), mientras que en el caso de las variables `cuantitativas`  nos centraremos en indicadores de posición,  centro, variabilidad o de dispersión y de forma, además de su representación gráfica mediante histogramas, diagramas de cajas, diagramas de dispersión entre otros. 
+El análisis de las variables **cualitativas** se centra en la construcción de tablas de frecuencia y su representación a través de gráficos de tortas (nominales) y de barras (ordinales), mientras que en el caso de las variables **cuantitativas**  nos centraremos en indicadores de posición,  centro, variabilidad o de dispersión y de forma, además de su representación gráfica mediante histogramas, diagramas de cajas, diagramas de dispersión entre otros. 
 
 </br></br>
 
@@ -177,7 +220,7 @@ plot
 
 </br></br>
 
-Los datos indican que en promedio los atletas emplearon 51 minutos, con un tiempo mínimo para el ganador de 43 minutos y un máximo de 64. Los datos presenta un forma simétrica concentra un gran número de atletas en un rango entre 45 y 55 minutos. En cuanto su dispersión presentan un 9% de coeficiente de variación que los califica como homogeneos.
+Los datos indican que en promedio los atletas emplearon 51 minutos (`Mean 50.80`), con un tiempo mínimo para el ganador de 43 minutos (`Min 42.30`) y un máximo de 64 (`Max 64.44`). Los datos presenta un forma simétrica concentra (`Skewness 0.60`) un gran número de atletas en un rango entre 45 y 55 minutos. En cuanto su dispersión presentan un 9% de coeficiente de variación (`CV 0.09`)  que los califica como homogeneos.
 
 
 

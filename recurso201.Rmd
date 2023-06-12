@@ -27,6 +27,7 @@ El proceso de manejo de datos comprende una serie de etapas que permiten cumplir
 ```{r, echo=FALSE, out.width="60%", fig.align = "center"}
 knitr::include_graphics("img/proceso_cd.png")
 ```
+
 <center>Tomado de : Ciencia de Datos para Gente Sociable</center>
 
 

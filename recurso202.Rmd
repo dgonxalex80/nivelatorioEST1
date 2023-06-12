@@ -41,7 +41,7 @@ Iniciaremos con los **indicadores de posición**
 ```{r, echo=FALSE, out.width="70%", fig.align = "center"}
 knitr::include_graphics("img/carrera1.jpg")
 ```
-**Figura 1.1**  *Carrera atletica* </br>
+**Figura 1.2**  *Carrera atletica* </br>
 <sub> Tomada de : https://pixabay.com/ </sub>
 </center>
 
@@ -72,7 +72,7 @@ Los siguientes datos corresponde a tiempos registrados por 70 atletas  durante u
 ```{r, echo=FALSE, out.width="100%", fig.align = "center"}
 knitr::include_graphics("img/puntos1.png")
 ```
-**Figura 1.1**  Tiempos de carrera en minutos </br>
+**Figura 1.3**  Tiempos de carrera en minutos </br>
 <sub>Fuente : Carrera La Luz Cali  </sub>
 </center>
 <br/>
@@ -91,7 +91,7 @@ Para facilitar la interpretación de los resultados se transforman a minutos.seg
 ```{r, echo=FALSE, out.width="700%", fig.align = "center"}
 knitr::include_graphics("img/puntosP30.png")
 ```
-**Figura 1.2**  Tiempos de carrera en minutos - Percentil 30 </br>
+**Figura 1.4**  Tiempos de carrera en minutos - Percentil 30 </br>
 <sub>Fuente : Carrera La Luz Cali  </sub>
 </center>
 
@@ -103,7 +103,7 @@ El **percentil 75** divide la muestra en dos partes, una parte inferior conforma
 ```{r, echo=FALSE, out.width="700%", fig.align = "center"}
 knitr::include_graphics("img/puntosP75.png")
 ```
-**Figura 1.3**  Tiempos de carrera en minutos - Percentil 75 </br>
+**Figura 1.5**  Tiempos de carrera en minutos - Percentil 75 </br>
 <sub>Fuente : Carrera La Luz Cali  </sub>
 </center>
 
@@ -125,7 +125,7 @@ El **decil 2** ($D_{2}$), tiene por debajo del el, el 20% de los datos
 ```{r, echo=FALSE, out.width="700%", fig.align = "center"}
 knitr::include_graphics("img/puntosD2yD5.png")
 ```
-**Figura 1.4**  Tiempos de carrera en minutos - Decil 2 y Decil 5</br>
+**Figura 1.6**  Tiempos de carrera en minutos - Decil 2 y Decil 5</br>
 <sub>Fuente : Carrera La Luz Cali  </sub>
 </center>
 
@@ -147,7 +147,7 @@ Y finalmente los **cuartiles** corresponden a 3 números que dividen la muestra 
 ```{r, echo=FALSE, out.width="700%", fig.align = "center"}
 knitr::include_graphics("img/puntosQ1Q2Q3.png")
 ```
-**Figura 1.5**  Tiempos de carrera en minutos - Cuartiles: $Q_1$, $Q_2$  y $Q_3$</br>
+**Figura 1.7**  Tiempos de carrera en minutos - Cuartiles: $Q_1$, $Q_2$  y $Q_3$</br>
 <sub>Fuente : Carrera La Luz Cali  </sub>
 </center>
 

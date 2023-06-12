@@ -34,6 +34,14 @@ paleta4=c("#0d3b66", "#faf0ca", "#f4d35e", "#ee964d")
 
 Elegir el gráfico adecuado es muy importante, pues existen diferentes alternativas  y se debe escoger el apropiado para representar los datos. El tipo de dato determina el tipo de gráfico así:
 
+<br/><br/>
+
+<center>
+**Tabla 6**  Tipos de gráfico por tipo de escala <br/>
+</center>
+
+<br/>
+
 |Tipo de variable  | Escala          | Gráfico                                   |
 |:-----------------|:----------------|:------------------------------------------|
 |Cualitativas      |                 |                                           |
@@ -48,7 +56,7 @@ Elegir el gráfico adecuado es muy importante, pues existen diferentes alternati
 |                  |                 | Diagrama de radar                         |
 |                  |                 | Gráfico likert                            |
 |                  |                 | Mapa de calor                             |
-
+|                  |                 |                                           |
 <br/><br/>
 
 ## <span style="color:#034a94">**Gráficos variables cualitativas**</span>
@@ -59,8 +67,8 @@ Elegir el gráfico adecuado es muy importante, pues existen diferentes alternati
 
 Este tipo de gráficos se utiliza para variables cualitativas medidas en escala nominal.
 
-<center>
-```{r, fig.height=5, echo=FALSE}
+
+```{r, fig.height=5}
 a=rep("Cultutal", 360145)
 b=rep("Pastoral", 61496)
 c=rep("Bienestar",49912)
@@ -75,7 +83,8 @@ pie(t, labels=labs, main=" ",
 col = paleta4)
 ```
 <br/>
-**Figura 1.12**  Participación eventos Medio Universitario </br>
+<center>
+**Figura 1.13**  Participación eventos Medio Universitario </br>
 </center>
 
 <br/><br/>
@@ -84,13 +93,14 @@ col = paleta4)
 
 El diagrama de barras se utiliza para representar variables cualitativas en escala ordinal.  Es necesario que los valores representados sigan el orden de la escala.
 
-```{r, fig.height=5, echo=FALSE}
+```{r, fig.height=5}
 ev=c(4,  8, 12, 43, 32)
 names(ev)=c("Muy regular", "Regular", "Bueno", "Muy bueno","Excelente")
 barplot(ev, col=c("#ff5b00","#dcf600","#7dbd00","#659cef","#2956b2"), las=1, ylim = c(0,50))
 ```
 <br/>
-**Figura 1.13**  Evaluación proceso de inducción </br>
+<center>
+**Figura 1.14**  Evaluación proceso de inducción </br>
 </center>
 
 <br/><br/>
@@ -99,14 +109,17 @@ barplot(ev, col=c("#ff5b00","#dcf600","#7dbd00","#659cef","#2956b2"), las=1, yli
 
 Este diagrama se emplea para representar dos variables cualitativas que pueden ser de escala nominal u ordinal.
 
-<center>
-```{r, fig.height=5.5, echo=FALSE}
+
+```{r, fig.height=5.5}
 counts <- table(mtcars$vs, mtcars$gear); rownames(counts)=c("Montor en linea", "Motor en V")
-barplot(counts, xlab="Número de cambios adelante ",col=c("#FFBF69","#034A94"),
+barplot(counts, 
+        xlab="Número de cambios adelante ",
+        col=c("#FFBF69","#034A94"),
 legend = rownames(counts))
 ```
 <br/>
-**Figura 1.14** Numero de cambios adelante por Tipo de motor  </br>
+<center>
+**Figura 1.15** Numero de cambios adelante por Tipo de motor  </br>
 </center>
 
 <br/><br/><br/>
@@ -131,12 +144,20 @@ Este diagrama ordena los datos de manera que se puede determinar tanto el mínim
 
 El histograma es uno de los gráficos más utilizados para representar variables cuantitativas y permite resumir por rangos los diferentes datos. Es una buena forma de visualizar la distribución de los datos y su forma.
 
-<center>
-```{r, fig.height=5, echo=FALSE}
-h1=hist(nf,  xlab = "nota", ylab="frecuencias absolutas", labels=TRUE, col="#034A94", ylim = c(0,30), las=1)
+
+```{r, fig.height=5}
+h1=hist(nf,  
+        main = "Notas de matemáticas fundamentales",
+        xlab = "nota", 
+        ylab="frecuencias absolutas", 
+        labels=TRUE, 
+        col="#034A94", 
+        ylim = c(0,30), 
+        las=1)
 abline(v=3,col="#f6b915", lwd=2)
 ```
 <br/>
+<center>
 **Figura 1.15**  Nota final de Estadística </br>
 </center>
 
@@ -146,13 +167,16 @@ abline(v=3,col="#f6b915", lwd=2)
 
 Este diagrama corresponde a un contorno suavizado del histograma que permite visualizar claramente la forma de los datos.
 
-<center>
-```{r, fig.height=5, echo=FALSE}
+
+```{r, fig.height=5}
 nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
-plot(density(nf),  col="#034A94", lwd=4, las=1,
+plot(density(nf),  
+     col="#034A94", 
+     lwd=4, las=1,
 xlab="nota", ylab="densidad")
 ```
 <br/>
+<center>
 **Figura 1.16**  Distribucion de las notas de Estadística,</br>
 </center>
 
@@ -162,8 +186,8 @@ xlab="nota", ylab="densidad")
 
 Es uno de las representaciones gráficas más utilizadas, pues además de los elementos y características que permite visualizar de las variables, permite comparar los resultados de dos o más grupos.
 
-<center>
-```{r, fig.height=4.5, echo=FALSE}
+
+```{r, fig.height=4.5}
 nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
 cc=c(20, 10, 20, 20, 20, 20, 20, 20, 20, 30, 20, 20, 20, 10, 30, 20, 20, 30, 20, 30, 30, 20, 10, 30, 20, 20, 30, 30, 10, 20, 10, 20, 20, 20, 10, 20, 10, 20, 20, 30, 30, 30, 10, 30, 20, 20, 20, 20, 20, 20, 10, 20, 30, 30, 10, 10, 10, 20, 10, 20, 10, 30, 20, 10, 20, 30, 10, 30, 30, 30, 20, 30, 30, 30, 30, 30, 30, 20, 10, 30, 10, 20, 20, 10, 20, 20, 20, 20, 10, 20)
 labs=c("Grupo 1","Grupo 2","Grupo 3")
@@ -174,6 +198,7 @@ abline(h=3, col="#960200", lwd=1)
 abline(h=4, col="#447270", lwd=1)
 ```
 <br/>
+<center>
 **Figura 1.17**  Nota final Estadística </br>
 </center>
 
@@ -183,12 +208,19 @@ abline(h=4, col="#447270", lwd=1)
 
 Este diagrma de puntos permite visualizar la relación lineal que puede existir entre dos variables cualitativas.
 
-```{r, fig.height=5, echo=FALSE}
+```{r, fig.height=5}
 ed=round(rnorm(90,28,1),1)
-plot(ed,nf,  ylim = c(0,5), xlab = "Edad (años)", ylab = "Nota final",col="#447270",pch=19,las=1)
+plot(ed,nf,  
+     ylim = c(0,5), 
+     xlab = "Edad (años)", 
+     ylab = "Nota final",
+     col="#447270",
+     pch=19,
+     las=1)
 grid()
 ```
 <br/>
+<center>
 **Figura 1.18**  Edad vs Nota final Estadística </br>
 </center>
 
@@ -196,13 +228,17 @@ grid()
 
 ### <span style="color:#034a94">**Gráfico de series de tiempo**</span>
 
-<center>
+
 ```{r, fig.height=5, echo=FALSE}
-plot(AirPassengers,  col="#034A94", lwd = 4, las=1, 
-ylab="número de pasajeros", xlab="año")
+plot(AirPassengers,  
+     col="#034A94", 
+     lwd = 4, las=1, 
+     ylab="número de pasajeros", 
+     xlab="año")
 ```
 <br/>
-**Figura 1.19**  Numero de pasajeros por mes </br>
+<center>
+**Figura 1.19**  Número de pasajeros por mes </br>
 </center>
 <br/><br/><br/>
 
@@ -215,12 +251,12 @@ y=rnorm(100,100,25)
 z=rbinom(100,4,0.30)
 t=1:100
 
-pie(table(z))            # gráfico de torta
+pie(table(z))        # gráfico de torta
 barplot(table(z))    # diagrama de barras
-stem(x)                    # diagrama de tallos y hojas
-hist(x)                      # histograma
-boxplot(x)               # diagrama de cajas
-plot(x,y)                  # diagrama de dispersión 
+stem(x)              # diagrama de tallos y hojas
+hist(x)              # histograma
+boxplot(x)           # diagrama de cajas
+plot(x,y)            # diagrama de dispersión 
 plot(t,y, type="l")  # linea de tiempo
 plot(density(x))     # diagrama de densidad
 </pre>

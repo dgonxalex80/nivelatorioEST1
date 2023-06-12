@@ -50,7 +50,7 @@ p=ggdistribution(dnorm, seq(-5, 5, 0.01), mean = 0, sd = .7,colour = 'red', p=p)
 p=ggdistribution(dnorm, seq(-5, 5, 0.01),   mean = 0, sd = 1.5,colour = 'orange', p=p)
 p
 ```
-**Figura 1.10**  Comparación de apuntamientos </br>
+**Figura 1.11**  Comparación de apuntamientos </br>
 </center>
 
 <br/> <br/>
@@ -76,7 +76,7 @@ Mide que tanto la forma de la distribución de frecuencias de los datos es simé
 <center>
 ![](img/simetria.png)
 
-**Figura 1.11**  Comparación de asimetrías </br>
+**Figura 1.12**  Comparación de asimetrías </br>
 </center>
 <br/>
 

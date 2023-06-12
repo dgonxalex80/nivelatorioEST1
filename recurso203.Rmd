@@ -21,7 +21,7 @@ value1=x
 ```{r, echo=FALSE, out.width="100%", fig.align = "center"}
 knitr::include_graphics("img/puntos1.png")
 ```
-**Figura 1.7**  Tiempos de carrera en minutos </br>
+**Figura 1.8**  Tiempos de carrera en minutos </br>
 <sub>Fuente : Carrera La Luz Cali  </sub>
 </center>
 
@@ -137,7 +137,7 @@ barplot(ev, col=c("#ff5b00","#dcf600","#7dbd00","#659cef","#2956b2"),
           cex.axis = 1, cex.lab=.5, cex.names=0.8)
 ```
 </br>
-**Figura 1.8**  Paises clasificados Mundial Catar 2022 </br>
+**Figura 1.9**  Paises clasificados Mundial Catar 2022 </br>
 <sub>Fuente : kaggle.com </sub>
 </center>
 

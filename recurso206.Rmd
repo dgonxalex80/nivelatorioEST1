@@ -229,7 +229,7 @@ grid()
 ### <span style="color:#034a94">**Gráfico de series de tiempo**</span>
 
 
-```{r, fig.height=5, echo=FALSE}
+```{r, fig.height=5}
 plot(AirPassengers,  
      col="#034A94", 
      lwd = 4, las=1, 

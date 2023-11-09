@@ -14,7 +14,7 @@
 
 <title> Indicadores de tendencias central</title>
 
-<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -31,6 +31,7 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
@@ -218,6 +219,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -272,6 +276,14 @@ $(document).ready(function () {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore"><span style="color:#034a94">
@@ -309,11 +321,10 @@ un conjunto de datos y dividirlos por el número de datos</p>
 <p><span class="math display">\[\bar{x}= \frac{1}{n} \sum_{i=1}^{n}
 x_{i}\]</span></p>
 <pre class="r"><code>x=c(1,2,3,4,5,6,7,8,9,10) # vector de números
-mean(x)  # función media
-sum(x)/length(x) # calculo de la media</code></pre>
-<pre>
-[1]  5.5
-</pre>
+mean(x)  # función media</code></pre>
+<pre><code>[1] 5.5</code></pre>
+<pre class="r"><code>sum(x)/length(x) # calculo de la media</code></pre>
+<pre><code>[1] 5.5</code></pre>
 <p><br/></p>
 <p>Sus principales propiedades son:</p>
 <ul>
@@ -346,9 +357,7 @@ grupo de 32 autos observados en el dataset <code>mtcars</code> es de
 <span class="math inline">\(20.09\)</span> mpg</p>
 <pre class="r"><code>mean(mtcars$mpg,     # variable mpg de la data mtcars
 na.rm = TRUE)   # parametro util cuando se tiene datos faltantes :</code></pre>
-<pre>
-[1]  20.09062     
-</pre>
+<pre><code>[1] 20.09062</code></pre>
 <p><br/> <br/></p>
 </div>
 <div id="mediana" class="section level3">
@@ -364,9 +373,7 @@ percentil 50 + <span class="math inline">\(D_{5}\)</span> : decil 5 +
 <h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
 <p><br/></p>
 <pre class="r"><code>median(cars$speed)</code></pre>
-<pre>
-[1] 15
-</pre>
+<pre><code>[1] 15</code></pre>
 <p><br/> <br/></p>
 </div>
 <div id="moda" class="section level3">
@@ -406,9 +413,7 @@ class="math inline">\(\bar{x}_{_{0.10}}\)</span>)</p>
 rendimiento de millas por galón de combustible de un grupo de 32 autos
 observados en el dataset <code>mtcars</code> es de 19.69615</p>
 <pre class="r"><code>mean(mtcars$mpg, na.rm = TRUE, trim = 0.10)</code></pre>
-<pre>
-[1] 19.69615
-</pre>
+<pre><code>[1] 19.69615</code></pre>
 <p><br/> <br/></p>
 </div>
 <div id="rango-medio" class="section level3">
@@ -427,9 +432,7 @@ class="math display">\[\frac{1}{2}\big(max(x)+min(x)\big)\]</span></p>
 <p>Para el caso de los datos de rendimiento de combustible arroja un
 valor de 22.15 millas por galón.</p>
 <pre class="r"><code>(max(mtcars$mpg,na.rm = TRUE)+min(mtcars$mpg,na.rm = TRUE))/2</code></pre>
-<pre>
-[1] 22.15
-</pre>
+<pre><code>[1] 22.15</code></pre>
 <p><br/> <br/></p>
 </div>
 <div id="media-geométrica" class="section level3">
@@ -456,9 +459,7 @@ library(psych)
 x = c(0.025,0.022,0.02,0.016,0.011,0.007)
 
 psych::geometric.mean(x)</code></pre>
-<pre>
-[1] 0.01544071
-</pre>
+<pre><code>[1] 0.01544071</code></pre>
 <p><br/></p>
 <p>Lo cual indica que la población colombiana está creciendo a una tasa
 del 1.5% durante las últimas 5 décadas</p>
@@ -488,25 +489,21 @@ utilizamos la función <code>harmonic.mean</code> del paquete de R
 <pre class="r"><code>library(psych)
 x=c(4.25, 3.75, 5.25)
 harmonic.mean(x,na.rm=TRUE,zero=TRUE)</code></pre>
-<pre>
-[1] 4.332524
-</pre>
+<pre><code>[1] 4.332524</code></pre>
 <p><br/> <br/></p>
 </div>
 <div id="código-r" class="section level2">
 <h2><span style="color:#034A94"><strong>Código R</strong></span></h2>
 <pre class="r"><code>tiempos=c(51.4, 49.9, 49.3, 51.2, 51.2, 45.7, 48.4, 47.3, 49.0, 50.1, 50.9, 45.4, 55.7, 48.9, 56.0, 44.7, 56.9, 46.6, 53.3, 48.5, 49.7, 45.0, 63.0, 51.0, 50.4, 51.2, 53.5, 52.1, 49.6, 45.9, 49.8, 42.3, 53.5, 54.7, 53.5, 56.7, NA,  44.4, 51.2, 51.1, 55.0, 64.4, 51.8, 45.3, 62.7, 43.8, 51.3, 53.7, 51.0, 52.9, 43.1, 43.6, 51.2, 52.8, 49.2, 49.6, 49.6, 51.5, 55.3, 46.7, 47.6, 51.8, 58.9, 50.8, 43.4, 48.5, 52.7, 44.8, 52.5, 58.4, 52.9)
 
-mean(tiempos, na.rm = TRUE)
-median(tiempos,na.rm = TRUE)
-mean(tiempos, na.rm = TRUE, trim = 0.10)
-(min(tiempos,na.rm = TRUE)+max(tiempos,na.rm = TRUE))/2</code></pre>
-<pre>
-[1] 50.79714
-[1] 51
-[1] 50.52679
-[1] 53.35
-</pre>
+mean(tiempos, na.rm = TRUE)</code></pre>
+<pre><code>[1] 50.79714</code></pre>
+<pre class="r"><code>median(tiempos,na.rm = TRUE)</code></pre>
+<pre><code>[1] 51</code></pre>
+<pre class="r"><code>mean(tiempos, na.rm = TRUE, trim = 0.10)</code></pre>
+<pre><code>[1] 50.52679</code></pre>
+<pre class="r"><code>(min(tiempos,na.rm = TRUE)+max(tiempos,na.rm = TRUE))/2</code></pre>
+<pre><code>[1] 53.35</code></pre>
 <p><br/> <br/></p>
 <div id="nota" class="section level3 content-box-gray">
 <h3><span style="color:#686868"><strong>Nota</strong></span></h3>
@@ -549,6 +546,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

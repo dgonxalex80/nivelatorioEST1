@@ -1,8 +1,10 @@
 ---
 title: <span style="color:#034a94"> **Tablas de frecuencia**</span>
 author: "Nivelatorio de Estadística"
-output: html_document
-css: style.css
+output:
+  html_document:
+    code_folding: hide
+    css: style.css
 ---
 
 ```{r setup, include=FALSE}
@@ -60,7 +62,7 @@ Fuente: [Datosmacro.com](https://datosmacro.expansion.com/demografia/poblacion)
 </center>
 </br>
 
-La tabla permite visualizar la deficiencia en el cubrimiento del servicio de gas natural de internet. Por otro lado la falta de agua potable en un porcentaje significativo de la población Colombiana 
+La tabla permite visualizar la distribución de la población muncial por continente, resaltando que más de la mitad de la población mundial se ubica en Asia (59.2%). 
 
 
 </br></br>
@@ -72,7 +74,7 @@ La tabla permite visualizar la deficiencia en el cubrimiento del servicio de gas
 Para el caso de variables cualitativas medidas en **escala ordinal** los valores debe presentarse ordenados. En este caso se adiciona una columna donde aparecen las frecuencias acumuladas relativas
 
 </br></br>
-
+<sup>Fuente: Encuesta se
 <center>
 **Tabla 1.4** Servicio de atención al cliente dic-2022
 ```{r, echo=FALSE, out.width="60%", fig.align = "center"}
@@ -80,10 +82,14 @@ knitr::include_graphics("img/tabla2a.png")
 
 ```
 
-<sup>Fuente: Encuesta servicios cafeteria central </sub>
+<!-- <sup>Fuente: Encuesta servicios cafeteria central </sub> -->
 </center>
 
 </br></br>
+
+La tabla muestra que un 13.2% de los encuestados tienen una percepción no agradable sobre el servicio prestado por la cafeteria (muy regular y regular), mientras que un  86% tiene un concepto del servicio bueo a excelente.
+
+
 
 ## <span style="color:#034a94">**Tablas cruzadas**</span>
 
@@ -105,7 +111,7 @@ knitr::include_graphics("img/tabla3a.png")
 
 </br></br>
 
-De esta tabla se puede observar que se presenta una mayor cantidad de hombres fallecidos  (86045)
+La tabla permite observar la distribución de las calificaciones por lugar de residencia 
 
 </br></br>
 
@@ -148,13 +154,13 @@ El siguiente código de R permite descargar la base de datos Casos positivos de 
 
 
 ```{r, eval=FALSE}
-install.packages("tidyverse") #  instalación de paquete para manejo de datos
-library(tidyverse)   # librerías útil en el manejo de datos
-
-install.packages("RSocrata", dependencies = TRUE)   # instalación de paquete RSocrata
-library(RSocrata)    # llamado de libreria
-token <- "zxMsD6eXc0zlEMryRGW87Hwrz"  # token
-Colombia <- read.socrata("https://www.datos.gov.co/resource/gt2j-8ykr.json", app_token = token) # lectura de manera remota 
+ install.packages("tidyverse") #  instalación de paquete para manejo de datos
+ library(tidyverse)   # librerías útil en el manejo de datos
+ 
+ install.packages("RSocrata", dependencies = TRUE)   # instalación de paquete RSocrata
+ library(RSocrata)    # llamado de libreria
+ token <- "zxMsD6eXc0zlEMryRGW87Hwrz"  # token
+ Colombia <- read.socrata("https://www.datos.gov.co/resource/gt2j-8ykr.json", app_token = token) # lectura de manera remota 
 
 # adecuación de la base de datos
 Colombia$edad=as.integer(Colombia$edad)  # convertir en entero la variable edad
@@ -183,7 +189,7 @@ summarytools::freq(Colombia21$estado, cumul = F)
 summarytools::freq(Colombia20$estado, cumul = F)
 summarytools::descr(Colombia22$edad)
 
-saveRDS(Colombia, file = "data/Colombia.RDS")  # guardar base con modificaciones
+saveRDS(Colombia, file = "/home/deg/Documentos/Javeriana/Ms Ciencia de Datos/repository/data/Colombia.RDS")
 
 table(Cali22_06$estado)
 ```

@@ -14,7 +14,7 @@
 
 <title> Tablas de frecuencia</title>
 
-<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -31,6 +31,7 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
@@ -218,6 +219,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -272,6 +276,14 @@ $(document).ready(function () {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore"><span style="color:#034a94"> <strong>Tablas
@@ -314,9 +326,9 @@ href="https://datosmacro.expansion.com/demografia/poblacion">Datosmacro.com</a>
 </sub>
 </center>
 <p></br></p>
-<p>La tabla permite visualizar la deficiencia en el cubrimiento del
-servicio de gas natural de internet. Por otro lado la falta de agua
-potable en un porcentaje significativo de la población Colombiana</p>
+<p>La tabla permite visualizar la distribución de la población muncial
+por continente, resaltando que más de la mitad de la población mundial
+se ubica en Asia (59.2%).</p>
 <p></br></br></p>
 </div>
 <div id="tablas-de-frecuencia-variables-ordinales"
@@ -328,13 +340,17 @@ ordinales</strong></span></h2>
 ordinal</strong> los valores debe presentarse ordenados. En este caso se
 adiciona una columna donde aparecen las frecuencias acumuladas
 relativas</p>
-<p></br></br></p>
+</br></br> <sup>Fuente: Encuesta se
 <center>
 <p><strong>Tabla 1.4</strong> Servicio de atención al cliente dic-2022
 <img src="img/tabla2a.png" width="60%" style="display: block; margin: auto;" /></p>
-<sup>Fuente: Encuesta servicios cafeteria central </sub>
+<!-- <sup>Fuente: Encuesta servicios cafeteria central </sub> -->
 </center>
 <p></br></br></p>
+<p>La tabla muestra que un 13.2% de los encuestados tienen una
+percepción no agradable sobre el servicio prestado por la cafeteria (muy
+regular y regular), mientras que un 86% tiene un concepto del servicio
+bueo a excelente.</p>
 </div>
 <div id="tablas-cruzadas" class="section level2">
 <h2><span style="color:#034a94"><strong>Tablas
@@ -352,8 +368,8 @@ residencia del cliente
 <img src="img/tabla3a.png" width="70%" style="display: block; margin: auto;" />
 </center>
 <p></br></br></p>
-<p>De esta tabla se puede observar que se presenta una mayor cantidad de
-hombres fallecidos (86045)</p>
+<p>La tabla permite observar la distribución de las calificaciones por
+lugar de residencia</p>
 <p></br></br></p>
 </div>
 <div id="visualización-de-errores" class="section level2">
@@ -437,13 +453,13 @@ positivos de COVID-19 en Colombia directamente del portal de Datos
 Abiertos, revisar los valores de las variables : ubicación y sexo,
 arreglarlas pasando todos sus valores a minúsculas y corrigiendo el
 valor de los datos faltantes NA</p>
-<pre class="r"><code>install.packages(&quot;tidyverse&quot;) #  instalación de paquete para manejo de datos
-library(tidyverse)   # librerías útil en el manejo de datos
-
-install.packages(&quot;RSocrata&quot;, dependencies = TRUE)   # instalación de paquete RSocrata
-library(RSocrata)    # llamado de libreria
-token &lt;- &quot;zxMsD6eXc0zlEMryRGW87Hwrz&quot;  # token
-Colombia &lt;- read.socrata(&quot;https://www.datos.gov.co/resource/gt2j-8ykr.json&quot;, app_token = token) # lectura de manera remota 
+<pre class="r"><code> install.packages(&quot;tidyverse&quot;) #  instalación de paquete para manejo de datos
+ library(tidyverse)   # librerías útil en el manejo de datos
+ 
+ install.packages(&quot;RSocrata&quot;, dependencies = TRUE)   # instalación de paquete RSocrata
+ library(RSocrata)    # llamado de libreria
+ token &lt;- &quot;zxMsD6eXc0zlEMryRGW87Hwrz&quot;  # token
+ Colombia &lt;- read.socrata(&quot;https://www.datos.gov.co/resource/gt2j-8ykr.json&quot;, app_token = token) # lectura de manera remota 
 
 # adecuación de la base de datos
 Colombia$edad=as.integer(Colombia$edad)  # convertir en entero la variable edad
@@ -472,7 +488,7 @@ summarytools::freq(Colombia21$estado, cumul = F)
 summarytools::freq(Colombia20$estado, cumul = F)
 summarytools::descr(Colombia22$edad)
 
-saveRDS(Colombia, file = &quot;data/Colombia.RDS&quot;)  # guardar base con modificaciones
+saveRDS(Colombia, file = &quot;/home/deg/Documentos/Javeriana/Ms Ciencia de Datos/repository/data/Colombia.RDS&quot;)
 
 table(Cali22_06$estado)</code></pre>
 <p></br></br></p>
@@ -553,6 +569,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

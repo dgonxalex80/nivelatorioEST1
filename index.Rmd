@@ -1,9 +1,11 @@
 ---
 title : <span style="color:#034a94"> **Experiencia**</span>
 author: "Nivelatorio de Estadística"
-css: style.css
+output:
+  html_document:
+    code_folding: hide
+    css: style.css
 ---
-
 
 
 ```{r setup, include=FALSE}
@@ -38,6 +40,7 @@ generar_tabla_bonita <- function(tabla) {
   return(tabla_bonita)
 }
 ```
+
 
 
 </br>
@@ -114,23 +117,29 @@ A la clasificación anterior añadimos la forma en que se pueden medir las varia
 </br></br>
 
 <center>
+
 **Tabla 1.1** Escalas de medición por tipo de variable
+
+</br>
 
 | Tipo de variable       |    escala de medición    |  ejemplo                            |
 |:-----------------------|:-------------------------|:------------------------------------|
-| Cualitativa            | nominal (no existe orden)|  estado civil ( soltero, casado, separado, viudo, unión libre)   | 
+| Cualitativa            | nominal (no existe orden)|  estado civil ( soltero, casado, separado, viudo, unión libre)    | 
 |                        |                          |  color ( blanco, negro, rojo, azul, amarillo, verde)              |
 |                        |                          |  pais (co, pe, us, uk, es,..)                                     |
 |                        | ordinal (con orden)      | nivel de ansiedad (bajo, medio, alto)                             |
 |                        |                          | clima laboral (excelente, muy bueno, bueno, regular, muy regular) |
-|                        |                          | nivel de satisfacción (baja, media, alta)                          |
-| Cuantitativas          | intervalo                | temperatura (centígrados, kelvin, Fahrenheit)                        |
+|                        |                          | nivel de satisfacción (baja, media, alta)                         |
+| Cuantitativas          | intervalo                | temperatura (centígrados, kelvin, Fahrenheit)                     |
 |                        |                          | operacionalización de clima laboral |
 |                        | de razón                 | edad                                |
-|                        |                          | tiempo de ejecución                   |
+|                        |                          | tiempo de ejecución                 |
 |                        |                          | precio del artículo en dólares      |
 
 </center>
+
+
+
 
 </br></br>
 
@@ -140,6 +149,8 @@ Dependiendo el tipo de variable y su escala de medición se tomaran los respecti
 
 <center>
 **Tabla 1.2** Indicadores y tipos de gráficos por tipos de variable
+
+</br>
 
 |Tipo de variable  | Escala          |  Indicadores             | Gráfico                     |
 |:-----------------|:----------------|:-------------------------|:----------------------------|
@@ -160,9 +171,12 @@ Dependiendo el tipo de variable y su escala de medición se tomaran los respecti
 |                  |                 | percentiles, deciles, cuartiles |                      |
 
 </center>
+
 </br></br>
 
 En esta unidad se tratará de manera general los conceptos principales relacionados con el análisis descriptivo de datos, basados en las principales características de los datos, tanto para variables cualitativas como para variables cuantitativas.
+
+</br>
 
 El análisis de las variables **cualitativas** se centra en la construcción de tablas de frecuencia y su representación a través de gráficos de tortas (nominales) y de barras (ordinales), mientras que en el caso de las variables **cuantitativas**  nos centraremos en indicadores de posición,  centro, variabilidad o de dispersión y de forma, además de su representación gráfica mediante histogramas, diagramas de cajas, diagramas de dispersión entre otros. 
 

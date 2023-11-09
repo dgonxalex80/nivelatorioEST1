@@ -1,8 +1,10 @@
 ---
 title: <span style="color:#034a94"> **Indicadores de tendencias central**</span>
 author: "Nivelatorio de Estadística "
-output: html_document
-css: style.css
+output:
+  html_document:
+    code_folding: hide
+    css: style.css
 ---
 
 ```{r setup, include=FALSE}
@@ -47,15 +49,11 @@ Es el indicador de tendencia central más conocido y utilizado por su fácil int
 
 $$\bar{x}= \frac{1}{n} \sum_{i=1}^{n} x_{i}$$
 
-```{r, eval=FALSE}
+```{r}
 x=c(1,2,3,4,5,6,7,8,9,10) # vector de números
 mean(x)  # función media
 sum(x)/length(x) # calculo de la media
 ```
-
-<pre>
-[1]  5.5
-</pre>
 
 <br/>
 
@@ -80,14 +78,11 @@ Sus principales propiedades son:
 El promedio del rendimiento de millas por galón de combustible de un grupo de 32 autos observados en el dataset `mtcars` es de $20.09$ mpg
 
 
-```{r, eval=FALSE}
+```{r}
 mean(mtcars$mpg,     # variable mpg de la data mtcars
 na.rm = TRUE)   # parametro util cuando se tiene datos faltantes :
 ```
 
-<pre>
-[1]  20.09062     
-</pre>
 
 <br/> <br/>
 
@@ -105,13 +100,10 @@ La **mediana** es el número que divide la muestra en dos partes de igual propor
 
 <br/>
 
-```{r, eval=FALSE}
+```{r}
 median(cars$speed)
 ```
 
-<pre>
-[1] 15
-</pre>
 
 <br/> <br/>
 
@@ -160,13 +152,10 @@ Con el fin de evitar que los datos atípicos generen sesgos en el indicador de l
 
 El valor para la media truncada al 10% para el caso de los datos de rendimiento de millas por galón de combustible de un grupo de 32 autos observados en el dataset `mtcars` es de 19.69615
 
-```{r, eval=FALSE}
+```{r}
 mean(mtcars$mpg, na.rm = TRUE, trim = 0.10)
 ```
 
-<pre>
-[1] 19.69615
-</pre>
 
 <br/> <br/>
 
@@ -184,13 +173,10 @@ El rango medio se obtiene al sumar los valores extremos ( mínimo y máximo) y d
 
 Para el caso de los datos de rendimiento de combustible arroja un valor de 22.15 millas por galón.
 
-```{r, eval=FALSE}
+```{r}
 (max(mtcars$mpg,na.rm = TRUE)+min(mtcars$mpg,na.rm = TRUE))/2
 ```
 
-<pre>
-[1] 22.15
-</pre>
 
 
 <br/> <br/>
@@ -212,7 +198,7 @@ $$MG = \Bigg(\displaystyle\prod_{i=1}^n (r_{i}+1)\Bigg)^{1/n}$$
 El crecimiento de la población en Colombia durante las ultimas décadas presenta la siguiente tendencia :
 
 
-```{r, eval=FALSE}
+```{r, message=FALSE, warning=FALSE}
 # install.packages(psych)
 library(psych)
 x = c(0.025,0.022,0.02,0.016,0.011,0.007)
@@ -220,9 +206,7 @@ x = c(0.025,0.022,0.02,0.016,0.011,0.007)
 psych::geometric.mean(x)
 ```
 
-<pre>
-[1] 0.01544071
-</pre>
+
 
 <br/>
 
@@ -248,23 +232,21 @@ Para calcular la velocidad promedio utilizamos la media armónica utilizamos la 
 
 
 
-```{r, eval=FALSE}
+```{r}
 library(psych)
 x=c(4.25, 3.75, 5.25)
 harmonic.mean(x,na.rm=TRUE,zero=TRUE)
 ```
 
 
-<pre>
-[1] 4.332524
-</pre>
+
 
 
 <br/> <br/>
 
 ## <span style="color:#034A94">**Código R**</span>
 
-```{r, eval=FALSE}
+```{r}
 tiempos=c(51.4, 49.9, 49.3, 51.2, 51.2, 45.7, 48.4, 47.3, 49.0, 50.1, 50.9, 45.4, 55.7, 48.9, 56.0, 44.7, 56.9, 46.6, 53.3, 48.5, 49.7, 45.0, 63.0, 51.0, 50.4, 51.2, 53.5, 52.1, 49.6, 45.9, 49.8, 42.3, 53.5, 54.7, 53.5, 56.7, NA,  44.4, 51.2, 51.1, 55.0, 64.4, 51.8, 45.3, 62.7, 43.8, 51.3, 53.7, 51.0, 52.9, 43.1, 43.6, 51.2, 52.8, 49.2, 49.6, 49.6, 51.5, 55.3, 46.7, 47.6, 51.8, 58.9, 50.8, 43.4, 48.5, 52.7, 44.8, 52.5, 58.4, 52.9)
 
 mean(tiempos, na.rm = TRUE)
@@ -273,12 +255,7 @@ mean(tiempos, na.rm = TRUE, trim = 0.10)
 (min(tiempos,na.rm = TRUE)+max(tiempos,na.rm = TRUE))/2
 
 ```
-<pre>
-[1] 50.79714
-[1] 51
-[1] 50.52679
-[1] 53.35
-</pre>
+
 
 <br/> <br/>
 

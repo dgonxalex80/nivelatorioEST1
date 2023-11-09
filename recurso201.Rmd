@@ -1,7 +1,10 @@
 ---
 title : <span style="color:#034a94"> **Introducción**</span>
 author: "Nivelatorio de Estadística"
-css: style.css
+output:
+  html_document:
+    code_folding: hide
+    css: style.css
 ---
 
 

@@ -1,8 +1,10 @@
 ---
 title: <span style="color:#034a94"> **Indicadores de variabilidad o dispersión**</span>
 author: "Nivelatorio de Estadística"
-output: html_document
-css: style.css
+output:
+  html_document:
+    code_folding: hide
+    css: style.css
 ---
 
 ```{r setup, include=FALSE}
@@ -164,19 +166,14 @@ En este caso se obtienen valores diferentes para los dos grupos. El grupo 1 con 
 
 
 
-```{r, eval=FALSE}
+```{r }
 max(x1)-min(x1)        # rango
 var(x1)                # varianza
 sd(x1)                 # desviación estándar
 sd(x1)/mean(x1)*100    # coeficiente de variación
 ```
 
-<pre >
-[1] 16
-[1] 16.62069
-[1] 4.076848
-[1] 14.56017  
-</pre> 
+
 
 
 

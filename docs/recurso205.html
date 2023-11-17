@@ -305,16 +305,22 @@ está relacionada directamente con la dispersión.</p>
 <p>De acuerdo con su valor, la puntudez de los datos puede clasificarse
 en tres grupos:</p>
 <ul>
-<li><p><strong>Leptocúrtica</strong>, con valores grandes para el
-coeficiente (CA&gt;0)</p></li>
-<li><p><strong>Mesocúrtica</strong>, con valores medianos para el
-coeficiente (CA=0)</p></li>
-<li><p><strong>Platicútrica</strong>, con valores pequeños para el
-coeficiente (CA&lt;0)</p></li>
+<li><span style="color:#686868"><strong>Leptocúrtica</strong></span>,
+con valores grandes para el coeficiente (CA&gt;0)</li>
+<li><span style="color:#FF7F00"><strong>Mesocúrtica</strong></span>, con
+valores grandes para el coeficiente (CA=0)</li>
+<li><span style="color:#0EB0C6"><strong>Platicútrica</strong></span>,
+con valores pequeños para el coeficiente (CA&lt;0)</li>
 </ul>
 <p></br></p>
-<center>
+<pre class="r"><code># Distribucion normal
+library(ggfortify)
+p=ggdistribution(dnorm, seq(-5, 5, 0.01), mean = 0, sd = 1,colour = &quot;#FF7F00&quot;)   + theme_minimal()
+p=ggdistribution(dnorm, seq(-5, 5, 0.01), mean = 0, sd = .7,colour = &quot;#686868&quot;, p=p)
+p=ggdistribution(dnorm, seq(-5, 5, 0.01),   mean = 0, sd = 1.5,colour = &quot;#0EB0C6&quot;, p=p)
+p</code></pre>
 <img src="recurso205_files/figure-html/unnamed-chunk-1-1.png" width="864" />
+<center>
 <strong>Figura 1.11</strong> Comparación de apuntamientos </br>
 </center>
 <p><br/> <br/></p>
@@ -330,18 +336,27 @@ sesgo</strong></span></h2>
 datos es simétrica o no con respecto a la media. Esta característica de
 los datos se mide a través del coeficiente de asimetría o sesgo.</p>
 <ul>
-<li><p>Es <strong>simétrica</strong> si el valor del indicador es 0
-(<span class="math inline">\(\bar{x}=Me\)</span>)</p></li>
-<li><p>Es <strong>asimétrica a la izquierda</strong>&gt; si el valor del
-indicador es negativo (<span
+<li><p>Es <span style="color:#686868"><strong>simétrica</strong></span>
+si el valor del indicador es 0 (<span
+class="math inline">\(\bar{x}=Me\)</span>)</p></li>
+<li><p>Es <span style="color:#FF7F00"><strong>asimétrica a la
+izquierda</strong></span> si el valor del indicador es negativo (<span
 class="math inline">\(\bar{x}&lt;Me\)</span>)</p></li>
-<li><p>Es <strong>asimétrica a la derecha</strong> si el valor del
-indicador es positivo (<span
+<li><p>Es <span style="color:#0EB0C6"><strong>asimétrica a la
+derecha</strong></span> si el valor del indicador es positivo (<span
 class="math inline">\(\bar{x}&gt;Me\)</span>)</p></li>
 </ul>
-<br/>
+<p><br/></p>
+<pre class="r"><code>library(ggfortify)
+ggdistribution(dbeta, seq(0, 1, 0.01), shape1 = 5, shape2 =2 ,colour = &quot;#FF7F00&quot;)  + theme_minimal()</code></pre>
+<p><img src="recurso205_files/figure-html/unnamed-chunk-2-1.png" width="864" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>library(ggfortify)
+ggdistribution(dnorm, seq(0.5, 3.5, 0.01), mean = 2, sd = .4,colour = &quot;#686868&quot;)  + theme_minimal()</code></pre>
+<p><img src="recurso205_files/figure-html/unnamed-chunk-3-1.png" width="864" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>library(ggfortify)
+ggdistribution(dbeta, seq(0, 1, 0.01), shape1 = 2, shape2 =5 ,colour = &quot;#0EB0C6&quot;)   + theme_minimal()</code></pre>
+<img src="recurso205_files/figure-html/unnamed-chunk-4-1.png" width="864" style="display: block; margin: auto;" />
 <center>
-<p><img src="img/simetria.png" /></p>
 <strong>Figura 1.12</strong> Comparación de asimetrías </br>
 </center>
 <p><br/></p>
@@ -351,32 +366,38 @@ class="math inline">\(\bar{x}&gt;Me\)</span>)</p></li>
 style="color:#034a94"><strong>Interpretación</strong></span></h2>
 <p><br/></p>
 <ul>
-<li><p><strong>Asimetría negativa </strong> : poco con poco y mucho con
-mucho. Una prueba con resultados asimétricos a la izquierda o negativa,
-indica que pocos obtuvieron resultados bajos y que muchos alcanzaron
-resultados altos, pudiendo indicar que la prueba era relativamente
-fácil</p></li>
-<li><p><strong>Simétrica</strong> : poco con poco, poco con mucho, mucho
-al rededor de un centro. En este caso una prueba con resultados
-simétricos indica que los puntajes se ubicaron al rededor de la media y
-que unos pocos sacaron puntaje bajo y que los que presentaron resultados
-altos corresponden a un pequeño grupo. Por lo regular estos son los
-resultados de pruebas estandarizada como pueden ser las pruebas de
-estado.</p></li>
-<li><p><strong>Asimetría positiva</strong> : mucho con poco y poco con
-mucho. Los resultados a pruebas con asimetría a la derecha o positiva,
-presentan resultados acumulados a la izquierda, es decir que muchos
-obtuvieron resultados bajos y unos pocos resultados altos. Esto haría
-pensar que la prueba fue exigente.</p></li>
+<li><p><span style="color:#FF7F00"><strong>Asimetría
+negativa</strong></span> : Una interpretación intuitiva de esta forma
+pidría ser : “poco con poco y mucho con mucho”. Ejemplo : Una prueba con
+resultados asimétricos a la izquierda o negativa, indica que pocos
+obtuvieron resultados bajos y que muchos alcanzaron resultados altos,
+pudiendo indicar que la prueba era relativamente fácil</p></li>
+<li><p><span style="color:#686868"><strong>Simétrica</strong></span> :
+En este caso se podría interpretar los resultados como “poco con poco,
+poco con mucho, mucho al rededor de un centro”. En este caso una prueba
+con resultados simétricos indica que los puntajes se ubicaron al rededor
+de la media y que unos pocos sacaron puntaje bajo y que los que
+presentaron resultados altos corresponden a un pequeño grupo. Por lo
+regular estos son los resultados de pruebas estandarizada como pueden
+ser las pruebas de estado.</p></li>
+<li><p><span style="color:#0EB0C6"><strong>Asimetría
+positiva</strong></span> : Esta forma se podría interpretar como “mucho
+con poco y poco con mucho”. Los resultados a pruebas con asimetría a la
+derecha o positiva, presentan resultados acumulados a la izquierda, es
+decir que muchos obtuvieron resultados bajos y unos pocos resultados
+altos. Esto haría pensar que la prueba fue exigente.</p></li>
 </ul>
 <p><br/><br/></p>
 </div>
 <div id="código-r" class="section level2">
 <h2><span style="color:#034a94"><strong>Código R</strong></span></h2>
 <p><br/></p>
-<p>En R se utilizan las funciones :
-<code>rapportools::kurtosis(x)</code> y
-<code>rapportools::skewness(x)</code> de manera individual.</p>
+<p>En R se utilizan las funciones :</p>
+<ul>
+<li><code>rapportools::kurtosis(x)</code><br />
+</li>
+<li><code>rapportools::skewness(x)</code></li>
+</ul>
 <p></br></p>
 <pre class="r"><code>x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,  48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19, 53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06, 54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24, 52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54, 52.72, 44.82, 52.49, 58.43, 52.91)
 

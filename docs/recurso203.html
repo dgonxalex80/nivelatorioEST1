@@ -294,7 +294,30 @@ $(document).ready(function () {
 
 
 <center>
-<img src="img/puntos1.png" width="100%" style="display: block; margin: auto;" />
+<pre class="r"><code>library(ggplot2)
+
+x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
+
+data1 &lt;- data.frame(
+name1=rep(&quot;A&quot;,70),
+value1=x
+)
+
+# Supongamos que data1 es tu conjunto de datos
+
+# Crear un gráfico base
+p2 &lt;- ggplot(data1, aes(x = value1, y = &quot; &quot;)) +
+  geom_jitter(color = &quot;#034A94&quot;, size = 3, alpha = 0.9) +
+  geom_text(data = data1, x = 50.5, y = 0, label = &quot;x&quot;, col = &quot;#034A94&quot;) +
+  
+  # Eliminar el eje y y el nombre de la variable en la leyenda
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        legend.title = element_blank())
+
+# Mostrar el gráfico
+print(p2)</code></pre>
+<p><img src="recurso203_files/figure-html/unnamed-chunk-1-1.png" width="960" /></p>
 <strong>Figura 1.8</strong> Tiempos de carrera en minutos </br>
 <sub>Fuente : Carrera La Luz Cali </sub>
 </center>
@@ -318,13 +341,46 @@ aritmética</strong></span></h3>
 fácil interpretación y calculo. Consiste en sumar todos los valores de
 un conjunto de datos y dividirlos por el número de datos</p>
 <p><br/></p>
+<pre class="r"><code>library(ggplot2)
+
+
+x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
+
+data1 &lt;- data.frame(
+name1=rep(&quot;A&quot;,70),
+value1=x
+)
+
+# Supongamos que data1 es tu conjunto de datos
+# Calcula la media de los datos
+media &lt;- mean(data1$value1)
+
+# Crea un gráfico base
+p2 &lt;- ggplot(data1, aes(x = value1, y = &quot; &quot;)) +
+  geom_jitter(color = &quot;#034A94&quot;, size = 3, alpha = 0.9) +
+  geom_text(data = data1, x = 50.5, y = 0, label = &quot;x&quot;, col = &quot;#034A94&quot;) +
+  
+  # Añade un punto de la media en color naranja
+  geom_point(x = media, color = &quot;orange&quot;, size = 3) +
+  
+  # Elimina el eje y y el nombre de la variable en la leyenda
+  theme(axis.title.y = element_blank(),
+         axis.title.x = element_blank(),
+        legend.title = element_blank())
+
+# Mostrar el gráfico
+p2</code></pre>
+<p><img src="recurso203_files/figure-html/unnamed-chunk-2-1.png" width="960" /></p>
 <p><span class="math display">\[\bar{x}= \frac{1}{n} \sum_{i=1}^{n}
 x_{i}\]</span></p>
-<pre class="r"><code>x=c(1,2,3,4,5,6,7,8,9,10) # vector de números
-mean(x)  # función media</code></pre>
-<pre><code>[1] 5.5</code></pre>
-<pre class="r"><code>sum(x)/length(x) # calculo de la media</code></pre>
-<pre><code>[1] 5.5</code></pre>
+<pre class="r"><code>x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
+
+data1 &lt;- data.frame(name1=rep(&quot;A&quot;,70),value1=x ) # vector de números
+
+mean(data1$value1) # media </code></pre>
+<pre><code>[1] 50.79957</code></pre>
+<pre class="r"><code>sum(data1$value1)/length(data1$value1) # calculo de la media</code></pre>
+<pre><code>[1] 50.79957</code></pre>
 <p><br/></p>
 <p>Sus principales propiedades son:</p>
 <ul>
@@ -356,7 +412,7 @@ class="math inline">\(\bar{z}=a\bar{x}+b\bar{y}\)</span>.</p></li>
 grupo de 32 autos observados en el dataset <code>mtcars</code> es de
 <span class="math inline">\(20.09\)</span> mpg</p>
 <pre class="r"><code>mean(mtcars$mpg,     # variable mpg de la data mtcars
-na.rm = TRUE)   # parametro util cuando se tiene datos faltantes :</code></pre>
+     na.rm = TRUE)   # parametro util cuando se tiene datos faltantes </code></pre>
 <pre><code>[1] 20.09062</code></pre>
 <p><br/> <br/></p>
 </div>
@@ -372,8 +428,43 @@ percentil 50 + <span class="math inline">\(D_{5}\)</span> : decil 5 +
 <div id="ejemplo-1" class="section level3">
 <h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
 <p><br/></p>
-<pre class="r"><code>median(cars$speed)</code></pre>
-<pre><code>[1] 15</code></pre>
+<pre class="r"><code>library(ggplot2)
+
+
+x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
+
+data1 &lt;- data.frame(
+name1=rep(&quot;A&quot;,70),
+value1=x
+)
+
+# Calcula la media de los datos
+mediana &lt;- median(data1$value1)
+
+# Crea un gráfico base
+p3 &lt;- ggplot(data1, aes(x = value1, y = &quot; &quot;)) +
+  geom_jitter(color = &quot;#034A94&quot;, size = 3, alpha = 0.9) +
+  geom_text(data = data1, x = mediana, y = 0, label = &quot;x&quot;, col = &quot;#034A94&quot;) +
+  
+  # Añade un punto de la media en color naranja
+  geom_point(x = mediana, color = &quot;orange&quot;, size = 3) +
+  
+  # Elimina el eje y y el nombre de la variable en la leyenda
+  theme(axis.title.y = element_blank(),
+         axis.title.x = element_blank(),
+        legend.title = element_blank())
+
+# Mostrar el gráfico
+p3</code></pre>
+<p><img src="recurso203_files/figure-html/unnamed-chunk-5-1.png" width="960" /></p>
+<pre class="r"><code>x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
+
+data1 &lt;- data.frame(
+name1=rep(&quot;A&quot;,70),
+value1=x
+) # vector de números
+median(data1$value1) # mediana </code></pre>
+<pre><code>[1] 50.98</code></pre>
 <p><br/> <br/></p>
 </div>
 <div id="moda" class="section level3">
@@ -388,7 +479,7 @@ cualitativas o en cuantitativas discretas con pocos valores. <br/>
 <h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
 <p><br/> <br/></p>
 <center>
-<img src="recurso203_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<img src="recurso203_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 </br> <strong>Figura 1.9</strong> Paises clasificados Mundial Catar 2022
 </br> <sub>Fuente : kaggle.com </sub>
 </center>
@@ -431,8 +522,15 @@ class="math display">\[\frac{1}{2}\big(max(x)+min(x)\big)\]</span></p>
 <h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
 <p>Para el caso de los datos de rendimiento de combustible arroja un
 valor de 22.15 millas por galón.</p>
-<pre class="r"><code>(max(mtcars$mpg,na.rm = TRUE)+min(mtcars$mpg,na.rm = TRUE))/2</code></pre>
-<pre><code>[1] 22.15</code></pre>
+<pre class="r"><code>x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
+
+data1 &lt;- data.frame(
+name1=rep(&quot;A&quot;,70),
+value1=x
+)
+
+(max(data1$value1,na.rm = TRUE)+min(data1$value1,na.rm = TRUE))/2</code></pre>
+<pre><code>[1] 53.37</code></pre>
 <p><br/> <br/></p>
 </div>
 <div id="media-geométrica" class="section level3">
@@ -494,16 +592,21 @@ harmonic.mean(x,na.rm=TRUE,zero=TRUE)</code></pre>
 </div>
 <div id="código-r" class="section level2">
 <h2><span style="color:#034A94"><strong>Código R</strong></span></h2>
-<pre class="r"><code>tiempos=c(51.4, 49.9, 49.3, 51.2, 51.2, 45.7, 48.4, 47.3, 49.0, 50.1, 50.9, 45.4, 55.7, 48.9, 56.0, 44.7, 56.9, 46.6, 53.3, 48.5, 49.7, 45.0, 63.0, 51.0, 50.4, 51.2, 53.5, 52.1, 49.6, 45.9, 49.8, 42.3, 53.5, 54.7, 53.5, 56.7, NA,  44.4, 51.2, 51.1, 55.0, 64.4, 51.8, 45.3, 62.7, 43.8, 51.3, 53.7, 51.0, 52.9, 43.1, 43.6, 51.2, 52.8, 49.2, 49.6, 49.6, 51.5, 55.3, 46.7, 47.6, 51.8, 58.9, 50.8, 43.4, 48.5, 52.7, 44.8, 52.5, 58.4, 52.9)
+<pre class="r"><code>x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
 
-mean(tiempos, na.rm = TRUE)</code></pre>
-<pre><code>[1] 50.79714</code></pre>
-<pre class="r"><code>median(tiempos,na.rm = TRUE)</code></pre>
-<pre><code>[1] 51</code></pre>
-<pre class="r"><code>mean(tiempos, na.rm = TRUE, trim = 0.10)</code></pre>
-<pre><code>[1] 50.52679</code></pre>
-<pre class="r"><code>(min(tiempos,na.rm = TRUE)+max(tiempos,na.rm = TRUE))/2</code></pre>
-<pre><code>[1] 53.35</code></pre>
+data1 &lt;- data.frame(
+name1=rep(&quot;A&quot;,70),
+value1=x
+)
+
+cat(&quot;media                :&quot;,mean(data1$value1, na.rm = TRUE), &quot;\n&quot;) # media</code></pre>
+<pre><code>media                : 50.79957 </code></pre>
+<pre class="r"><code>cat(&quot;mediana              :&quot;, median(data1$value1,na.rm = TRUE), &quot;\n&quot;) # mediana</code></pre>
+<pre><code>mediana              : 50.98 </code></pre>
+<pre class="r"><code>cat(&quot;media truncada 10%   :&quot;, mean(data1$value1, na.rm = TRUE, trim = 0.10), &quot;\n&quot;) # media truncada al 10%</code></pre>
+<pre><code>media truncada 10%   : 50.52786 </code></pre>
+<pre class="r"><code>cat(&quot;rango medio          :&quot;, (min(data1$value1,na.rm = TRUE)+max(data1$value1,na.rm = TRUE))/2, &quot;\n&quot;)# rango medio</code></pre>
+<pre><code>rango medio          : 53.37 </code></pre>
 <p><br/> <br/></p>
 <div id="nota" class="section level3 content-box-gray">
 <h3><span style="color:#686868"><strong>Nota</strong></span></h3>

@@ -324,7 +324,25 @@ no es así, los datos que se presentan a continuación tienen medias de
 </table>
 <p></br></br></p>
 <center>
-<img src="img/grupos12.png" width="100%" style="display: block; margin: auto;" />
+<pre class="r"><code>x1=c(27, 27, 28, 28, 34, 28, 26, 33, 24, 28, 25, 25, 33, 27, 34, 38, 24, 26, 22, 
+     23, 33, 23, 26, 26, 32, 33, 29, 30, 25, 23)
+x2=c(35,  25,  19,  17,  24,   17,  55,  25,  31,   35,  43,  28,  32,  19,  20, 
+     17, 25,  18,  21,  22,  17,  35,  29,  20,  54,  46,  24, 29, 40, 18)
+data2 &lt;- data.frame(name2=c(rep(&quot;Grupo1&quot;,30), rep(&quot;Grupo2&quot;,30)),
+                    value2=c(x1,x2))
+
+p3=ggplot(data2, aes(x=value2, y=name2, color = name2)) +
+          geom_jitter(size=3, alpha=1) +
+          scale_color_manual(values=c(&quot;#FF7F00&quot;, &quot;#034A94&quot;))+
+    # Eliminar el eje y y el nombre de la variable en la leyenda
+        theme_minimal() +
+        theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        legend.title = element_blank(),
+        legend.position = &quot;none&quot;)
+
+p3  </code></pre>
+<img src="recurso204_files/figure-html/unnamed-chunk-1-1.png" width="960" />
 <strong>Figura 1.10</strong> Tiempos de carrera en minutos </br>
 <sub>Fuente : Carrera La Luz Cali - comparación de grupos </sub>
 </center>
@@ -512,14 +530,13 @@ grupo 1 con un valor inferior a 20%, que indica homogeneidad y el grupo
 </div>
 <div id="código-r" class="section level2">
 <h2><span style="color:#034A94"><strong>Código R</strong></span></h2>
-<pre class="r"><code>max(x1)-min(x1)        # rango</code></pre>
-<pre><code>[1] 16</code></pre>
-<pre class="r"><code>var(x1)                # varianza</code></pre>
-<pre><code>[1] 16.62069</code></pre>
-<pre class="r"><code>sd(x1)                 # desviación estándar</code></pre>
-<pre><code>[1] 4.076848</code></pre>
-<pre class="r"><code>sd(x1)/mean(x1)*100    # coeficiente de variación</code></pre>
-<pre><code>[1] 14.56017</code></pre>
+<pre>
+max(x1)-min(x1)       # rango
+var(x1)               # varianza
+sd(x1)                # desviación estándar
+sd(x1)/mean(x1)*100   # coeficiente de variación
+
+</pre>
 </div>
 
 

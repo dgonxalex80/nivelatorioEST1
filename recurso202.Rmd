@@ -10,12 +10,18 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = NA)
 
-x=c(51.35212, 49.87575, 49.34843, 51.21381, 51.24443, 45.74725, 48.42380, 47.29197, 48.97805, 50.06414, 50.93887, 45.40615, 55.69387, 48.90457, 55.99991, 44.71925, 56.88540, 46.61125, 53.25002, 48.46261, 49.74167, 45.02893, 63.01846, 50.96321, 50.42523, 51.19170, 53.45167, 52.10473, 49.60598, 45.89307, 49.75569, 42.29984, 53.48346, 54.70581, 53.48042, 56.67013, 44.37571, 51.17919, 51.06382, 54.96013, 64.43723, 51.84813, 45.33205, 62.73598, 43.83679, 51.32204, 53.69599, 51.00030, 52.85885, 43.06412, 43.63493, 51.24188, 52.84303, 49.18509, 49.56495, 49.55592, 51.49034, 55.31177, 46.74424, 47.61693, 51.84773, 58.89864, 50.80074, 43.39416, 48.54392, 52.71874, 44.82219, 52.48635, 58.42706, 52.91451)
+library(ggplot2)
 
-data1 <- data.frame(
-name1=rep("A",70),
-value1=x
-)
+x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
+
+data1 <- data.frame(name1=rep("A",70),
+                    value1=x )
+
+
+c1 ="#FF7F00"  # naranja - color primario 
+c2 ="#034A94"  # azul oscuro - color secundario
+c3 ="#0EB0C6"  # azul claro - color terciario
+c4 ="#686868"  # gris - color texto
 ```
 
 <br/> <br/>
@@ -71,15 +77,39 @@ Los siguientes datos corresponde a tiempos registrados por 70 atletas  durante u
 </div>
 
 <center>
-```{r, echo=FALSE, out.width="100%", fig.align = "center"}
-knitr::include_graphics("img/puntos1.png")
+```{r, fig.height=3, fig.width=10}
+
+library(ggplot2)
+
+x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
+
+data1 <- data.frame(
+name1=rep("A",70),
+value1=x
+)
+
+# Supongamos que data1 es tu conjunto de datos
+
+# Crear un gráfico base
+p2 <- ggplot(data1, aes(x = value1, y = " ")) +
+  geom_jitter(color = "#034A94", size = 3, alpha = 0.9) +
+  geom_text(data = data1, x = 50.5, y = 0, label = "x", col = "#034A94") +
+  
+  # Eliminar el eje y y el nombre de la variable en la leyenda
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        legend.title = element_blank())
+
+# Mostrar el gráfico
+print(p2)
+
 ```
 **Figura 1.3**  Tiempos de carrera en minutos </br>
 <sub>Fuente : Carrera La Luz Cali  </sub>
 </center>
 <br/>
 
-El **percentil 30** divide la muestra en dos partes.  30% por debajo y un 70% por encima de este valor. Para el conjunto de tiempos el $P_{30}$ corresponde a un valor de $48.96$, valor que se   representa con un punto azul en la gráfica de puntos. Este valor corresponde al tiempo empleado por un atleta cuya posición está por encima del 30% de los participantes, pero por debajo del 70% de los que gastaron mayor tiempo.
+El **percentil 30** divide la muestra en dos partes.  30% por debajo y un 70% por encima de este valor. Para el conjunto de tiempos el $P_{30}$ corresponde a un valor de $48.96$, valor que se   representa con un punto naranja en la gráfica de puntos. Este valor corresponde al tiempo empleado por un atleta cuya posición está por encima del 30% de los participantes, pero por debajo del 70% de los que gastaron mayor tiempo.
 
 <br/>
 <div class="content-box-gray">
@@ -88,23 +118,93 @@ El **percentil 30** divide la muestra en dos partes.  30% por debajo y un 70% po
 Para facilitar la interpretación de los resultados se transforman a minutos.segundos.
 </div>
 
+```{r}
+# Calcular el percentil 30
+cat("percentil 30   :", quantile(data1$value1, 0.30) )
+```
 
 <center>
-```{r, echo=FALSE, out.width="700%", fig.align = "center"}
-knitr::include_graphics("img/puntosP30.png")
+
+
+
+```{r, fig.height=3, fig.width=10}
+library(ggplot2)
+
+x = c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69, 48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19, 53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06, 54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24, 52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54, 52.72, 44.82, 52.49, 58.43, 52.91)
+
+data1 <- data.frame(
+  name1 = rep("A", 70),
+  value1 = x
+)
+
+# Calcular el percentil 30
+percentil_30 <- quantile(data1$value1, 0.3)
+
+# Crear un gráfico base
+p <- ggplot(data1, aes(x = value1, y = " ")) +
+  geom_jitter(color = "#034A94", size = 3, alpha = 0.9) +
+  geom_text(data = data1, x = 50.5, y = 0, label = "x", col = "#034A94") +
+  
+  # Agregar un punto para el percentil 30 en color naranja
+  geom_point(x = percentil_30, color = "orange", size = 3) +
+  
+  # Eliminar el eje y y el nombre de la variable en la leyenda
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        legend.title = element_blank())
+
+# Mostrar el gráfico
+p
+
 ```
+
 **Figura 1.4**  Tiempos de carrera en minutos - Percentil 30 </br>
 <sub>Fuente : Carrera La Luz Cali  </sub>
 </center>
 
 <br/></br>
 
-El **percentil 75** divide la muestra en dos partes, una parte inferior conformada por un 75% de los datos y un restante 25% por encima. En el conjunto de datos del ejemplo 1, corresponde a un valor de 52.90, el cual se representa en la siguiente gráfica con un punto azul. 
+El **percentil 75** divide la muestra en dos partes, una parte inferior conformada por un 75% de los datos y un restante 25% por encima. En el conjunto de datos del ejemplo 1, corresponde a un valor de 52.90, el cual se representa en la siguiente gráfica con un punto naranja. 
+
+
+```{r}
+# Calcular el percentil 30
+cat("percentil 75   :", quantile(data1$value1, 0.75) )
+```
 
 <center>
-```{r, echo=FALSE, out.width="700%", fig.align = "center"}
-knitr::include_graphics("img/puntosP75.png")
+
+```{r, fig.height=3, fig.width=10}
+library(ggplot2)
+
+x = c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69, 48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19, 53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06, 54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24, 52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54, 52.72, 44.82, 52.49, 58.43, 52.91)
+
+data1 <- data.frame(
+  name1 = rep("A", 70),
+  value1 = x
+)
+
+# Calcular el percentil 30
+percentil_75 <- quantile(data1$value1, 0.75)
+
+# Crear un gráfico base
+p <- ggplot(data1, aes(x = value1, y = " ")) +
+  geom_jitter(color = "#034A94", size = 3, alpha = 0.9) +
+  geom_text(data = data1, x = 50.5, y = 0, label = "x", col = "#034A94") +
+  
+  # Agregar un punto para el percentil 30 en color naranja
+  geom_point(x = percentil_75, color = "orange", size = 3) +
+  
+  # Eliminar el eje y y el nombre de la variable en la leyenda
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        legend.title = element_blank())
+
+# Mostrar el gráfico
+p
+
 ```
+
 **Figura 1.5**  Tiempos de carrera en minutos - Percentil 75 </br>
 <sub>Fuente : Carrera La Luz Cali  </sub>
 </center>
@@ -146,9 +246,38 @@ Y finalmente los **cuartiles** corresponden a 3 números que dividen la muestra 
 ### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 <center>
-```{r, echo=FALSE, out.width="700%", fig.align = "center"}
-knitr::include_graphics("img/puntosQ1Q2Q3.png")
+
+```{r, fig.height=3, fig.width=10}
+library(ggplot2)
+
+x = c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69, 48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19, 53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06, 54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24, 52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54, 52.72, 44.82, 52.49, 58.43, 52.91)
+
+data1 <- data.frame(
+  name1 = rep("A", 70),
+  value1 = x
+)
+
+# Crear un gráfico base con diagrama de cajas y puntos superpuestos de forma horizontal
+p2 <- ggplot(data1, aes(y = " ", x = value1)) +
+  geom_boxplot(width = 0.5, color = "orange", fill = NA) +
+  geom_jitter(color = "#034A94", size = 3, alpha = 0.9) +
+    # Agregar puntos de color azul
+  scale_color_manual(values = "blue") +
+  # Eliminar el eje y y el nombre de la variable en la leyenda
+  theme_minimal() +
+  # Eliminar el eje y y el nombre de la variable en la leyenda
+  theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        legend.title = element_blank())
+
+# Mostrar el gráfico
+print(p2)
+
+
 ```
+
+
+
 **Figura 1.7**  Tiempos de carrera en minutos - Cuartiles: $Q_1$, $Q_2$  y $Q_3$</br>
 <sub>Fuente : Carrera La Luz Cali  </sub>
 </center>
@@ -164,16 +293,11 @@ En este caso los cuartiles $Q_1 = 46.72$, $Q_2 = 50.98$ y $Q_3 = 52.90$, están 
 
 Los percentiles pueden ser calculados mediante la función  `quantile()` . El siguiente código ilustra la obtención de los cuartiles
 
-```{r, eval=FALSE}
+```{r}
 x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69, 48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19, 53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06, 54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24, 52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54, 52.72, 44.82, 52.49, 58.43, 52.91)
 
 quantile(x, c(0.25,0.50,0.75))
 ```
-
-<pre class="my-pre">
-25%             50%             75% 
-48.4300         50.9800         52.8975 
-</pre>
 
 
 

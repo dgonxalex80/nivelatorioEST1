@@ -10,15 +10,22 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = NA)
 
-x1=c(27, 27, 28, 28, 34, 28, 26, 33, 24, 28, 25, 25, 33, 27, 34, 38, 24, 26, 22, 23, 33, 23, 26, 26, 32, 33, 29, 30, 25, 23)
-x2=c(35,  25,  19,  17,  24,   17,  55,  25,  31,   35,  43,  28,  32,  19,  20, 17, 25,  18,  21,  22,  17,  35,  29,  20,  54,  46,  24, 29, 40, 18)
-data4=data.frame(x1,x2)
+x1=c(27, 27, 28, 28, 34, 28, 26, 33, 24, 28, 25, 25, 33, 27, 34, 38, 24, 26, 22, 
+     23, 33, 23, 26, 26, 32, 33, 29, 30, 25, 23)
+x2=c(35,  25,  19,  17,  24,   17,  55,  25,  31,   35,  43,  28,  32,  19,  20, 
+     17, 25,  18,  21,  22,  17,  35,  29,  20,  54,  46,  24, 29, 40, 18)
+data2 <- data.frame(name2=c(rep("Grupo1",30), rep("Grupo2",30)),
+                    value2=c(x1,x2)
+)
+
+library(ggplot2)
+
+col1 ="#FF7F00"  # naranja - color primario 
+col2 ="#034A94"  # azul oscuro - color secundario
+col3 ="#0EB0C6"  # azul claro - color terciario
+col4 ="#686868"  # gris - color texto
 
 
-c1 ="#FF7F00"  # naranja - color primario 
-c2 ="#034A94"  # azul oscuro - color secundario
-c3 ="#0EB0C6"  # azul claro - color terciario
-c4 ="#686868"  # gris - color texto
 ```
 
 </br></br>
@@ -37,8 +44,27 @@ Supongamos que tenemos dos grupos de estudiantes y solo se conoce  el promedio d
 </br></br>
 
 <center>
-```{r, echo=FALSE, out.width="100%", fig.align = "center"}
-knitr::include_graphics("img/grupos12.png")
+
+```{r, fig.height=3, fig.width=10}
+
+x1=c(27, 27, 28, 28, 34, 28, 26, 33, 24, 28, 25, 25, 33, 27, 34, 38, 24, 26, 22, 
+     23, 33, 23, 26, 26, 32, 33, 29, 30, 25, 23)
+x2=c(35,  25,  19,  17,  24,   17,  55,  25,  31,   35,  43,  28,  32,  19,  20, 
+     17, 25,  18,  21,  22,  17,  35,  29,  20,  54,  46,  24, 29, 40, 18)
+data2 <- data.frame(name2=c(rep("Grupo1",30), rep("Grupo2",30)),
+                    value2=c(x1,x2))
+
+p3=ggplot(data2, aes(x=value2, y=name2, color = name2)) +
+          geom_jitter(size=3, alpha=1) +
+          scale_color_manual(values=c("#FF7F00", "#034A94"))+
+    # Eliminar el eje y y el nombre de la variable en la leyenda
+        theme_minimal() +
+        theme(axis.title.y = element_blank(),
+        axis.title.x = element_blank(),
+        legend.title = element_blank(),
+        legend.position = "none")
+
+p3  
 ```
 **Figura 1.10**  Tiempos de carrera en minutos </br>
 <sub>Fuente : Carrera La Luz Cali - comparación de grupos </sub>
@@ -166,12 +192,13 @@ En este caso se obtienen valores diferentes para los dos grupos. El grupo 1 con 
 
 
 
-```{r }
-max(x1)-min(x1)        # rango
-var(x1)                # varianza
-sd(x1)                 # desviación estándar
-sd(x1)/mean(x1)*100    # coeficiente de variación
-```
+<pre>
+max(x1)-min(x1)       # rango
+var(x1)               # varianza
+sd(x1)                # desviación estándar
+sd(x1)/mean(x1)*100   # coeficiente de variación
+
+</pre>
 
 
 

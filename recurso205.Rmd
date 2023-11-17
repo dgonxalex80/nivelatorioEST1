@@ -16,10 +16,13 @@ name1=rep("A",70),
 value1=x
 )
 
-c1="#FF7F00"
-c2="#=EB0C6"
-c3="#034A94"
-c4="#686868"
+
+col1 ="#FF7F00"  # naranja - color primario 
+col2 ="#034A94"  # azul oscuro - color secundario
+col3 ="#0EB0C6"  # azul claro - color terciario
+col4 ="#686868"  # gris - color texto
+
+
 
 
 library(ggplot2)
@@ -35,23 +38,22 @@ Se mide a través del coeficiente de curtosis que mide cuan **puntiaguda** es un
 
 De acuerdo con su valor, la puntudez de los datos puede clasificarse en tres grupos:
 
-+ **Leptocúrtica**, con valores grandes para el coeficiente (CA>0)
-
-+ **Mesocúrtica**, con valores medianos para el coeficiente (CA=0)
-
-+ **Platicútrica**, con valores pequeños para el coeficiente (CA<0) 
+* <span style="color:#686868">**Leptocúrtica**</span>, con valores grandes para el coeficiente (CA>0)
+* <span style="color:#FF7F00">**Mesocúrtica**</span>, con valores grandes para el coeficiente (CA=0)
+* <span style="color:#0EB0C6">**Platicútrica**</span>, con valores pequeños para el coeficiente (CA<0) 
 
 </br>
 
-<center>
-```{r, echo=FALSE, fig.height=3, fig.width=9}
+
+```{r, fig.height=4, fig.width=9}
 # Distribucion normal
 library(ggfortify)
-p=ggdistribution(dnorm, seq(-5, 5, 0.01), mean = 0, sd = 1,colour = 'blue')
-p=ggdistribution(dnorm, seq(-5, 5, 0.01), mean = 0, sd = .7,colour = 'red', p=p)
-p=ggdistribution(dnorm, seq(-5, 5, 0.01),   mean = 0, sd = 1.5,colour = 'orange', p=p)
+p=ggdistribution(dnorm, seq(-5, 5, 0.01), mean = 0, sd = 1,colour = "#FF7F00")   + theme_minimal()
+p=ggdistribution(dnorm, seq(-5, 5, 0.01), mean = 0, sd = .7,colour = "#686868", p=p)
+p=ggdistribution(dnorm, seq(-5, 5, 0.01),   mean = 0, sd = 1.5,colour = "#0EB0C6", p=p)
 p
 ```
+<center>
 **Figura 1.11**  Comparación de apuntamientos </br>
 </center>
 
@@ -68,16 +70,29 @@ En R se utiliza la función del paquete rapportools : `rapportools::kurtosis(x)`
 
 Mide que tanto la forma de la distribución de frecuencias de los datos es simétrica o no con respecto a la media. Esta característica de los datos se mide a través del coeficiente de asimetría o sesgo.
 
-+ Es **simétrica** si el  valor del indicador es 0  ($\bar{x}=Me$)
++ Es <span style="color:#686868">**simétrica**</span> si el  valor del indicador es 0  ($\bar{x}=Me$)
 
-+ Es **asimétrica a la izquierda**> si el valor del indicador es negativo ($\bar{x}<Me$)
++ Es <span style="color:#FF7F00">**asimétrica a la izquierda**</span> si el valor del indicador es negativo ($\bar{x}<Me$)
 
-+ Es **asimétrica a la derecha** si el valor del indicador es positivo ($\bar{x}>Me$)
++ Es <span style="color:#0EB0C6">**asimétrica a la derecha**</span> si el valor del indicador es positivo ($\bar{x}>Me$)
 
 <br/>
-<center>
-![](img/simetria.png)
 
+```{r, fig.height=3, fig.width=9, fig.align='center'}
+library(ggfortify)
+ggdistribution(dbeta, seq(0, 1, 0.01), shape1 = 5, shape2 =2 ,colour = "#FF7F00")  + theme_minimal()
+```
+
+```{r, fig.height=3, fig.width=9, fig.align='center'}
+library(ggfortify)
+ggdistribution(dnorm, seq(0.5, 3.5, 0.01), mean = 2, sd = .4,colour = "#686868")  + theme_minimal()
+```
+
+```{r, fig.height=3, fig.width=9, fig.align='center'}
+library(ggfortify)
+ggdistribution(dbeta, seq(0, 1, 0.01), shape1 = 2, shape2 =5 ,colour = "#0EB0C6")   + theme_minimal()
+```
+<center>
 **Figura 1.12**  Comparación de asimetrías </br>
 </center>
 <br/>
@@ -86,11 +101,11 @@ Mide que tanto la forma de la distribución de frecuencias de los datos es simé
 
 <br/>
 
-+ **Asimetría negativa ** : poco con poco y mucho con mucho.  Una prueba con resultados asimétricos a la izquierda o negativa, indica que pocos obtuvieron resultados bajos y que muchos alcanzaron resultados altos, pudiendo indicar que la prueba era relativamente fácil
++ <span style="color:#FF7F00">**Asimetría negativa**</span> : Una interpretación intuitiva de esta forma pidría ser : "poco con poco y mucho con mucho".  Ejemplo : Una prueba con resultados asimétricos a la izquierda o negativa, indica que pocos obtuvieron resultados bajos y que muchos alcanzaron resultados altos, pudiendo indicar que la prueba era relativamente fácil
 
-+ **Simétrica**           : poco con poco, poco con mucho, mucho al rededor de un centro. En este caso una prueba con resultados simétricos indica que los puntajes se ubicaron al rededor de la media y que unos pocos sacaron puntaje bajo y que los que presentaron resultados altos corresponden a un pequeño grupo. Por lo regular estos son los resultados de pruebas estandarizada como pueden ser las pruebas de estado.
++ <span style="color:#686868">**Simétrica**</span> : En este caso se podría interpretar los resultados como "poco con poco, poco con mucho, mucho al rededor de un centro". En este caso una prueba con resultados simétricos indica que los puntajes se ubicaron al rededor de la media y que unos pocos sacaron puntaje bajo y que los que presentaron resultados altos corresponden a un pequeño grupo. Por lo regular estos son los resultados de pruebas estandarizada como pueden ser las pruebas de estado.
 
-+ **Asimetría positiva**  : mucho con poco y poco con mucho. Los resultados a pruebas con asimetría a la derecha o positiva, presentan resultados acumulados a la izquierda, es decir que muchos obtuvieron resultados bajos y unos pocos resultados altos. Esto haría pensar que la prueba fue exigente.
++ <span style="color:#0EB0C6">**Asimetría positiva**</span>  : Esta forma se podría interpretar como "mucho con poco y poco con mucho". Los resultados a pruebas con asimetría a la derecha o positiva, presentan resultados acumulados a la izquierda, es decir que muchos obtuvieron resultados bajos y unos pocos resultados altos. Esto haría pensar que la prueba fue exigente.
 
 <br/><br/>
 
@@ -98,7 +113,10 @@ Mide que tanto la forma de la distribución de frecuencias de los datos es simé
 
 <br/>
 
-En R se utilizan las funciones : `rapportools::kurtosis(x)`  y  `rapportools::skewness(x)` de manera individual.
+En R se utilizan las funciones :
+
+* `rapportools::kurtosis(x)`  
+* `rapportools::skewness(x)` 
 
 </br>
 

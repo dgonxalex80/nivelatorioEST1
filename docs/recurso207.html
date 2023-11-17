@@ -34,6 +34,8 @@
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -311,16 +313,129 @@ un valor determinado</li>
 <li>Frecuencia relativa que corresponde al porcentaje sobre el total de
 registros que corresponden a un valor determinado</li>
 </ul>
-<p>La siguiente tabla corresponde a la distribución de la variable
-ubicación de las personas que se han contagiado con Covid-19 en
-Colombia, base que se encuentra disponible en la plataforma <a
+<p>La siguiente tabla corresponde a la distribución de la población
+mundial a 2022 por continente, base que se encuentra disponible en la
+plataforma <a
 href="https://www.datos.gov.co/browse?q=covid%20&amp;sortBy=relevance">Datos
 abiertos</a></p>
 </br></br>
 <center>
 <strong>Tabla 1.3</strong> Distribución de población mundial por
-continente
-<img src="img/tabla1a.png" width="50%" style="display: block; margin: auto;" />
+continente 2022
+</center>
+<pre class="r"><code># Instala el paquete formattable si no lo tienes instalado
+# install.packages(&quot;formattable&quot;)
+
+# Carga el paquete
+library(formattable)
+
+# Datos
+continente &lt;- c(&quot;Asia&quot;, &quot;África&quot;, &quot;América&quot;, &quot;Europa&quot;, &quot;Oceanía&quot;, &quot;Antártida&quot;)
+poblacion &lt;- c(4753500631, 1440353360, 1046571635, 747089798, 44284912, 4490)
+frecuencia &lt;- round(poblacion / sum(poblacion)*100,2)  # Frecuencia relativa en porcentaje
+datos &lt;- data.frame(continente, poblacion, frecuencia)
+
+# Renombra las columnas
+colnames(datos) &lt;- c(&quot;Continente&quot;, &quot;Frecuencia absoluta&quot;, &quot;Frecuencia relativa (%)&quot;)
+
+# Formatea la tabla con formattable
+tabla13 &lt;- formattable(datos, align = c(&quot;l&quot;, &quot;r&quot;, &quot;r&quot;), list(
+  `Frecuencia absoluta` = color_tile(&quot;white&quot;, &quot;orange&quot;),
+  `Frecuencia relativa` = color_bar(&quot;lightblue&quot;)
+))
+
+# Muestra la tabla
+tabla13</code></pre>
+<table class="table table-condensed">
+<thead>
+<tr>
+<th style="text-align:left;">
+Continente
+</th>
+<th style="text-align:right;">
+Frecuencia absoluta
+</th>
+<th style="text-align:right;">
+Frecuencia relativa (%)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:right;">
+<span
+style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffa500">4753500631</span>
+</td>
+<td style="text-align:right;">
+59.18
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+África
+</td>
+<td style="text-align:right;">
+<span
+style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffe3b1">1440353360</span>
+</td>
+<td style="text-align:right;">
+17.93
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+América
+</td>
+<td style="text-align:right;">
+<span
+style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffebc6">1046571635</span>
+</td>
+<td style="text-align:right;">
+13.03
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Europa
+</td>
+<td style="text-align:right;">
+<span
+style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fff0d6">747089798</span>
+</td>
+<td style="text-align:right;">
+9.30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Oceanía
+</td>
+<td style="text-align:right;">
+<span
+style="display: block; padding: 0 4px; border-radius: 4px; background-color: #fffefc">44284912</span>
+</td>
+<td style="text-align:right;">
+0.55
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Antártida
+</td>
+<td style="text-align:right;">
+<span
+style="display: block; padding: 0 4px; border-radius: 4px; background-color: #ffffff">4490</span>
+</td>
+<td style="text-align:right;">
+0.00
+</td>
+</tr>
+</tbody>
+</table>
+<center>
 <sub> Fuente: <a
 href="https://datosmacro.expansion.com/demografia/poblacion">Datosmacro.com</a>
 </sub>
@@ -340,17 +455,132 @@ ordinales</strong></span></h2>
 ordinal</strong> los valores debe presentarse ordenados. En este caso se
 adiciona una columna donde aparecen las frecuencias acumuladas
 relativas</p>
-</br></br> <sup>Fuente: Encuesta se
+<p></br></br></p>
 <center>
-<p><strong>Tabla 1.4</strong> Servicio de atención al cliente dic-2022
-<img src="img/tabla2a.png" width="60%" style="display: block; margin: auto;" /></p>
-<!-- <sup>Fuente: Encuesta servicios cafeteria central </sub> -->
+<strong>Tabla 1.4</strong> Servicio de atención al cliente dic-2022
+</center>
+<pre class="r"><code># Datos
+evaluacion &lt;- c(&quot;Exelente&quot;, &quot;Muy bueno&quot;, &quot;Bueno&quot;, &quot;Regular&quot;, &quot;Muy regular&quot;)
+frec.absoluta &lt;- c(309, 433, 208, 99, 45)
+frec.relativa &lt;- round(frec.absoluta / sum(frec.absoluta), 2)
+frec.acumulada &lt;- cumsum(frec.relativa)
+
+datos14 &lt;- data.frame(evaluacion, frec.absoluta, frec.relativa, frec.acumulada)
+
+# Carga el paquete knitr
+library(knitr)
+
+# Muestra la tabla con kable y ajuste de estilo
+kable(
+  datos14,
+  caption = &quot; &quot;,
+  col.names = c(&quot;Evaluación&quot;, &quot;Frecuencia absoluta&quot;, &quot;Frecuencia relativa&quot;, &quot;Frecuencia acumulada&quot;),
+  format = &quot;html&quot;,
+  align = c(&quot;l&quot;, &quot;r&quot;, &quot;r&quot;, &quot;r&quot;),
+  digits = c(0, 0, 2, 2)
+) %&gt;%
+  kable_styling(full_width = FALSE)</code></pre>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Evaluación
+</th>
+<th style="text-align:right;">
+Frecuencia absoluta
+</th>
+<th style="text-align:right;">
+Frecuencia relativa
+</th>
+<th style="text-align:right;">
+Frecuencia acumulada
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Exelente
+</td>
+<td style="text-align:right;">
+309
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+<td style="text-align:right;">
+0.28
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Muy bueno
+</td>
+<td style="text-align:right;">
+433
+</td>
+<td style="text-align:right;">
+0.40
+</td>
+<td style="text-align:right;">
+0.68
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Bueno
+</td>
+<td style="text-align:right;">
+208
+</td>
+<td style="text-align:right;">
+0.19
+</td>
+<td style="text-align:right;">
+0.87
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Regular
+</td>
+<td style="text-align:right;">
+99
+</td>
+<td style="text-align:right;">
+0.09
+</td>
+<td style="text-align:right;">
+0.96
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Muy regular
+</td>
+<td style="text-align:right;">
+45
+</td>
+<td style="text-align:right;">
+0.04
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+</tbody>
+</table>
+<center>
+<sup>Fuente: Encuesta servicios cafeteria central </sub>
 </center>
 <p></br></br></p>
 <p>La tabla muestra que un 13.2% de los encuestados tienen una
 percepción no agradable sobre el servicio prestado por la cafeteria (muy
 regular y regular), mientras que un 86% tiene un concepto del servicio
 bueo a excelente.</p>
+<p></br></br></p>
 </div>
 <div id="tablas-cruzadas" class="section level2">
 <h2><span style="color:#034a94"><strong>Tablas
@@ -365,8 +595,100 @@ que permite visualizar las frecuencias de dos variables cualitativas</p>
 <center>
 <strong>Tabla 1.5</strong> Calificación del producto de acuerdo a su
 residencia del cliente
-<img src="img/tabla3a.png" width="70%" style="display: block; margin: auto;" />
 </center>
+<pre class="r"><code># Instala y carga los paquetes necesarios
+# install.packages(&quot;magrittr&quot;)
+# install.packages(&quot;knitr&quot;)
+
+library(magrittr)
+library(knitr)
+
+# Datos
+x = c(20, 40, 15, 11, 8, 6)
+m = matrix(x, ncol = 2) %&gt;%
+  addmargins()
+colnames(m) = c(&quot;Urbana&quot;, &quot;Rural&quot;, &quot;Total&quot;)
+rownames(m) = c(&quot;Bueno&quot;, &quot;Regular&quot;, &quot;Malo&quot;, &quot;Total&quot;)
+
+# Formatea la tabla con kable
+m %&gt;%
+  kable(&quot;html&quot;) %&gt;%
+  kable_styling(&quot;striped&quot;, full_width = FALSE)</code></pre>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Urbana
+</th>
+<th style="text-align:right;">
+Rural
+</th>
+<th style="text-align:right;">
+Total
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Bueno
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+11
+</td>
+<td style="text-align:right;">
+31
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Regular
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+48
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Malo
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+21
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:right;">
+75
+</td>
+<td style="text-align:right;">
+25
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+</tbody>
+</table>
 <p></br></br></p>
 <p>La tabla permite observar la distribución de las calificaciones por
 lugar de residencia</p>

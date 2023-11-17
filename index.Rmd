@@ -19,6 +19,12 @@ value1=x
 )
 
 
+col1 ="#FF7F00"  # naranja - color primario 
+col2 ="#034A94"  # azul oscuro - color secundario
+col3 ="#0EB0C6"  # azul claro - color terciario
+col4 ="#686868"  # gris - color texto
+
+
 
 # Carga las librerías
 library(knitr)

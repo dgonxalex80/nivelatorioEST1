@@ -621,6 +621,11 @@ N.Valid     70.00
 Pct.Valid   100.00
 </pre>
 <p></br></br></p>
+<pre class="r"><code>library(ggplot2)
+dat &lt;- data1
+plot &lt;- ggplot(data1, aes(x = value1)) 
+plot &lt;- plot + geom_histogram(aes(y=..density..), color=&quot;black&quot;, fill = &quot;#034A96&quot;, binwidth = 5, alpha = 0.5) + labs(title = &quot;Tiempo de carrera  K10.5-2022&quot;) + ylab(&quot;densidad&quot;) + xlab(&quot;minutos&quot;)
+plot</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p></br></br></p>
 <p>Los datos indican que en promedio los atletas emplearon 51 minutos

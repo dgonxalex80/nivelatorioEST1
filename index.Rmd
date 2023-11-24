@@ -230,7 +230,7 @@ Pct.Valid   100.00
 
 </br></br>
 
-```{r, fig.height=4, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, fig.height=4,warning=FALSE, message=FALSE}
 library(ggplot2)
 dat <- data1
 plot <- ggplot(data1, aes(x = value1)) 

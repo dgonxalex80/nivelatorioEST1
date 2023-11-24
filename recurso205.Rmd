@@ -135,3 +135,17 @@ Estos resultados indica una leve concentración de los datos y una leve asimetr�
 El valor obtenido para el sesgos nos indica que existe un mediano sesgo positivo o a la derecha ( mucho con poco - poco con mucho). 
 
 
+
+
+
+</br></br></br>
+
+## <span style="color:#034A94">**Código  R**</span>
+
+
+<pre>
+
+rapportools::kurtosis(x)   
+rapportools::skewness(x) 
+
+</pre>

@@ -438,7 +438,7 @@ name1=rep(&quot;A&quot;,70),
 value1=x
 )
 
-# Calcula la media de los datos
+# Calcula la medina de los datos
 mediana &lt;- median(data1$value1)
 
 # Crea un gráfico base
@@ -614,6 +614,20 @@ cat(&quot;media                :&quot;,mean(data1$value1, na.rm = TRUE), &quot;\
 eliminar de los datos los faltantes para el calculo de los
 indicadores</p>
 </div>
+</div>
+<div id="código-r-1" class="section level2">
+<h2><span style="color:#034A94"><strong>Código R</strong></span></h2>
+<pre>
+mean(data1$value1, na.rm = TRUE)               # media
+median(data1$value1,na.rm = TRUE)              # mediana
+mean(data1$value1, na.rm = TRUE, trim = 0.10)  # media truncada al 10%
+(max(x,na.rm = TRUE)+min(x,na.rm = TRUE))/2    # rango medio
+
+
+psych::harmonic.mean(x,na.rm=TRUE,zero=TRUE)   # media armónica
+psych::geometric.mean(x)                       # media geométrica
+
+</pre>
 </div>
 
 

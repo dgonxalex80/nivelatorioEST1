@@ -146,7 +146,7 @@ kable(
 
 </br></br>
 
-La tabla muestra que un 13.2% de los encuestados tienen una percepción no agradable sobre el servicio prestado por la cafeteria (muy regular y regular), mientras que un  86% tiene un concepto del servicio bueo a excelente.
+La tabla muestra que un 13.2% de los encuestados tienen una percepción no agradable sobre el servicio prestado por la cafeteria (muy regular y regular), mientras que un  68% tiene un concepto del servicio muy bueno a excelente.
 
 </br></br>
 
@@ -154,10 +154,13 @@ La tabla muestra que un 13.2% de los encuestados tienen una percepción no agrad
 
 </br>
 
-Se puede interpretar que las evaluaciones desfavorables (muy regular y regular) representan un 13.16%  y que entre muy bueno y exelente se encuentra el 67.83% de los evaluados (100-32.17)
+Tambien conocida como tabla de contingencia o tabla de doble entrada, en una forma de resumir información de dos variables categóricas, indicando su forma en que se distribuyen las observaciones de manera conjunta.
 
 
-También es de utilidad realizar tablas cruzadas o de doble entrada que permite visualizar las frecuencias de dos variables cualitativas 
+La tabla se organiza en filas y columnas, donde las filas representan una variable y las columnas representan la otra variable. Cada celda en la tabla contiene el recuento o la frecuencia de las observaciones que pertenecen a una combinación específica de categorías.
+
+
+### **Ejemplo** 
 
 </br></br>
 
@@ -188,15 +191,13 @@ m %>%
 
 ```
 
+La tabla permite observar la distribución de las calificaciones por lugar de residencia. Se puede interpretar que las evaluaciones desfavorables (muy regular y regular) representan un 13.16%  y que entre muy bueno y exelente se encuentra el 67.83% de los evaluados. 
 
-
-
-
-
+También es de utilidad realizar tablas cruzadas o de doble entrada que permite visualizar las frecuencias de dos variables cualitativas. 
 
 </br></br>
 
-La tabla permite observar la distribución de las calificaciones por lugar de residencia 
+ 
 
 </br></br>
 
@@ -204,25 +205,31 @@ La tabla permite observar la distribución de las calificaciones por lugar de re
 
 </br>
 
-Al trabajar con la base de datos Covid-19 para Colombia se encontraron registros con el mismo valor pero que por su forma de escritura eran tomados como diferentes. 
-Las tablas de frecuencia además de permitir un análisis rápido de las variables cualitativas, también permite detectar posible problemas en la digitalización y valorar la magnitud de los datos faltantes (NA) 
+Al trabajar con la base de datos como la del Covid-19 para Colombia se encontraron registros con el mismo valor pero que por su forma de escritura eran tomados como diferentes. Las tablas de frecuencia además de permitir un análisis rápido de las variables cualitativas, también permite detectar posible problemas en la digitalización y valorar la magnitud de los datos faltantes (NA) 
 
 </br></br>
 
-Como ejemplo tenemos las variables *ubicación* y *sexo*   
+Como ejemplo tenemos las variables *ubicación* y *sexo*  
 
-| casa    | Casa       |CASA    |Fallecido     |Hospital        | Hospital UCI  | NA      |
-|:--------|:-----------|:-------|:-------------|:---------------|:--------------|:--------|
-| 27689   | 6107510    |7       |141862        |   179          | 19            | 34093   |
+
+```{r}
+# Cargar la base de datos desde el archivo .rda
+load("data/Colombia.rda")
+table(Colombia$sexo)
+```
+
 
 
 </br></br>
 
-|   f  | F         | m      | M        |
-|:-----|:----------|:-------|:---------|
-|   6  |3370605    |6       | 2940742  |
 
 
+
+```{r}
+# Cargar la base de datos desde el archivo .rda
+load("data/Colombia.rda")
+table(Colombia$ubicacion)
+```
 
 </br></br>
 
@@ -277,6 +284,9 @@ summarytools::descr(Colombia22$edad)
 saveRDS(Colombia, file = "/home/deg/Documentos/Javeriana/Ms Ciencia de Datos/repository/data/Colombia.RDS")
 
 table(Cali22_06$estado)
+
+table(Cali22_06$sexo)
+
 ```
 
 </br></br>
@@ -305,6 +315,7 @@ Type: Character
              Total   6311359   100.00000   100.00000
 </pre>
 
+Esta tabla permite detectar anomalias en la data que deben ser ajustadas antes de realizar los analisis descriptivos
 
 </br></br>
 
@@ -328,7 +339,7 @@ Type: Character
             3-Bueno    127     12.70          24.50     12.70          24.50
         4-Muy bueno    446     44.60          69.10     44.60          69.10
         5-Excelente    309     30.90         100.00     30.90         100.00
-               <NA>      0                               0.00         100.00
+                 NA      0                               0.00         100.00
               Total   1000    100.00         100.00    100.00         100.00
 
 </pre>

@@ -188,7 +188,7 @@ name1=rep("A",70),
 value1=x
 )
 
-# Calcula la media de los datos
+# Calcula la medina de los datos
 mediana <- median(data1$value1)
 
 # Crea un gráfico base
@@ -400,5 +400,23 @@ Es necesario agregar `na.rm = TRUE` para que permite eliminar de los datos los f
 </div>
 
 
+
+
+
+## <span style="color:#034A94">**Código  R**</span>
+
+
+
+<pre>
+mean(data1$value1, na.rm = TRUE)               # media
+median(data1$value1,na.rm = TRUE)              # mediana
+mean(data1$value1, na.rm = TRUE, trim = 0.10)  # media truncada al 10%
+(max(x,na.rm = TRUE)+min(x,na.rm = TRUE))/2    # rango medio
+
+
+psych::harmonic.mean(x,na.rm=TRUE,zero=TRUE)   # media armónica
+psych::geometric.mean(x)                       # media geométrica
+
+</pre>
 
 

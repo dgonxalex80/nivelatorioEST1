@@ -112,20 +112,37 @@ print(p2)
 El **percentil 30** divide la muestra en dos partes.  30% por debajo y un 70% por encima de este valor. Para el conjunto de tiempos el $P_{30}$ corresponde a un valor de $48.96$, valor que se   representa con un punto naranja en la gráfica de puntos. Este valor corresponde al tiempo empleado por un atleta cuya posición está por encima del 30% de los participantes, pero por debajo del 70% de los que gastaron mayor tiempo.
 
 <br/>
+
 <div class="content-box-gray">
 ### <span style="color:#686868">**Nota**</span> 
 
-Para facilitar la interpretación de los resultados se transforman a minutos.segundos.
+Para facilitar la interpretación de los resultados se transforman a segundos a minutos.
 </div>
+
+<br/>
+
+`quantile(x, 0.30)`
+
+<br/>
 
 ```{r}
 # Calcular el percentil 30
-cat("percentil 30   :", quantile(data1$value1, 0.30) )
+x=c(51.4, 49.9, 49.3, 51.2, 51.2, 45.7, 48.4, 47.3, 49.0, 50.1, 50.9, 45.4, 55.7,
+    48.9, 56.0, 44.7, 56.9, 46.6, 53.3, 48.5, 49.7, 45.0, 63.0, 51.0, 50.4, 51.2,
+    53.5, 52.1, 49.6, 45.9, 49.8, 42.3, 53.5, 54.7, 53.5, 56.7, 44.4, 51.2, 51.1,
+    55.0, 64.4, 51.8, 45.3, 62.7, 43.8, 51.3, 53.7, 51.0, 52.9, 43.1, 43.6, 51.2,
+    52.8, 49.2, 49.6, 49.6, 51.5, 55.3, 46.7, 47.6, 51.8, 58.9, 50.8, 43.4, 48.5,
+    52.7, 44.8, 52.5, 58.4, 52.9)
+cat("percentil 30   :", quantile(x, 0.30))
 ```
 
 <center>
 
+<br/>
 
+La siguiente gráfica presenta la ubucación del percentil 30 con respecto a la distribución de la muestra - punto en naranja -.
+
+<br/>
 
 ```{r, fig.height=3, fig.width=10}
 library(ggplot2)
@@ -166,10 +183,17 @@ p
 
 El **percentil 75** divide la muestra en dos partes, una parte inferior conformada por un 75% de los datos y un restante 25% por encima. En el conjunto de datos del ejemplo 1, corresponde a un valor de 52.90, el cual se representa en la siguiente gráfica con un punto naranja. 
 
+</br>
+
+`quantile(x, 0.75)`
+
+</br>
 
 ```{r}
-# Calcular el percentil 30
-cat("percentil 75   :", quantile(data1$value1, 0.75) )
+# Calcular el percentil 75
+x = c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69, 48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19, 53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06, 54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24, 52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54, 52.72, 44.82, 52.49, 58.43, 52.91)
+
+cat("percentil 75   :", quantile(x, 0.75) )
 ```
 
 <center>
@@ -221,9 +245,11 @@ Los **deciles** por su parte corresponden a  9 número que dividen la muestra en
 
 ### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
-El **decil 2** ($D_{2}$), tiene por debajo del el, el 20% de los datos 
+* El **decil 2** ($D_{2}$), tiene por debajo del el, el 20% de los datos 
+* El **decil 5** ($D_{5}$), tiene por debajo del el, el 50% de los datos y es igual al percentil 50 ($P_{50}$) 
 
 <center>
+
 ```{r, echo=FALSE, out.width="700%", fig.align = "center"}
 knitr::include_graphics("img/puntosD2yD5.png")
 ```

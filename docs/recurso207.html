@@ -578,19 +578,24 @@ Muy regular
 <p></br></br></p>
 <p>La tabla muestra que un 13.2% de los encuestados tienen una
 percepción no agradable sobre el servicio prestado por la cafeteria (muy
-regular y regular), mientras que un 86% tiene un concepto del servicio
-bueo a excelente.</p>
+regular y regular), mientras que un 68% tiene un concepto del servicio
+muy bueno a excelente.</p>
 <p></br></br></p>
 </div>
 <div id="tablas-cruzadas" class="section level2">
 <h2><span style="color:#034a94"><strong>Tablas
 cruzadas</strong></span></h2>
 <p></br></p>
-<p>Se puede interpretar que las evaluaciones desfavorables (muy regular
-y regular) representan un 13.16% y que entre muy bueno y exelente se
-encuentra el 67.83% de los evaluados (100-32.17)</p>
-<p>También es de utilidad realizar tablas cruzadas o de doble entrada
-que permite visualizar las frecuencias de dos variables cualitativas</p>
+<p>Tambien conocida como tabla de contingencia o tabla de doble entrada,
+en una forma de resumir información de dos variables categóricas,
+indicando su forma en que se distribuyen las observaciones de manera
+conjunta.</p>
+<p>La tabla se organiza en filas y columnas, donde las filas representan
+una variable y las columnas representan la otra variable. Cada celda en
+la tabla contiene el recuento o la frecuencia de las observaciones que
+pertenecen a una combinación específica de categorías.</p>
+<div id="ejemplo" class="section level3">
+<h3><strong>Ejemplo</strong></h3>
 <p></br></br></p>
 <center>
 <strong>Tabla 1.5</strong> Calificación del producto de acuerdo a su
@@ -600,8 +605,16 @@ residencia del cliente
 # install.packages(&quot;magrittr&quot;)
 # install.packages(&quot;knitr&quot;)
 
-library(magrittr)
-library(knitr)
+library(magrittr)</code></pre>
+<pre><code>
+Attaching package: &#39;magrittr&#39;</code></pre>
+<pre><code>The following object is masked from &#39;package:purrr&#39;:
+
+    set_names</code></pre>
+<pre><code>The following object is masked from &#39;package:tidyr&#39;:
+
+    extract</code></pre>
+<pre class="r"><code>library(knitr)
 
 # Datos
 x = c(20, 40, 15, 11, 8, 6)
@@ -689,17 +702,23 @@ Total
 </tr>
 </tbody>
 </table>
-<p></br></br></p>
 <p>La tabla permite observar la distribución de las calificaciones por
-lugar de residencia</p>
+lugar de residencia. Se puede interpretar que las evaluaciones
+desfavorables (muy regular y regular) representan un 13.16% y que entre
+muy bueno y exelente se encuentra el 67.83% de los evaluados.</p>
+<p>También es de utilidad realizar tablas cruzadas o de doble entrada
+que permite visualizar las frecuencias de dos variables
+cualitativas.</p>
 <p></br></br></p>
+<p></br></br></p>
+</div>
 </div>
 <div id="visualización-de-errores" class="section level2">
 <h2><span style="color:#034a94"><strong>Visualización de
 errores</strong></span></h2>
 <p></br></p>
-<p>Al trabajar con la base de datos Covid-19 para Colombia se
-encontraron registros con el mismo valor pero que por su forma de
+<p>Al trabajar con la base de datos como la del Covid-19 para Colombia
+se encontraron registros con el mismo valor pero que por su forma de
 escritura eran tomados como diferentes. Las tablas de frecuencia además
 de permitir un análisis rápido de las variables cualitativas, también
 permite detectar posible problemas en la digitalización y valorar la
@@ -707,58 +726,21 @@ magnitud de los datos faltantes (NA)</p>
 <p></br></br></p>
 <p>Como ejemplo tenemos las variables <em>ubicación</em> y
 <em>sexo</em></p>
-<table>
-<colgroup>
-<col width="10%" />
-<col width="14%" />
-<col width="9%" />
-<col width="16%" />
-<col width="19%" />
-<col width="18%" />
-<col width="10%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">casa</th>
-<th align="left">Casa</th>
-<th align="left">CASA</th>
-<th align="left">Fallecido</th>
-<th align="left">Hospital</th>
-<th align="left">Hospital UCI</th>
-<th align="left">NA</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">27689</td>
-<td align="left">6107510</td>
-<td align="left">7</td>
-<td align="left">141862</td>
-<td align="left">179</td>
-<td align="left">19</td>
-<td align="left">34093</td>
-</tr>
-</tbody>
-</table>
+<pre class="r"><code># Cargar la base de datos desde el archivo .rda
+load(&quot;data/Colombia.rda&quot;)
+table(Colombia$sexo)</code></pre>
+<pre><code>
+      f       F       m       M 
+      6 3413793       6 2971396 </code></pre>
 <p></br></br></p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">f</th>
-<th align="left">F</th>
-<th align="left">m</th>
-<th align="left">M</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">6</td>
-<td align="left">3370605</td>
-<td align="left">6</td>
-<td align="left">2940742</td>
-</tr>
-</tbody>
-</table>
+<pre class="r"><code># Cargar la base de datos desde el archivo .rda
+load(&quot;data/Colombia.rda&quot;)
+table(Colombia$ubicacion)</code></pre>
+<pre><code>
+        casa         Casa         CASA    Fallecido     Hospital Hospital UCI 
+       28320      6172449            7       143085          226           37 
+         N/A 
+       41077 </code></pre>
 <p></br></br></p>
 <p>En R se puede utilizar la función <code>table(x)</code> para la
 elaboración de una tabla de frecuencias que contiene solo el conteo,
@@ -812,7 +794,9 @@ summarytools::descr(Colombia22$edad)
 
 saveRDS(Colombia, file = &quot;/home/deg/Documentos/Javeriana/Ms Ciencia de Datos/repository/data/Colombia.RDS&quot;)
 
-table(Cali22_06$estado)</code></pre>
+table(Cali22_06$estado)
+
+table(Cali22_06$sexo)</code></pre>
 <p></br></br></p>
 <p>Tabla de frecuencias de una variable cualitativa en escala
 nominal</p>
@@ -834,6 +818,8 @@ Type: Character
               <NA>         0                 0.00000
              Total   6311359   100.00000   100.00000
 </pre>
+<p>Esta tabla permite detectar anomalias en la data que deben ser
+ajustadas antes de realizar los analisis descriptivos</p>
 <p></br></br></p>
 <p>Tabla de frecuencias de una variable cuantitativa en escala
 ordinal</p>
@@ -852,7 +838,7 @@ Type: Character
             3-Bueno    127     12.70          24.50     12.70          24.50
         4-Muy bueno    446     44.60          69.10     44.60          69.10
         5-Excelente    309     30.90         100.00     30.90         100.00
-               <NA>      0                               0.00         100.00
+                 NA      0                               0.00         100.00
               Total   1000    100.00         100.00    100.00         100.00
 
 </pre>

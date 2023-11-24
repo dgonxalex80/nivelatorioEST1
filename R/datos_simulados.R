@@ -50,3 +50,7 @@ p3=ggplot(data2, aes(x=value2, y=name2, color = name2)) +
           scale_color_manual(values=c("#FF7F00", "#034A94")) 
 p3          
   
+
+
+
+

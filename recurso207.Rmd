@@ -167,7 +167,7 @@ La tabla se organiza en filas y columnas, donde las filas representan una variab
 <center>
 **Tabla 1.5** Calificación del producto de acuerdo a su residencia del cliente
 </center>
-```{r}
+```{r, message=FALSE, warning=FALSE}
 # Instala y carga los paquetes necesarios
 # install.packages("magrittr")
 # install.packages("knitr")
@@ -344,5 +344,40 @@ Type: Character
 
 </pre>
 
+</br></br>
 
+Se emplea la funcion table()  para la construcción de tablas de manera sencilla
+
+Caso de tabla simple 
+
+```{r, eval=FALSE}
+table(Colombia$ubicacion)
+```
+
+<pre>
+   casa    fallecido     hospital hospital uci          n/a 
+6200776       143085          226           37        41077 
+</pre>
+
+</br></br>
+
+
+
+Caso de tabla cruzada
+
+```{r, eval=FALSE}
+table(Colombia$ubicacion,Colombia$sexo)
+```
+
+<pre>
+                     f       m
+  casa         3338686 2862090
+  fallecido      56359   86726
+  hospital         112     114
+  hospital uci      12      25
+  n/a            18630   22447
+
+</pre>
+
+</br></br>
 

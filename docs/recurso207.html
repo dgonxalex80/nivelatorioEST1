@@ -605,16 +605,8 @@ residencia del cliente
 # install.packages(&quot;magrittr&quot;)
 # install.packages(&quot;knitr&quot;)
 
-library(magrittr)</code></pre>
-<pre><code>
-Attaching package: &#39;magrittr&#39;</code></pre>
-<pre><code>The following object is masked from &#39;package:purrr&#39;:
-
-    set_names</code></pre>
-<pre><code>The following object is masked from &#39;package:tidyr&#39;:
-
-    extract</code></pre>
-<pre class="r"><code>library(knitr)
+library(magrittr)
+library(knitr)
 
 # Datos
 x = c(20, 40, 15, 11, 8, 6)
@@ -842,6 +834,28 @@ Type: Character
               Total   1000    100.00         100.00    100.00         100.00
 
 </pre>
+<p></br></br></p>
+<p>Se emplea la funcion table() para la construcción de tablas de manera
+sencilla</p>
+<p>Caso de tabla simple</p>
+<pre class="r"><code>table(Colombia$ubicacion)</code></pre>
+<pre>
+   casa    fallecido     hospital hospital uci          n/a 
+6200776       143085          226           37        41077 
+</pre>
+<p></br></br></p>
+<p>Caso de tabla cruzada</p>
+<pre class="r"><code>table(Colombia$ubicacion,Colombia$sexo)</code></pre>
+<pre>
+                     f       m
+  casa         3338686 2862090
+  fallecido      56359   86726
+  hospital         112     114
+  hospital uci      12      25
+  n/a            18630   22447
+
+</pre>
+<p></br></br></p>
 </div>
 
 

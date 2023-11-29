@@ -101,11 +101,21 @@ ggdistribution(dbeta, seq(0, 1, 0.01), shape1 = 2, shape2 =5 ,colour = "#0EB0C6"
 
 <br/>
 
-+ <span style="color:#FF7F00">**Asimetría negativa**</span> : Una interpretación intuitiva de esta forma pidría ser : "poco con poco y mucho con mucho".  Ejemplo : Una prueba con resultados asimétricos a la izquierda o negativa, indica que pocos obtuvieron resultados bajos y que muchos alcanzaron resultados altos, pudiendo indicar que la prueba era relativamente fácil
+###  <span style="color:#FF7F00">**Asimetría negativa**</span> : 
 
-+ <span style="color:#686868">**Simétrica**</span> : En este caso se podría interpretar los resultados como "poco con poco, poco con mucho, mucho al rededor de un centro". En este caso una prueba con resultados simétricos indica que los puntajes se ubicaron al rededor de la media y que unos pocos sacaron puntaje bajo y que los que presentaron resultados altos corresponden a un pequeño grupo. Por lo regular estos son los resultados de pruebas estandarizada como pueden ser las pruebas de estado.
+Una interpretación intuitiva de esta forma podría ser : "poco con poco y mucho con mucho".  
 
-+ <span style="color:#0EB0C6">**Asimetría positiva**</span>  : Esta forma se podría interpretar como "mucho con poco y poco con mucho". Los resultados a pruebas con asimetría a la derecha o positiva, presentan resultados acumulados a la izquierda, es decir que muchos obtuvieron resultados bajos y unos pocos resultados altos. Esto haría pensar que la prueba fue exigente.
+### **Ejemplo** : 
+
+Una prueba con resultados asimétricos a la izquierda o negativa, indica que pocos obtuvieron resultados bajos y que muchos alcanzaron resultados altos, pudiendo indicar que la prueba era relativamente fácil
+
+### <span style="color:#686868">**Simetría**</span> 
+
+En este caso se podría interpretar los resultados como "poco con poco, poco con mucho, mucho alrededor de un centro". En este caso una prueba con resultados simétricos indica que los puntajes se ubicaron al rededor de la media y que unos pocos sacaron puntaje bajo y que los que presentaron resultados altos corresponden a un pequeño grupo. Por lo regular estos son los resultados de pruebas estandarizada como pueden ser las pruebas de estado.
+
+### <span style="color:#0EB0C6">**Asimetría positiva**</span>   
+
+Esta forma se podría interpretar como "mucho con poco y poco con mucho". Los resultados a pruebas con asimetría a la derecha o positiva, presentan resultados acumulados a la izquierda, es decir que muchos obtuvieron resultados bajos y unos pocos resultados altos. Esto haría pensar que la prueba fue exigente.
 
 <br/><br/>
 

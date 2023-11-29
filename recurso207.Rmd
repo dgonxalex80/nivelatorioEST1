@@ -53,7 +53,7 @@ Las tablas de frecuencia constituyen una de las herramientas más utilizadas en 
 + Frecuencia absoluta o conteo de los elementos o registros que tienen un valor determinado
 + Frecuencia relativa que corresponde al porcentaje sobre el total de registros que corresponden a un valor determinado
 
-La siguiente tabla corresponde a la distribución de la población mundial a 2022  por continente, base que se encuentra disponible en la plataforma [Datos abiertos](https://www.datos.gov.co/browse?q=covid%20&sortBy=relevance)
+La siguiente tabla corresponde a la distribución de la población mundial a 2022  por continente, base que se encuentra disponible en la plataforma [Datosmacro.com](https://datosmacro.expansion.com/demografia/poblacion) 
 
 </br></br>
 <center>
@@ -93,7 +93,7 @@ Fuente: [Datosmacro.com](https://datosmacro.expansion.com/demografia/poblacion)
 </center>
 </br>
 
-La tabla permite visualizar la distribución de la población muncial por continente, resaltando que más de la mitad de la población mundial se ubica en Asia (59.2%). 
+La tabla permite visualizar la distribución de la población mundial por continente, resaltando que más de la mitad de la población mundial se ubica en Asia (59.2%). 
 
 
 </br></br>
@@ -212,25 +212,33 @@ Al trabajar con la base de datos como la del Covid-19 para Colombia se encontrar
 Como ejemplo tenemos las variables *ubicación* y *sexo*  
 
 
-```{r}
+
+```{r, eval=FALSE}
 # Cargar la base de datos desde el archivo .rda
 load("data/Colombia.rda")
 table(Colombia$sexo)
 ```
 
-
+<pre>
+      f       F       m       M 
+      6 3413793       6 2971396 
+</pre>
 
 </br></br>
 
 
 
-
-```{r}
+```{r, eval=FALSE}
 # Cargar la base de datos desde el archivo .rda
 load("data/Colombia.rda")
 table(Colombia$ubicacion)
 ```
 
+
+<pre>
+        casa         Casa         CASA    Fallecido     Hospital Hospital UCI          N/A 
+       28320      6172449            7       143085          226           37        41077 
+</pre>
 </br></br>
 
 En R se puede utilizar la función `table(x)` para la elaboración de una tabla de frecuencias que contiene solo el conteo, pero que permite una revisión rápida de sus valores. Una mejor representación se puede realizar a través de la función `freq` del  paquete `summarytools`
@@ -242,7 +250,7 @@ En R se puede utilizar la función `table(x)` para la elaboración de una tabla 
 
 </br>
 
-El siguiente código de R permite descargar la base de datos Casos positivos de COVID-19 en Colombia directamente del portal de Datos Abiertos, revisar los valores de las variables : ubicación y sexo, arreglarlas pasando todos sus valores a minúsculas y corrigiendo el valor de los datos faltantes NA
+El siguiente código de R permite descargar la base de datos Casos positivos de COVID-19 en Colombia directamente del portal de Datos Abiertos, revisar los valores de las variables ubicación y sexo, arreglarlas pasando todos sus valores a minúsculas y corrigiendo el valor de los datos faltantes NA
 
 
 ```{r, eval=FALSE}

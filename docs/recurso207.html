@@ -316,8 +316,7 @@ registros que corresponden a un valor determinado</li>
 <p>La siguiente tabla corresponde a la distribución de la población
 mundial a 2022 por continente, base que se encuentra disponible en la
 plataforma <a
-href="https://www.datos.gov.co/browse?q=covid%20&amp;sortBy=relevance">Datos
-abiertos</a></p>
+href="https://datosmacro.expansion.com/demografia/poblacion">Datosmacro.com</a></p>
 </br></br>
 <center>
 <strong>Tabla 1.3</strong> Distribución de población mundial por
@@ -441,7 +440,7 @@ href="https://datosmacro.expansion.com/demografia/poblacion">Datosmacro.com</a>
 </sub>
 </center>
 <p></br></p>
-<p>La tabla permite visualizar la distribución de la población muncial
+<p>La tabla permite visualizar la distribución de la población mundial
 por continente, resaltando que más de la mitad de la población mundial
 se ubica en Asia (59.2%).</p>
 <p></br></br></p>
@@ -721,18 +720,18 @@ magnitud de los datos faltantes (NA)</p>
 <pre class="r"><code># Cargar la base de datos desde el archivo .rda
 load(&quot;data/Colombia.rda&quot;)
 table(Colombia$sexo)</code></pre>
-<pre><code>
+<pre>
       f       F       m       M 
-      6 3413793       6 2971396 </code></pre>
+      6 3413793       6 2971396 
+</pre>
 <p></br></br></p>
 <pre class="r"><code># Cargar la base de datos desde el archivo .rda
 load(&quot;data/Colombia.rda&quot;)
 table(Colombia$ubicacion)</code></pre>
-<pre><code>
-        casa         Casa         CASA    Fallecido     Hospital Hospital UCI 
-       28320      6172449            7       143085          226           37 
-         N/A 
-       41077 </code></pre>
+<pre>
+        casa         Casa         CASA    Fallecido     Hospital Hospital UCI          N/A 
+       28320      6172449            7       143085          226           37        41077 
+</pre>
 <p></br></br></p>
 <p>En R se puede utilizar la función <code>table(x)</code> para la
 elaboración de una tabla de frecuencias que contiene solo el conteo,
@@ -746,7 +745,7 @@ representación se puede realizar a través de la función
 <p></br></p>
 <p>El siguiente código de R permite descargar la base de datos Casos
 positivos de COVID-19 en Colombia directamente del portal de Datos
-Abiertos, revisar los valores de las variables : ubicación y sexo,
+Abiertos, revisar los valores de las variables ubicación y sexo,
 arreglarlas pasando todos sus valores a minúsculas y corrigiendo el
 valor de los datos faltantes NA</p>
 <pre class="r"><code> install.packages(&quot;tidyverse&quot;) #  instalación de paquete para manejo de datos

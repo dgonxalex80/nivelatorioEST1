@@ -140,7 +140,7 @@ cat("percentil 30   :", quantile(x, 0.30))
 
 <br/>
 
-La siguiente gráfica presenta la ubucación del percentil 30 con respecto a la distribución de la muestra - punto en naranja -.
+La siguiente gráfica presenta la ubicación del percentil 30 con respecto a la distribución de la muestra - punto en naranja -.
 
 <br/>
 

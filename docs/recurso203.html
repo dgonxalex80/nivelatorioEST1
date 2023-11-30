@@ -293,15 +293,12 @@ $(document).ready(function () {
 </div>
 
 
-<center>
 <pre class="r"><code>library(ggplot2)
 
 x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
 
-data1 &lt;- data.frame(
-name1=rep(&quot;A&quot;,70),
-value1=x
-)
+data1 &lt;- data.frame(name1 = rep(&quot;A&quot;,70),
+                    value1 = x)
 
 # Supongamos que data1 es tu conjunto de datos
 
@@ -317,7 +314,8 @@ p2 &lt;- ggplot(data1, aes(x = value1, y = &quot; &quot;)) +
 
 # Mostrar el gráfico
 print(p2)</code></pre>
-<p><img src="recurso203_files/figure-html/unnamed-chunk-1-1.png" width="960" /></p>
+<p><img src="recurso203_files/figure-html/unnamed-chunk-1-1.png" width="960" style="display: block; margin: auto;" /></p>
+<center>
 <strong>Figura 1.8</strong> Tiempos de carrera en minutos </br>
 <sub>Fuente : Carrera La Luz Cali </sub>
 </center>
@@ -346,10 +344,8 @@ un conjunto de datos y dividirlos por el número de datos</p>
 
 x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
 
-data1 &lt;- data.frame(
-name1=rep(&quot;A&quot;,70),
-value1=x
-)
+data1 &lt;- data.frame(name1 = rep(&quot;A&quot;,70),
+                    value1 = x)
 
 # Supongamos que data1 es tu conjunto de datos
 # Calcula la media de los datos
@@ -375,7 +371,8 @@ p2</code></pre>
 x_{i}\]</span></p>
 <pre class="r"><code>x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
 
-data1 &lt;- data.frame(name1=rep(&quot;A&quot;,70),value1=x ) # vector de números
+data1 &lt;- data.frame(name1 = rep(&quot;A&quot;,70),
+                    value1 = x ) # vector de números
 
 mean(data1$value1) # media </code></pre>
 <pre><code>[1] 50.79957</code></pre>
@@ -433,10 +430,8 @@ percentil 50 + <span class="math inline">\(D_{5}\)</span> : decil 5 +
 
 x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
 
-data1 &lt;- data.frame(
-name1=rep(&quot;A&quot;,70),
-value1=x
-)
+data1 &lt;- data.frame(name1 = rep(&quot;A&quot;,70),
+                    value1 = x)
 
 # Calcula la medina de los datos
 mediana &lt;- median(data1$value1)
@@ -459,10 +454,8 @@ p3</code></pre>
 <p><img src="recurso203_files/figure-html/unnamed-chunk-5-1.png" width="960" /></p>
 <pre class="r"><code>x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
 
-data1 &lt;- data.frame(
-name1=rep(&quot;A&quot;,70),
-value1=x
-) # vector de números
+data1 &lt;- data.frame(name1 = rep(&quot;A&quot;,70),
+                    value1 = x) 
 median(data1$value1) # mediana </code></pre>
 <pre><code>[1] 50.98</code></pre>
 <p><br/> <br/></p>
@@ -478,10 +471,18 @@ cualitativas o en cuantitativas discretas con pocos valores. <br/>
 <div id="ejemplo-2" class="section level3">
 <h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
 <p><br/> <br/></p>
+<pre class="r"><code>par(oma = c(1, 1, 1, 1) )  # margenes de la imagen
+ev=c(4,  4, 5, 13, 6)
+names(ev)=c(&quot;CONCACAF&quot;, &quot;CONMEBOL&quot;, &quot;CAF&quot;, &quot;UEFA&quot;,&quot;AFC&quot;)
+barplot(ev, col=c(&quot;#ff5b00&quot;,&quot;#dcf600&quot;,&quot;#7dbd00&quot;,&quot;#659cef&quot;,&quot;#2956b2&quot;),
+        # main = &quot;Paises clasificados Mundial Catar-2022&quot;, 
+        ylim = c(0,15), las=1,
+          cex.axis = 1, cex.lab=.5, cex.names=0.8)</code></pre>
+<img src="recurso203_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
+</br>
 <center>
-<img src="recurso203_files/figure-html/unnamed-chunk-7-1.png" width="672" />
-</br> <strong>Figura 1.9</strong> Paises clasificados Mundial Catar 2022
-</br> <sub>Fuente : kaggle.com </sub>
+<strong>Figura 1.9</strong> Paises clasificados Mundial Catar 2022 </br>
+<sub>Fuente : kaggle.com </sub>
 </center>
 <p><br/></p>
 <p>Moda : <strong>UEFA</strong> .</p>
@@ -524,10 +525,8 @@ class="math display">\[\frac{1}{2}\big(max(x)+min(x)\big)\]</span></p>
 valor de 22.15 millas por galón.</p>
 <pre class="r"><code>x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
 
-data1 &lt;- data.frame(
-name1=rep(&quot;A&quot;,70),
-value1=x
-)
+data1 &lt;- data.frame(name1 = rep(&quot;A&quot;,70),
+                    value1 = x)
 
 (max(data1$value1,na.rm = TRUE)+min(data1$value1,na.rm = TRUE))/2</code></pre>
 <pre><code>[1] 53.37</code></pre>
@@ -594,10 +593,8 @@ harmonic.mean(x,na.rm=TRUE,zero=TRUE)</code></pre>
 <h2><span style="color:#034A94"><strong>Código R</strong></span></h2>
 <pre class="r"><code>x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
 
-data1 &lt;- data.frame(
-name1=rep(&quot;A&quot;,70),
-value1=x
-)
+data1 &lt;- data.frame(name1 = rep(&quot;A&quot;,70),
+                    value1 = x)
 
 cat(&quot;media                :&quot;,mean(data1$value1, na.rm = TRUE), &quot;\n&quot;) # media</code></pre>
 <pre><code>media                : 50.79957 </code></pre>
@@ -618,6 +615,12 @@ indicadores</p>
 <div id="código-r-1" class="section level2">
 <h2><span style="color:#034A94"><strong>Código R</strong></span></h2>
 <pre>
+x=c(51.35, 49.88, 49.35, 51.21, 51.24, 45.75, 48.42, 47.29, 48.98, 50.06, 50.94, 45.41, 55.69,     48.90, 56.00, 44.72, 56.89, 46.61, 53.25, 48.46, 49.74, 45.03, 63.02, 50.96, 50.43, 51.19,     53.45, 52.10, 49.61, 45.89, 49.76, 42.30, 53.48, 54.71, 53.48, 56.67, 44.38, 51.18, 51.06,     54.96, 64.44, 51.85, 45.33, 62.74, 43.84, 51.32, 53.70, 51.00, 52.86, 43.06, 43.63, 51.24,     52.84, 49.19, 49.56, 49.56, 51.49, 55.31, 46.74, 47.62, 51.85, 58.90, 50.80, 43.39, 48.54,     52.72, 44.82, 52.49, 58.43, 52.91)
+
+data1 <- data.frame(name1 = rep("A",70),
+                    value1 = x )
+
+
 mean(data1$value1, na.rm = TRUE)               # media
 median(data1$value1,na.rm = TRUE)              # mediana
 mean(data1$value1, na.rm = TRUE, trim = 0.10)  # media truncada al 10%

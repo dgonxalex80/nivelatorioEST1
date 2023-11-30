@@ -299,11 +299,14 @@ $(document).ready(function () {
 grupo</strong></span></h2>
 <p></br></p>
 <p>Supongamos que tenemos dos grupos de estudiantes y solo se conoce el
-promedio de sus edades (<span class="math inline">\(\bar{x} =28\)</span>
-años). Lo que primero se piensa es que los dos grupos tienen una
-composición igual o muy parecida dado que coinciden en el promedio. Pero
-no es así, los datos que se presentan a continuación tienen medias de
-28, pero corresponden a grupos diferentes.</p>
+promedio de sus edades</p>
+<p><span class="math display">\[\bar{x}_{1} = \bar{x}_{2} = 28
+\text{años}\]</span></p>
+<p>Lo que primero se piensa es que los dos grupos tienen una composición
+igual o muy parecida dado que coinciden en el promedio. Pero no es así,
+los datos que se presentan a continuación tienen medias de 28, pero
+corresponden a grupos diferentes.</p>
+<p></br></p>
 <table>
 <colgroup>
 <col width="4%" />
@@ -368,24 +371,27 @@ obtiene restando los valores extremos de los datos:</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left"><strong>Grupo 1</strong></th>
-<th align="left"><strong>Grupo 1</strong></th>
+<th align="left"></th>
+<th align="center">media (<span
+class="math inline">\(\bar{x}\)</span>)</th>
+<th align="center">rango (<span class="math inline">\(r\)</span>)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><span class="math inline">\(\bar{x} = 28\)</span>
-años</td>
-<td align="left"><span class="math inline">\(\bar{x} = 28\)</span>
-años</td>
+<td align="left"><strong>Grupo 1</strong></td>
+<td align="center"><span class="math inline">\(28\)</span> años</td>
+<td align="center"><span class="math inline">\(16\)</span> años</td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math inline">\(r = 16\)</span> años</td>
-<td align="left"><span class="math inline">\(r = 38\)</span> años</td>
+<td align="left"><strong>Grupo 2</strong></td>
+<td align="center"><span class="math inline">\(28\)</span> años</td>
+<td align="center"><span class="math inline">\(38\)</span> años</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
-<td align="left"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -448,35 +454,15 @@ estándar</strong></span></h3>
 <p>Para la desviación estándar no aplican todas las propiedades de la
 varianza, dado que la raíz cuadrada no es una transformación lineal</p>
 </div>
-<p></br></p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"><strong>Grupo 1</strong></th>
-<th align="left"><strong>Grupo 1</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><span class="math inline">\(\bar{x} = 28\)</span>
-años</td>
-<td align="left"><span class="math inline">\(\bar{x} = 28\)</span>
-años</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(s^{2} = 16.62\)</span>
-años<span class="math inline">\(^2\)</span></td>
-<td align="left"><span class="math inline">\(s^{2} = 116.89\)</span>
-años<span class="math inline">\(^2\)</span></td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(s = 4.16\)</span> años</td>
-<td align="left"><span class="math inline">\(s = 10.81\)</span>
-años</td>
-</tr>
-</tbody>
-</table>
-<p></br></p>
+<p></br
+
+|               |   media ($\bar{x}$) | varianza ($s^{2}$)  | desviación estandar ($s$)|
+|:--------------|:-------------------:|:-------------------:|:------------------------:|
+|**Grupo 1**    |  $28$ años          | $16.62$  años$^2$   |  $4.16$ años             |
+|**Grupo 2**    |  $28$ años          | $116.89$ años$^2$   |  $10.81$ años            |
+|               |                     |                     |                          |
+
+</br></p>
 <p>Aunque la desviación estándar reduce el problema mencionado
 anteriormente debido a tener las mismas unidades de la variable, es útil
 para comparación de dos grupos con igual media. En caso de que las
@@ -502,29 +488,50 @@ homogéneos, de lo contrario se calificará como heterogéneo.</p>
 <div id="ejemplo" class="section level3">
 <h3><span style="color:#FF7F00"> <strong>Ejemplo</strong></span></h3>
 <table>
+<colgroup>
+<col width="15%" />
+<col width="22%" />
+<col width="27%" />
+<col width="34%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Grupo 1</strong></th>
-<th align="left"><strong>Grupo 1</strong></th>
+<th align="left"></th>
+<th align="center">media (<span
+class="math inline">\(\bar{x}\)</span>)</th>
+<th align="center">desviación estandar (<span
+class="math inline">\(s\)</span>)</th>
+<th align="center">coeficiente de variación (<span
+class="math inline">\(CV\)</span>)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><span class="math inline">\(\bar{x} = 28\)</span>
-años</td>
-<td align="left"><span class="math inline">\(\bar{x} = 28\)</span>
-años</td>
+<td align="left"><strong>Grupo 1</strong></td>
+<td align="center"><span class="math inline">\(28\)</span> años</td>
+<td align="center"><span class="math inline">\(4.16\)</span> años</td>
+<td align="center"><span class="math inline">\(14.56\)</span> %</td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math inline">\(CV = 14.56\)</span> %</td>
-<td align="left"><span class="math inline">\(CV = 38.61\)</span> %</td>
+<td align="left"><strong>Grupo 2</strong></td>
+<td align="center"><span class="math inline">\(28\)</span> años</td>
+<td align="center"><span class="math inline">\(10.81\)</span> años</td>
+<td align="center"><span class="math inline">\(38.61\)</span> %</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
 <p></br></p>
 <p>En este caso se obtienen valores diferentes para los dos grupos. El
-grupo 1 con un valor inferior a 20%, que indica homogeneidad y el grupo
-2 con un valor superior que indica heterogeneidad</p>
+grupo 1 con un valor bajo (<span class="math inline">\(14.56\)</span>
+%), indicando una homogeneidad en los valores, mientras que el grupo 2
+presenta un coeficiente de <span class="math inline">\(38.61\)</span>%
+que indica una mayor heterogeneidad.</p>
 <p></br></br></br></p>
 </div>
 </div>
@@ -535,7 +542,6 @@ max(x1)-min(x1)       # rango
 var(x1)               # varianza
 sd(x1)                # desviación estándar
 sd(x1)/mean(x1)*100   # coeficiente de variación
-
 </pre>
 </div>
 

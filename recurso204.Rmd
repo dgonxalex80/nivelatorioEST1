@@ -34,7 +34,13 @@ col4 ="#686868"  # gris - color texto
 
 </br>
 
-Supongamos que tenemos dos grupos de estudiantes y solo se conoce  el promedio de sus edades ($\bar{x} =28$ años).  Lo que primero se piensa es que los dos grupos tienen una composición igual o muy parecida dado que coinciden en el promedio.  Pero no es así, los datos que se presentan a continuación tienen medias de 28,  pero corresponden a grupos diferentes.
+Supongamos que tenemos dos grupos de estudiantes y solo se conoce  el promedio de sus edades 
+
+$$\bar{x}_{1} = \bar{x}_{2} = 28 \text{años}$$ 
+
+Lo que primero se piensa es que los dos grupos tienen una composición igual o muy parecida dado que coinciden en el promedio.  Pero no es así, los datos que se presentan a continuación tienen medias de 28,  pero corresponden a grupos diferentes.
+
+</br>
 
 |      |                                                                                                                       |
 |:-----|:----------------------------------------------------------------------------------------------------------------------|
@@ -90,11 +96,11 @@ $r = max(x) - min(x)$
 
 En el caso de los dos grupos:
 
-|**Grupo 1**                  | **Grupo 1**                        |
-|:----------------------------|:-----------------------------------|
-|$\bar{x} = 28$ años          |$\bar{x} = 28$ años                 |
-|$r = 16$ años                 |$r = 38$ años                      |  
-|                             |                                    |
+|               |   media ($\bar{x}$) | rango ($r$)         |
+|:--------------|:-------------------:|:-------------------:|
+|**Grupo 1**    |  $28$ años          | $16$ años           |
+|**Grupo 2**    |  $28$ años          | $38$ años           |  
+|               |                     |                     |
 
 </br>
 
@@ -148,13 +154,13 @@ $$s=\sqrt{s^{2}}$$
 Para la desviación estándar no aplican todas las propiedades de la varianza, dado que la raíz cuadrada no es una transformación lineal
 </div>
 
-</br>
+</br
 
-|**Grupo 1**                  | **Grupo 1**                        |
-|:----------------------------|:-----------------------------------|
-|$\bar{x} = 28$ años          |$\bar{x} = 28$ años                 |
-|$s^{2} = 16.62$ años$^2$     |$s^{2} = 116.89$ años$^2$           |  
-|$s  = 4.16$ años             |$s = 10.81$ años                    | 
+|               |   media ($\bar{x}$) | varianza ($s^{2}$)  | desviación estandar ($s$)|
+|:--------------|:-------------------:|:-------------------:|:------------------------:|
+|**Grupo 1**    |  $28$ años          | $16.62$  años$^2$   |  $4.16$ años             |
+|**Grupo 2**    |  $28$ años          | $116.89$ años$^2$   |  $10.81$ años            |
+|               |                     |                     |                          |
 
 </br>
 
@@ -177,14 +183,16 @@ Existen diferentes reglas empíricas para la interpretación del coeficiente de 
 ### <span style="color:#FF7F00"> **Ejemplo**</span> 
 
 
-|**Grupo 1**                  | **Grupo 1**                        |
-|:----------------------------|:-----------------------------------|
-|$\bar{x} = 28$ años          |$\bar{x} = 28$ años                 |
-|$CV  = 14.56$ %              |$CV = 38.61$ %                      |  
+|               |   media ($\bar{x}$) | desviación estandar ($s$)| coeficiente de variación ($CV$)|
+|:--------------|:-------------------:|:------------------------:|:------------------------------:|
+|**Grupo 1**    |  $28$ años          | $4.16$ años              | $14.56$ %                      |
+|**Grupo 2**    |  $28$ años          | $10.81$ años             | $38.61$ %                      |
+|               |                     |                          |                                |
+
 
 </br>
 
-En este caso se obtienen valores diferentes para los dos grupos. El grupo 1 con un valor inferior a 20%, que indica homogeneidad y el grupo 2 con un valor superior que indica heterogeneidad
+En este caso se obtienen valores diferentes para los dos grupos. El grupo 1 con un valor bajo ($14.56$ %), indicando una homogeneidad en los valores, mientras que el grupo 2 presenta un coeficiente de   $38.61$% que indica una mayor heterogeneidad.
 
 </br></br></br>
 
@@ -197,7 +205,6 @@ max(x1)-min(x1)       # rango
 var(x1)               # varianza
 sd(x1)                # desviación estándar
 sd(x1)/mean(x1)*100   # coeficiente de variación
-
 </pre>
 
 

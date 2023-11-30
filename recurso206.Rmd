@@ -274,3 +274,5 @@ plot(density(x))     # diagrama de densidad
 <br/><br/>
 
 
+
+

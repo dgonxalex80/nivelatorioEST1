@@ -350,16 +350,19 @@ class="math inline">\(\bar{x}&gt;Me\)</span>)</p></li>
 <pre class="r"><code>library(ggfortify)
 ggdistribution(dbeta, seq(0, 1, 0.01), shape1 = 5, shape2 =2 ,colour = &quot;#FF7F00&quot;)  + theme_minimal()</code></pre>
 <p><img src="recurso205_files/figure-html/unnamed-chunk-2-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><br/></p>
 <pre class="r"><code>library(ggfortify)
 ggdistribution(dnorm, seq(0.5, 3.5, 0.01), mean = 2, sd = .4,colour = &quot;#686868&quot;)  + theme_minimal()</code></pre>
 <p><img src="recurso205_files/figure-html/unnamed-chunk-3-1.png" width="864" style="display: block; margin: auto;" /></p>
+<p><br/></p>
 <pre class="r"><code>library(ggfortify)
 ggdistribution(dbeta, seq(0, 1, 0.01), shape1 = 2, shape2 =5 ,colour = &quot;#0EB0C6&quot;)   + theme_minimal()</code></pre>
-<img src="recurso205_files/figure-html/unnamed-chunk-4-1.png" width="864" style="display: block; margin: auto;" />
+<p><img src="recurso205_files/figure-html/unnamed-chunk-4-1.png" width="864" style="display: block; margin: auto;" /></p>
 <center>
 <strong>Figura 1.12</strong> Comparación de asimetrías </br>
 </center>
 <p><br/></p>
+<p><br/><br/></p>
 </div>
 <div id="interpretación" class="section level2">
 <h2><span
@@ -367,32 +370,44 @@ style="color:#034a94"><strong>Interpretación</strong></span></h2>
 <p><br/></p>
 <div id="asimetría-negativa" class="section level3">
 <h3><span style="color:#FF7F00"><strong>Asimetría
-negativa</strong></span> :</h3>
+negativa</strong></span></h3>
 <p>Una interpretación intuitiva de esta forma podría ser : “poco con
 poco y mucho con mucho”.</p>
+<p><br/></p>
 </div>
 <div id="ejemplo" class="section level3">
-<h3><strong>Ejemplo</strong> :</h3>
+<h3><span style="color:#FF7F00"><strong>Ejemplo</strong></span></h3>
 <p>Una prueba con resultados asimétricos a la izquierda o negativa,
 indica que pocos obtuvieron resultados bajos y que muchos alcanzaron
 resultados altos, pudiendo indicar que la prueba era relativamente
 fácil</p>
+<p><br/><br/></p>
 </div>
 <div id="simetría" class="section level3">
 <h3><span style="color:#686868"><strong>Simetría</strong></span></h3>
 <p>En este caso se podría interpretar los resultados como “poco con
-poco, poco con mucho, mucho alrededor de un centro”. En este caso una
-prueba con resultados simétricos indica que los puntajes se ubicaron al
-rededor de la media y que unos pocos sacaron puntaje bajo y que los que
-presentaron resultados altos corresponden a un pequeño grupo. Por lo
-regular estos son los resultados de pruebas estandarizada como pueden
-ser las pruebas de estado.</p>
+poco, poco con mucho, mucho alrededor de un centro”.</p>
+<p><br/></p>
+</div>
+<div id="ejemplo-1" class="section level3">
+<h3><span style="color:#FF7F00"><strong>Ejemplo</strong></span></h3>
+<p>En este caso una prueba con resultados simétricos indica que los
+puntajes se ubicaron al rededor de la media y que unos pocos sacaron
+puntaje bajo y que los que presentaron resultados altos corresponden a
+un pequeño grupo. Por lo regular estos son los resultados de pruebas
+estandarizada como pueden ser las pruebas de estado.</p>
+<p><br/><br/></p>
 </div>
 <div id="asimetría-positiva" class="section level3">
 <h3><span style="color:#0EB0C6"><strong>Asimetría
 positiva</strong></span></h3>
 <p>Esta forma se podría interpretar como “mucho con poco y poco con
-mucho”. Los resultados a pruebas con asimetría a la derecha o positiva,
+mucho”.</p>
+<p><br/></p>
+</div>
+<div id="ejemplo-2" class="section level3">
+<h3><span style="color:#FF7F00"><strong>Ejemplo</strong></span></h3>
+<p>Los resultados a pruebas con asimetría a la derecha o positiva,
 presentan resultados acumulados a la izquierda, es decir que muchos
 obtuvieron resultados bajos y unos pocos resultados altos. Esto haría
 pensar que la prueba fue exigente.</p>
@@ -401,7 +416,7 @@ pensar que la prueba fue exigente.</p>
 </div>
 <div id="código-r" class="section level2">
 <h2><span style="color:#034a94"><strong>Código R</strong></span></h2>
-<p><br/></p>
+<p><br/><br/></p>
 <p>En R se utilizan las funciones :</p>
 <ul>
 <li><code>rapportools::kurtosis(x)</code><br />

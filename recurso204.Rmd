@@ -49,7 +49,7 @@ Lo que primero se piensa es que los dos grupos tienen una composición igual o m
 
 </br></br>
 
-<center>
+
 
 ```{r, fig.height=3, fig.width=10}
 
@@ -72,6 +72,7 @@ p3=ggplot(data2, aes(x=value2, y=name2, color = name2)) +
 
 p3  
 ```
+<center>
 **Figura 1.10**  Tiempos de carrera en minutos </br>
 <sub>Fuente : Carrera La Luz Cali - comparación de grupos </sub>
 </center>

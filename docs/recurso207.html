@@ -741,7 +741,7 @@ representación se puede realizar a través de la función
 <p></br></br></p>
 </div>
 <div id="código-r" class="section level2">
-<h2><span style="color:#034a94"><strong>Código R</strong></h2>
+<h2><span style="color:#034a94"><strong>Código R</strong></span></h2>
 <p></br></p>
 <p>El siguiente código de R permite descargar la base de datos Casos
 positivos de COVID-19 en Colombia directamente del portal de Datos
@@ -783,14 +783,26 @@ summarytools::freq(Colombia21$estado, cumul = F)
 summarytools::freq(Colombia20$estado, cumul = F)
 summarytools::descr(Colombia22$edad)
 
-saveRDS(Colombia, file = &quot;/home/deg/Documentos/Javeriana/Ms Ciencia de Datos/repository/data/Colombia.RDS&quot;)
+table(Valle22$estado)
+table(Valle22$sexo)
 
-table(Cali22_06$estado)
+saveRDS(Colombia, file = &quot;/home/deg/Documentos/Javeriana/Ms Ciencia de Datos/repository/data/Colombia.RDS&quot;)</code></pre>
+<pre>
+ install.packages("tidyverse") #  instalación de paquete para manejo de datos
+ library(tidyverse)   # librerías útil en el manejo de datos
+ 
+ install.packages("RSocrata", dependencies = TRUE)   # instalación de paquete RSocrata
+ library(RSocrata)    # llamado de libreria
+ token <- "zxMsD6eXc0zlEMryRGW87Hwrz"  # token
+ Colombia <- read.socrata("https://www.datos.gov.co/resource/gt2j-8ykr.json", app_token = token) # lectura de manera remota 
 
-table(Cali22_06$sexo)</code></pre>
+</pre>
 <p></br></br></p>
-<p>Tabla de frecuencias de una variable cualitativa en escala
-nominal</p>
+<div
+id="tabla-de-frecuencias-de-una-variable-cualitativa-en-escala-nominal"
+class="section level3">
+<h3><span style="color:#034a94"><strong>Tabla de frecuencias de una
+variable cualitativa en escala nominal</strong></span></h3>
 <pre class="r"><code>summarytools::freq(Colombia$ubicacion, cumul = FALSE)    # tabla</code></pre>
 <pre>
 Frequencies  
@@ -812,8 +824,12 @@ Type: Character
 <p>Esta tabla permite detectar anomalias en la data que deben ser
 ajustadas antes de realizar los analisis descriptivos</p>
 <p></br></br></p>
-<p>Tabla de frecuencias de una variable cuantitativa en escala
-ordinal</p>
+</div>
+<div
+id="tabla-de-frecuencias-de-una-variable-cuantitativa-en-escala-ordinal"
+class="section level3">
+<h3><span style="color:#034a94"><strong>Tabla de frecuencias de una
+variable cuantitativa en escala ordinal</strong></span></h3>
 <pre class="r"><code>ev=c(&quot;1-Muy regular&quot;, &quot;2-Regular&quot;, &quot;3-Bueno&quot;, &quot;4-Muy bueno&quot;,&quot;5-Excelente&quot;)     # etiquetas 
 califica=sample(ev, 1000, replace = TRUE, prob = c(0.04,0.08,0.12,0.43,0.32))  # datos simulados
 summarytools::freq(califica)                                                   # tabla</code></pre>
@@ -834,16 +850,22 @@ Type: Character
 
 </pre>
 <p></br></br></p>
-<p>Se emplea la funcion table() para la construcción de tablas de manera
-sencilla</p>
-<p>Caso de tabla simple</p>
+<p>Se emplea la funcion <code>table()</code> para la construcción de
+tablas de manera sencilla</p>
+</div>
+<div id="caso-de-tabla-simple" class="section level3">
+<h3><span style="color:#034a94"><strong>Caso de tabla
+simple</strong></span></h3>
 <pre class="r"><code>table(Colombia$ubicacion)</code></pre>
 <pre>
    casa    fallecido     hospital hospital uci          n/a 
 6200776       143085          226           37        41077 
 </pre>
 <p></br></br></p>
-<p>Caso de tabla cruzada</p>
+</div>
+<div id="caso-de-tabla-cruzada" class="section level3">
+<h3><span style="color:#034a94"><strong>Caso de tabla
+cruzada</strong></spa></h3>
 <pre class="r"><code>table(Colombia$ubicacion,Colombia$sexo)</code></pre>
 <pre>
                      f       m
@@ -855,6 +877,7 @@ sencilla</p>
 
 </pre>
 <p></br></br></p>
+</div>
 </div>
 
 

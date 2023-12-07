@@ -245,12 +245,13 @@ En R se puede utilizar la función `table(x)` para la elaboración de una tabla 
 
 </br></br>
 
-## <span style="color:#034a94">**Código R**
+## <span style="color:#034a94">**Código R**</span>
 
 
 </br>
 
 El siguiente código de R permite descargar la base de datos Casos positivos de COVID-19 en Colombia directamente del portal de Datos Abiertos, revisar los valores de las variables ubicación y sexo, arreglarlas pasando todos sus valores a minúsculas y corrigiendo el valor de los datos faltantes NA
+
 
 
 ```{r, eval=FALSE}
@@ -289,17 +290,27 @@ summarytools::freq(Colombia21$estado, cumul = F)
 summarytools::freq(Colombia20$estado, cumul = F)
 summarytools::descr(Colombia22$edad)
 
+table(Valle22$estado)
+table(Valle22$sexo)
+
 saveRDS(Colombia, file = "/home/deg/Documentos/Javeriana/Ms Ciencia de Datos/repository/data/Colombia.RDS")
-
-table(Cali22_06$estado)
-
-table(Cali22_06$sexo)
-
 ```
+
+<pre>
+ install.packages("tidyverse") #  instalación de paquete para manejo de datos
+ library(tidyverse)   # librerías útil en el manejo de datos
+ 
+ install.packages("RSocrata", dependencies = TRUE)   # instalación de paquete RSocrata
+ library(RSocrata)    # llamado de libreria
+ token <- "zxMsD6eXc0zlEMryRGW87Hwrz"  # token
+ Colombia <- read.socrata("https://www.datos.gov.co/resource/gt2j-8ykr.json", app_token = token) # lectura de manera remota 
+
+</pre>
+
 
 </br></br>
 
-Tabla de frecuencias de una variable cualitativa en escala nominal
+### <span style="color:#034a94">**Tabla de frecuencias de una variable cualitativa en escala nominal**</span>
 
 ```{r, eval=FALSE}
 summarytools::freq(Colombia$ubicacion, cumul = FALSE)    # tabla
@@ -327,7 +338,7 @@ Esta tabla permite detectar anomalias en la data que deben ser ajustadas antes d
 
 </br></br>
 
-Tabla de frecuencias de una variable cuantitativa en escala ordinal
+### <span style="color:#034a94">**Tabla de frecuencias de una variable cuantitativa en escala ordinal**</span>
 
 ```{r, eval=FALSE}
 ev=c("1-Muy regular", "2-Regular", "3-Bueno", "4-Muy bueno","5-Excelente")     # etiquetas 
@@ -354,9 +365,9 @@ Type: Character
 
 </br></br>
 
-Se emplea la funcion table()  para la construcción de tablas de manera sencilla
+Se emplea la funcion `table()`  para la construcción de tablas de manera sencilla
 
-Caso de tabla simple 
+### <span style="color:#034a94">**Caso de tabla simple**</span> 
 
 ```{r, eval=FALSE}
 table(Colombia$ubicacion)
@@ -371,7 +382,7 @@ table(Colombia$ubicacion)
 
 
 
-Caso de tabla cruzada
+### <span style="color:#034a94">**Caso de tabla cruzada**</spa>
 
 ```{r, eval=FALSE}
 table(Colombia$ubicacion,Colombia$sexo)

@@ -45,7 +45,7 @@ De acuerdo con su valor, la puntudez de los datos puede clasificarse en tres gru
 </br>
 
 
-```{r, fig.height=4, fig.width=9}
+```{r, fig.height=4, fig.width=9, fig.align='center'}
 # Distribucion normal
 library(ggfortify)
 p=ggdistribution(dnorm, seq(-5, 5, 0.01), mean = 0, sd = 1,colour = "#FF7F00")   + theme_minimal()

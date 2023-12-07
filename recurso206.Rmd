@@ -78,7 +78,7 @@ Elegir el gráfico adecuado es muy importante, pues existen diferentes alternati
 Este tipo de gráficos se utiliza para variables cualitativas medidas en escala nominal.
 
 
-```{r, fig.height=5}
+```{r, fig.height=5, fig.align='center'}
 a=rep("Cultutal", 360145)
 b=rep("Pastoral", 61496)
 c=rep("Bienestar",49912)
@@ -120,7 +120,7 @@ barplot(ev, col=c("#ff5b00","#dcf600","#7dbd00","#659cef","#2956b2"), las=1, yli
 Este diagrama se emplea para representar dos variables cualitativas que pueden ser de escala nominal u ordinal.
 
 
-```{r, fig.height=5.5}
+```{r, fig.height=5.5, fig.align='center'}
 counts <- table(mtcars$vs, mtcars$gear); rownames(counts)=c("Montor en linea", "Motor en V")
 barplot(counts, 
         xlab="Número de cambios adelante ",
@@ -155,7 +155,7 @@ Este diagrama ordena los datos de manera que se puede determinar tanto el mínim
 El histograma es uno de los gráficos más utilizados para representar variables cuantitativas y permite resumir por rangos los diferentes datos. Es una buena forma de visualizar la distribución de los datos y su forma.
 
 
-```{r, fig.height=5}
+```{r, fig.height=5, fig.align='center'}
 h1=hist(nf,  
         main = "Notas de matemáticas fundamentales",
         xlab = "nota", 
@@ -178,7 +178,7 @@ abline(v=3,col="#f6b915", lwd=2)
 Este diagrama corresponde a un contorno suavizado del histograma que permite visualizar claramente la forma de los datos.
 
 
-```{r, fig.height=5}
+```{r, fig.height=5, fig.align='center'}
 nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
 plot(density(nf),  
      col="#034A94", 
@@ -197,7 +197,7 @@ xlab="nota", ylab="densidad")
 Es uno de las representaciones gráficas más utilizadas, pues además de los elementos y características que permite visualizar de las variables, permite comparar los resultados de dos o más grupos.
 
 
-```{r, fig.height=4.5}
+```{r, fig.height=4.5, fig.align='center'}
 nf=c(4.1, 2.7, 3.1, 3.2, 3.0, 3.2, 2.0, 2.4, 1.6, 3.2, 3.1, 2.6, 2.0, 2.4, 2.8, 3.3, 4.0, 3.4, 3.0, 3.1, 2.7, 2.7, 3.0, 3.8, 3.2, 2.2, 3.5, 3.5, 3.8, 3.5, 3.9, 4.2, 4.3, 3.9, 3.2, 3.5, 3.5, 3.7, 4.1, 3.7, 3.5, 3.6, 3.2, 3.1, 3.4, 3.0, 3.0, 3.0, 2.7, 1.7, 3.6, 2.1, 2.4, 3.0, 3.1, 2.5, 2.5, 3.6, 2.2, 2.4, 3.1, 3.3, 2.7, 3.7, 3.0, 2.7, 3.0, 3.2, 3.1, 2.4, 3.0, 2.7, 2.5, 3.0, 3.0, 3.0, 3.2, 3.1, 3.8, 4.1, 3.7, 3.5, 3.0, 3.7, 3.7, 4.1, 3.7, 3.9, 3.7, 2.0)
 cc=c(20, 10, 20, 20, 20, 20, 20, 20, 20, 30, 20, 20, 20, 10, 30, 20, 20, 30, 20, 30, 30, 20, 10, 30, 20, 20, 30, 30, 10, 20, 10, 20, 20, 20, 10, 20, 10, 20, 20, 30, 30, 30, 10, 30, 20, 20, 20, 20, 20, 20, 10, 20, 30, 30, 10, 10, 10, 20, 10, 20, 10, 30, 20, 10, 20, 30, 10, 30, 30, 30, 20, 30, 30, 30, 30, 30, 30, 20, 10, 30, 10, 20, 20, 10, 20, 20, 20, 20, 10, 20)
 labs=c("Grupo 1","Grupo 2","Grupo 3")
@@ -218,7 +218,7 @@ abline(h=4, col="#447270", lwd=1)
 
 Este diagrma de puntos permite visualizar la relación lineal que puede existir entre dos variables cualitativas.
 
-```{r, fig.height=5}
+```{r, fig.height=5, fig.align='center'}
 ed=round(rnorm(90,28,1),1)
 plot(ed,nf,  
      ylim = c(0,5), 
@@ -239,7 +239,7 @@ grid()
 ### <span style="color:#034a94">**Gráfico de series de tiempo**</span>
 
 
-```{r, fig.height=5}
+```{r, fig.height=5, fig.align='center'}
 plot(AirPassengers,  
      col="#034A94", 
      lwd = 4, las=1, 
